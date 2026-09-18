@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This script is installed as the forced command for the wiki-deploy SSH key.
+# It accepts only the server-side scp upload used by GitHub Actions and the
+# single release-activation command below. It intentionally has no shell mode.
+
+ROOT=/var/www/agi-wiki
+RELEASES="$ROOT/releases"
+HOME_DIR=/home/wiki-deploy
+ORIGINAL_COMMAND=${SSH_ORIGINAL_COMMAND:-}
+
+die() {
+  printf 'agi-wiki-deploy: %s\n' "$*" >&2
+  exit 1
+}
+
+if [[ "$ORIGINAL_COMMAND" =~ ^scp[[:space:]]-t[[:space:]]/home/wiki-deploy/wiki-mirror-([0-9a-f]{40})\.tar\.gz$ ]]; then
+  archive="$HOME_DIR/wiki-mirror-${BASH_REMATCH[1]}.tar.gz"
+  exec /usr/bin/scp -t "$archive"
+fi
+
+if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activate[[:space:]]([0-9a-f]{40})$ ]]; then
+  sha="${BASH_REMATCH[1]}"
+  archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
+  release="$RELEASES/$sha"
+  temporary="$RELEASES/.${sha}.tmp.$$"
+
+  [[ -f "$archive" ]] || die "release archive is missing"
+  [[ ! -e "$release" ]] || die "release already exists"
+
+  mkdir "$temporary"
+  trap 'rm -rf -- "$temporary"' EXIT
+  tar --no-same-owner --no-same-permissions -xzf "$archive" -C "$temporary"
+  [[ -f "$temporary/index.html" ]] || die "release does not contain index.html"
+  mv -- "$temporary" "$release"
+  trap - EXIT
+
+  link="$ROOT/.current-$sha.tmp"
+  rm -f -- "$link"
+  ln -s -- "$release" "$link"
+  mv -Tf -- "$link" "$ROOT/current"
+  rm -f -- "$archive"
+
+  mapfile -t old_releases < <(
+    find "$RELEASES" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %p\n' |
+      sort -nr | tail -n +6 | cut -d' ' -f2-
+  )
+  for old_release in "${old_releases[@]}"; do
+    rm -rf -- "$old_release"
+  done
+  exit 0
+fi
+
+die "unsupported SSH command"

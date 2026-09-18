@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 6.1. Collective intelligence
+  link: /research/nars/theory/gti/chapter6/6.1
 ---
 
 # Chapter 6. Community and Science

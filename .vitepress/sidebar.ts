@@ -100,6 +100,27 @@ function fixItems(arr, parentDir) {
   return sorted.map(item => {
     const fixed = { ...item }
     if (fixed.link) fixed.link = fixLink(fixed.link)
+    // VitePress serializes a trailing-slash directory link as `.../index`,
+    // while the active page path is normalized to `.../directory`. Remove
+    // the explicit `index` suffix so the current chapter can be identified
+    // when calculating the document footer pager.
+    if (fixed.items && fixed.link?.endsWith('/index')) {
+      fixed.link = fixed.link.slice(0, -'/index'.length)
+    }
+    // A directory index is a real document even when the sidebar generator
+    // represents the directory as a group. Keep that document in the flat
+    // sidebar sequence so VitePress can calculate the expected prev/next
+    // links (for example: Chapter 1 -> Section 1.1).
+    if (!fixed.link && fixed.items && fixed.index) {
+      const indexPath = join(parentDir, fixed.index, 'index.md')
+      if (existsSync(indexPath)) {
+        const relativeIndex = indexPath
+          .replace(/^content[\\/]/, '')
+          .replace(/[\\/]index\.md$/, '')
+          .replaceAll('\\', '/')
+        fixed.link = '/' + relativeIndex
+      }
+    }
     if (fixed.items) fixed.items = fixItems(fixed.items, join(parentDir, item.index || ''))
     if (fixed.collapsed !== true) fixed.collapsed = false
     return fixed

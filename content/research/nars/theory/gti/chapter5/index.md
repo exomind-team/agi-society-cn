@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 5.1. Sensorimotor mechanism
+  link: /research/nars/theory/gti/chapter5/5.1
 ---
 # Chapter 5. Experience and Socialization
 

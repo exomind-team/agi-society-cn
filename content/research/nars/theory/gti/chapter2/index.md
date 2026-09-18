@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 2.1. Intelligence defined
+  link: /research/nars/theory/gti/chapter2/2.1
 ---
 # Chapter 2. Intelligent System
 

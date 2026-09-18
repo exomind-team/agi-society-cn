@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 4.1. Learning as self-organization
+  link: /research/nars/theory/gti/chapter4/4.1
 ---
 # Chapter 4. Self-Organizing Process
 

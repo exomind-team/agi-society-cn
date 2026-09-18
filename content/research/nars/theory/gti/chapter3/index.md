@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 3.1. Formalization of information system
+  link: /research/nars/theory/gti/chapter3/3.1
 ---
 # Chapter 3. Inference System
 

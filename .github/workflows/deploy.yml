@@ -112,16 +112,4 @@ jobs:
       - name: Activate mirror release atomically
         run: |
           ssh -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
-            "GITHUB_SHA='$GITHUB_SHA' WIKI_DEPLOY_ROOT='$WIKI_DEPLOY_ROOT' bash -s" <<'REMOTE'
-          set -eu
-          release="$WIKI_DEPLOY_ROOT/releases/$GITHUB_SHA"
-          archive="/home/$USER/wiki-mirror-$GITHUB_SHA.tar.gz"
-          mkdir -p "$release"
-          tar -xzf "$archive" -C "$release"
-          test -f "$release/index.html"
-          ln -sfn "$release" "$WIKI_DEPLOY_ROOT/current"
-          rm -f "$archive"
-          find "$WIKI_DEPLOY_ROOT/releases" -mindepth 1 -maxdepth 1 -type d \
-            -printf '%T@ %p\n' | sort -nr | tail -n +6 | cut -d' ' -f2- | \
-            xargs -r rm -rf
-          REMOTE
+            "/usr/local/sbin/agi-wiki-deploy activate $GITHUB_SHA"

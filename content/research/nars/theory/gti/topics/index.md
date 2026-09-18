@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Amount of Information
+  link: /research/nars/theory/gti/topics/amount_of_information
 ---
 
 # Topic List

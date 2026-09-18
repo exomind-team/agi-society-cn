@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Chapter 1. Information System
+  link: /research/nars/theory/gti/chapter1
 ---
 
 # A General Theory of Intelligence

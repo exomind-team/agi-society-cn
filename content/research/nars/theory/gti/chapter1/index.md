@@ -1,5 +1,8 @@
 ---
 comments: true
+next:
+  text: Section 1.1. Defining "information system"
+  link: /research/nars/theory/gti/chapter1/1.1
 ---
 # Chapter 1. Information System
 
