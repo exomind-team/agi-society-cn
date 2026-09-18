@@ -76,7 +76,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WIKI_DEPLOY_HOST: ${{ vars.WIKI_DEPLOY_HOST || '120.53.232.88' }}
-      WIKI_DEPLOY_USER: ${{ vars.WIKI_DEPLOY_USER || 'wiki-deploy' }}
+      WIKI_DEPLOY_USER: ${{ vars.WIKI_DEPLOY_USER || 'wiki-deploy-20260918-5f921eef' }}
       WIKI_DEPLOY_ROOT: /var/www/agi-wiki
     steps:
       - name: Download Tencent Cloud mirror artifact
@@ -105,11 +105,25 @@ jobs:
 
       - name: Upload mirror release
         run: |
-          scp -O -i "$HOME/.ssh/agi-wiki-deploy" \
+          curl -4 -sS -o /dev/null --max-time 20 \
+            -w 'github_runner_to_tencent_http status=%{http_code} connect=%{time_connect}s total=%{time_total}s\n' \
+            "http://$WIKI_DEPLOY_HOST/"
+          upload_start_ns=$(date +%s%N)
+          upload_start=$(date -u +%FT%TZ)
+          scp -O -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -i "$HOME/.ssh/agi-wiki-deploy" \
             wiki-mirror.tar.gz \
             "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST:/home/$WIKI_DEPLOY_USER/wiki-mirror-${GITHUB_SHA}.tar.gz"
+          upload_end_ns=$(date +%s%N)
+          upload_end=$(date -u +%FT%TZ)
+          upload_bytes=$(stat -c '%s' wiki-mirror.tar.gz)
+          upload_seconds=$(awk "BEGIN { print ($upload_end_ns - $upload_start_ns) / 1000000000 }")
+          upload_rate=$(awk "BEGIN { print $upload_bytes / $upload_seconds }")
+          printf 'github_runner_to_tencent_scp start=%s end=%s bytes=%s seconds=%s bytes_per_second=%s\n' \
+            "$upload_start" "$upload_end" "$upload_bytes" "$upload_seconds" "$upload_rate"
 
       - name: Activate mirror release atomically
         run: |
-          ssh -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
+          ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
             "/usr/local/sbin/agi-wiki-deploy activate $GITHUB_SHA"

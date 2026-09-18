@@ -7,16 +7,21 @@ set -euo pipefail
 
 ROOT=/var/www/agi-wiki
 RELEASES="$ROOT/releases"
-HOME_DIR=/home/wiki-deploy
+HOME_DIR="/home/$(id -un)"
 ORIGINAL_COMMAND=${SSH_ORIGINAL_COMMAND:-}
 
 die() {
   printf 'agi-wiki-deploy: %s\n' "$*" >&2
+  printf 'agi-wiki-deploy: command=%q\n' "$ORIGINAL_COMMAND" >&2
   exit 1
 }
 
-if [[ "$ORIGINAL_COMMAND" =~ ^scp[[:space:]]-t[[:space:]]/home/wiki-deploy/wiki-mirror-([0-9a-f]{40})\.tar\.gz$ ]]; then
-  archive="$HOME_DIR/wiki-mirror-${BASH_REMATCH[1]}.tar.gz"
+scp_prefix="scp -t $HOME_DIR/wiki-mirror-"
+if [[ "$ORIGINAL_COMMAND" == "$scp_prefix"*.tar.gz ]]; then
+  sha="${ORIGINAL_COMMAND#"$scp_prefix"}"
+  sha="${sha%.tar.gz}"
+  [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || die "invalid release identifier"
+  archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
   exec /usr/bin/scp -t "$archive"
 fi
 
