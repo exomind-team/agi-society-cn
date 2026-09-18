@@ -105,7 +105,7 @@ jobs:
 
       - name: Upload mirror release
         run: |
-          scp -i "$HOME/.ssh/agi-wiki-deploy" \
+          scp -O -i "$HOME/.ssh/agi-wiki-deploy" \
             wiki-mirror.tar.gz \
             "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST:/home/$WIKI_DEPLOY_USER/wiki-mirror-${GITHUB_SHA}.tar.gz"
 
