@@ -33,7 +33,7 @@ comments: true
 ### JavaScript/TypeScript
 
 - [[nars_cxin_py_to_ts|NARS CXin Py to TS]]
-- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript（[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)）
+- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript；项目正在活跃开发中，尚未开源（[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)）
 
 ### Julia
 

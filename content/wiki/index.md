@@ -17,7 +17,7 @@ AGI 领域的知识库，汇集 NARS 及其相关工程的实施细节与参考�
 - [[projects/nars_impl/narust|NARust]] — Rust
 - [[projects/nars_impl/ona|ONA]] — C
 - [[projects/nars_impl/narjure|Narjure]] — Clojure
-- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript，[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)
+- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript；项目正在活跃开发中，尚未开源；[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)
 - [[projects/nars_impl/index|更多实现...]]
 
 ## 思想书库

@@ -59,7 +59,7 @@ content/
 ├── index.md           # 首页
 ├── about/             # 协会简介、研究团队
 ├── research/          # 学术研究（NARS 理论、GTI、NAC）
-├── conference/        # 学术会议（2016-2025 年会 + 组会）
+├── conference/        # 学术会议（2016-2026 年会 + 组会）
 ├── content/           # Obsidian 知识库内容（维基、研究、会议与项目）
 ├── projects/          # 项目介绍
 └── contact/           # 联系我们
