@@ -33,6 +33,7 @@ comments: true
 ### JavaScript/TypeScript
 
 - [[nars_cxin_py_to_ts|NARS CXin Py to TS]]
+- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript（[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)）
 
 ### Julia
 
@@ -57,7 +58,7 @@ comments: true
 
 > [!question] 需要添加自己的版本？
 >
-> 若实现者有自己的一版NARS实现，可[在GitHub提issue](https://github.com/Hailaylin/agi-society-cn/issues/new)，或在文末评论区发言。
+> 若实现者有自己的一版 NARS 实现，可[在 GitHub 提 issue](https://github.com/exomind-team/agi-society-cn/issues/new)，或在文末评论区发言。
 >
 > 同样也欢迎贡献者对遗漏的版本投稿！
 >

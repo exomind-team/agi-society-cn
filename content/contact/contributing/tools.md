@@ -52,7 +52,7 @@ nvm use 20
 移动到你要 clone 的目录后：
 
 ```bash
-git clone https://github.com/Hailaylin/agi-society-cn.git
+git clone https://github.com/exomind-team/agi-society-cn.git
 cd agi-society-cn
 ```
 
@@ -62,11 +62,10 @@ cd agi-society-cn
 
 #### 2. 安装项目依赖
 
-进入 `wiki/` 子目录，安装 npm 依赖：
+进入仓库根目录，安装 npm 依赖：
 
 ```bash
-cd wiki
-npm install
+npm ci
 ```
 
 > [!tip] 网络不畅时设置 npm 镜像源
@@ -125,7 +124,7 @@ npm --version
 
 #### 2. 安装项目依赖
 
-同 [Linux 对应小节](#2-安装项目依赖)，在 `wiki/` 目录下运行：
+同 [Linux 对应小节](#2-安装项目依赖)，在仓库根目录下运行：
 
 ```bash
 npm install
@@ -133,7 +132,7 @@ npm install
 
 #### 3. 开启实时预览
 
-同 [Linux 对应小节](#3-启动实时预览)，在 `wiki/` 目录下运行：
+同 [Linux 对应小节](#3-启动实时预览)，在仓库根目录下运行：
 
 ```bash
 npm run dev
@@ -171,13 +170,13 @@ npm run dev
 
 ## 构建生产环境
 
-本地开发完成后，可以在 `wiki/` 目录下运行构建命令生成静态网站：
+本地开发完成后，可以在仓库根目录下运行构建命令生成静态网站：
 
 ```bash
 npm run build
 ```
 
-构建产物在 `wiki/dist/` 目录中，可直接部署到任意静态文件服务器。
+构建产物在 `dist/` 目录中，可直接部署到任意静态文件服务器。
 
 若要在本地预览构建结果：
 
@@ -193,7 +192,7 @@ npm run serve
 
 > [!question] `vitepress dev` 启动后页面 404？
 >
-> 请确保终端当前工作目录在 `wiki/` 下，而非项目根目录。
+> 请确保终端当前工作目录在项目根目录，而非其它目录。
 
 > [!question] 端口 5173 被占用？
 >

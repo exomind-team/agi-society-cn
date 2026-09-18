@@ -10,24 +10,25 @@ AGI 领域的知识库，汇集 NARS 及其相关工程的实施细节与参考�
 
 全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖主流编程语言：
 
-- [实现介绍](/wiki/nars_impl/introduction)
-- [实现总览](/wiki/nars_impl/)
-- [OpenNARS](/wiki/nars_impl/impls/opennars) — Java / Kotlin
-- [PyNARS](/wiki/nars_impl/impls/pynars) — Python
-- [NARust](/wiki/nars_impl/impls/narust) — Rust
-- [ONA](/wiki/nars_impl/impls/ona) — C
-- [Narjure](/wiki/nars_impl/impls/narjure) — Clojure
-- [更多实现...](/wiki/nars_impl/)
+- [[projects/nars_impl/introduction|实现介绍]]
+- [[projects/nars_impl/index|实现总览]]
+- [[projects/nars_impl/opennars|OpenNARS]] — Java / Kotlin
+- [[projects/nars_impl/pynars|PyNARS]] — Python
+- [[projects/nars_impl/narust|NARust]] — Rust
+- [[projects/nars_impl/ona|ONA]] — C
+- [[projects/nars_impl/narjure|Narjure]] — Clojure
+- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript，[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)
+- [[projects/nars_impl/index|更多实现...]]
 
 ## 思想书库
 
 跨学科的 AGI 理论探索，汇聚协会成员的原创思想：
 
-- [总览](/research/thought_library/)
-- [意义片网思想](/research/thought_library/meaning_network)
-- [拟态操作](/research/thought_library/mimicry_operation)
-- [Lazero](/projects/lazero)
-- [类脑智能意识系统](/research/thought_library/bingfengdecao)
-- [智能同一观](/research/thought_library/identity_of_intelligence)
+- [[wiki/thought_library/index|总览]]
+- [[wiki/thought_library/meaning_network|意义片网思想]]
+- [[wiki/thought_library/mimicry_operation|拟态操作]]
+- [[wiki/thought_library/lazero|Lazero]]
+- [[wiki/thought_library/bingfengdecao|类脑智能意识系统]]
+- [[wiki/thought_library/identity_of_intelligence|智能同一观]]
 
 > 更多详细的维基内容正在整理中。

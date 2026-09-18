@@ -2,7 +2,7 @@
 
 中国通用人工智能协会（AGI Society CN）官方网站。基于 **VitePress + Nólëbase** 构建的学术知识库。
 
-🔗 在线访问：<https://hailaylin.github.io/agi-society-cn/>
+🔗 在线访问：<https://exomind-team.github.io/agi-society-cn/>
 
 ---
 
@@ -60,7 +60,7 @@ content/
 ├── about/             # 协会简介、研究团队
 ├── research/          # 学术研究（NARS 理论、GTI、NAC）
 ├── conference/        # 学术会议（2016-2025 年会 + 组会）
-├── wiki/              # 维基百科（NARS 实现、思想书库）
+├── content/           # Obsidian 知识库内容（维基、研究、会议与项目）
 ├── projects/          # 项目介绍
 └── contact/           # 联系我们
 ```

@@ -8,6 +8,8 @@ import obsidianCallouts from 'markdown-it-obsidian-callouts'
 import markdownItMark from 'markdown-it-mark'
 import { generateSidebar, hasSidebarChanged, commitSidebarUpdate } from './sidebar'
 
+const siteBase = process.env.VITEPRESS_BASE ?? '/agi-society-cn/'
+
 const nolebaseMD = presetMarkdownIt({
   bidirectionalLinks: {
     options: { dir: path.join(process.cwd(), 'content'), isRelativePath: true },
@@ -22,7 +24,7 @@ export default defineConfig({
   description: '中国通用人工智能协会 — 学术知识库',
   srcDir: './content',
   outDir: './dist',
-  base: '/agi-society-cn/',
+  base: siteBase,
   ignoreDeadLinks: true,
   cleanUrls: true,
 

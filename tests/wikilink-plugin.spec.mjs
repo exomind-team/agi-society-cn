@@ -4,10 +4,10 @@
  * Simulates: [[annual/index|查看年会总览 →]] in conference/index.md
  * Expected: renders as <a href="conference/annual/index"> link
  */
-const fs = require('fs');
-const path = require('path');
-const MarkdownIt = require('markdown-it');
-const { BiDirectionalLinks } = require('@nolebase/markdown-it-bi-directional-links');
+import fs from 'node:fs';
+import path from 'node:path';
+import MarkdownIt from 'markdown-it';
+import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links';
 
 // Setup temp dir simulating content structure
 const tmpDir = path.join(process.env.TEMP || '/tmp', 'wikilink-test-' + Date.now());

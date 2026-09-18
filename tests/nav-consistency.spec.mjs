@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 
-const PAGES = ['/', '/conference/', '/about/', '/nars/', '/other/', '/sai/'];
+const BASE = '/agi-society-cn';
+const PAGES = ['/', '/conference/', '/about/', '/research/', '/wiki/', '/projects/', '/contact/'];
 const TIMEOUT = 60000;
 
 (async () => {
@@ -13,7 +14,7 @@ const TIMEOUT = 60000;
 
   for (const path of PAGES) {
     try {
-      await page.goto(`http://localhost:5173${path}`, { waitUntil: 'networkidle', timeout: TIMEOUT });
+      await page.goto(`http://localhost:5173${BASE}${path}`, { waitUntil: 'networkidle', timeout: TIMEOUT });
 
       const nav = await page.locator('.VPNav').evaluate(el => getComputedStyle(el).backgroundColor);
       const navBar = await page.locator('.VPNavBar').evaluate(el => getComputedStyle(el).backgroundColor);
@@ -37,7 +38,7 @@ const TIMEOUT = 60000;
     }
   }
 
-  console.log(allPassed ? '\n✅ PASS: 全站 6 页面顶栏纯白一致' : '\n❌ FAIL: 存在不一致页面');
+  console.log(allPassed ? `\n✅ PASS: 全站 ${PAGES.length} 页面顶栏纯白一致` : '\n❌ FAIL: 存在不一致页面');
   await browser.close();
   process.exit(allPassed ? 0 : 1);
 })();

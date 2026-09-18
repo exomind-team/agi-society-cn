@@ -10,7 +10,7 @@ comments: true
 
 1. 安装 [Obsidian](https://obsidian.md/download)
 2. 打开 Obsidian，点击「打开其他知识库」→「打开本地文件夹」
-3. 选择项目中的 `wiki/content/` 目录
+3. 选择项目中的 `content/` 目录
 4. 现在你可以浏览、编辑、搜索所有维基内容了
 
 ## 推荐插件
@@ -34,4 +34,4 @@ comments: true
 
 ## 本地开发（可选）
 
-如需在本地预览网站效果，请参考[工具配置](/contact/contributing/tools)。
+如需在本地预览网站效果，请参考[[contact/contributing/tools|工具配置]]。
