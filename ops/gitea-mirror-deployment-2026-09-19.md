@@ -29,6 +29,8 @@ Gitea Release 只承载已构建产物；Gitea 的 `main`、`dev` 则作为 GitH
 
 腾讯云 WordPress 站点通过 Nginx `/wiki/` 反向代理到本机 `127.0.0.1:8085`，后者读取 `/var/www/agi-wiki-wordpress/current`。专用 `/wiki/` 构建产物保证资源和内部链接继续带有 `/wiki/` 前缀。
 
+内部代理的 `location /` 还会把带尾斜杠的平面页面路径内部重写为无尾斜杠形式，再按 `$uri.html` 查找文件；因此 `/wiki/conference/annual/2026` 与 `/wiki/conference/annual/2026/` 均可访问，且不会把内部主机名暴露给浏览器。该配置的服务器备份为 `/www/server/panel/vhost/nginx/agi-wiki-wordpress-subpath.conf.codex-20260919.bak`。
+
 ## 凭据边界
 
 当前使用同一枚 Gitea 仓库读写 token，但使用位置分开：
