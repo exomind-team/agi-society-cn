@@ -9,7 +9,8 @@ comments: true
 - 作者：*Christian Hahm*
     - [GitHub↗](https://github.com/ccrock4t)
 
-todo
+> [!info] 基础资料
+> 官方 README 确认这是 Python NARS 实现，并提供 PyInstaller 构建方式、GUI 和架构图；NAL 覆盖范围本轮未据推测补齐。跨项目字段见 [[catalog|NARS 实现基础资料总表]]。
 
 ## 快速入门（迁移自官网）
 

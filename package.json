@@ -8,6 +8,8 @@
     "build": "vitepress build",
     "serve": "vitepress serve",
     "check:content-links": "node scripts/check-content-links.mjs",
+    "nars:catalog": "node scripts/render-nars-catalog.mjs --write",
+    "audit:bilibili": "node scripts/audit-bilibili-conference.mjs",
     "postinstall": "patch-package"
   },
   "devDependencies": {

@@ -8,6 +8,8 @@ comments: true
 
 NARust是一个兼顾高性能与可集成性的NARS实现方案。
 
+基础字段与最新公开仓库元数据见 [[catalog|NARS 实现基础资料总表]]。本页的源码说明继续以 NARust-158 README 和项目代码为准。
+
 目前，NARust主要有[NARust-158](#narust-158)等版本
 
 ## NARust-158

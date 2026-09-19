@@ -20,3 +20,9 @@ order: 2
 海报
 
 ![202408_nars_workshop](./images/202408_nars_workshop.png)
+
+## 2022 世界 AGI 大会 NARS 工作坊
+
+[B站视频：2022年世界AGI大会_NARS工作坊](https://www.bilibili.com/video/BV13V4y1x7VF/)
+
+视频简介说明该场内容包括 NARS 基本介绍与近期工作进展。本条属于专题工作坊，不计入年会或组会场次；先作为 NARS 原始视频资料保留。

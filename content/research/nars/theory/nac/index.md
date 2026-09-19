@@ -18,9 +18,11 @@ comments: true
 
 （✨持续更新中，欢迎贡献内容）
 
-## 大致内容目录（拟）
+## 内容目录与原始资料
 
-🕒最后更新：【2024-08-30 20:44:42】
+🕒最后更新：【2026-09-19】
+
+- [[source-materials|非公理控制原始资料索引]] —— 先收集原始论文、官方 README、源码入口和视频，再逐项整理正文。
 
 - [[nac_overview/index|NARS控制机制概览]]
 - [[nac_principles/index|NARS控制机制的总体原则]]
@@ -39,4 +41,4 @@ comments: true
     - [[nac_classic_versions/pynars|PyNARS]]
     - …
 
-（✨持续更新中，欢迎贡献内容）
+（✨持续更新中；本页先固定资料边界，不把尚未核验的推断写成理论结论。）

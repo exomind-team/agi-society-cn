@@ -12,6 +12,9 @@ comments: true
 - 介绍链接
     - [Bilibili视频（年会报告）](https://www.bilibili.com/video/BV15m4y1Q7yD?p=3)
 
+> [!info] README 已确认的范围
+> 当前仓库 README 明确写出 OpenJunars 实现 NAL 1–6，用于教育和演示；跨项目字段见 [[catalog|NARS 实现基础资料总表]]。
+
 ## 教程导引
 
 OpenJunars是NARS的Julia版本，语言本身并不难学，且打开方式较为简单。

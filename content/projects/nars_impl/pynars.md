@@ -4,7 +4,7 @@ comments: true
 
 # PyNARS
 
-🕒最后更新：2024-07-26
+🕒最后更新：2026-09-19
 
 [GitHub↗](https://github.com/bowen-xu/PyNARS)
 
@@ -20,4 +20,7 @@ comments: true
     - *Maxim Tarasov*
         - [GitHub↗](https://github.com/maxeeem)
 
-todo
+> [!warning] 项目状态
+> 原仓库 README 已明确标记为 **Deprecated**，并指向 [OpenNARS 4](https://github.com/opennars/OpenNARS-4)。本页保留历史资料，不把 PyNARS 继续描述为当前主线实现。
+
+基础字段见 [[catalog|NARS 实现基础资料总表]]。

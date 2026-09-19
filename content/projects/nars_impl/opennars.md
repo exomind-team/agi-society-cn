@@ -6,9 +6,12 @@ comments: true
 
 [官网↗](http://www.opennars.org/)
 
+跨项目基础字段、相关仓库和核验日期见 [[catalog|NARS 实现基础资料总表]]。本页保留 OpenNARS 1.x/3.x 的历史教程与版本说明；控制机制原始资料另见 [[research/nars/theory/nac/source-materials|非公理控制原始资料索引]]。
+
 - 作者：*The OpenNARS team*
 
-todo
+> [!info] 资料边界
+> 本页保留 OpenNARS 1.x/3.x 的历史资料；版本差异、源码状态与控制机制相关内容应以仓库和 [[research/nars/theory/nac/source-materials|原始资料索引]] 为准。跨实现的基础字段见 [[catalog|NARS 实现基础资料总表]]。
 
 ## 各个版本
 
@@ -22,7 +25,8 @@ todo
   - [ARCJ137442/OpenNARS-158-dev](https://github.com/ARCJ137442/OpenNARS-158-dev)：基于上述声明性内核的中文注释版，相比原版增加了许多内容注解，并优化了代码可读性
     - [Gitee镜像↗](https://gitee.com/A137442/OpenNARS-158-dev)
 
-todo
+> [!info] 待核验
+> OpenNARS 1.x 的版本差异、中文注释版与运行方式仍需按对应仓库逐项复核；本页暂不把历史教程中的环境描述当作当前推荐方案。
 
 ### OpenNARS 3.x
 
@@ -31,7 +35,7 @@ todo
 
 > [!warning] 3.0.x & 3.1.0 与 3.1.x 的区别
 >
-> todo
+> 本页尚未完成这些版本之间的逐项源码核验。需要补充时，应优先对照 `opennars/opennars`、`OpenNARS-for-Research` 与相关发行记录，避免依据旧教程推断版本行为。
 
 ## 快速入门（迁移自官网）
 

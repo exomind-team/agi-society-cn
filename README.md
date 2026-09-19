@@ -92,8 +92,11 @@ npm install          # 安装依赖（仅需一次）
 npm run dev          # 启动开发服务器 → http://localhost:5173/agi-society-cn/
 npm run build        # 构建生产版本 → dist/
 npm run check:content-links  # 检查 Obsidian wikilink 与构建资源
+npm run nars:catalog # 从结构化资料生成 NARS 实现总表
 npm run serve        # 预览构建产物
 ```
+
+会议与 NARS 资料维护还提供两个辅助命令：`npm run nars:catalog` 会根据 `data/nars-implementations.json` 重建总表；B 站审计脚本需要通过 web-access/CDP 提供目标页，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`。脚本只生成候选报告，正式更新会议页面前仍需人工核对。
 
 ---
 
