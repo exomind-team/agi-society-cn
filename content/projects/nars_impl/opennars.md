@@ -35,7 +35,7 @@ todo
 
 ## 快速入门（迁移自官网）
 
-🕒【2024-07-27 20:42:49】迁移自官网，[源链接↗](http://www.agi-society.cn/index.html?key=F5xSWA4ZKR2JyCWQG5BbFj5iNbXFkMem&blog=N4CZfCnE85ETFwE5RexB3KKehbpzsWje)
+🕒【2024-07-27 20:42:49】迁移自旧官网；原页面目前已替换为站点创建成功提示，正文保留在本页。
 
 不同的 NARS 版本，打开方式稍有不同，下面以最新版（2020年12月16日）为例。由于网络问题，有些同学不能获取完整的 NARS 源码以及依赖库，所以我们把 NARS 打包到了百度网盘，方便大家下载：
 

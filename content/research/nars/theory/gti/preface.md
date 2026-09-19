@@ -22,9 +22,9 @@ According to this belief, I set my career goal to be two books, one conceptual a
 
 This eBook is going to evolve into the conceptual book, which is written in non-technical language, and establishes the philosophical foundation of my approach toward CogSci and AI. Also, it puts the research in a broad context. Previous abstractions and versions of this work have been distributed and discussed in several small circles of friends in 1985, 1991, and 2000, respectively.
 
-The technical book has also grown through several stages, as my Master Thesis (Peking University, 1986), [Ph.D. Dissertation](http://www.cogsci.indiana.edu/farg/peiwang/papers.html#thesis) (Indiana University, 1995), and [a research monograph](http://www.springer.com/west/home/computer/artificial?SGWID=4-147-22-173659733-0) (Springer, 2006), with the supplements of my other [publications](http://nars.wang.googlepages.com/nars%3Apublication).
+The technical book has also grown through several stages, as my Master Thesis (Peking University, 1986), [Ph.D. Dissertation](http://www.cogsci.indiana.edu/farg/peiwang/papers.html#thesis) (Indiana University, 1995), and [a research monograph](http://www.springer.com/west/home/computer/artificial?SGWID=4-147-22-173659733-0) (Springer, 2006), with the supplements of my other [publications](https://cis.temple.edu/~pwang/Publication/).
 
-The software is [NARS](http://nars.wang.googlepages.com/nars%3Aimplementation), which has been developed in several versions, too. Recently it grew into [Open NARS](http://code.google.com/p/open-nars/), an open-source software.
+The software is [NARS](https://cis.temple.edu/~pwang/NARS-Intro.html), which has been developed in several versions, too. Recently it grew into [Open NARS](https://github.com/opennars/opennars), an open-source software.
 
 Currently, works at all three levels are under constant revision and extension in a time-sharing manner, whenever I find time to work on them.
 

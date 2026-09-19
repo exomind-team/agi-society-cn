@@ -13,7 +13,7 @@ todo
 
 ## 快速入门（迁移自官网）
 
-🕒【2024-07-27 20:43:24】迁移自官网，[源链接↗](http://www.agi-society.cn/index.html?key=F5xSWA4ZKR2JyCWQG5BbFj5iNbXFkMem&blog=AnHb3CMnkckJh5GeeMS5N3ijGsGQbZCE)
+🕒【2024-07-27 20:43:24】迁移自旧官网；原页面目前已替换为站点创建成功提示，正文保留在本页。
 
 先安装 Python （这里建议使用迅雷下载，因为 Python 官网比较慢）：
 <https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe>
