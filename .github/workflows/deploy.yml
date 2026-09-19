@@ -2,7 +2,7 @@ name: Deploy VitePress to GitHub Pages and Tencent Cloud mirror
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
   workflow_dispatch:
 
 permissions:
@@ -78,7 +78,7 @@ jobs:
 
   publish-gitea-mirror:
     needs: build
-    if: ${{ vars.GITEA_MIRROR_ENABLED == 'true' }}
+    if: ${{ github.ref == 'refs/heads/main' && vars.GITEA_MIRROR_ENABLED == 'true' }}
     continue-on-error: true
     runs-on: ubuntu-latest
     env:
@@ -108,7 +108,7 @@ jobs:
 
   deploy-mirror:
     needs: [build, publish-gitea-mirror]
-    if: ${{ always() && needs.build.result == 'success' && vars.WIKI_MIRROR_ENABLED == 'true' }}
+    if: ${{ always() && github.ref == 'refs/heads/main' && needs.build.result == 'success' && vars.WIKI_MIRROR_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       WIKI_DEPLOY_HOST: ${{ vars.WIKI_DEPLOY_HOST || '120.53.232.88' }}

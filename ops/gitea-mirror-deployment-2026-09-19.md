@@ -4,6 +4,8 @@
 
 把 GitHub Actions 构建出的腾讯云根路径静态产物先发布到 Gitea，再由腾讯云服务器主动拉取。这样大文件不再由 GitHub Runner 直接持续上传到国内服务器；当前 GitHub → 腾讯云的 SCP 仍保留为失败回退路径。
 
+分支策略：`dev` 推送只更新 GitHub Pages 预览；只有 `main` 推送或从 `main` 手动触发 workflow 时，才发布 Gitea Release 并同步腾讯云。
+
 ## 当前链路
 
 ```text
