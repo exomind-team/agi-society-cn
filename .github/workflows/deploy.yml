@@ -53,6 +53,17 @@ jobs:
       - name: Check Tencent Cloud mirror content links and assets
         run: node scripts/check-content-links.mjs --dist=dist-mirror --base=/
 
+      - name: Build WordPress subpath site for Tencent Cloud
+        run: npx vitepress build
+        env:
+          VITEPRESS_BASE: /wiki/
+
+      - name: Preserve WordPress subpath artifact
+        run: mv dist dist-wordpress-wiki
+
+      - name: Check WordPress subpath content links and assets
+        run: node scripts/check-content-links.mjs --dist=dist-wordpress-wiki --base=/wiki/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -65,6 +76,13 @@ jobs:
           path: dist-mirror
           retention-days: 7
 
+      - name: Upload WordPress subpath artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-wordpress-wiki-dist
+          path: dist-wordpress-wiki
+          retention-days: 7
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -75,6 +93,41 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  sync-gitea-source:
+    needs: build
+    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' }}
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    env:
+      GITEA_REPOSITORY_URL: https://gitea.hailay.site/agiteam/agi-society-cn.git
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync GitHub main and dev to Gitea
+        env:
+          GITEA_TOKEN: ${{ secrets.GITEA_CI_PUBLISH_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$GITEA_TOKEN"
+          git fetch --no-tags origin main dev
+          gitea_main=$(git -c http.extraHeader="Authorization: token $GITEA_TOKEN" \
+            ls-remote "$GITEA_REPOSITORY_URL" refs/heads/main | awk '{ print $1 }')
+          gitea_dev=$(git -c http.extraHeader="Authorization: token $GITEA_TOKEN" \
+            ls-remote "$GITEA_REPOSITORY_URL" refs/heads/dev | awk '{ print $1 }')
+          test -n "$gitea_main"
+          test -n "$gitea_dev"
+          git -c http.extraHeader="Authorization: token $GITEA_TOKEN" push \
+            --force-with-lease="refs/heads/main:$gitea_main" \
+            --force-with-lease="refs/heads/dev:$gitea_dev" \
+            "$GITEA_REPOSITORY_URL" \
+            refs/remotes/origin/main:refs/heads/main \
+            refs/remotes/origin/dev:refs/heads/dev
+          printf 'gitea_source_synced main=%s dev=%s\n' \
+            "$(git rev-parse refs/remotes/origin/main)" \
+            "$(git rev-parse refs/remotes/origin/dev)"
 
   publish-gitea-mirror:
     needs: build
@@ -94,17 +147,29 @@ jobs:
           name: wiki-mirror-dist
           path: dist-mirror
 
+      - name: Download WordPress subpath artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: wiki-wordpress-wiki-dist
+          path: dist-wordpress-wiki
+
       - name: Pack and checksum mirror artifact
         run: |
           tar -czf "wiki-mirror-${GITHUB_SHA}.tar.gz" -C dist-mirror .
           sha256sum "wiki-mirror-${GITHUB_SHA}.tar.gz" > "wiki-mirror-${GITHUB_SHA}.tar.gz.sha256"
+          tar -czf "wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz" -C dist-wordpress-wiki .
+          sha256sum "wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz" > "wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz.sha256"
 
       - name: Publish Gitea Release artifact and retain latest 16
         env:
           GITEA_TOKEN: ${{ secrets.GITEA_CI_PUBLISH_TOKEN }}
           GITEA_ARCHIVE_PATH: wiki-mirror-${{ github.sha }}.tar.gz
           GITEA_CHECKSUM_PATH: wiki-mirror-${{ github.sha }}.tar.gz.sha256
-        run: node scripts/publish-gitea-release.mjs
+        run: |
+          node scripts/publish-gitea-release.mjs
+          GITEA_ARCHIVE_PATH="wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz" \
+            GITEA_CHECKSUM_PATH="wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz.sha256" \
+            node scripts/publish-gitea-release.mjs
 
   deploy-mirror:
     needs: [build, publish-gitea-mirror]
@@ -120,6 +185,12 @@ jobs:
         with:
           name: wiki-mirror-dist
           path: dist-mirror
+
+      - name: Download WordPress subpath artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: wiki-wordpress-wiki-dist
+          path: dist-wordpress-wiki
 
       - name: Prepare SSH client
         env:
@@ -147,7 +218,9 @@ jobs:
 
       - name: Pack mirror artifact
         if: ${{ steps.gitea_sync.outcome != 'success' }}
-        run: tar -czf wiki-mirror.tar.gz -C dist-mirror .
+        run: |
+          tar -czf wiki-mirror.tar.gz -C dist-mirror .
+          tar -czf wiki-wp-mirror.tar.gz -C dist-wordpress-wiki .
 
       - name: Upload mirror release
         if: ${{ steps.gitea_sync.outcome != 'success' }}
@@ -161,6 +234,10 @@ jobs:
             -i "$HOME/.ssh/agi-wiki-deploy" \
             wiki-mirror.tar.gz \
             "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST:/home/$WIKI_DEPLOY_USER/wiki-mirror-${GITHUB_SHA}.tar.gz"
+          scp -O -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -i "$HOME/.ssh/agi-wiki-deploy" \
+            wiki-wp-mirror.tar.gz \
+            "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST:/home/$WIKI_DEPLOY_USER/wiki-wp-mirror-${GITHUB_SHA}.tar.gz"
           upload_end_ns=$(date +%s%N)
           upload_end=$(date -u +%FT%TZ)
           upload_bytes=$(stat -c '%s' wiki-mirror.tar.gz)
@@ -175,3 +252,6 @@ jobs:
           ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
             -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
             "/usr/local/sbin/agi-wiki-deploy activate $GITHUB_SHA"
+          ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
+            "/usr/local/sbin/agi-wiki-deploy activate-wp $GITHUB_SHA"

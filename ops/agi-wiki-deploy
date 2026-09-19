@@ -8,6 +8,8 @@ set -euo pipefail
 
 ROOT=/var/www/agi-wiki
 RELEASES="$ROOT/releases"
+WP_ROOT=/var/www/agi-wiki-wordpress
+WP_RELEASES="$WP_ROOT/releases"
 HOME_DIR="/home/$(id -un)"
 ORIGINAL_COMMAND=${SSH_ORIGINAL_COMMAND:-}
 GITEA_API_BASE="https://gitea.hailay.site/api/v1"
@@ -29,15 +31,27 @@ if [[ "$ORIGINAL_COMMAND" == "$scp_prefix"*.tar.gz ]]; then
   exec /usr/bin/scp -t "$archive"
 fi
 
-activate_release() {
-  local sha="$1"
-  local archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
-  local release="$RELEASES/$sha"
-  local temporary="$RELEASES/.${sha}.tmp.$$"
+wp_scp_prefix="scp -t $HOME_DIR/wiki-wp-mirror-"
+if [[ "$ORIGINAL_COMMAND" == "$wp_scp_prefix"*.tar.gz ]]; then
+  sha="${ORIGINAL_COMMAND#"$wp_scp_prefix"}"
+  sha="${sha%.tar.gz}"
+  [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || die "invalid WordPress release identifier"
+  archive="$HOME_DIR/wiki-wp-mirror-$sha.tar.gz"
+  exec /usr/bin/scp -t "$archive"
+fi
 
-  [[ -f "$archive" ]] || die "release archive is missing"
+activate_static_release() {
+  local target_root="$1"
+  local releases_dir="$2"
+  local archive="$3"
+  local sha="$4"
+  local release="$releases_dir/$sha"
+  local temporary="$releases_dir/.${sha}.tmp.$$"
+
+  [[ -d "$releases_dir" ]] || die "release directory is missing: $releases_dir"
+  [[ -f "$archive" ]] || die "release archive is missing: $archive"
   if [[ -e "$release" ]]; then
-    [[ "$(readlink -f "$ROOT/current" 2>/dev/null || true)" == "$release" ]] || die "release already exists"
+    [[ "$(readlink -f "$target_root/current" 2>/dev/null || true)" == "$release" ]] || die "release already exists: $release"
     rm -f -- "$archive"
     return 0
   fi
@@ -49,19 +63,29 @@ activate_release() {
   mv -- "$temporary" "$release"
   trap - EXIT
 
-  link="$ROOT/.current-$sha.tmp"
+  local link="$target_root/.current-$sha.tmp"
   rm -f -- "$link"
   ln -s -- "$release" "$link"
-  mv -Tf -- "$link" "$ROOT/current"
+  mv -Tf -- "$link" "$target_root/current"
   rm -f -- "$archive"
 
   mapfile -t old_releases < <(
-    find "$RELEASES" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %p\n' |
+    find "$releases_dir" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %p\n' |
       sort -nr | tail -n +6 | cut -d' ' -f2-
   )
   for old_release in "${old_releases[@]}"; do
     rm -rf -- "$old_release"
   done
+}
+
+activate_release() {
+  local sha="$1"
+  activate_static_release "$ROOT" "$RELEASES" "$HOME_DIR/wiki-mirror-$sha.tar.gz" "$sha"
+}
+
+activate_wp_release() {
+  local sha="$1"
+  activate_static_release "$WP_ROOT" "$WP_RELEASES" "$HOME_DIR/wiki-wp-mirror-$sha.tar.gz" "$sha"
 }
 
 gitea_asset_url() {
@@ -97,32 +121,53 @@ if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+sync-gi
 
   archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
   checksum="$archive.sha256"
+  wp_archive="$HOME_DIR/wiki-wp-mirror-$sha.tar.gz"
+  wp_checksum="$wp_archive.sha256"
   archive_tmp="$HOME_DIR/.wiki-mirror-$sha.tar.gz.$$"
   checksum_tmp="$HOME_DIR/.wiki-mirror-$sha.tar.gz.sha256.$$"
-  trap 'rm -f -- "$archive_tmp" "$checksum_tmp"' EXIT
+  wp_archive_tmp="$HOME_DIR/.wiki-wp-mirror-$sha.tar.gz.$$"
+  wp_checksum_tmp="$HOME_DIR/.wiki-wp-mirror-$sha.tar.gz.sha256.$$"
+  trap 'rm -f -- "$archive_tmp" "$checksum_tmp" "$wp_archive_tmp" "$wp_checksum_tmp"' EXIT
 
   archive_download_url="$(gitea_asset_url "$release_json" "wiki-mirror-$sha.tar.gz")" || die "Gitea archive asset is missing"
   checksum_download_url="$(gitea_asset_url "$release_json" "wiki-mirror-$sha.tar.gz.sha256")" || die "Gitea checksum asset is missing"
-  [[ -n "$archive_download_url" && -n "$checksum_download_url" ]] || die "Gitea asset URL is empty"
+  wp_archive_download_url="$(gitea_asset_url "$release_json" "wiki-wordpress-wiki-$sha.tar.gz")" || die "Gitea WordPress archive asset is missing"
+  wp_checksum_download_url="$(gitea_asset_url "$release_json" "wiki-wordpress-wiki-$sha.tar.gz.sha256")" || die "Gitea WordPress checksum asset is missing"
+  [[ -n "$archive_download_url" && -n "$checksum_download_url" && -n "$wp_archive_download_url" && -n "$wp_checksum_download_url" ]] || die "Gitea asset URL is empty"
 
   /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 300 \
     -H "Authorization: token $token" "$archive_download_url" -o "$archive_tmp" || die "Gitea archive download failed"
   /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 20 \
     -H "Authorization: token $token" "$checksum_download_url" -o "$checksum_tmp" || die "Gitea checksum download failed"
+  /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 300 \
+    -H "Authorization: token $token" "$wp_archive_download_url" -o "$wp_archive_tmp" || die "Gitea WordPress archive download failed"
+  /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 20 \
+    -H "Authorization: token $token" "$wp_checksum_download_url" -o "$wp_checksum_tmp" || die "Gitea WordPress checksum download failed"
 
   expected="$(/usr/bin/awk 'NF { print $1; exit }' "$checksum_tmp")"
   [[ "$expected" =~ ^[0-9a-fA-F]{64}$ ]] || die "Gitea checksum is invalid"
   actual="$(/usr/bin/sha256sum "$archive_tmp" | /usr/bin/awk '{ print $1 }')"
   [[ "$actual" == "$expected" ]] || die "Gitea archive checksum mismatch"
+  wp_expected="$(/usr/bin/awk 'NF { print $1; exit }' "$wp_checksum_tmp")"
+  [[ "$wp_expected" =~ ^[0-9a-fA-F]{64}$ ]] || die "Gitea WordPress checksum is invalid"
+  wp_actual="$(/usr/bin/sha256sum "$wp_archive_tmp" | /usr/bin/awk '{ print $1 }')"
+  [[ "$wp_actual" == "$wp_expected" ]] || die "Gitea WordPress archive checksum mismatch"
   mv -- "$archive_tmp" "$archive"
+  mv -- "$wp_archive_tmp" "$wp_archive"
   activate_release "$sha"
+  activate_wp_release "$sha"
   trap - EXIT
-  rm -f -- "$checksum_tmp"
+  rm -f -- "$checksum_tmp" "$wp_checksum_tmp"
   exit 0
 fi
 
 if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activate[[:space:]]([0-9a-f]{40})$ ]]; then
   activate_release "${BASH_REMATCH[1]}"
+  exit 0
+fi
+
+if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activate-wp[[:space:]]([0-9a-f]{40})$ ]]; then
+  activate_wp_release "${BASH_REMATCH[1]}"
   exit 0
 fi
 

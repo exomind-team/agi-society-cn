@@ -10,16 +10,22 @@
 
 ```text
 main 推送
-  -> GitHub Actions 构建 dist-mirror
-  -> Gitea Release: deploy-<40 位 commit SHA>
+  -> GitHub Actions 构建三种站点产物
+     - GitHub Pages: /agi-society-cn/
+     - 腾讯云根路径: /
+     - WordPress 子路径: /wiki/
+  -> GitHub main/dev 源码同步到 Gitea
+  -> main 额外创建 Gitea Release: deploy-<40 位 commit SHA>
      - wiki-mirror-<SHA>.tar.gz
-     - wiki-mirror-<SHA>.tar.gz.sha256
+     - wiki-wordpress-wiki-<SHA>.tar.gz
+     - 两个对应的 .sha256 文件
   -> SSH 发送短命令 sync-gitea <SHA>
-  -> 腾讯云从 Gitea 下载并校验 SHA256
-  -> /var/www/agi-wiki 原子激活
+  -> 腾讯云从 Gitea 下载、校验 SHA256，并原子激活两个静态站目录
 ```
 
-Gitea Release 只承载已构建产物，不作为源码分支的替代品。Gitea 源码镜像同步与生产静态产物发布可以独立维护。
+Gitea Release 只承载已构建产物；Gitea 的 `main`、`dev` 则作为 GitHub 的源码镜像，二者独立维护。
+
+腾讯云 WordPress 站点通过 Nginx `/wiki/` 反向代理到本机 `127.0.0.1:8085`，后者读取 `/var/www/agi-wiki-wordpress/current`。专用 `/wiki/` 构建产物保证资源和内部链接继续带有 `/wiki/` 前缀。
 
 ## 凭据边界
 
