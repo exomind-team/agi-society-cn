@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import path from 'node:path';
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
@@ -30,7 +31,8 @@ import { chromium } from 'playwright';
   const navCount = await page.locator('nav').count();
   console.log(`h1 count: ${h1Count}, nav count: ${navCount}`);
 
-  const ssPath = 'C:\\Users\\56506\\AppData\\Local\\Temp\\nolebase-wiki-test.png';
+  const ssPath = process.env.TEST_SCREENSHOT_PATH
+    ?? path.join(process.env.TEMP ?? process.cwd(), 'nolebase-wiki-test.png');
   await page.screenshot({ path: ssPath, fullPage: false });
   console.log(`Screenshot saved: ${ssPath}`);
 

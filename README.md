@@ -38,7 +38,7 @@ npm run dev
 │         │                                    │
 │         编辑、新建 .md 文件                   │
 │         │                                    │
-│         在浏览器 http://localhost:5173 预览   │
+│   在浏览器 http://localhost:5173/agi-society-cn/ 预览 │
 │         │                                    │
 │         提交 Pull Request                     │
 │                                              │
@@ -47,7 +47,7 @@ npm run dev
 
 1. 打开 Obsidian → "打开其他 Vault" → 选择 `content/` 目录
 2. 像写笔记一样编辑 Markdown，Obsidian 所见即所得
-3. 浏览器访问 `http://localhost:5173` 实时预览最终效果
+3. 浏览器访问 `http://localhost:5173/agi-society-cn/` 实时预览最终效果
 4. 满意后提交 Pull Request
 
 > 编辑已有文件内容网站会即时刷新。**新增文件后侧边栏 2 秒内自动更新**，无需重启。
@@ -60,9 +60,10 @@ content/
 ├── about/             # 协会简介、研究团队
 ├── research/          # 学术研究（NARS 理论、GTI、NAC）
 ├── conference/        # 学术会议（2016-2026 年会 + 组会）
-├── content/           # Obsidian 知识库内容（维基、研究、会议与项目）
+├── wiki/               # 思想书库等维基内容
 ├── projects/          # 项目介绍
-└── contact/           # 联系我们
+├── contact/           # 联系我们
+└── public/             # 发布到站点根路径的公共资源
 ```
 
 每个目录对应网站导航栏的一个板块。新增页面放到对应目录即可自动出现在侧边栏中。
@@ -88,8 +89,9 @@ comments: true           # 开启评论区
 
 ```bash
 npm install          # 安装依赖（仅需一次）
-npm run dev          # 启动开发服务器 → http://localhost:5173
+npm run dev          # 启动开发服务器 → http://localhost:5173/agi-society-cn/
 npm run build        # 构建生产版本 → dist/
+npm run check:content-links  # 检查 Obsidian wikilink 与构建资源
 npm run serve        # 预览构建产物
 ```
 

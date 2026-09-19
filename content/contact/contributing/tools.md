@@ -85,11 +85,11 @@ npm run dev
 ```plaintext
   vitepress v1.6.3
 
-  ➜  Local:   http://localhost:5173/
+  ➜  Local:   http://localhost:5173/agi-society-cn/
   ➜  Network: use --host to expose
 ```
 
-则说明启动成功。在浏览器中打开 `http://localhost:5173/` 即可实时预览。
+则说明启动成功。在浏览器中打开 `http://localhost:5173/agi-society-cn/` 即可实时预览。
 
 > [!note] VitePress 热更新
 >
@@ -143,7 +143,7 @@ npm run dev
 ```plaintext
   vitepress v1.6.3
 
-  ➜  Local:   http://localhost:5173/
+  ➜  Local:   http://localhost:5173/agi-society-cn/
 ```
 
 则说明启动成功。
@@ -158,7 +158,7 @@ npm run dev
 >
 > 此时终端会额外输出一个局域网地址，如 `Network: http://192.168.1.x:5173/`。
 
-此时打开浏览器，访问 `http://localhost:5173/` 即可看到实时预览。
+此时打开浏览器，访问 `http://localhost:5173/agi-society-cn/` 即可看到实时预览。
 
 ![VSCode](./../../about/image/contributing/tools/vscode_windows_preview_2024-07-27_1.png)
 

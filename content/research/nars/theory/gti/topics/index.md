@@ -11,9 +11,7 @@ next:
 
 [[index|🔙上一级]]
 
-- [[ai_or_agi|AI or AGI]]
 - [[amount_of_information|amount of information]]
-- [[intelligence_and_evolution|intelligence and evolution]]
 - NARS and probability theory
 - Occam and Mach
 - [[working_definition|working definition]]

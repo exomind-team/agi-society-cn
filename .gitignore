@@ -1,5 +1,7 @@
 node_modules/
 public/
+!content/public/
+!content/public/**
 dist/
 .vitepress/cache/
 temp/

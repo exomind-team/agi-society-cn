@@ -14,10 +14,9 @@ content/
 │   ├── nars/         NARS 理论（theory/, news.md）
 │   └── thought_library/  思想书库
 ├── conference/       学术会议
-│   ├── annual/       年会（2016.md-2025.md + index.md）
+│   ├── annual/       年会（2016.md-2026.md + index.md）
 │   └── group/        组会（2016-2017.md-2025-2026.md + index.md）
-├── wiki/             维基百科
-│   └── nars_impl/    NARS 实现（12 个 .md）
+├── wiki/             维基百科（思想书库）
 ├── projects/         项目介绍
 │   └── nars_derivatives/  衍生项目
 └── contact/          联系我们
@@ -69,7 +68,7 @@ comments:              # true = 显示 Giscus 评论区
 ### 架构
 
 - `sidebar.ts` — 三个公共导出，**不要手写侧边栏**
-- `config.ts` 只有一行：`sidebar: generateSidebar()`
+- `config.ts` 负责站点配置，`sidebar: generateSidebar()` 是其侧边栏入口
 
 ### 三个函数
 
@@ -118,7 +117,7 @@ styles/
 
 - **编辑已有 .md 内容/frontmatter** → VitePress HMR 即时刷新（不触发 reload）
 - **新增/重命名 .md 文件** → 2 秒内自动检测 + 全量 reload
-- `npm run dev` 在 `wiki/` 目录下运行，端口默认 5173
+- `npm run dev` 在项目根目录运行，端口默认 5173；默认项目路径为 `/agi-society-cn/`
 
 ### 不要做的事
 
@@ -154,6 +153,8 @@ tests/
 ├── nav-consistency.spec.mjs  Playwright — 导航一致性
 ├── wiki.spec.mjs             Playwright — 维基页面
 └── wikilink-plugin.spec.mjs  Node — 双向链接插件 TDD
+
+另有 `scripts/check-content-links.mjs`，用于检查 Obsidian wikilink、公共资源和构建后的 Demo 资源。
 ```
 
 ### 运行方式
@@ -164,7 +165,7 @@ tests/
 
 ### 构建验证
 
-- 每次改动后运行 `npx vitepress build`
+- 每次改动后运行 `npm run build` 和 `npm run check:content-links`
 - `ignoreDeadLinks: true` 已配置，但仍需关注构建警告
 
 ---
@@ -178,6 +179,7 @@ tests/
 | `.vitepress/head.ts` | HTML 元数据 |
 | `.vitepress/theme/index.ts` | 主题入口（Nólëbase 插件 + 自定义组件） |
 | `tests/sidebar.test.ts` | 侧边栏自动化测试 |
+| `scripts/check-content-links.mjs` | Obsidian wikilink 与构建资源检查 |
 | `tests/` | 所有测试脚本（6 个） |
 | `../CONTRIBUTING.md` | 项目贡献指南（Obsidian / GitHub / 本地构建三种路径） |
 | `content/contact/contributing/obsidian.md` | Obsidian 编辑指南 |
@@ -296,7 +298,7 @@ npx vitepress build
 - `.obsidian/` 全部 Git 忽略（`content/.obsidian/`），各协作者自行配置
 - `CONTRIBUTING.md` 在项目根目录，提供多种贡献路径
 - 关键 Obsidian 语法（wikilink、callout、`==高亮==`）确保网站渲染支持
-- `wiki/content/` 即为 Obsidian vault，协作者无需 `npm run dev` 即可编辑
+- `content/` 即为 Obsidian vault；公共静态资源放在 `content/public/`
 
 ---
 

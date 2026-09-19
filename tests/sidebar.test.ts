@@ -5,8 +5,12 @@ describe('Conference sidebar ordering', () => {
   let browser: Browser
   let page: Page
 
-  // With content-order: date in annual/index.md, expect descending by date
+  // With content-order: date in annual/index.md, expect descending by date.
+  // The local dev server uses the project base by default; set VITEPRESS_BASE=/
+  // when testing a root-path mirror build.
+  const BASE = (process.env.VITEPRESS_BASE ?? '/agi-society-cn').replace(/\/$/, '')
   const expectedByDateDesc = [
+    '2026 · 第十一届',
     '2025 · 第十届',
     '2024 · 第九届',
     '2023 · 第八届',
@@ -22,19 +26,19 @@ describe('Conference sidebar ordering', () => {
   beforeAll(async () => {
     browser = await chromium.launch({ headless: true })
     page = await browser.newPage()
-    await page.goto('http://localhost:5173/conference/', { waitUntil: 'networkidle' })
+    await page.goto(`http://localhost:5173${BASE}/conference/`, { waitUntil: 'networkidle' })
   })
 
   afterAll(async () => {
     await browser.close()
   })
 
-  it('should show 10 conference year entries', async () => {
+  it('should show all conference year entries', async () => {
     const count = await page.evaluate(() => {
       const links = document.querySelectorAll('.VPSidebarItem a .text')
       return Array.from(links).map(el => el.textContent.trim()).filter(t => /^20\d{2} · /.test(t)).length
     })
-    expect(count).toBe(10)
+    expect(count).toBe(expectedByDateDesc.length)
   })
 
   it('should sort conferences by date descending (newest first) when content-order: date is set', async () => {

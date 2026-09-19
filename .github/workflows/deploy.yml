@@ -39,6 +39,9 @@ jobs:
       - name: Preserve GitHub Pages artifact
         run: mv dist dist-pages
 
+      - name: Check GitHub Pages content links and assets
+        run: node scripts/check-content-links.mjs --dist=dist-pages --base=/agi-society-cn/
+
       - name: Build root-path site for Tencent Cloud mirror
         run: npx vitepress build
         env:
@@ -46,6 +49,9 @@ jobs:
 
       - name: Preserve Tencent Cloud artifact
         run: mv dist dist-mirror
+
+      - name: Check Tencent Cloud mirror content links and assets
+        run: node scripts/check-content-links.mjs --dist=dist-mirror --base=/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
