@@ -100,34 +100,50 @@ jobs:
     continue-on-error: true
     runs-on: ubuntu-latest
     env:
-      GITEA_REPOSITORY_URL: https://gitea.hailay.site/agiteam/agi-society-cn.git
+      GITEA_API_BASE: https://gitea.hailay.site/api/v1
+      GITEA_REPOSITORY: agiteam/agi-society-cn
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Sync GitHub main and dev to Gitea
+      - name: Trigger and verify Gitea mirror sync for main and dev
         env:
           GITEA_TOKEN: ${{ secrets.GITEA_CI_PUBLISH_TOKEN }}
         run: |
           set -euo pipefail
           test -n "$GITEA_TOKEN"
           git fetch --no-tags origin main dev
-          gitea_main=$(git -c http.extraHeader="Authorization: token $GITEA_TOKEN" \
-            ls-remote "$GITEA_REPOSITORY_URL" refs/heads/main | awk '{ print $1 }')
-          gitea_dev=$(git -c http.extraHeader="Authorization: token $GITEA_TOKEN" \
-            ls-remote "$GITEA_REPOSITORY_URL" refs/heads/dev | awk '{ print $1 }')
-          test -n "$gitea_main"
-          test -n "$gitea_dev"
-          git -c http.extraHeader="Authorization: token $GITEA_TOKEN" push \
-            --force-with-lease="refs/heads/main:$gitea_main" \
-            --force-with-lease="refs/heads/dev:$gitea_dev" \
-            "$GITEA_REPOSITORY_URL" \
-            refs/remotes/origin/main:refs/heads/main \
-            refs/remotes/origin/dev:refs/heads/dev
-          printf 'gitea_source_synced main=%s dev=%s\n' \
-            "$(git rev-parse refs/remotes/origin/main)" \
-            "$(git rev-parse refs/remotes/origin/dev)"
+          github_main=$(git rev-parse refs/remotes/origin/main)
+          github_dev=$(git rev-parse refs/remotes/origin/dev)
+          mirror_sync_url="$GITEA_API_BASE/repos/$GITEA_REPOSITORY/mirror-sync"
+
+          curl -4 -fsS --retry 2 --connect-timeout 20 --max-time 30 \
+            -X POST \
+            -H 'Accept: application/json' \
+            -H "Authorization: token $GITEA_TOKEN" \
+            "$mirror_sync_url" > /dev/null
+
+          for attempt in $(seq 1 20); do
+            gitea_main=$(curl -4 -fsS --retry 2 --connect-timeout 20 --max-time 30 \
+              -H 'Accept: application/json' \
+              -H "Authorization: token $GITEA_TOKEN" \
+              "$GITEA_API_BASE/repos/$GITEA_REPOSITORY/branches/main" | jq -r '.commit.id')
+            gitea_dev=$(curl -4 -fsS --retry 2 --connect-timeout 20 --max-time 30 \
+              -H 'Accept: application/json' \
+              -H "Authorization: token $GITEA_TOKEN" \
+              "$GITEA_API_BASE/repos/$GITEA_REPOSITORY/branches/dev" | jq -r '.commit.id')
+            if [[ "$gitea_main" == "$github_main" && "$gitea_dev" == "$github_dev" ]]; then
+              printf 'gitea_source_synced main=%s dev=%s attempts=%s\n' \
+                "$gitea_main" "$gitea_dev" "$attempt"
+              exit 0
+            fi
+            sleep 3
+          done
+
+          printf 'gitea_source_mismatch github_main=%s gitea_main=%s github_dev=%s gitea_dev=%s\n' \
+            "$github_main" "$gitea_main" "$github_dev" "$gitea_dev"
+          exit 1
 
   publish-gitea-mirror:
     needs: build
