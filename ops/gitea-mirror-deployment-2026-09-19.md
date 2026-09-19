@@ -25,6 +25,8 @@ main 推送
 
 Gitea Release 只承载已构建产物；Gitea 的 `main`、`dev` 则作为 GitHub 的源码镜像，二者独立维护。
 
+源码同步使用 Gitea 原生镜像接口 `POST /api/v1/repos/agiteam/agi-society-cn/mirror-sync`，而不是向镜像仓库执行 `git push`。这是必要的：该仓库在 Gitea 中被标记为只读镜像，直接 push 会得到 `mirror repository is read-only`；工作流触发同步后，会轮询并核验 Gitea 的 `main`、`dev` 提交哈希均与 GitHub 一致。
+
 腾讯云 WordPress 站点通过 Nginx `/wiki/` 反向代理到本机 `127.0.0.1:8085`，后者读取 `/var/www/agi-wiki-wordpress/current`。专用 `/wiki/` 构建产物保证资源和内部链接继续带有 `/wiki/` 前缀。
 
 ## 凭据边界
