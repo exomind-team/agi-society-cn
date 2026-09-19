@@ -2,13 +2,17 @@
 set -euo pipefail
 
 # This script is installed as the forced command for the wiki-deploy SSH key.
-# It accepts only the server-side scp upload used by GitHub Actions and the
-# single release-activation command below. It intentionally has no shell mode.
+# It accepts only the server-side scp upload used by GitHub Actions, a
+# Gitea-pull deployment command, and the release-activation command below.
+# It intentionally has no shell mode.
 
 ROOT=/var/www/agi-wiki
 RELEASES="$ROOT/releases"
 HOME_DIR="/home/$(id -un)"
 ORIGINAL_COMMAND=${SSH_ORIGINAL_COMMAND:-}
+GITEA_API_BASE="https://gitea.hailay.site/api/v1"
+GITEA_REPOSITORY="agiteam/agi-society-cn"
+GITEA_TOKEN_FILE="$HOME_DIR/.config/agi-wiki/gitea-token"
 
 die() {
   printf 'agi-wiki-deploy: %s\n' "$*" >&2
@@ -25,14 +29,18 @@ if [[ "$ORIGINAL_COMMAND" == "$scp_prefix"*.tar.gz ]]; then
   exec /usr/bin/scp -t "$archive"
 fi
 
-if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activate[[:space:]]([0-9a-f]{40})$ ]]; then
-  sha="${BASH_REMATCH[1]}"
-  archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
-  release="$RELEASES/$sha"
-  temporary="$RELEASES/.${sha}.tmp.$$"
+activate_release() {
+  local sha="$1"
+  local archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
+  local release="$RELEASES/$sha"
+  local temporary="$RELEASES/.${sha}.tmp.$$"
 
   [[ -f "$archive" ]] || die "release archive is missing"
-  [[ ! -e "$release" ]] || die "release already exists"
+  if [[ -e "$release" ]]; then
+    [[ "$(readlink -f "$ROOT/current" 2>/dev/null || true)" == "$release" ]] || die "release already exists"
+    rm -f -- "$archive"
+    return 0
+  fi
 
   mkdir "$temporary"
   trap 'rm -rf -- "$temporary"' EXIT
@@ -54,6 +62,67 @@ if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activat
   for old_release in "${old_releases[@]}"; do
     rm -rf -- "$old_release"
   done
+}
+
+gitea_asset_url() {
+  local release_json="$1"
+  local asset_name="$2"
+  printf '%s' "$release_json" | /usr/bin/python3 -c '
+import json
+import sys
+
+name = sys.argv[1]
+release = json.load(sys.stdin)
+for asset in release.get("assets", []):
+    if asset.get("name") == name:
+        print(asset.get("browser_download_url") or asset.get("url") or "")
+        break
+else:
+    raise SystemExit(1)
+' "$asset_name"
+}
+
+if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+sync-gitea[[:space:]]([0-9a-f]{40})$ ]]; then
+  sha="${BASH_REMATCH[1]}"
+  [[ -r "$GITEA_TOKEN_FILE" ]] || die "Gitea token file is missing"
+  token="$(<"$GITEA_TOKEN_FILE")"
+  [[ "$token" =~ ^[^[:space:]]+$ ]] || die "Gitea token file is invalid"
+
+  tag="deploy-$sha"
+  release_url="$GITEA_API_BASE/repos/$GITEA_REPOSITORY/releases/tags/$tag"
+  release_json=$(/usr/bin/curl -4 -fsSL --connect-timeout 20 --max-time 60 \
+    -H "Accept: application/json" \
+    -H "Authorization: token $token" \
+    "$release_url") || die "Gitea release lookup failed"
+
+  archive="$HOME_DIR/wiki-mirror-$sha.tar.gz"
+  checksum="$archive.sha256"
+  archive_tmp="$HOME_DIR/.wiki-mirror-$sha.tar.gz.$$"
+  checksum_tmp="$HOME_DIR/.wiki-mirror-$sha.tar.gz.sha256.$$"
+  trap 'rm -f -- "$archive_tmp" "$checksum_tmp"' EXIT
+
+  archive_download_url="$(gitea_asset_url "$release_json" "wiki-mirror-$sha.tar.gz")" || die "Gitea archive asset is missing"
+  checksum_download_url="$(gitea_asset_url "$release_json" "wiki-mirror-$sha.tar.gz.sha256")" || die "Gitea checksum asset is missing"
+  [[ -n "$archive_download_url" && -n "$checksum_download_url" ]] || die "Gitea asset URL is empty"
+
+  /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 300 \
+    -H "Authorization: token $token" "$archive_download_url" -o "$archive_tmp" || die "Gitea archive download failed"
+  /usr/bin/curl -4 -fsSL --location --retry 2 --connect-timeout 20 --max-time 20 \
+    -H "Authorization: token $token" "$checksum_download_url" -o "$checksum_tmp" || die "Gitea checksum download failed"
+
+  expected="$(/usr/bin/awk 'NF { print $1; exit }' "$checksum_tmp")"
+  [[ "$expected" =~ ^[0-9a-fA-F]{64}$ ]] || die "Gitea checksum is invalid"
+  actual="$(/usr/bin/sha256sum "$archive_tmp" | /usr/bin/awk '{ print $1 }')"
+  [[ "$actual" == "$expected" ]] || die "Gitea archive checksum mismatch"
+  mv -- "$archive_tmp" "$archive"
+  activate_release "$sha"
+  trap - EXIT
+  rm -f -- "$checksum_tmp"
+  exit 0
+fi
+
+if [[ "$ORIGINAL_COMMAND" =~ ^/usr/local/sbin/agi-wiki-deploy[[:space:]]+activate[[:space:]]([0-9a-f]{40})$ ]]; then
+  activate_release "${BASH_REMATCH[1]}"
   exit 0
 fi
 

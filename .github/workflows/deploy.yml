@@ -76,9 +76,37 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  deploy-mirror:
+  publish-gitea-mirror:
     needs: build
-    if: ${{ vars.WIKI_MIRROR_ENABLED == 'true' }}
+    if: ${{ vars.GITEA_MIRROR_ENABLED == 'true' }}
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    env:
+      GITEA_API_BASE: https://gitea.hailay.site/api/v1
+      GITEA_REPOSITORY: agiteam/agi-society-cn
+      GITEA_RELEASE_RETENTION: '16'
+    steps:
+      - name: Download Tencent Cloud mirror artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: wiki-mirror-dist
+          path: dist-mirror
+
+      - name: Pack and checksum mirror artifact
+        run: |
+          tar -czf "wiki-mirror-${GITHUB_SHA}.tar.gz" -C dist-mirror .
+          sha256sum "wiki-mirror-${GITHUB_SHA}.tar.gz" > "wiki-mirror-${GITHUB_SHA}.tar.gz.sha256"
+
+      - name: Publish Gitea Release artifact and retain latest 16
+        env:
+          GITEA_TOKEN: ${{ secrets.GITEA_CI_PUBLISH_TOKEN }}
+          GITEA_ARCHIVE_PATH: wiki-mirror-${{ github.sha }}.tar.gz
+          GITEA_CHECKSUM_PATH: wiki-mirror-${{ github.sha }}.tar.gz.sha256
+        run: node scripts/publish-gitea-release.mjs
+
+  deploy-mirror:
+    needs: [build, publish-gitea-mirror]
+    if: ${{ always() && needs.build.result == 'success' && vars.WIKI_MIRROR_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       WIKI_DEPLOY_HOST: ${{ vars.WIKI_DEPLOY_HOST || '120.53.232.88' }}
@@ -106,10 +134,21 @@ jobs:
             ssh-keyscan -H "$WIKI_DEPLOY_HOST" >> "$HOME/.ssh/known_hosts"
           fi
 
+      - name: Try Tencent Cloud pull from Gitea
+        id: gitea_sync
+        if: ${{ vars.GITEA_MIRROR_ENABLED == 'true' && needs.publish-gitea-mirror.result == 'success' }}
+        continue-on-error: true
+        run: |
+          ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
+            "/usr/local/sbin/agi-wiki-deploy sync-gitea $GITHUB_SHA"
+
       - name: Pack mirror artifact
+        if: ${{ steps.gitea_sync.outcome != 'success' }}
         run: tar -czf wiki-mirror.tar.gz -C dist-mirror .
 
       - name: Upload mirror release
+        if: ${{ steps.gitea_sync.outcome != 'success' }}
         run: |
           curl -4 -sS -o /dev/null --max-time 20 \
             -w 'github_runner_to_tencent_http status=%{http_code} connect=%{time_connect}s total=%{time_total}s\n' \
@@ -129,6 +168,7 @@ jobs:
             "$upload_start" "$upload_end" "$upload_bytes" "$upload_seconds" "$upload_rate"
 
       - name: Activate mirror release atomically
+        if: ${{ steps.gitea_sync.outcome != 'success' }}
         run: |
           ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
             -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
