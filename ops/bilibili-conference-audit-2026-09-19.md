@@ -4,14 +4,14 @@
 
 官方空间：<https://space.bilibili.com/475410405/video>
 当前页面采集到视频数：40
-会议页面已收录的 BV 数：39
+会议页面已收录的 BV 数：46
 
 | BV 号 | 页面标题 | 分类 | 是否已收录 |
 |---|---|---|---|
 | [BV1TDGT6vEBt](https://www.bilibili.com/video/BV1TDGT6vEBt/) | 2026年第十一届中国通用人工智能年会_第二天下午_机器教育与人工认知生命分论坛 | 年会候选 | 是 |
 | [BV1kuGc6uExY](https://www.bilibili.com/video/BV1kuGc6uExY/) | 2026年第十一届中国通用人工智能年会_第一天下午_认知哲学、AGI理论及NARS分论坛 | 年会候选 | 是 |
 | [BV1AmGc6VEBG](https://www.bilibili.com/video/BV1AmGc6VEBG/) | 2026年第十一届中国通用人工智能年会_第一天上午_大会主旨报告 | 年会候选 | 是 |
-| [BV1uLLn6mE3i](https://www.bilibili.com/video/BV1uLLn6mE3i/) | 当前硬件上的通用人工智能是一个类别错误——神经元是线路，而不是芯片（Joscha Bach） | 组会/NARS候选 | 否 |
+| [BV1uLLn6mE3i](https://www.bilibili.com/video/BV1uLLn6mE3i/) | 当前硬件上的通用人工智能是一个类别错误——神经元是线路，而不是芯片（Joscha Bach） | 组会/NARS候选 | 是 |
 | [BV1965y69EkA](https://www.bilibili.com/video/BV1965y69EkA/) | 【中国通用人工智能协会（组会视频）】视觉的语法：对幼年失明成年复明者的案例调查 | 组会/NARS候选 | 是 |
 | [BV1KacLz6EwA](https://www.bilibili.com/video/BV1KacLz6EwA/) | 【中国通用人工智能协会（组会视频）】若无大脑皮层，还有智能吗？——非皮层中心主义视角下的智能本质研究 | 组会/NARS候选 | 是 |
 | [BV1bq8qzmEho](https://www.bilibili.com/video/BV1bq8qzmEho/) | 超越图灵机——《生命传》启示下的AGI能动性与目标生成 | 组会/NARS候选 | 是 |
@@ -23,12 +23,12 @@
 | [BV1z9NWzwEkX](https://www.bilibili.com/video/BV1z9NWzwEkX/) | 2025年第十届中国通用人工智能年会暨首届机器教育研讨会_第二天上午_主会场 | 年会候选 | 是 |
 | [BV1hgNsznEkM](https://www.bilibili.com/video/BV1hgNsznEkM/) | 2025年第十届中国通用人工智能年会_第一天下午_主会场 | 年会候选 | 是 |
 | [BV1YRN7zTEjZ](https://www.bilibili.com/video/BV1YRN7zTEjZ/) | 2025年第十届中国通用人工智能年会_第一天上午_主会场 | 年会候选 | 是 |
-| [BV1ZY7yzJECN](https://www.bilibili.com/video/BV1ZY7yzJECN/) | 【机器教育科普系列（六）】人工智能与教育学融合的双重范式变革 | 组会/NARS候选 | 否 |
-| [BV17i7yzEEwR](https://www.bilibili.com/video/BV17i7yzEEwR/) | 【机器教育科普系列（五）】像教育人一样教育机器————人类教学经验能否提升通用人工智能系统的学习效果？ | 组会/NARS候选 | 否 |
-| [BV1UCEGzjEpa](https://www.bilibili.com/video/BV1UCEGzjEpa/) | 【机器教育科普系列（四）】像教育人一样教育机器——人类教学原则能用于通用人工智能系统吗？ | 组会/NARS候选 | 否 |
-| [BV1hRVczrEfK](https://www.bilibili.com/video/BV1hRVczrEfK/) | 【机器教育科普系列（三）】何去何从？通用人工智能视域下未来的教师与教师的未来 | 组会/NARS候选 | 否 |
-| [BV1F3VnzCEWy](https://www.bilibili.com/video/BV1F3VnzCEWy/) | 【机器教育科普系列（二）】中国教育领域人工智能研究论纲——基于通用人工智能视角 | 组会/NARS候选 | 否 |
-| [BV168VJzrE8u](https://www.bilibili.com/video/BV168VJzrE8u/) | 【机器教育科普系列（一）】机器也需教育?论通用人工智能与教育学的革新 | 组会/NARS候选 | 否 |
+| [BV1ZY7yzJECN](https://www.bilibili.com/video/BV1ZY7yzJECN/) | 【机器教育科普系列（六）】人工智能与教育学融合的双重范式变革 | 组会/NARS候选 | 是 |
+| [BV17i7yzEEwR](https://www.bilibili.com/video/BV17i7yzEEwR/) | 【机器教育科普系列（五）】像教育人一样教育机器————人类教学经验能否提升通用人工智能系统的学习效果？ | 组会/NARS候选 | 是 |
+| [BV1UCEGzjEpa](https://www.bilibili.com/video/BV1UCEGzjEpa/) | 【机器教育科普系列（四）】像教育人一样教育机器——人类教学原则能用于通用人工智能系统吗？ | 组会/NARS候选 | 是 |
+| [BV1hRVczrEfK](https://www.bilibili.com/video/BV1hRVczrEfK/) | 【机器教育科普系列（三）】何去何从？通用人工智能视域下未来的教师与教师的未来 | 组会/NARS候选 | 是 |
+| [BV1F3VnzCEWy](https://www.bilibili.com/video/BV1F3VnzCEWy/) | 【机器教育科普系列（二）】中国教育领域人工智能研究论纲——基于通用人工智能视角 | 组会/NARS候选 | 是 |
+| [BV168VJzrE8u](https://www.bilibili.com/video/BV168VJzrE8u/) | 【机器教育科普系列（一）】机器也需教育?论通用人工智能与教育学的革新 | 组会/NARS候选 | 是 |
 | [BV1LxWYeBEiZ](https://www.bilibili.com/video/BV1LxWYeBEiZ/) | 2024-2025年_中国通用人工智能协会_组会视频合集 | 组会/NARS候选 | 是 |
 | [BV1dx4y1x7Vn](https://www.bilibili.com/video/BV1dx4y1x7Vn/) | 2024年第九届中国通用人工智能年会（四） | 年会候选 | 是 |
 | [BV1Ff421B7sp](https://www.bilibili.com/video/BV1Ff421B7sp/) | 2024年第九届中国通用人工智能年会（三） | 年会候选 | 是 |
