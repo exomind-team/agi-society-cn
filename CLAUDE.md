@@ -174,7 +174,7 @@ tests/
 - B 站候选审计需要先通过 web-access/CDP 打开协会官方空间，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`
 - B 站脚本只生成候选报告，不自动把视频归入年会或组会；正式入库前必须核对标题、发布时间、合集分页与议程
 - NARS 理论原始资料入口维护在 `content/research/nars/theory/nac/source-materials.md`
-- 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent -- --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
+- 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
 
 ---
 

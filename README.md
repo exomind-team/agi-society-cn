@@ -93,13 +93,13 @@ npm run dev          # 启动开发服务器 → http://localhost:5173/agi-socie
 npm run build        # 构建生产版本 → dist/
 npm run check:content-links  # 检查 Obsidian wikilink 与构建资源
 npm run nars:catalog # 从结构化资料生成 NARS 索引和各实现页的基础资料
-npm run publish:tencent -- --confirm=tencent-main # 明确批准后，手动触发 main 的腾讯云生产发布
+npm run publish:tencent --confirm=tencent-main # 明确批准后，手动触发 main 的腾讯云生产发布
 npm run serve        # 预览构建产物
 ```
 
 会议与 NARS 资料维护还提供辅助命令：`npm run nars:catalog` 会根据 `data/nars-implementations.json` 更新索引和各实现页；B 站审计脚本需要通过 web-access/CDP 提供目标页，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`。脚本只生成候选报告，正式更新会议页面前仍需人工核对。
 
-普通 `dev`/`main` 推送只用于 GitHub Pages 测试和 Gitea 源码镜像同步；腾讯云正式镜像必须在 `main` 干净且已推送后，人工执行 `npm run publish:tencent -- --confirm=tencent-main`，并在 GitHub Actions 的 `publish_tencent` 选项中确认。
+普通 `dev`/`main` 推送只用于 GitHub Pages 测试和 Gitea 源码镜像同步；腾讯云正式镜像必须在 `main` 干净且已推送后，人工执行 `npm run publish:tencent --confirm=tencent-main`，并在 GitHub Actions 的 `publish_tencent` 选项中确认。
 
 ---
 

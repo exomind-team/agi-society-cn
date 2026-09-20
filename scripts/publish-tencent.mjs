@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 
-const confirmed = process.argv.includes('--confirm=tencent-main')
-const dryRun = process.argv.includes('--dry-run')
+const confirmed = process.argv.includes('--confirm=tencent-main') || process.env.npm_config_confirm === 'tencent-main'
+const dryRun = process.argv.includes('--dry-run') || process.env.npm_config_dry_run === 'true'
 
 if (!confirmed && !dryRun) {
   console.error('拒绝发布：需要显式参数 --confirm=tencent-main')
