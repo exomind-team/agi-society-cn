@@ -4,6 +4,27 @@ comments: true
 
 # OpenJunars
 
+<!-- BEGIN GENERATED NARS PROFILE -->
+
+## 基础资料
+
+> 本节由 data/nars-implementations.json 生成；项目特有教程和源码观察仍在本页维护。
+
+| 字段 | 已核验信息 |
+|---|---|
+| 代际 / 定位 | Junars 的开源版本 |
+| 编程语言 | Julia |
+| 作者 / 维护组织 | 孙常新（AIxer） |
+| 代码仓库 | [仓库](https://github.com/AIxer/OpenJunars) |
+| 许可证 | GPL-3.0 |
+| Narsese / NAL 边界 | README 明确写出 NAL 1–6，用于教育和演示 |
+| 运行 / Demo | Julia 包安装；README 提供 REPL、NaCore 和交互式终端示例 |
+| 最近公开提交 | 2023-08-16（仅为仓库元数据观察值） |
+| 维护状态 | 未判定 |
+| 最后核验 | 2026-09-20 |
+
+<!-- END GENERATED NARS PROFILE -->
+
 - 作者：*孙常新 (Changxin Sun)*
     - [GitHub↗](https://github.com/AIxer)
 - 源码链接
@@ -13,7 +34,7 @@ comments: true
     - [Bilibili视频（年会报告）](https://www.bilibili.com/video/BV15m4y1Q7yD?p=3)
 
 > [!info] README 已确认的范围
-> 当前仓库 README 明确写出 OpenJunars 实现 NAL 1–6，用于教育和演示；跨项目字段见 [[catalog|NARS 实现基础资料总表]]。
+> 当前仓库 README 明确写出 OpenJunars 实现 NAL 1–6，用于教育和演示；基础字段见本页下方的“基础资料”。
 
 ## 教程导引
 

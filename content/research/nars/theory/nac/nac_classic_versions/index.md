@@ -22,6 +22,6 @@ comments: true
 
 [[ona|📄详细内容]]
 
-## PyNARS——OpenNARS 4
+## OpenNARS 4 (PyNARS)
 
-[[pynars|📄详细内容]]
+[[pynars|📄历史控制机制页面]] · [[projects/nars_impl/opennars4|📄实现介绍]]

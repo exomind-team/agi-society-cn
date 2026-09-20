@@ -26,6 +26,16 @@ comments: true
 - [ONA README](https://github.com/opennars/OpenNARS-for-Applications) —— 明确说明 ONA 的控制模型来源、应用取向、编译方式、Narsese shell、评测和示例；适合单独建立“应用型控制机制”分支。
 - [ONA: Architecture and Control](https://www.researchgate.net/publication/342713626_%27OpenNARS_for_Applications%27_Architecture_and_Control) —— ONA 架构与控制论文入口；后续需要回到论文原文核对术语。
 
+### 3. Temple AGI Team 公开论文目录
+
+- [TAGIT Publications 公开目录](https://cis.temple.edu/tagit/publications/)
+- [An Attentional Control Mechanism for Reasoning and Learning](https://cis.temple.edu/tagit/publications/An%20Attentional%20Control%20Mechanism%20for%20Reasoning%20and%20Learning.pdf)
+- [Goal Generation and Management in NARS](https://cis.temple.edu/tagit/publications/Goal_Generation_and_Management_in_NARS.pdf)
+- [Memory System and Memory Types for Real-Time Reasoning Systems](https://cis.temple.edu/tagit/publications/Memory_System_and_Memory_Types_for_Real_Time_Reasoning_Systems.pdf)
+- [ONA](https://cis.temple.edu/tagit/publications/ONA.pdf)
+- [Comparative Reasoning for Intelligent Agents](https://cis.temple.edu/tagit/publications/Comparative_Reasoning_for_Intelligent_Agents.pdf)
+- [A Model of Unified Perception and Cognition](https://cis.temple.edu/tagit/publications/A_Model_of_Unified_Perception_and_Cognition.pdf)
+
 ## 二、实现源码入口
 
 | 实现 | NAC 重点入口 | 资料状态 |
@@ -39,12 +49,48 @@ comments: true
 | OpenJunars | [OpenJunars](https://github.com/AIxer/OpenJunars) | README 明确 NAL 1–6；源码控制结构待整理 |
 | NARS-Swift | [NARS-Swift](https://github.com/maxeeem/NARS-Swift) 的 `Sources/NAL`、`Sources/NARS`、`Sources/Narsese` | README 明确 logic/control 分层，control 标为 TBD |
 
-## 三、可关联的会议与组会原始视频
+## 三、可关联的会议与组会具体报告
 
-- [[conference/annual/2025|2025 年会]]：包含 ONA、OpenNARS、NARS 理论与实现相关报告，应按报告标题逐项建立“视频—源码—论文”关联。
-- [[conference/annual/2026|2026 年会]]：包含 ACA、NARS 与机器心理/行为主题，当前第二天上午视频仍待发现。
-- [[conference/group/2023-2024|2023–2024 组会]]：第 3、4、8–11 场直接涉及 NAL、NARS 接口、代码阅读和 OpenNARS。
-- [[conference/group/2019-2020|2019–2020 组会]]：包含 NARS 工程结构、控制代码研读等历史资料。
+以下链接尽量直接定位到视频分 P 的具体报告，而不是只链接整场合集。
+
+### 年会报告
+
+| 年会 | 具体报告 | 视频 |
+|---|---|---|
+| 2026 | 基于 NARS 资源管理的智能代理知识共享平台 | [B站分 P2](https://www.bilibili.com/video/BV1kuGc6uExY?p=2) |
+| 2026 | ARC-AGI3 比赛视角下的 NARS 状态空间搜索问题 | [B站分 P5](https://www.bilibili.com/video/BV1kuGc6uExY?p=5) |
+| 2026 | 基于非公理逻辑的“学习—推理协同”应急决策模型 | [B站分 P6](https://www.bilibili.com/video/BV1kuGc6uExY?p=6) |
+| 2025 | 基于非公理逻辑的可解释的实体对齐与知识图谱补全研究 | [B站分 P3](https://www.bilibili.com/video/BV1hgNsznEkM?p=3) |
+| 2025 | 融合深度学习和非公理化逻辑的城市火灾应急管理 | [B站分 P3](https://www.bilibili.com/video/BV1uiNUzDEYc?p=3) |
+| 2025 | 基于非公理推理系统的自主认知修正控制机制的研究 | [B站分 P5](https://www.bilibili.com/video/BV1uiNUzDEYc?p=5) |
+| 2024 | 自底向上：AGI 的具身认知发展之路 | [B站分 P2](https://www.bilibili.com/video/BV1dx4y1x7Vn?p=2) |
+| 2024 | “看”的感觉：AGI 主动视觉研究进展 | [B站分 P3](https://www.bilibili.com/video/BV1dx4y1x7Vn?p=3) |
+| 2023 | 让机器婴儿“看见”——AGI 主动视觉发展初探 | [B站分 P1](https://www.bilibili.com/video/BV1rp4y157qy?p=1) |
+| 2022 | 机器婴儿主动视觉的初步发展 | [B站分 P2](https://www.bilibili.com/video/BV16G411n7F4?p=2) |
+| 2022 | 通用人工智能视角下的新常识观 | [B站分 P5](https://www.bilibili.com/video/BV16G411n7F4?p=5) |
+| 2022 | 何为情绪？基于生成认知的情绪衍生论 | [B站分 P6](https://www.bilibili.com/video/BV16G411n7F4?p=6) |
+| 2021 | “两种世界”假设与通用解悖框架 | [B站](https://www.bilibili.com/video/BV15m4y1Q7yD?p=1) |
+| 2021 | 机器教育系列：NARS 与自然语言处理相关报告 | [B站分 P6](https://www.bilibili.com/video/BV1ND4y1w7M5?p=6) |
+| 2020 | 何为“常识”？ | [B站分 P9](https://www.bilibili.com/video/BV1y64y1f7Nf?p=9) |
+| 2020 | 人类婴儿启发下的机器教育 | [B站分 P12](https://www.bilibili.com/video/BV1y64y1f7Nf?p=12) |
+
+### 组会中的源码与理论报告
+
+| 学年 | 具体报告入口 | 视频 |
+|---|---|---|
+| 2023–2024 | NAL-7 | [B站分 P3](https://www.bilibili.com/video/BV1o94y1r7hB?p=3) |
+| 2023–2024 | NARS 8–9 | [B站分 P4](https://www.bilibili.com/video/BV1o94y1r7hB?p=4) |
+| 2023–2024 | NARS 接口与非公理虚拟机 | [B站分 P8](https://www.bilibili.com/video/BV1o94y1r7hB?p=8) |
+| 2023–2024 | NARS 代码阅读 | [B站分 P9](https://www.bilibili.com/video/BV1o94y1r7hB?p=9) |
+| 2023–2024 | NARS 代码阅读 | [B站分 P10](https://www.bilibili.com/video/BV1o94y1r7hB?p=10) |
+| 2023–2024 | OpenNARS walkthrough | [B站分 P11](https://www.bilibili.com/video/BV1o94y1r7hB?p=11) |
+| 2020–2021 | NARS in Game AI | [B站分 P5](https://www.bilibili.com/video/BV1wf4y1k7Yh?p=5) |
+| 2020–2021 | NARS 代码阅读 / 实现讨论 | [B站分 P6](https://www.bilibili.com/video/BV1wf4y1k7Yh?p=6) |
+| 2020–2021 | OpenNARS 问答 | [B站分 P19](https://www.bilibili.com/video/BV1wf4y1k7Yh?p=19) |
+| 2019–2020 | 论意识 | [B站分 P3](https://www.bilibili.com/video/BV1hV411t7CG?p=3) |
+| 2019–2020 | Artificial consciousness | [B站分 P8](https://www.bilibili.com/video/BV1hV411t7CG?p=8) |
+
+年会与组会的页面索引见 [[conference/annual/index|历届年会]] 与 [[conference/group/index|历届组会]]；具体报告链接用于后续把公开内容、实现源码和论文逐条关联。
 
 ## 四、后续整理顺序
 

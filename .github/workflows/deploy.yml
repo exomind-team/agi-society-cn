@@ -4,6 +4,12 @@ on:
   push:
     branches: [main, dev]
   workflow_dispatch:
+    inputs:
+      publish_tencent:
+        description: Publish main to Tencent Cloud production mirror
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -18,9 +24,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -29,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build project-path site for GitHub Pages
         run: npx vitepress build
@@ -65,19 +71,19 @@ jobs:
         run: node scripts/check-content-links.mjs --dist=dist-wordpress-wiki --base=/wiki/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist-pages
 
       - name: Upload Tencent Cloud mirror artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: wiki-mirror-dist
           path: dist-mirror
           retention-days: 7
 
       - name: Upload WordPress subpath artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: wiki-wordpress-wiki-dist
           path: dist-wordpress-wiki
@@ -92,7 +98,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.1
 
   sync-gitea-source:
     needs: build
@@ -103,7 +109,7 @@ jobs:
       GITEA_API_BASE: https://gitea.hailay.site/api/v1
       GITEA_REPOSITORY: agiteam/agi-society-cn
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -147,7 +153,7 @@ jobs:
 
   publish-gitea-mirror:
     needs: build
-    if: ${{ github.ref == 'refs/heads/main' && vars.GITEA_MIRROR_ENABLED == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_tencent == true && github.ref == 'refs/heads/main' && vars.GITEA_MIRROR_ENABLED == 'true' }}
     continue-on-error: true
     runs-on: ubuntu-latest
     env:
@@ -155,16 +161,16 @@ jobs:
       GITEA_REPOSITORY: agiteam/agi-society-cn
       GITEA_RELEASE_RETENTION: '16'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Download Tencent Cloud mirror artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wiki-mirror-dist
           path: dist-mirror
 
       - name: Download WordPress subpath artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wiki-wordpress-wiki-dist
           path: dist-wordpress-wiki
@@ -189,7 +195,7 @@ jobs:
 
   deploy-mirror:
     needs: [build, publish-gitea-mirror]
-    if: ${{ always() && github.ref == 'refs/heads/main' && needs.build.result == 'success' && vars.WIKI_MIRROR_ENABLED == 'true' }}
+    if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.publish_tencent == true && github.ref == 'refs/heads/main' && needs.build.result == 'success' && vars.WIKI_MIRROR_ENABLED == 'true' }}
     runs-on: ubuntu-latest
     env:
       WIKI_DEPLOY_HOST: ${{ vars.WIKI_DEPLOY_HOST || '120.53.232.88' }}
@@ -197,13 +203,13 @@ jobs:
       WIKI_DEPLOY_ROOT: /var/www/agi-wiki
     steps:
       - name: Download Tencent Cloud mirror artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wiki-mirror-dist
           path: dist-mirror
 
       - name: Download WordPress subpath artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wiki-wordpress-wiki-dist
           path: dist-wordpress-wiki

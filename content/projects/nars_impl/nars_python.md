@@ -4,13 +4,34 @@ comments: true
 
 # NARS-Python
 
+<!-- BEGIN GENERATED NARS PROFILE -->
+
+## 基础资料
+
+> 本节由 data/nars-implementations.json 生成；项目特有教程和源码观察仍在本页维护。
+
+| 字段 | 已核验信息 |
+|---|---|
+| 代际 / 定位 | 独立 Python 实现 |
+| 编程语言 | Python |
+| 作者 / 维护组织 | Christian Hahm |
+| 代码仓库 | [仓库](https://github.com/ccrock4t/NARS-Python) |
+| 许可证 | MIT |
+| Narsese / NAL 边界 | README 确认是 Python NARS 实现；本轮未确认完整 NAL 层级 |
+| 运行 / Demo | README 给出 pyinstaller --onefile main.py；仓库包含 GUI 与架构图 |
+| 最近公开提交 | 2025-08-19（仅为仓库元数据观察值） |
+| 维护状态 | 未判定 |
+| 最后核验 | 2026-09-20 |
+
+<!-- END GENERATED NARS PROFILE -->
+
 [GitHub↗](https://github.com/ccrock4t/NARS-Python)
 
 - 作者：*Christian Hahm*
     - [GitHub↗](https://github.com/ccrock4t)
 
 > [!info] 基础资料
-> 官方 README 确认这是 Python NARS 实现，并提供 PyInstaller 构建方式、GUI 和架构图；NAL 覆盖范围本轮未据推测补齐。跨项目字段见 [[catalog|NARS 实现基础资料总表]]。
+> 官方 README 确认这是 Python NARS 实现，并提供 PyInstaller 构建方式、GUI 和架构图；NAL 覆盖范围本轮未据推测补齐。基础字段见本页下方的“基础资料”。
 
 ## 快速入门（迁移自官网）
 

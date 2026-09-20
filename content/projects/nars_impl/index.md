@@ -4,74 +4,38 @@ comments: true
 
 # NARS各版实现 索引
 
-综合NARS在各处的实现情况，本文添加了NARS各版实现索引。
+本页是 NARS 各版实现的入口索引。每个项目页保存该实现自己的基础资料、运行方式、教程、截图和源码观察；不再另设一张重复维护的大型资料表。
 
-> [!info] 基础资料总表
-> 各实现的语言、仓库、许可证、Narsese/NAL 资料边界、运行方式和最近公开提交日期，集中维护在 [[catalog|NARS 实现基础资料总表]]。总表最后核验于 2026-09-19；未知字段不会用推测补齐。
+> [!info] 资料口径
+> 页面中的“基础资料”由 data/nars-implementations.json 维护，并通过 npm run nars:catalog 分发到各项目页。字段只记录已核验事实；未知字段保留“未知”，不根据提交日期推断维护状态。
 
-该索引将专注于NARS各版实现的分类存档。索引将以**编程语言**为主要分类依据，内部排序大部分将按**实现时间/发布时间**组织。编程语言的排序不分先后。
+**最后核验：** 2026-09-20
 
-> [!note] 收录边界
-> 当前索引收录 12 个实现或实现方向。项目页用于保存项目特有的教程、截图和源码观察；跨项目可比较字段以基础资料总表为准。
+## 实现索引
 
-> [!warning] 注意
-> 本板块不讨论编程语言。
->
-> 若想讨论与编程语言自身相关的话题，可移步至其它技术论坛网站。
+| 实现 | 代际 / 定位 | 语言 | 页面与代码 |
+|---|---|---|---|
+| [[ona|ONA]] | OpenNARS for Applications | C | [[ona|项目页]]；[仓库](https://github.com/opennars/OpenNARS-for-Applications) |
+| [[narjure|Narjure]] | OpenNARS 2.0 | Clojure | [[narjure|项目页]]；[仓库](https://github.com/opennars/narjure) |
+| [[opennars|OpenNARS]] | OpenNARS 1.x / 3.x；相关研究版 3.1.1 | Java | [[opennars|项目页]]；[仓库](https://github.com/opennars/opennars) |
+| [[nars_cxin_py_to_ts|NARS CXin Py to TS]] | Python 到 TypeScript 的迁移实现 | TypeScript（仓库 API 未声明语言） | [[nars_cxin_py_to_ts|项目页]]；[仓库](https://gitee.com/poerlang/nars_cxin_py_to_ts) |
+| [[opennars304ts|OpenNARS 304 TS]] | OpenNARS 3.0.4 的 TypeScript 实现方向 | TypeScript | [[opennars304ts|项目页]]；[仓库](https://github.com/ARCJ137442/OpenNARS-304-ts) |
+| [[openjunars|OpenJunars]] | Junars 的开源版本 | Julia | [[openjunars|项目页]]；[仓库](https://github.com/AIxer/OpenJunars) |
+| [[nars_python|NARS-Python]] | 独立 Python 实现 | Python | [[nars_python|项目页]]；[仓库](https://github.com/ccrock4t/NARS-Python) |
+| [[opennars4|OpenNARS 4 (PyNARS)]] | OpenNARS 4 / Python | Python | [[opennars4|项目页]]；[仓库](https://github.com/opennars/OpenNARS-4) |
+| [[20nar1|20NAR1]] | 受 NARS 启发的 GMI 系统 | Rust | [[20nar1|项目页]]；[仓库](https://github.com/PtrMan/20NAR1) |
+| [[narst|NARst]] | 实验性 Rust NARS 实现 | Rust | [[narst|项目页]]；[仓库](https://github.com/ntoxeg/narst) |
+| [[narust|NARust-158]] | OpenNARS 1.5.8 的 Rust 重实现 | Rust | [[narust|项目页]]；[仓库](https://github.com/ARCJ137442/NARust-158) |
+| [[nars_swift|NARS-Swift]] | Swift NAL/NARS 实现 | Swift | [[nars_swift|项目页]]；[仓库](https://github.com/maxeeem/NARS-Swift) |
 
-## 索引
+## 资料与理论入口
 
-### C
+- [[introduction|NARS各版实现介绍]]：历史脉络与入门说明。
+- [[research/nars/theory/nac/source-materials|非公理控制原始资料索引]]：理论、论文、源码和具体会议报告入口。
+- [Temple AGI Team](https://cis.temple.edu/tagit/#projects)：公开项目、论文、演示和活动资料。
 
-- [[ona|ONA]] (OpenNARS for Applications)
-
-### Clojure
-
-- [[narjure|Narjure]] (OpenNARS 2.x)
-
-### Java
-
-- [[opennars|OpenNARS]] (OpenNARS 1.x / 3.x)
-
-### JavaScript/TypeScript
-
-- [[nars_cxin_py_to_ts|NARS CXin Py to TS]]
-- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript；项目正在活跃开发中，尚未开源（[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)）
-
-### Julia
-
-- [[openjunars|OpenJunars]]
-
-### Python
-
-- [[nars_python|NARS-Python]]
-- [[pynars|PyNARS]]
-
-### Rust
-
-- [[20nar1|20NAR1]]
-- [[narst|Narst]]（截止至2024-07-26，尚不完整）
-- [[narust|NARust]]
-
-### Swift
-
-- [[nars_swift|NARS-Swift]]
-
-## 版本收录&投稿
+## 版本收录与投稿
 
 > [!question] 需要添加自己的版本？
 >
-> 若实现者有自己的一版 NARS 实现，可[在 GitHub 提 issue](https://github.com/exomind-team/agi-society-cn/issues/new)，或在文末评论区发言。
->
-> 同样也欢迎贡献者对遗漏的版本投稿！
->
-> 投稿NARS实现前，可检查以下几点：
->
-> 1. 有GitHub/Gitee代码仓库
->     - 推荐开源
-> 2. 有Narsese语言实现
->     - 不论是内建数据结构，还是借助外部语法解析库
-> 3. 有NAL实现
->     - 不限层级，不限算法
-> 4. 有Demo演示
->     - 可为视频，也可为在线交互页面
+> 若实现者有自己的一版 NARS 实现，可[在 GitHub 提 issue](https://github.com/exomind-team/agi-society-cn/issues/new)，或在文末评论区发言。投稿前请提供代码仓库、Narsese/NAL 范围和可运行 Demo；缺少可靠资料的字段保持“未知”。

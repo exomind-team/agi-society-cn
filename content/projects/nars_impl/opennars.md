@@ -4,14 +4,35 @@ comments: true
 
 # OpenNARS
 
+<!-- BEGIN GENERATED NARS PROFILE -->
+
+## 基础资料
+
+> 本节由 data/nars-implementations.json 生成；项目特有教程和源码观察仍在本页维护。
+
+| 字段 | 已核验信息 |
+|---|---|
+| 代际 / 定位 | OpenNARS 1.x / 3.x；相关研究版 3.1.1 |
+| 编程语言 | Java |
+| 作者 / 维护组织 | OpenNARS 项目团队 |
+| 代码仓库 | [仓库](https://github.com/opennars/opennars) |
+| 许可证 | MIT |
+| Narsese / NAL 边界 | README 明确描述 Narsese、memory、inference engine 与 control mechanism；仓库 README 未将完整 NAL 层级作为单一字段声明 |
+| 运行 / Demo | Java 8+、Maven；README 列出 Lab、Applications、示例 Narsese 和 GUI 运行方式 |
+| 最近公开提交 | 2021-03-31（仅为仓库元数据观察值） |
+| 维护状态 | 未判定 |
+| 最后核验 | 2026-09-20 |
+
+<!-- END GENERATED NARS PROFILE -->
+
 [官网↗](http://www.opennars.org/)
 
-跨项目基础字段、相关仓库和核验日期见 [[catalog|NARS 实现基础资料总表]]。本页保留 OpenNARS 1.x/3.x 的历史教程与版本说明；控制机制原始资料另见 [[research/nars/theory/nac/source-materials|非公理控制原始资料索引]]。
+本页下方保存基础字段、相关仓库和核验日期。本页保留 OpenNARS 1.x/3.x 的历史教程与版本说明；控制机制原始资料另见 [[research/nars/theory/nac/source-materials|非公理控制原始资料索引]]。
 
 - 作者：*The OpenNARS team*
 
 > [!info] 资料边界
-> 本页保留 OpenNARS 1.x/3.x 的历史资料；版本差异、源码状态与控制机制相关内容应以仓库和 [[research/nars/theory/nac/source-materials|原始资料索引]] 为准。跨实现的基础字段见 [[catalog|NARS 实现基础资料总表]]。
+> 本页保留 OpenNARS 1.x/3.x 的历史资料；版本差异、源码状态与控制机制相关内容应以仓库和 [[research/nars/theory/nac/source-materials|原始资料索引]] 为准。
 
 ## 各个版本
 

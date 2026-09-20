@@ -13,7 +13,7 @@ AGI 领域的知识库，汇集 NARS 及其相关工程的实施细节与参考�
 - [[projects/nars_impl/introduction|实现介绍]]
 - [[projects/nars_impl/index|实现总览]]
 - [[projects/nars_impl/opennars|OpenNARS]] — Java / Kotlin
-- [[projects/nars_impl/pynars|PyNARS]] — Python
+- [[projects/nars_impl/opennars4|OpenNARS 4 (PyNARS)]] — Python
 - [[projects/nars_impl/narust|NARust]] — Rust
 - [[projects/nars_impl/ona|ONA]] — C
 - [[projects/nars_impl/narjure|Narjure]] — Clojure

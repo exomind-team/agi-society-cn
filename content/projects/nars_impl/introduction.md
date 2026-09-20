@@ -8,7 +8,7 @@ comments: true
 
 由于版本多，加之理论难度和编程难度都对初学者入门造成了一定的阻碍，因此特地总结各个版本实现的简介和运行教程，让新手也能在自己计算设备上运行NARS，感受其实际效果。
 
-索引页面请参照[[index|这里]]；跨项目的基础字段与核验日期见[[catalog|NARS 实现基础资料总表]]。
+索引页面请参照[[index|这里]]；各项目的基础字段与核验日期直接维护在对应项目页。
 
 ## 各版本总览
 
@@ -20,7 +20,7 @@ comments: true
 
 OpenNARS 后续出现了 3.0.4、3.1.1 等历史版本；相关仓库和资料入口见 [[opennars|OpenNARS 项目页]] 与总表。
 
-Python 方向曾有 [[pynars|PyNARS]]，但原仓库 README 已标记为 Deprecated，并指向 [OpenNARS 4](https://github.com/opennars/OpenNARS-4)。因此本页不再把 PyNARS 写成当前唯一主线；不同实现的维护状态和资料边界以总表的逐项核验为准。
+Python 方向的 [[opennars4|OpenNARS 4 (PyNARS)]] 延续了 PyNARS 的历史线索；原仓库 README 已标记为 Deprecated，并指向 OpenNARS 4。不同实现的维护状态和资料边界以各项目页的逐项核验为准。
 
 > [!info] 后续扩充
 > 更多历史版本和相关项目可参考[天普大学 AGI 团队项目页](https://cis.temple.edu/tagit/#projects)。新增条目先进入总表并完成来源核验，再补充独立介绍页。

@@ -154,7 +154,7 @@ tests/
 ├── wiki.spec.mjs             Playwright — 维基页面
 └── wikilink-plugin.spec.mjs  Node — 双向链接插件 TDD
 
-另有 `scripts/check-content-links.mjs`，用于检查 Obsidian wikilink、公共资源和构建后的 Demo 资源；`scripts/render-nars-catalog.mjs` 用于从结构化 JSON 生成 NARS 实现总表，`scripts/audit-bilibili-conference.mjs` 用于从协会官方 B 站空间生成会议/组会候选审计报告。
+另有 `scripts/check-content-links.mjs`，用于检查 Obsidian wikilink、公共资源和构建后的 Demo 资源；`scripts/render-nars-catalog.mjs` 用于从结构化 JSON 生成 NARS 索引和各实现页基础资料，`scripts/audit-bilibili-conference.mjs` 用于从协会官方 B 站空间生成会议/组会候选审计报告，`scripts/publish-tencent.mjs` 用于带显式确认地触发腾讯云生产发布。
 ```
 
 ### 运行方式
@@ -174,6 +174,7 @@ tests/
 - B 站候选审计需要先通过 web-access/CDP 打开协会官方空间，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`
 - B 站脚本只生成候选报告，不自动把视频归入年会或组会；正式入库前必须核对标题、发布时间、合集分页与议程
 - NARS 理论原始资料入口维护在 `content/research/nars/theory/nac/source-materials.md`
+- 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent -- --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
 
 ---
 
@@ -187,8 +188,9 @@ tests/
 | `.vitepress/theme/index.ts` | 主题入口（Nólëbase 插件 + 自定义组件） |
 | `tests/sidebar.test.ts` | 侧边栏自动化测试 |
 | `scripts/check-content-links.mjs` | Obsidian wikilink 与构建资源检查 |
-| `scripts/render-nars-catalog.mjs` | 从 `data/nars-implementations.json` 生成 NARS 实现总表 |
+| `scripts/render-nars-catalog.mjs` | 从 `data/nars-implementations.json` 生成 NARS 索引和各实现页基础资料 |
 | `scripts/audit-bilibili-conference.mjs` | 生成官方 B 站会议/组会候选审计报告 |
+| `scripts/publish-tencent.mjs` | 仅在显式确认后触发 main 的腾讯云生产发布 |
 | `data/nars-implementations.json` | NARS 各实现的结构化基础资料 |
 | `tests/` | 所有测试脚本（6 个） |
 | `../CONTRIBUTING.md` | 项目贡献指南（Obsidian / GitHub / 本地构建三种路径） |

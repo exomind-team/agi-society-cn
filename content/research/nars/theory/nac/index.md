@@ -38,7 +38,7 @@ comments: true
     - [[opennars_30x|OpenNARS 3.0.x/3.1.0]]
     - [[opennars_31x|OpenNARS 3.1.x]]
     - [[nac_classic_versions/ona|ONA]]
-    - [[nac_classic_versions/pynars|PyNARS]]
+    - [[nac_classic_versions/index|OpenNARS 4 (PyNARS) 控制机制资料]]
     - …
 
 （✨持续更新中；本页先固定资料边界，不把尚未核验的推断写成理论结论。）

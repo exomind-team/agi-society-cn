@@ -52,7 +52,8 @@ async function collectOfficialSpace() {
         const imageTitle = card.querySelector('img')?.alt || '';
         const titleLink = card.parentElement?.querySelector('a:not(.bili-cover-card)[href*="/video/"]');
         const title = (imageTitle || titleLink?.innerText || '').trim();
-        return { bvid: match[1], href, title };
+        const publishedLabel = card.parentElement?.parentElement?.querySelector('.bili-video-card__subtitle')?.innerText?.trim() || '';
+        return { bvid: match[1], href, title, publishedLabel };
       }).filter(Boolean);
     })()`,
   })
@@ -88,9 +89,9 @@ const report = [
   `当前页面采集到视频数：${officialVideos.length}`,
   `会议页面已收录的 BV 数：${existingBvids.size}`,
   '',
-  '| BV 号 | 页面标题 | 分类 | 是否已收录 |',
-  '|---|---|---|---|',
-  ...candidates.map((video) => `| [${video.bvid}](https://www.bilibili.com/video/${video.bvid}/) | ${video.title || '未从卡片 DOM 取得标题'} | ${video.classification} | ${video.alreadyIndexed ? '是' : '否'} |`),
+  '| BV 号 | 页面标题 | 发布日期 | 分类 | 是否已收录 |',
+  '|---|---|---|---|---|',
+  ...candidates.map((video) => `| [${video.bvid}](https://www.bilibili.com/video/${video.bvid}/) | ${video.title || '未从卡片 DOM 取得标题'} | ${video.publishedLabel || '未从卡片 DOM 取得'} | ${video.classification} | ${video.alreadyIndexed ? '是' : '否'} |`),
   '',
   '## 人工处理规则',
   '',
