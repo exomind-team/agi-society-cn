@@ -114,7 +114,7 @@ if (fs.existsSync(DIST)) {
     // Static demos are regular files rather than vault notes. Check their
     // clean-URL resolution explicitly while leaving VitePress router links
     // to the generated-site smoke tests.
-    for (const match of html.matchAll(/(?:href|src)="([^"]*demo\/[^"#?]*)/g)) {
+    for (const match of html.matchAll(/(?:href|src)="((?:[^"]*\/)?demo\/[^"#?]*)/g)) {
       const href = match[1]
       const relativeHtml = relativeTo(DIST, file)
       const route = relativeHtml.replace(/\.html$/, '').replace(/\/index$/, '')
