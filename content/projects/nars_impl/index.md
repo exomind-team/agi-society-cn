@@ -19,7 +19,7 @@ comments: true
 | [[narjure|Narjure]] | OpenNARS 2.0 | Clojure | [[narjure|项目页]]；[仓库](https://github.com/opennars/narjure) |
 | [[opennars|OpenNARS]] | OpenNARS 1.x / 3.x；相关研究版 3.1.1 | Java | [[opennars|项目页]]；[仓库](https://github.com/opennars/opennars) |
 | [[nars_cxin_py_to_ts|NARS CXin Py to TS]] | Python 到 TypeScript 的迁移实现 | TypeScript（仓库 API 未声明语言） | [[nars_cxin_py_to_ts|项目页]]；[仓库](https://gitee.com/poerlang/nars_cxin_py_to_ts) |
-| [[opennars304ts|OpenNARS 304 TS]] | OpenNARS 3.0.4 的 TypeScript 实现方向 | TypeScript | [[opennars304ts|项目页]]；[仓库](https://github.com/ARCJ137442/OpenNARS-304-ts) |
+| [[opennars304ts|OpenNARS 304 TS]] | OpenNARS 3.0.4 的 TypeScript 实现 | TypeScript | [[opennars304ts|项目页]]；[仓库](https://github.com/ARCJ137442/OpenNARS-304-ts) |
 | [[openjunars|OpenJunars]] | Junars 的开源版本 | Julia | [[openjunars|项目页]]；[仓库](https://github.com/AIxer/OpenJunars) |
 | [[nars_python|NARS-Python]] | 独立 Python 实现 | Python | [[nars_python|项目页]]；[仓库](https://github.com/ccrock4t/NARS-Python) |
 | [[opennars4|OpenNARS 4 (PyNARS)]] | OpenNARS 4 / Python | Python | [[opennars4|项目页]]；[仓库](https://github.com/opennars/OpenNARS-4) |

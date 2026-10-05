@@ -33,7 +33,7 @@ function renderProfile(entry) {
     `| 运行 / Demo | ${clean(entry.runDemo)} |`,
     `| 最近公开提交 | ${clean(entry.latestPublicCommit)}（仅为仓库元数据观察值） |`,
     `| 维护状态 | ${clean(entry.maintenanceStatus)} |`,
-    `| 最后核验 | ${clean(data.lastVerified)} |`,
+    `| 最后核验 | ${clean(entry.lastVerified ?? data.lastVerified)} |`,
     '',
     END,
   ].join('\n')
