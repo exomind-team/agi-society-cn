@@ -8,13 +8,21 @@ const OUTPUT_PATH = path.join(ROOT, 'content', 'projects', 'nars_impl', 'index.m
 const WRITE = process.argv.includes('--write')
 
 const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'))
+// 表格单元格里所有 `|` 都必须转义成 `\|`，否则 markdown-it 会把它们当成列分隔符破坏表格。
+// 所有渲染到单元格的字符串最后都要走 escapeCell。
+const escapeCell = (s) => String(s ?? '').replaceAll('|', '\\|')
 const pageCell = (entry) => entry.page ? `[[${entry.page}|${entry.name}]]` : entry.name
-const repositoryCell = (entry) => `[仓库](${entry.repository})`
+const projectCell = (entry) => entry.page ? `[[${entry.page}|项目页]]` : '暂无独立页面'
+const repositoryCell = (entry) => entry.repository ? `[仓库](${entry.repository})` : ''
 
+// 说明：项目首次公开发布日期（firstPublicAt）尚未确立可靠字段；JSON 里有 repoCreatedAt
+// 仅记录仓库平台创建日，二者不等价。本表暂按 JSON entries 原顺序展示，待首发日期核实后再排序。
 const rows = data.entries.map((entry) => {
-  const language = entry.languages.join(' / ')
-  const project = entry.page ? `[[${entry.page}|项目页]]` : '暂无独立页面'
-  return `| ${pageCell(entry)} | ${entry.generation} | ${language} | ${project}；${repositoryCell(entry)} |`
+  const language = (entry.languages ?? []).join(' / ') || '未知'
+  const author = entry.maintainers ?? '未声明'
+  const repoPart = repositoryCell(entry)
+  const tail = repoPart ? `${escapeCell(projectCell(entry))}；${escapeCell(repoPart)}` : escapeCell(projectCell(entry))
+  return `| ${escapeCell(pageCell(entry))} | ${escapeCell(entry.generation)} | ${escapeCell(language)} | ${escapeCell(author)} | ${tail} |`
 })
 
 const output = `---
@@ -32,8 +40,8 @@ comments: true
 
 ## 实现索引
 
-| 实现 | 代际 / 定位 | 语言 | 页面与代码 |
-|---|---|---|---|
+| 实现 | 代际 / 定位 | 语言 | 作者 / 维护者 | 页面与代码 |
+|---|---|---|---|---|
 ${rows.join('\n')}
 
 ## 资料与理论入口

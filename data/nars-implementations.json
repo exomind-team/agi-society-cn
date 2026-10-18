@@ -7,7 +7,9 @@
       "name": "ONA",
       "page": "ona",
       "generation": "OpenNARS for Applications",
-      "languages": ["C"],
+      "languages": [
+        "C"
+      ],
       "maintainers": "OpenNARS 项目；README 署名与项目资料以 Patrick Hammer 等贡献者为主",
       "repository": "https://github.com/opennars/OpenNARS-for-Applications",
       "license": "MIT",
@@ -15,14 +17,17 @@
       "runDemo": "源码目录运行 ./build.sh；运行 ./NAR shell；README 提供测试、示例和视频教程",
       "latestPublicCommit": "2025-05-30",
       "maintenanceStatus": "未判定",
-      "notes": "README 明确说明它不是从旧 OpenNARS 代码库分支出来的独立平台，并包含控制机制与应用实验资料"
+      "notes": "README 明确说明它不是从旧 OpenNARS 代码库分支出来的独立平台，并包含控制机制与应用实验资料",
+      "repoCreatedAt": "2020-02-16"
     },
     {
       "id": "narjure",
       "name": "Narjure",
       "page": "narjure",
       "generation": "OpenNARS 2.0",
-      "languages": ["Clojure"],
+      "languages": [
+        "Clojure"
+      ],
       "maintainers": "The OpenNARS team",
       "repository": "https://github.com/opennars/narjure",
       "license": "GPL-2.0",
@@ -30,14 +35,17 @@
       "runDemo": "README 建议使用 Cursive/IntelliJ 打开项目、进入 REPL 并加载 Lense.clj",
       "latestPublicCommit": "2017-02-24",
       "maintenanceStatus": "未判定",
-      "notes": "适合作为 OpenNARS 2.0 历史实现归档，不把仓库长期未更新直接等同于项目废弃"
+      "notes": "适合作为 OpenNARS 2.0 历史实现归档，不把仓库长期未更新直接等同于项目废弃",
+      "repoCreatedAt": "2016-03-12"
     },
     {
       "id": "opennars",
       "name": "OpenNARS",
       "page": "opennars",
       "generation": "OpenNARS 1.x / 3.x；相关研究版 3.1.1",
-      "languages": ["Java"],
+      "languages": [
+        "Java"
+      ],
       "maintainers": "OpenNARS 项目团队",
       "repository": "https://github.com/opennars/opennars",
       "license": "MIT",
@@ -45,14 +53,17 @@
       "runDemo": "Java 8+、Maven；README 列出 Lab、Applications、示例 Narsese 和 GUI 运行方式",
       "latestPublicCommit": "2021-03-31",
       "maintenanceStatus": "未判定",
-      "notes": "相关仓库：[OpenNARS-for-Research 3.1.1](https://github.com/opennars/OpenNARS-for-Research)；[OpenNARS declarative core](https://github.com/patham9/opennars_declarative_core)"
+      "notes": "相关仓库：[OpenNARS-for-Research 3.1.1](https://github.com/opennars/OpenNARS-for-Research)；[OpenNARS declarative core](https://github.com/patham9/opennars_declarative_core)",
+      "repoCreatedAt": "2014-07-18"
     },
     {
       "id": "nars_cxin_py_to_ts",
       "name": "NARS CXin Py to TS",
       "page": "nars_cxin_py_to_ts",
       "generation": "Python 到 TypeScript 的迁移实现",
-      "languages": ["TypeScript（仓库 API 未声明语言）"],
+      "languages": [
+        "TypeScript（仓库 API 未声明语言）"
+      ],
       "maintainers": "孙常新（原作者）；破耳狼（现作者）",
       "repository": "https://gitee.com/poerlang/nars_cxin_py_to_ts",
       "license": "未声明",
@@ -60,14 +71,17 @@
       "runDemo": "本轮未核实统一运行命令",
       "latestPublicCommit": "2024-04-12",
       "maintenanceStatus": "未判定",
-      "notes": "Gitee API 当前返回默认分支 master；需要后续直接阅读源码与构建配置"
+      "notes": "Gitee API 当前返回默认分支 master；需要后续直接阅读源码与构建配置",
+      "repoCreatedAt": "2023-12-23"
     },
     {
       "id": "opennars304ts",
       "name": "OpenNARS 304 TS",
       "page": "opennars304ts",
       "generation": "OpenNARS 3.0.4 的 TypeScript 实现",
-      "languages": ["TypeScript"],
+      "languages": [
+        "TypeScript"
+      ],
       "maintainers": "ARCJ137442",
       "repository": "https://github.com/ARCJ137442/OpenNARS-304-ts",
       "license": "MIT（Core；Demo 素材与改写按各自来源声明）",
@@ -76,14 +90,17 @@
       "latestPublicCommit": "Core 2a84811；Demo 87d7f64；Pages ccfd0a2（2026-10-05）",
       "maintenanceStatus": "公开研究 / 集成 fix release（v1.0.7）",
       "notes": "Core 与 Web Demo 已公开；项目同时提供 Node.js CLI、ESM API、浏览器 Worker 与可交互 Demo Lab。持续 20 TPS、Java 同负载性能等价和 Shot 长期行为等价仍是未完成实验，不应写成已达标",
-      "lastVerified": "2026-10-05"
+      "lastVerified": "2026-10-05",
+      "repoCreatedAt": "2025-08-25"
     },
     {
       "id": "openjunars",
       "name": "OpenJunars",
       "page": "openjunars",
       "generation": "Junars 的开源版本",
-      "languages": ["Julia"],
+      "languages": [
+        "Julia"
+      ],
       "maintainers": "孙常新（AIxer）",
       "repository": "https://github.com/AIxer/OpenJunars",
       "license": "GPL-3.0",
@@ -91,14 +108,17 @@
       "runDemo": "Julia 包安装；README 提供 REPL、NaCore 和交互式终端示例",
       "latestPublicCommit": "2023-08-16",
       "maintenanceStatus": "未判定",
-      "notes": "README 提示旧的多种实现方式已舍弃，后续应以当前仓库源码为准"
+      "notes": "README 提示旧的多种实现方式已舍弃，后续应以当前仓库源码为准",
+      "repoCreatedAt": "2021-04-23"
     },
     {
       "id": "nars_python",
       "name": "NARS-Python",
       "page": "nars_python",
       "generation": "独立 Python 实现",
-      "languages": ["Python"],
+      "languages": [
+        "Python"
+      ],
       "maintainers": "Christian Hahm",
       "repository": "https://github.com/ccrock4t/NARS-Python",
       "license": "MIT",
@@ -106,14 +126,17 @@
       "runDemo": "README 给出 pyinstaller --onefile main.py；仓库包含 GUI 与架构图",
       "latestPublicCommit": "2025-08-19",
       "maintenanceStatus": "未判定",
-      "notes": "与 PyNARS/OpenNARS 4 是不同仓库，不能因名称相近合并记录"
+      "notes": "与 PyNARS/OpenNARS 4 是不同仓库，不能因名称相近合并记录",
+      "repoCreatedAt": "2020-10-09"
     },
     {
       "id": "opennars4",
       "name": "OpenNARS 4 (PyNARS)",
       "page": "opennars4",
       "generation": "OpenNARS 4 / Python",
-      "languages": ["Python"],
+      "languages": [
+        "Python"
+      ],
       "maintainers": "OpenNARS 项目；PyNARS 原贡献者参与早期实现",
       "repository": "https://github.com/opennars/OpenNARS-4",
       "license": "MIT",
@@ -121,14 +144,17 @@
       "runDemo": "OpenNARS 4 README 提供 Python 安装与 Console 入口；以当前仓库 README 和源码为准",
       "latestPublicCommit": "2024-11-27",
       "maintenanceStatus": "未判定",
-      "notes": "本页将 PyNARS 视为 OpenNARS 4 的历史名称/前身，合并记录但保留原仓库链接作为迁移线索"
+      "notes": "本页将 PyNARS 视为 OpenNARS 4 的历史名称/前身，合并记录但保留原仓库链接作为迁移线索",
+      "repoCreatedAt": "2022-02-11"
     },
     {
       "id": "20nar1",
       "name": "20NAR1",
       "page": "20nar1",
       "generation": "受 NARS 启发的 GMI 系统",
-      "languages": ["Rust"],
+      "languages": [
+        "Rust"
+      ],
       "maintainers": "Robert Wünsche（PtrMan）",
       "repository": "https://github.com/PtrMan/20NAR1",
       "license": "MIT",
@@ -136,14 +162,17 @@
       "runDemo": "cargo test && cargo run --release it；README 另列 srv、envPong3 与问答评测",
       "latestPublicCommit": "2021-08-21",
       "maintenanceStatus": "未判定",
-      "notes": "项目自称 NARS-inspired GMI，不应不加限定地描述为标准 OpenNARS 克隆"
+      "notes": "项目自称 NARS-inspired GMI，不应不加限定地描述为标准 OpenNARS 克隆",
+      "repoCreatedAt": "2020-08-10"
     },
     {
       "id": "narst",
       "name": "NARst",
       "page": "narst",
       "generation": "实验性 Rust NARS 实现",
-      "languages": ["Rust"],
+      "languages": [
+        "Rust"
+      ],
       "maintainers": "Adrian Borucki",
       "repository": "https://github.com/ntoxeg/narst",
       "license": "Apache-2.0",
@@ -151,14 +180,17 @@
       "runDemo": "本轮未从 README 核实统一构建/运行命令",
       "latestPublicCommit": "2023-09-21",
       "maintenanceStatus": "未判定",
-      "notes": "应保留“实验性、非完全兼容”这一原始限定"
+      "notes": "应保留“实验性、非完全兼容”这一原始限定",
+      "repoCreatedAt": "2023-07-13"
     },
     {
       "id": "narust",
       "name": "NARust-158",
       "page": "narust",
       "generation": "OpenNARS 1.5.8 的 Rust 重实现",
-      "languages": ["Rust"],
+      "languages": [
+        "Rust"
+      ],
       "maintainers": "ARCJ137442 / Tessergon",
       "repository": "https://github.com/ARCJ137442/NARust-158",
       "license": "Apache-2.0",
@@ -166,14 +198,17 @@
       "runDemo": "cargo install narust-158；narust_158_shell / narust_158_batch；提供 WebAssembly Demo",
       "latestPublicCommit": "2026-05-23",
       "maintenanceStatus": "未判定",
-      "notes": "README 还明确列出 language、entity、inference、control、storage、vm 等模块，可作为 NAC 源码分析入口"
+      "notes": "README 还明确列出 language、entity、inference、control、storage、vm 等模块，可作为 NAC 源码分析入口",
+      "repoCreatedAt": "2024-06-13"
     },
     {
       "id": "nars_swift",
       "name": "NARS-Swift",
       "page": "nars_swift",
       "generation": "Swift NAL/NARS 实现",
-      "languages": ["Swift"],
+      "languages": [
+        "Swift"
+      ],
       "maintainers": "Maxim Tarasov",
       "repository": "https://github.com/maxeeem/NARS-Swift",
       "license": "未按 SPDX 声明（GitHub API 返回 NOASSERTION）",
@@ -181,7 +216,25 @@
       "runDemo": "swift run / swift build；提供 WebAssembly 在线 Demo与 playground",
       "latestPublicCommit": "2025-07-01",
       "maintenanceStatus": "未判定",
-      "notes": "在线 Demo 主要用于演示，README 明确提示 WebAssembly 性能限制"
+      "notes": "在线 Demo 主要用于演示，README 明确提示 WebAssembly 性能限制",
+      "repoCreatedAt": "2021-12-27"
+    },
+    {
+      "id": "exnars",
+      "name": "Exnars",
+      "page": "exnars",
+      "generation": "暂未公开（项目方未提供代号或定位说明）",
+      "languages": [
+        "Elixir"
+      ],
+      "maintainers": "孙常新",
+      "repository": "",
+      "license": "未知",
+      "narseseNal": "本轮未核实",
+      "runDemo": "本轮未核实",
+      "latestPublicCommit": "未知",
+      "maintenanceStatus": "暂未公开发布",
+      "notes": "本轮未在 GitHub/Gitee 检索到公开仓库；待正式公开后再补充资料"
     }
   ]
 }
