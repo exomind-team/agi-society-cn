@@ -9,5 +9,5 @@ comments: true
 
 ## 参考资料
 
-- [[ona|ONA工程实现介绍页面]]
+- [[projects/nars_impl/ona|ONA工程实现介绍页面]]
 - [ONA的GitHub页面↗](https://github.com/opennars/OpenNARS-for-Applications)

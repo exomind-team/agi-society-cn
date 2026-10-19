@@ -1,4 +1,4 @@
----
+﻿---
 comments: true
 ---
 
@@ -6,7 +6,7 @@ comments: true
 
 本页汇总与 NARS 相关的衍生项目：基于 NARS 内核或 NAL 模型，但**不直接实现完整 NARS 推理引擎**的项目（典型如应用、工具、论文附属实现、跨学科扩展）。
 
-若为 NARS 各版实现的直接精简/重写，请见 [[../index\|NARS各版实现]]。
+若为 NARS 各版实现的直接精简/重写，请见 [[../index|NARS各版实现]]。
 
 ## 主轴：NARS 在项目中的地位（深度由深到浅）
 
@@ -16,24 +16,24 @@ comments: true
 
 #### A1. 运行时集成：把成熟 NARS 引擎作为子进程 / RPC / 库调用
 
-- [[channels\|OpenNARS Channels]]（opennars/Channels，Python）— 把 OpenNARS NAR shell 接进自然语言 / 知识库 / 传感器
-- [[narca\|NARCA]]（ntoxeg/narca，Python，Apache-2.0）— NARS Controlled Agent 框架
+- [[channels|OpenNARS Channels]]（opennars/Channels，Python）— 把 OpenNARS NAR shell 接进自然语言 / 知识库 / 传感器
+- [[narca|NARCA]]（ntoxeg/narca，Python，Apache-2.0）— NARS Controlled Agent 框架
 
 #### A3. 框架 / 可视化 / 应用：在 NARS 上的 IO 抽象、桥接、可视化、教学
 
-- [[babelnar\|BabelNAR 项目集 / NAVM 模型]]（ARCJ137442，Rust/Julia）— 跨 NARS 实现的 IO 抽象 + NAVM 非公理虚拟机
-- [[nace\|NACE]]（patham9 / ntoxeg，Python / Julia）— 基于 NARS 的因果探索器
+- [[babelnar|BabelNAR 项目集 / NAVM 模型]]（ARCJ137442，Rust/Julia）— 跨 NARS 实现的 IO 抽象 + NAVM 非公理虚拟机
+- [[nace|NACE]]（patham9 / ntoxeg，Python / Julia）— 基于 NARS 的因果探索器
 
 ### B. 灵感启发自 NARS（不调用 NARS 引擎，也不完整实现 NAL）
 
 #### B1. 控制 / AGI 应用：借鉴 NAL/NARS 思想于其他技术栈
 
-- [[nnesycef\|NNeSyCeF]]（PtrMan，F#）— 基于 NAL 真值与 AIKR 的神经符号 AGI 框架
+- [[nnesycef|NNeSyCeF]]（PtrMan，F#）— 基于 NAL 真值与 AIKR 的神经符号 AGI 框架
 
 #### B2. 学术 / 论文附属 / 实验笔记
 
-- [[nars-gpt\|NarsGPT]]（patham9 + narsgpt 组织，Python）— 用 GPT 模型模拟 NAL 推理，含 AAAI 2023 匿名提交版与 patham9 版；按 CLAUDE.md §"NARS 实现的准入范围"判定**不属于 NARS 实现**
-- [[pixel-to-concept-reader\|Pixel-to-Concept Reader]]（poerlang，TypeScript）— 阅读友好的"结构化 NAL 词条 + 手写数字识别"论文附属实现
+- [[nars-gpt|NarsGPT]]（patham9 + narsgpt 组织，Python）— 用 GPT 模型模拟 NAL 推理，含 AAAI 2023 匿名提交版与 patham9 版；按 CLAUDE.md §"NARS 实现的准入范围"判定**不属于 NARS 实现**
+- [[pixel-to-concept-reader|Pixel-to-Concept Reader]]（poerlang，TypeScript）— 阅读友好的"结构化 NAL 词条 + 手写数字识别"论文附属实现
 
 ## 已收录（按上述分类汇总）
 
@@ -86,4 +86,4 @@ comments: true
 - [donyedwakefield/nars_multi_agent_env](https://github.com/donyedwakefield/nars_multi_agent_env) — NARS 多智能体环境
 
 > [!info] 收录口径
-> 本页只收录与 NARS（理论、内核、NAL、Narsese）有直接关系、但**不直接实现完整 NARS 推理引擎**的项目。任何能独立提供 Narsese 输入 → 推理服务的项目（即便名字里有"GPT"、"Agent"字样），按原则归 [[index\|NARS各版实现]]。fork 透明 + 有二次改造的可入"已收录"；只 fork 上游、不做二次工作的暂入"候选与待收录"。
+> 本页只收录与 NARS（理论、内核、NAL、Narsese）有直接关系、但**不直接实现完整 NARS 推理引擎**的项目。任何能独立提供 Narsese 输入 → 推理服务的项目（即便名字里有"GPT"、"Agent"字样），按原则归 [[index|NARS各版实现]]。fork 透明 + 有二次改造的可入"已收录"；只 fork 上游、不做二次工作的暂入"候选与待收录"。
