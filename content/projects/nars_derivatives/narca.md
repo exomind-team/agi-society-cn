@@ -4,6 +4,8 @@ comments: true
 
 # NARCA（NARS Controlled Agent）
 
+> **层级**：A1. 运行时集成 — 直接把 NARS 作为 agent 推理内核
+
 - 全名：**NARCA**（NARS Controlled Agent）
 - 编程语言：Python
 - 仓库：<https://github.com/ntoxeg/narca>

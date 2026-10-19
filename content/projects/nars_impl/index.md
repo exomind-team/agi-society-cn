@@ -27,6 +27,7 @@ comments: true
 | [[narst\|NARst]] | 实验性 Rust NARS 实现 | Rust | Adrian Borucki | [[narst\|项目页]]；[仓库](https://github.com/ntoxeg/narst) | 🟢 公开 |
 | [[narust\|NARust-158]] | OpenNARS 1.5.8 的 Rust 重实现 | Rust | ARCJ137442 / Tessergon | [[narust\|项目页]]；[仓库](https://github.com/ARCJ137442/NARust-158) | 🟢 公开 |
 | [[nars_swift\|NARS-Swift]] | Swift NAL/NARS 实现 | Swift | Maxim Tarasov | [[nars_swift\|项目页]]；[仓库](https://github.com/maxeeem/NARS-Swift) | 🟢 公开 |
+| [[nars-gpt\|NarsGPT]] | A NARS implemented as a GPT model prompted to invoke reasoning steps（patham9 版；含 AAAI 2023 匿名提交版） | Python | patham9；narsgpt 组织（AAAI 2023 匿名提交） | [[nars-gpt\|项目页]]；[仓库](https://github.com/patham9/NarsGPT) | 🟢 公开 |
 | [[exnars\|Exnars]] | 暂未公开（项目方未提供代号或定位说明） | Elixir | 孙常新 | [[exnars\|项目页]] | 🔴 内部 |
 
 ## 资料与理论入口

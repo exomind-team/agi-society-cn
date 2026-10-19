@@ -4,6 +4,8 @@ comments: true
 
 # BabelNAR 项目集 / NAVM 模型
 
+> **层级**：A3. 框架与应用 — 跨 NARS 实现的 IO 抽象与运行时（NAVM 非公理虚拟机）
+
 本页聚合同一作者（ARCJ137442）名下围绕 NAVM 模型（Non-Axiomatic Virtual Machine）与 CINs（NARS Computer Implementations，统一输入输出接口）展开的项目群。
 
 ## 核心：NAVM（非公理虚拟机）
