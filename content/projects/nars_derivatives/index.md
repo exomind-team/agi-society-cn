@@ -67,9 +67,9 @@ comments: true
 
 ### poerlang 名下
 
-- [he4o](https://github.com/poerlang/he4o) / [HELIX_THEORY](https://github.com/poerlang/HELIX_THEORY) — "螺旋论 / 熵减机"理论及配套 AGI 系统；与 NARS 间接相关，等项目方明确学术联系后再决定
 - [mininars](https://github.com/poerlang/mininars) — 项目方声明"又一个 NARS 精简版"；属于 OpenNARS 系列的 fork 链（`fork:true`，parent `patham9/opennars_declarative_core`，source `opennars/opennars_googlecode`），按查重纪律在 fork 链透明度确认前不入"已收录"
 - [PyNARS](https://github.com/poerlang/PyNARS)（poerlang fork）— "pynars version editted by Tory Li"；同上，待主线 PyNARS 项目方确认
+- `he4o` / `HELIX_THEORY`（已从本候选清单移除）—— 这两个原本挂在 poerlang 名下，但 GitHub 上 `parent`/`source` 都指向 jiaxiaogang/HE、jiaxiaogang/HELIX_THEORY（原作者 jiaxiaogang / 贾晓刚 的"螺旋抗熵"AGI 平行理论），且未见到可核验的二次改造。按 CLAUDE.md §"挂回原作者"，应挂回 [jiaxiaogang/HE](https://github.com/jiaxiaogang/HE) / [jiaxiaogang/HELIX_THEORY](https://github.com/jiaxiaogang/HELIX_THEORY)；且因这俩与 NARS 没有直接字样关联（仅 AGI 平行思路），本就**不在 nars_derivatives 收录范围**内
 
 ### opennars 组织周边
 

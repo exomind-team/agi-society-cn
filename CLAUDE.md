@@ -187,6 +187,16 @@ tests/
   - 拒绝：换名复刻（同一份代码换维护者/换项目名，无可核验的二次改造）——除非项目方明确说明
 - 文档化：所有 NARS 实现条目须在 `notes` / `generation` 字段写明上游来源与本次精简内容；若属 fork 链一目了然，在项目页正文也要再次注明
 - 例外（如特殊说明 fork 即停刊的归档项目）单独评估，且笔记里要写明评估依据
+
+### 衍生项目收录范围
+
+- nars_derivatives 只收录与 NARS（理论、内核、NAL、Narsese）有**直接字样**关联的衍生项目；不属于 NARS 但属于其他 AGI 平行理论的项目（即便作者相邻），不在本页收录
+- 当某个仓库跟 NARS 没直接字样、但跟 NARS 作者群有间接关联（fork 关系、共同目录、共同作者），应挂回对应原作者、并告知作者无关
+
+### 挂回原作者 / 范围声明
+
+- 当一个仓库 fork 自其它作者、且 GitHub 上没有清晰可核验的二次改造（PR、commit history、changelog 等），收录时应把候选条目挂在**原作者**名下，fork 仅作为补充链接，避免"换账号搬运"造成的归属漂移
+- 反例：把 poerlang 名下的 `he4o` / `HELIX_THEORY`（fork 自 jiaxiaogang/HE、jiaxiaogang/HELIX_THEORY，无独有改造）当作 poerlang 原创收录，会把原作者的署名错挂——应当挂在 jiaxiaogang 名下，且因这俩本质是 jiaxiaogang 的"螺旋抗熵"AGI 平行理论，与 NARS 没有直接字样关联，按 §"衍生项目收录范围"也不在 nars_derivatives 收录清单内
 - 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
 
 ---
