@@ -188,6 +188,14 @@ tests/
 - 文档化：所有 NARS 实现条目须在 `notes` / `generation` 字段写明上游来源与本次精简内容；若属 fork 链一目了然，在项目页正文也要再次注明
 - 例外（如特殊说明 fork 即停刊的归档项目）单独评估，且笔记里要写明评估依据
 
+### NARS 实现的准入范围
+
+- NARS 实现（`nars_impl`）须同时满足两条：
+  1. **原创 NARS 推理器代码**：自己实现 Narsese 解析、NAL 规则、控制机制等核心组件；可以是他人项目的 fork + 大量二次改造（如 OpenNARS 系列的 C / Clojure / Python / Julia / Rust / TypeScript / Swift 衍生实现），但**不能是只换名搬运**的纯 fork
+  2. **对外提供基于 Narsese 的推理服务**：用户能够向程序提交 Narsese 输入并得到 NARS 推理输出
+- 只"受 NARS 启发"但用其他技术栈（LLM 提示工程、神经符号、强化学习等）的项目**不算** NARS 实现，归 `nars_derivatives`
+- 仅按"调用 NARS 作为子模块"而自己不实现推理器的项目，归 `nars_derivatives`（运行时集成层）
+
 ### 衍生项目收录范围
 
 - nars_derivatives 只收录与 NARS（理论、内核、NAL、Narsese）有**直接字样**关联的衍生项目；不属于 NARS 但属于其他 AGI 平行理论的项目（即便作者相邻），不在本页收录

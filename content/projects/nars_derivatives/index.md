@@ -32,8 +32,8 @@ comments: true
 
 #### B2. 学术 / 论文附属 / 实验笔记
 
+- [[nars-gpt\|NarsGPT]]（patham9 + narsgpt 组织，Python）— 用 GPT 模型模拟 NAL 推理，含 AAAI 2023 匿名提交版与 patham9 版；按 CLAUDE.md §"NARS 实现的准入范围"判定**不属于 NARS 实现**
 - [[pixel-to-concept-reader\|Pixel-to-Concept Reader]]（poerlang，TypeScript）— 阅读友好的"结构化 NAL 词条 + 手写数字识别"论文附属实现
-- *注：NarsGPT（patham9/narsgpt）不属于"派生项目"，它本身是 NARS 推理引擎，参见 [[index\|NARS各版实现]]*
 
 ## 已收录（按上述分类汇总）
 
@@ -44,6 +44,7 @@ comments: true
 | [[babelnar\|BabelNAR 项目集 / NAVM 模型]] | Rust / Julia | ARCJ137442 | 围绕 NAVM + CIN 的项目群，含十余个子项目 | [NAVM.rs](https://github.com/ARCJ137442/NAVM.rs) ｜ [BabelNAR.rs](https://github.com/ARCJ137442/BabelNAR.rs) |
 | [[nace\|NACE]] | Python / Julia | patham9 / ntoxeg | 基于 NARS 的因果探索工具 | [Python 版](https://github.com/patham9/NACE) ｜ [Julia 复刻](https://github.com/ntoxeg/NACE.jl) |
 | [[nnesycef\|NNeSyCeF]] | F# | PtrMan | 基于 NAL 真值与 AIKR 的神经符号 AGI 框架 | [仓库](https://github.com/PtrMan/NNeSyCeF) |
+| [[nars-gpt\|NarsGPT]] | Python | patham9；narsgpt 组织（AAAI 2023 匿名提交） | 用 GPT 模型模拟 NAL 推理路径；含 [[#patham9/NarsGPT\|patham9 版]] 与 [[#narsgpt/NARS-GPT\|AAAI 提交版]] | [patham9/NarsGPT](https://github.com/patham9/NarsGPT) ｜ [narsgpt/NARS-GPT](https://github.com/narsgpt/NARS-GPT) |
 | [[pixel-to-concept-reader\|Pixel-to-Concept Reader]] | TypeScript | poerlang | 阅读友好的"结构化 NAL 词条 + 手写数字识别"论文附属实现 | [仓库](https://github.com/poerlang/pixel-to-concept-reader) |
 
 ## 候选与待收录

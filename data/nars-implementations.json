@@ -232,25 +232,6 @@
       "publicStatus": "public"
     },
     {
-      "id": "nars-gpt",
-      "name": "NarsGPT",
-      "page": "nars-gpt",
-      "generation": "A NARS implemented as a GPT model prompted to invoke reasoning steps（patham9 版；含 AAAI 2023 匿名提交版）",
-      "languages": [
-        "Python"
-      ],
-      "maintainers": "patham9；narsgpt 组织（AAAI 2023 匿名提交）",
-      "repository": "https://github.com/patham9/NarsGPT",
-      "repoCreatedAt": "2023-04-16",
-      "publicStatus": "public",
-      "license": "MIT（patham9/NarsGPT）；narsgpt/NARS-GPT 匿名提交仓库元数据未声明",
-      "narseseNal": "patham9 版 README 明示「以 GPT 模型提示方式调用推理步骤，把 NARS 记忆与控制机制用 Python 落地」；AAAI 提交版具体 NAL 边界待论文公开版为准",
-      "runDemo": "运行方式本轮未统一核实",
-      "latestPublicCommit": "2024-02-01 patham9/NarsGPT；2023-08-17 narsgpt/NARS-GPT",
-      "maintenanceStatus": "patham9 版 2024-02 最后一次 push；AAAI 提交版 2023-08 最后一次 push；当前无活跃进展",
-      "notes": "本条目整合两份同名独立仓库：patham9/NarsGPT（独立、46 stars、MIT、2023-04-16 创建）与 narsgpt/NARS-GPT（AAAI 2023 匿名提交、2023-08-16 创建、description 为 anonymous AAAI submission）。两份仓库 fork 链独立：fork=false / parent=null / source=null。按 § 收录 NARS 实现的查重纪律，因属于 NARS 引擎本身的实现，本轮同步归入 [nars_impl] 索引。"
-    },
-    {
       "id": "exnars",
       "name": "Exnars",
       "page": "exnars",
