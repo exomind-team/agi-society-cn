@@ -8,16 +8,16 @@ AGI 领域的知识库，汇集 NARS 及其相关工程的实施细节与参考�
 
 ## NARS 工程实现
 
-全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖主流编程语言：
+从 [[learn/try|一次动手试玩]] 开始，或按 [[learn/projects|想做的事选择项目]]。各实现的语言、版本与维护信息见对应项目页：
 
 - [[projects/nars_impl/introduction|实现介绍]]
 - [[projects/nars_impl/index|实现总览]]
-- [[projects/nars_impl/opennars|OpenNARS]] — Java / Kotlin
+- [[projects/nars_impl/opennars|OpenNARS]] — Java
 - [[projects/nars_impl/opennars4|OpenNARS 4 (PyNARS)]] — Python
 - [[projects/nars_impl/narust|NARust]] — Rust
 - [[projects/nars_impl/ona|ONA]] — C
 - [[projects/nars_impl/narjure|Narjure]] — Clojure
-- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript；项目正在活跃开发中，尚未开源；[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)
+- [[opennars304ts|OpenNARS 304 TS]] — TypeScript；试玩入口、六路感知教程与版本状态统一见项目页
 - [[projects/nars_impl/index|更多实现...]]
 
 ## 思想书库

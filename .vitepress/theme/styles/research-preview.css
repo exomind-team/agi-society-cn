@@ -74,3 +74,18 @@
 .people-members{border-top:1px solid var(--rp-line);padding-top:18px;margin-top:28px}.people-members summary{cursor:pointer;min-height:44px;font-size:16px}.people-members summary span{font-size:12px;color:var(--rp-muted);margin-left:12px}.people-members ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 16px;list-style:none;padding:0!important;font-size:13px}
 @media(max-width:800px){.people-featured,.people-secretariat{grid-template-columns:repeat(2,minmax(0,1fr))}.people-members ul{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:540px){.people-featured,.people-secretariat{grid-template-columns:1fr}.people-group-heading{align-items:flex-start;flex-direction:column;gap:8px}.person-portrait{aspect-ratio:4/3}.people-members ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Association home: one conference lead, followed by a clear learning journey. */
+.VPHome > .vp-doc > div > div { display:block; }
+.VPHome > .vp-doc .section { border:0; border-top:1px solid var(--rp-line); border-radius:0; background:transparent; padding:38px 0!important; }
+.VPHome > .vp-doc .association-intro { max-width:900px; border-top:0; }
+.VPHome > .vp-doc .association-intro > p { font-size:16px; }
+.home-journey { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; }
+.home-journey > div { border-top:3px solid var(--rp-accent); padding-top:10px; }
+.home-journey > div:nth-child(2) { border-color:var(--rp-evidence); }
+.home-journey > div:nth-child(3) { border-color:var(--rp-muted); }
+.home-meeting-paths { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; }
+.VPHome .home-journey h3,.VPHome .home-meeting-paths h3 { font-family:var(--rp-serif); margin:12px 0; font-size:21px; }
+.VPHome .home-journey p,.VPHome .home-meeting-paths p { font-size:14px; color:var(--rp-muted); line-height:1.9; }
+.VPHome .home-journey a,.VPHome .home-meeting-paths a { display:inline-block; padding-block:5px; }
+@media(max-width:700px) { .home-journey,.home-meeting-paths { grid-template-columns:1fr; gap:18px; } .VPHome > .vp-doc .section { padding:28px 0!important; } }

@@ -2,76 +2,51 @@
 layout: home
 sidebar: false
 content-order: order
-
-hero:
-  name: 中国通用人工智能协会
-  text: AGI Society of China
-  tagline: 第十一届中国通用人工智能年会 · 2026 · 已举办
-  actions:
-    - theme: brand
-      text: 了解 NARS 理论
-      link: /research/nars/
-    - theme: alt
-      text: 2026 年会信息
-      link: /conference/
-    - theme: alt
-      text: 浏览维基百科
-      link: /wiki/
 ---
 
-<!-- 2026 年会公告 -->
-<section class="section">
+<section class="section association-intro" id="协会">
 
-## AGI-26 · 第十一届中国通用人工智能年会
+## 中国通用人工智能协会
 
-中国通用人工智能年会是由中国通用人工智能协会主办的年度学术会议。自 2016 年起，已连续举办十一届（2016-2026）。**第十一届年会（AGI-26）** 已于 2026 年 7 月 18–19 日在湖北武汉举办，议题聚焦机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
+由王培教授发起，连接计算机科学、哲学、认知科学与教育研究。我们围绕通用智能的理论基础、开源实践与跨学科影响，持续开展研究、教育和交流。
 
-会议汇聚国内外 AGI 研究者、计算机科学家、哲学家与认知科学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
-
-[[conference/annual/2026|查看会议详情 →]]
+[认识协会](/about/) · [研究方向](/research/) · [联系与参与](/contact/)
 
 </section>
 
-<div class="section-divider"></div>
+<section class="section home-learning" id="知识库">
 
-<!-- 协会简介 -->
-<section class="section">
+## 从问题到实验
 
-## 关于协会
+<div class="home-journey">
 
-中国通用人工智能协会（AGI Society CN）由**王培教授**发起创立，致力于推动通用人工智能理论与开源实现的研究、教育与交流。协会以 **NARS**（Non-Axiomatic Reasoning System，非公理推理系统）为核心理论锚点，汇聚哲学、计算机科学、认知科学、教育科学等多学科力量。
+<div>
 
-自 2016 年起，协会已连续举办**十一届**中国通用人工智能年会，并组织超过百场学术组会。
+### 理解一个基本问题
 
-</section>
+知识不完整、时间不够用，系统还怎样作出判断？从 AIKR 开始，读到 NAL 与非公理控制。
 
-<!-- 分隔线 -->
-<div class="section-divider"></div>
-
-<!-- 核心研究方向 -->
-<section class="section section-alt">
-
-## 核心研究
-
-<div class="research-grid">
-
-<div class="research-card">
-
-### NARS 理论
-
-基于 **AIKR**（不足知识与资源预设）与 **3C 原则**（正确性、具体性、紧凑性），NARS 是一种不同于主流机器学习的通用人工智能路径。它强调在**实时、开放、资源有限**的条件下进行自适应推理。
-
-[[research/nars/index|探索 NARS 理论 →]]
+[进入理论](/research/nars/theory/aikr) · [学习资源](/research/nars/theory/learning_resources)
 
 </div>
 
-<div class="research-card">
+<div>
 
-### NARS 工程实现
+### 观察一次感知与行动
 
-全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖 C、Clojure、Java、JavaScript、Julia、Python、Rust、Swift 等主流语言。
+打开虫脑实验，先看六路感知，再看系统操作与环境反馈。带着问题回到原理，而不只看画面动起来。
 
-[[projects/nars_impl/index|查看实现列表 →]]
+[开始试玩](/learn/try) · [选择实现](/learn/projects)
+
+</div>
+
+<div>
+
+### 接着探索不同思想
+
+理论不止一条路径。沿思想书库中的原作者论述，比较不同认知架构与智能观。
+
+[思想书库](/wiki/thought_library/) · [完整知识地图](/learn/map)
 
 </div>
 
@@ -79,98 +54,35 @@ hero:
 
 </section>
 
-<!-- 分隔线 -->
-<div class="section-divider"></div>
+<section class="section home-meetings" id="学术会议">
 
-<!-- 学术会议 -->
-<section class="section">
+## 在交流中推进研究
 
-## 学术会议
+<div class="home-meeting-paths">
 
-<div class="conference-highlight">
+<div>
 
-### 第十一届中国通用人工智能年会
+### 年会档案
 
-**2026 年 7 月 18–19 日 · 湖北武汉**
+从 2016 年到 2026 年，按届次查找议程、报告与录像。部分材料仍有缺项，详见各届档案。
 
-大会议题：机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
-
-中国通用人工智能年会是国内 AGI 领域最具影响力的学术会议之一，每年汇聚国内外 AGI 研究者、开发者和哲学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
-
-[[conference/annual/2026|查看年会详情 →]]
+[历届年会](/conference/annual/) · [2026 年完整议程](/conference/annual/2026)
 
 </div>
 
-<div class="conference-archive">
+<div>
 
-### 往届年会
+### 学术组会
 
-| 届次 | 年份 | 地点 |
-|------|------|------|
-| 第十一届 | 2026 | 武汉理工大学 |
-| 第十届 | 2025 | 辽宁工业大学 & 渤海大学 |
-| 第九届 | 2024 | 南京理工大学 |
-| 第八届 | 2023 | 上海复旦大学 |
-| 第七届 | 2022 | 线上会议 |
-| 第六届 | 2021 | 线上会议 |
-| 第五届 | 2020 | 线上会议 |
-| 第四届 | 2019 | 厦门大学 |
-| 第三届 | 2018 | 西安交通大学 |
-| 第二届 | 2017 | 北京大学 |
-| 第一届 | 2016 | 华中师范大学 |
+理论研读、论文分享与工程进展。按学年进入记录，继续追踪感兴趣的问题。
 
-[[conference/annual/index|查看全部年会记录 →]]
-
-</div>
-
-</section>
-
-<!-- 分隔线 -->
-<div class="section-divider"></div>
-
-<!-- 知识库入口 -->
-<section class="section section-alt">
-
-## 知识库
-
-<div class="knowledge-grid">
-
-<div class="knowledge-card">
-
-### 思想书库
-
-意义片网思想、拟态操作、Lazero、类脑智能意识系统、智能同一观——跨学科的 AGI 理论探索。
-
-[[wiki/thought_library/index|浏览思想书库 →]]
-
-</div>
-
-<div class="knowledge-card">
-
-### 组会视频
-
-2016–2025 历年组会视频目录，覆盖 NARS 理论研读、论文分享、工程进展报告，全部B站可看。
-
-[[conference/group/index|查看组会目录 →]]
-
-</div>
-
-<div class="knowledge-card">
-
-### 前沿研究
-
-大语言模型、认知架构、意识理论、计算精神病学——AGI 关联前沿议题的持续追踪。
-
-[[research/sai/index|浏览前沿研究 →]]
+[组会资料](/conference/group/) · [新闻动态](/news)
 
 </div>
 
 </div>
 
 </section>
-
-<!-- 分隔线 -->
-<div class="section-divider"></div>
 
 <!-- 核心成员 -->
 <section class="section">
@@ -234,21 +146,39 @@ AGI 认知科学，人工智能情感
 <!-- 分隔线 -->
 <div class="section-divider"></div>
 
-<!-- 参与贡献 -->
-<section class="section section-alt">
 
-## 参与贡献
+<section class="section home-participate" id="参与">
 
-本知识库内容开放编辑。欢迎到 [GitHub](https://github.com/exomind-team/agi-society-cn) 或 [Gitee](https://gitee.com/Hailay/agi-society-cn) 提交 Pull Request。
+## 把问题与材料带进来
 
-查看 [[contact/contributing/formats|贡献者指南]] 了解编辑方式。
+<div class="home-meeting-paths">
+
+<div>
+
+### 交流与合作
+
+找研究团队、交流渠道和公开联系方式。
+
+[联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
+
+</div>
+
+<div>
+
+### 共建知识库
+
+补充出处、纠正文档、分享项目。正文以 Markdown 维护，可按贡献指南提交修改。
+
+[如何贡献](/contact/contributing/formats) · [源码仓库](https://github.com/exomind-team/agi-society-cn)
+
+</div>
+
+</div>
 
 </section>
 
----
-
 <div class="home-footer">
 
-*本知识库基于 Nólëbase (VitePress) 构建 · 内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · 粤ICP备2021145979号-1*
+内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
 
 </div>

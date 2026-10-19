@@ -21,4 +21,4 @@ function restore() {
 onMounted(restore)
 watch(() => route.path, restore, { immediate: true })
 </script>
-<template><div class="preview-context"><a :href="back">{{ isNews ? '‹ 返回首页' : '‹ 返回新闻动态' }}</a><span>先锋体验版</span></div></template>
+<template><div class="preview-context"><a :href="back">{{ isNews ? '‹ 返回首页' : '‹ 返回新闻动态' }}</a><a :href="withBase('/learn/map')">知识地图</a><span>先锋体验版</span></div></template>

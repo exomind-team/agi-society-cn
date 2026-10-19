@@ -1,4 +1,5 @@
 ---
+title: 学习资源链接
 comments: true
 ---
 
@@ -45,12 +46,10 @@ comments: true
 
    图灵的一篇论文、侯世达的《哥德尔、艾舍尔、巴赫：集异璧之大成》（王培老师为译者之一）。首先指出AI目标，然后指出智能的现象。集异璧(GEB)。
 
-#### 2. (TODO)
-
 ## 2. 编码实现
 
-参见[[gti/chapter1/index|NARS 各个版本实现介绍]]
+先从 [[learn/try|动手试玩 NARS]] 输入一个最小推理例子，再到 [[projects/nars_impl/introduction|NARS 各个版本实现介绍]] 了解实现之间的区别。准备读源码或接入自己的环境时，可用 [[learn/projects|选择项目与工具]] 找到对应入口。
 
 ## Christian G. Hahm（ccrock4t）NARS Python v0.3
 
-里面有一份图指南。
+[[nars_python|NARS-Python 项目页]] 收录了 GUI、架构图与历史入门教程。阅读旧版 v0.3 资料时，请同时对照项目页所链接的仓库，区分教程版本与准备运行的版本。

@@ -20,8 +20,8 @@ const nolebaseMD = presetMarkdownIt({
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'AGI Wiki',
-  description: '中国通用人工智能协会 — 学术知识库',
+  title: '中国通用人工智能协会',
+  description: '中国通用人工智能协会 — 研究、教育、学术交流与开放知识',
   srcDir: './content',
   outDir: './dist',
   base: siteBase,
@@ -100,17 +100,26 @@ export default defineConfig({
   },
 
   themeConfig: {
+    siteTitle: 'AGI Society CN',
     previewEnvironment: process.env.VITEPRESS_PREVIEW === 'true',
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
+      { text: '学习与知识', link: '/learn/map' },
+      { text: '研究与项目', items: [
+        { text: '研究方向', link: '/research/' },
+        { text: '选择项目', link: '/learn/projects' },
+        { text: '推理器实现', link: '/projects/nars_impl/' },
+        { text: '应用与工具', link: '/projects/nars_derivatives/' },
+      ] },
+      { text: '会议与交流', link: '/conference/' },
       { text: '新闻动态', link: '/news' },
-      { text: '协会简介', link: '/about/' },
-      { text: '学术研究', link: '/research/' },
-      { text: '学术会议', link: '/conference/' },
-      { text: '维基百科', link: '/wiki/' },
-      { text: '项目介绍', link: '/projects/' },
-      { text: '联系我们', link: '/contact/' },
+      { text: '关于与联系', items: [
+        { text: '协会简介', link: '/about/' },
+        { text: '研究团队', link: '/contact/team' },
+        { text: '联系与参与', link: '/contact/' },
+        { text: '贡献指南', link: '/contact/contributing/' },
+      ] },
     ],
 
     sidebar: generateSidebar(),

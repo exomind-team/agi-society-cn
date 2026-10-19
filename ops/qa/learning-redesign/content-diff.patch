@@ -1,0 +1,729 @@
+diff --git a/content/about/home-archive.md b/content/about/home-archive.md
+new file mode 100644
+index 0000000..d60a245
+--- /dev/null
++++ b/content/about/home-archive.md
+@@ -0,0 +1,245 @@
++---
++title: 首页历史内容（2026-10-19）
++sidebarHide: true
++search: false
++---
++
++# 首页历史内容
++
++本页保留改版前的首页正文，用于追溯。版本数量、链接说明与会议措辞为历史记录；当前入口见[协会首页](/)和[知识地图](/learn/map)。
++
++
++
++<!-- 2026 年会公告 -->
++<section class="section">
++
++## AGI-26 · 第十一届中国通用人工智能年会
++
++中国通用人工智能年会是由中国通用人工智能协会主办的年度学术会议。自 2016 年起，已连续举办十一届（2016-2026）。**第十一届年会（AGI-26）** 已于 2026 年 7 月 18–19 日在湖北武汉举办，议题聚焦机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
++
++会议汇聚国内外 AGI 研究者、计算机科学家、哲学家与认知科学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
++
++[[conference/annual/2026|查看会议详情 →]]
++
++</section>
++
++<div class="section-divider"></div>
++
++<!-- 协会简介 -->
++<section class="section">
++
++## 关于协会
++
++中国通用人工智能协会（AGI Society CN）由**王培教授**发起创立，致力于推动通用人工智能理论与开源实现的研究、教育与交流。协会以 **NARS**（Non-Axiomatic Reasoning System，非公理推理系统）为核心理论锚点，汇聚哲学、计算机科学、认知科学、教育科学等多学科力量。
++
++自 2016 年起，协会已连续举办**十一届**中国通用人工智能年会，并组织超过百场学术组会。
++
++</section>
++
++<!-- 分隔线 -->
++<div class="section-divider"></div>
++
++<!-- 核心研究方向 -->
++<section class="section section-alt">
++
++## 核心研究
++
++<div class="research-grid">
++
++<div class="research-card">
++
++### NARS 理论
++
++基于 **AIKR**（不足知识与资源预设）与 **3C 原则**（正确性、具体性、紧凑性），NARS 是一种不同于主流机器学习的通用人工智能路径。它强调在**实时、开放、资源有限**的条件下进行自适应推理。
++
++[[research/nars/index|探索 NARS 理论 →]]
++
++</div>
++
++<div class="research-card">
++
++### NARS 工程实现
++
++全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖 C、Clojure、Java、JavaScript、Julia、Python、Rust、Swift 等主流语言。
++
++[[projects/nars_impl/index|查看实现列表 →]]
++
++</div>
++
++</div>
++
++</section>
++
++<!-- 分隔线 -->
++<div class="section-divider"></div>
++
++<!-- 学术会议 -->
++<section class="section">
++
++## 学术会议
++
++<div class="conference-highlight">
++
++### 第十一届中国通用人工智能年会
++
++**2026 年 7 月 18–19 日 · 湖北武汉**
++
++大会议题：机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
++
++中国通用人工智能年会是国内 AGI 领域最具影响力的学术会议之一，每年汇聚国内外 AGI 研究者、开发者和哲学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
++
++[[conference/annual/2026|查看年会详情 →]]
++
++</div>
++
++<div class="conference-archive">
++
++### 往届年会
++
++| 届次 | 年份 | 地点 |
++|------|------|------|
++| 第十一届 | 2026 | 武汉理工大学 |
++| 第十届 | 2025 | 辽宁工业大学 & 渤海大学 |
++| 第九届 | 2024 | 南京理工大学 |
++| 第八届 | 2023 | 上海复旦大学 |
++| 第七届 | 2022 | 线上会议 |
++| 第六届 | 2021 | 线上会议 |
++| 第五届 | 2020 | 线上会议 |
++| 第四届 | 2019 | 厦门大学 |
++| 第三届 | 2018 | 西安交通大学 |
++| 第二届 | 2017 | 北京大学 |
++| 第一届 | 2016 | 华中师范大学 |
++
++[[conference/annual/index|查看全部年会记录 →]]
++
++</div>
++
++</section>
++
++<!-- 分隔线 -->
++<div class="section-divider"></div>
++
++<!-- 知识库入口 -->
++<section class="section section-alt">
++
++## 知识库
++
++<div class="knowledge-grid">
++
++<div class="knowledge-card">
++
++### 思想书库
++
++意义片网思想、拟态操作、Lazero、类脑智能意识系统、智能同一观——跨学科的 AGI 理论探索。
++
++[[wiki/thought_library/index|浏览思想书库 →]]
++
++</div>
++
++<div class="knowledge-card">
++
++### 组会视频
++
++2016–2025 历年组会视频目录，覆盖 NARS 理论研读、论文分享、工程进展报告，全部B站可看。
++
++[[conference/group/index|查看组会目录 →]]
++
++</div>
++
++<div class="knowledge-card">
++
++### 前沿研究
++
++大语言模型、认知架构、意识理论、计算精神病学——AGI 关联前沿议题的持续追踪。
++
++[[research/sai/index|浏览前沿研究 →]]
++
++</div>
++
++</div>
++
++</section>
++
++<!-- 分隔线 -->
++<div class="section-divider"></div>
++
++<!-- 核心成员 -->
++<section class="section">
++
++## 核心成员
++
++<div class="team-grid">
++
++<div class="team-member">
++
++**王培** · 教授
++*美国天普大学计算机系*
++NARS 理论创始人，AGI 协会发起人
++
++</div>
++
++<div class="team-member">
++
++**刘凯** · 博士
++*渤海大学教育科学学院*
++协会召集人，通用人工智能与教育
++
++</div>
++
++<div class="team-member">
++
++**徐英瑾** · 教授
++*复旦大学哲学学院*
++人工智能哲学，心灵哲学
++
++</div>
++
++<div class="team-member">
++
++**那迪** · 博士
++*西北民族大学*
++智能决策，数据科学，AGI 理论
++
++</div>
++
++<div class="team-member">
++
++**魏屹东** · 教授
++*山西大学哲学学院*
++适应性表征，认知哲学
++
++</div>
++
++<div class="team-member">
++
++**李祥** · 博士
++*辽宁工业大学*
++AGI 认知科学，人工智能情感
++
++</div>
++
++</div>
++
++</section>
++
++<!-- 分隔线 -->
++<div class="section-divider"></div>
++
++<!-- 参与贡献 -->
++<section class="section section-alt">
++
++## 参与贡献
++
++本知识库内容开放编辑。欢迎到 [GitHub](https://github.com/exomind-team/agi-society-cn) 或 [Gitee](https://gitee.com/Hailay/agi-society-cn) 提交 Pull Request。
++
++查看 [[contact/contributing/formats|贡献者指南]] 了解编辑方式。
++
++</section>
++
++---
++
++<div class="home-footer">
++
++*本知识库基于 Nólëbase (VitePress) 构建 · 内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · 粤ICP备2021145979号-1*
++
++</div>
+diff --git a/content/contact/index.md b/content/contact/index.md
+index 03c388b..fe313a2 100644
+--- a/content/contact/index.md
++++ b/content/contact/index.md
+@@ -10,6 +10,12 @@ order: 6
+ 
+ [[contact/team|查看全部团队成员 →]]
+ 
++## 研究与报考联系
++
++准备了解研究生方向，可先阅读协会官网于 **2026 年 5 月 14 日**发布的[“读博读硕”原始通知](https://www.agi-society.cn/?p=789)，按通知中的导师与方向继续核实。
++
++该通知是历史信息入口，不代表当前招生名额、截止日期或录取承诺；申请条件与当期安排请以目标院校及导师最新正式信息为准。
++
+ ## 在线资源
+ 
+ - **QQ 群**：[[contact/documents_and_qq_group|查看群号和资源链接]]
+diff --git a/content/index.md b/content/index.md
+index 5a66a6d..15f183f 100644
+--- a/content/index.md
++++ b/content/index.md
+@@ -2,166 +2,81 @@
+ layout: home
+ sidebar: false
+ content-order: order
+-
+-hero:
+-  name: 中国通用人工智能协会
+-  text: AGI Society of China
+-  tagline: 第十一届中国通用人工智能年会 · 2026 · 已举办
+-  actions:
+-    - theme: brand
+-      text: 了解 NARS 理论
+-      link: /research/nars/
+-    - theme: alt
+-      text: 2026 年会信息
+-      link: /conference/
+-    - theme: alt
+-      text: 浏览维基百科
+-      link: /wiki/
+ ---
+ 
+-<!-- 2026 年会公告 -->
+-<section class="section">
+-
+-## AGI-26 · 第十一届中国通用人工智能年会
++<section class="section association-intro" id="协会">
+ 
+-中国通用人工智能年会是由中国通用人工智能协会主办的年度学术会议。自 2016 年起，已连续举办十一届（2016-2026）。**第十一届年会（AGI-26）** 已于 2026 年 7 月 18–19 日在湖北武汉举办，议题聚焦机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
++## 中国通用人工智能协会
+ 
+-会议汇聚国内外 AGI 研究者、计算机科学家、哲学家与认知科学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
++由王培教授发起，连接计算机科学、哲学、认知科学与教育研究。我们围绕通用智能的理论基础、开源实践与跨学科影响，持续开展研究、教育和交流。
+ 
+-[[conference/annual/2026|查看会议详情 →]]
++[认识协会](/about/) · [研究方向](/research/) · [联系与参与](/contact/)
+ 
+ </section>
+ 
+-<div class="section-divider"></div>
+-
+-<!-- 协会简介 -->
+-<section class="section">
+-
+-## 关于协会
+-
+-中国通用人工智能协会（AGI Society CN）由**王培教授**发起创立，致力于推动通用人工智能理论与开源实现的研究、教育与交流。协会以 **NARS**（Non-Axiomatic Reasoning System，非公理推理系统）为核心理论锚点，汇聚哲学、计算机科学、认知科学、教育科学等多学科力量。
+-
+-自 2016 年起，协会已连续举办**十一届**中国通用人工智能年会，并组织超过百场学术组会。
+-
+-</section>
+-
+-<!-- 分隔线 -->
+-<div class="section-divider"></div>
+-
+-<!-- 核心研究方向 -->
+-<section class="section section-alt">
++<section class="section home-learning" id="知识库">
+ 
+-## 核心研究
++## 从问题到实验
+ 
+-<div class="research-grid">
++<div class="home-journey">
+ 
+-<div class="research-card">
++<div>
+ 
+-### NARS 理论
++### 理解一个基本问题
+ 
+-基于 **AIKR**（不足知识与资源预设）与 **3C 原则**（正确性、具体性、紧凑性），NARS 是一种不同于主流机器学习的通用人工智能路径。它强调在**实时、开放、资源有限**的条件下进行自适应推理。
++知识不完整、时间不够用，系统还怎样作出判断？从 AIKR 开始，读到 NAL 与非公理控制。
+ 
+-[[research/nars/index|探索 NARS 理论 →]]
++[进入理论](/research/nars/theory/aikr) · [学习资源](/research/nars/theory/learning_resources)
+ 
+ </div>
+ 
+-<div class="research-card">
++<div>
+ 
+-### NARS 工程实现
++### 观察一次感知与行动
+ 
+-全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖 C、Clojure、Java、JavaScript、Julia、Python、Rust、Swift 等主流语言。
++打开虫脑实验，先看六路感知，再看系统操作与环境反馈。带着问题回到原理，而不只看画面动起来。
+ 
+-[[projects/nars_impl/index|查看实现列表 →]]
++[开始试玩](/learn/try) · [选择实现](/learn/projects)
+ 
+ </div>
+ 
+-</div>
+-
+-</section>
+-
+-<!-- 分隔线 -->
+-<div class="section-divider"></div>
+-
+-<!-- 学术会议 -->
+-<section class="section">
++<div>
+ 
+-## 学术会议
++### 接着探索不同思想
+ 
+-<div class="conference-highlight">
++理论不止一条路径。沿思想书库中的原作者论述，比较不同认知架构与智能观。
+ 
+-### 第十一届中国通用人工智能年会
+-
+-**2026 年 7 月 18–19 日 · 湖北武汉**
+-
+-大会议题：机器心理与行为、机器教育、人工认知生命及 AI 法律治理。
+-
+-中国通用人工智能年会是国内 AGI 领域最具影响力的学术会议之一，每年汇聚国内外 AGI 研究者、开发者和哲学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。
+-
+-[[conference/annual/2026|查看年会详情 →]]
++[思想书库](/wiki/thought_library/) · [完整知识地图](/learn/map)
+ 
+ </div>
+ 
+-<div class="conference-archive">
+-
+-### 往届年会
+-
+-| 届次 | 年份 | 地点 |
+-|------|------|------|
+-| 第十一届 | 2026 | 武汉理工大学 |
+-| 第十届 | 2025 | 辽宁工业大学 & 渤海大学 |
+-| 第九届 | 2024 | 南京理工大学 |
+-| 第八届 | 2023 | 上海复旦大学 |
+-| 第七届 | 2022 | 线上会议 |
+-| 第六届 | 2021 | 线上会议 |
+-| 第五届 | 2020 | 线上会议 |
+-| 第四届 | 2019 | 厦门大学 |
+-| 第三届 | 2018 | 西安交通大学 |
+-| 第二届 | 2017 | 北京大学 |
+-| 第一届 | 2016 | 华中师范大学 |
+-
+-[[conference/annual/index|查看全部年会记录 →]]
+-
+ </div>
+ 
+ </section>
+ 
+-<!-- 分隔线 -->
+-<div class="section-divider"></div>
+-
+-<!-- 知识库入口 -->
+-<section class="section section-alt">
++<section class="section home-meetings" id="学术会议">
+ 
+-## 知识库
++## 在交流中推进研究
+ 
+-<div class="knowledge-grid">
++<div class="home-meeting-paths">
+ 
+-<div class="knowledge-card">
++<div>
+ 
+-### 思想书库
++### 年会档案
+ 
+-意义片网思想、拟态操作、Lazero、类脑智能意识系统、智能同一观——跨学科的 AGI 理论探索。
++从 2016 年到 2026 年，按届次查找议程、报告与录像。部分材料仍有缺项，详见各届档案。
+ 
+-[[wiki/thought_library/index|浏览思想书库 →]]
++[历届年会](/conference/annual/) · [2026 年完整议程](/conference/annual/2026)
+ 
+ </div>
+ 
+-<div class="knowledge-card">
++<div>
+ 
+-### 组会视频
++### 学术组会
+ 
+-2016–2025 历年组会视频目录，覆盖 NARS 理论研读、论文分享、工程进展报告，全部B站可看。
++理论研读、论文分享与工程进展。按学年进入记录，继续追踪感兴趣的问题。
+ 
+-[[conference/group/index|查看组会目录 →]]
+-
+-</div>
+-
+-<div class="knowledge-card">
+-
+-### 前沿研究
+-
+-大语言模型、认知架构、意识理论、计算精神病学——AGI 关联前沿议题的持续追踪。
+-
+-[[research/sai/index|浏览前沿研究 →]]
++[组会资料](/conference/group/) · [新闻动态](/news)
+ 
+ </div>
+ 
+@@ -169,9 +84,6 @@ hero:
+ 
+ </section>
+ 
+-<!-- 分隔线 -->
+-<div class="section-divider"></div>
+-
+ <!-- 核心成员 -->
+ <section class="section">
+ 
+@@ -234,21 +146,39 @@ AGI 认知科学，人工智能情感
+ <!-- 分隔线 -->
+ <div class="section-divider"></div>
+ 
+-<!-- 参与贡献 -->
+-<section class="section section-alt">
+ 
+-## 参与贡献
++<section class="section home-participate" id="参与">
+ 
+-本知识库内容开放编辑。欢迎到 [GitHub](https://github.com/exomind-team/agi-society-cn) 或 [Gitee](https://gitee.com/Hailay/agi-society-cn) 提交 Pull Request。
++## 把问题与材料带进来
+ 
+-查看 [[contact/contributing/formats|贡献者指南]] 了解编辑方式。
++<div class="home-meeting-paths">
+ 
+-</section>
++<div>
+ 
+----
++### 交流与合作
++
++找研究团队、交流渠道和公开联系方式。
++
++[联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
++
++</div>
++
++<div>
++
++### 共建知识库
++
++补充出处、纠正文档、分享项目。正文以 Markdown 维护，可按贡献指南提交修改。
++
++[如何贡献](/contact/contributing/formats) · [源码仓库](https://github.com/exomind-team/agi-society-cn)
++
++</div>
++
++</div>
++
++</section>
+ 
+ <div class="home-footer">
+ 
+-*本知识库基于 Nólëbase (VitePress) 构建 · 内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · 粤ICP备2021145979号-1*
++内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
+ 
+ </div>
+diff --git a/content/learn/map.md b/content/learn/map.md
+new file mode 100644
+index 0000000..19e5ca7
+--- /dev/null
++++ b/content/learn/map.md
+@@ -0,0 +1,20 @@
++---
++title: 知识地图
++sidebarTitle: 学习与知识地图
++order: 1
++sidebar: false
++aside: false
++outline: false
++---
++
++# 知识地图
++
++从一个问题开始，沿着原文、代码与实验继续。这里汇集理论、推理器、应用、思想与会议材料。
++
++<KnowledgeMap />
++
++## 继续学习与参与
++
++- [学习资源与推荐阅读](/research/nars/theory/learning_resources)
++- [项目如何区分与选择](/learn/projects)
++- [补充材料与修正文档](/contact/contributing/)
+diff --git a/content/learn/projects.md b/content/learn/projects.md
+new file mode 100644
+index 0000000..899db5f
+--- /dev/null
++++ b/content/learn/projects.md
+@@ -0,0 +1,60 @@
++---
++title: 选择项目与工具
++order: 3
++comments: true
++---
++
++# 选择项目与工具
++
++先确定你要做什么，再选择代码。能直接接受 Narsese 的推理器、把推理器接入环境的工具，以及受 NARS 启发的实验，承担的是不同工作。
++
++## 我想先看一次推理和行动
++
++从 [[learn/try|动手试玩 NARS]] 开始。[[opennars304ts|OpenNARS 304 TS]] 提供浏览器终端和 Demo Lab，适合把输入、推理周期、感知、操作放在一起观察。
++
++准备继续读代码时，注意 Core 与 Demo 是不同仓库：前者实现推理核心，后者连接实验环境。项目页统一提供仓库、来源说明与维护信息。
++
++## 我想研究或修改推理内核
++
++先读 [[projects/nars_impl/introduction|实现介绍]]，再用 [[projects/nars_impl/index|实现总览]] 比较语言、代际、Narsese / NAL 边界和运行入口。
++
++- [[opennars|OpenNARS]]：Java 历史版本与相关源码入口，维护归属为 OpenNARS 项目团队。读旧教程时对照对应版本。
++- [[opennars304ts|OpenNARS 304 TS]]：ARCJ137442 维护的 TypeScript 实现；从项目页追踪 OpenNARS 3.0.4 来源与宿主接口边界。
++- [[projects/nars_impl/ona|ONA]]、[[opennars4|OpenNARS 4]]、[[narust|NARust]]：从各自项目页查看实现方式和适用范围，不把语言差异当成能力排名。
++
++选定后，先跑该仓库自己的最小示例，再研究解析、推理规则和控制机制。版本号、最近提交与许可证以项目页和所链接的原仓库为准。
++
++## 我想把 NARS 接进自己的环境
++
++从 [[projects/nars_derivatives/index|衍生项目索引]] 的 A1「运行时集成」和 A3「框架 / 可视化 / 应用」开始。使用这类项目时，分别确认它调用哪个推理器、如何传递输入，以及操作怎样回到环境。
++
++| 想做的事 | 入口与维护归属 | 与推理器的关系 |
++|---|---|---|
++| 统一不同实现的输入输出 | [[babelnar\|BabelNAR / NAVM]] · ARCJ137442 | 接口模型、桥接与运行时；不等于新的完整推理内核 |
++| 接入自然语言、知识库或传感器 | [[channels\|OpenNARS Channels]] · opennars | 连接 OpenNARS NAR shell 的通道 |
++| 搭建受 NARS 控制的智能体 | [[narca\|NARCA]] · ntoxeg | 基于 NARS 的智能体框架 |
++| 研究游戏感知与操作循环 | [[nars-fighterplane\|NARS-FighterPlane]] · Noctis-Xu；[[nars-pong\|NARS-Pong]] · ccrock4t | 游戏环境与控制集成；按项目页查看所调用引擎和依赖 |
++| 查看 Web 界面工具 | [[nars-web-gui\|NARS-Web-GUI]] · ccrock4t | GUI 项目；先读仓库说明确认连接方式 |
++
++这里保留索引原有分类。框架、示例与内核之间的连接关系，要按具体仓库判断；同一个维护者名下的项目也不一定属于同一内核。
++
++### 找 Java 相关仓库时，先辨认用途
++
++衍生索引中还收录了 opennars 组织的几个 Java 仓库。它们用途不同，不能统称为应用：
++
++- [OpenNARS-for-Research](https://github.com/opennars/OpenNARS-for-Research)：OpenNARS 3.1.1 研究延伸版。
++- [opennars_v3.1.2](https://github.com/opennars/opennars_v3.1.2)：3.1.2 release 版本仓库。
++- [opennars-demavenized](https://github.com/opennars/opennars-demavenized)：无 Maven、移除部分控制功能的精简版。
++- [opennars-applications](https://github.com/opennars/opennars-applications)：OpenNARS v3.0.0+ 应用层。
++
++先在 [[opennars|OpenNARS 项目页]] 确认所需代际，再阅读目标仓库说明。需要复现实验时，记录具体仓库与版本，避免混用研究版、发行版和应用层的运行方法。
++
++## 我想探索 NARS 与其他方法的结合
++
++看衍生索引的 B1「控制 / AGI 应用」和 B2「学术 / 论文附属 / 实验笔记」：
++
++- [[nnesycef|NNeSyCeF]] · PtrMan：借鉴 NAL 真值与 AIKR 的神经符号框架。
++- [[nars-gpt|NarsGPT]] · patham9 / narsgpt 相关仓库：用 GPT 模型模拟推理步骤；项目页区分仓库及调用 ONA 的分支。
++- [[pixel-to-concept-reader|Pixel-to-Concept Reader]] · poerlang：结构化 NAL 词条与手写数字识别的论文附属实现。
++
++这些入口用来研究结合方式，不作为完整 NARS 推理内核的替代清单。选定一个项目后，先读清楚它实际实现、调用或借鉴了什么，再决定要复现哪一个实验。
+diff --git a/content/learn/try.md b/content/learn/try.md
+new file mode 100644
+index 0000000..8556d72
+--- /dev/null
++++ b/content/learn/try.md
+@@ -0,0 +1,55 @@
++---
++title: 动手试玩 NARS
++order: 2
++comments: true
++---
++
++# 动手试玩 NARS
++
++先输入两条判断，再看一次推理；然后进入小世界，追踪感知如何变成操作。不需要先安装开发环境，也不需要先读完理论。
++
++## 第一站：在终端问一个问题
++
++打开 [OpenNARS 304 TS 终端](https://arcj137442.github.io/opennars-304-ts-lab/terminal.html)，按顺序提交下面四行：
++
++```text
++<bird --> animal>.
++<robin --> bird>.
++<robin --> animal>?
++:cycles 100
++```
++
++前两行分别表达“鸟是动物”“知更鸟是鸟”，第三行询问“知更鸟是动物吗”，最后一行推进推理周期。留意输出中是否出现与问题匹配的判断，以及它附带的真值信息；不要把输入回显当成推理答案。
++
++如果没有找到回答，先查看输入是否被接受、推理周期是否推进，以及输出里有没有解析错误。保留完整输入顺序和输出，便于与 [[opennars304ts#从哪里开始|项目页的终端示例]] 对照。
++
++这一步用来认识输入、问题与推理输出。一次回答不代表系统已掌握任意自然语言，也不代表其他实现接受完全相同的终端命令。
++
++## 第二站：跟着六路感知看一次行动
++
++打开 [经典虫脑 Microworld](https://arcj137442.github.io/opennars-304-ts-lab/microworld.html)，同时展开“经验观察”和“性能诊断”。按这条顺序看：
++
++1. 在 SENSORY FIELD 找到 G1–G3、B1–B3，观察好、坏食物的六路感知强度。
++2. 在 NARS EXECUTION 读出最近一次操作，区分 NARS 操作与 babble 探索；left、right 是相对虫子身体的转向。
++3. 在 OUTCOME / REWARD 观察操作后的反馈，并对照经验观察中的信念变化。
++4. 在性能诊断中分别看世界步进 TPS 与推理周期 RPS。画面在动，不等于每一步都完成了新的推理。
++
++需要认清每个窗口时，打开 [[opennars304ts#经典虫脑-六个小窗口看见一个大问题|六路感知与观察面板教程]]。项目页还解释了同步、异步模式，以及经验观察与原始派生任务的区别。
++
++普通入口使用随机起点与空白探索。如果想对照示例先验，可以另开 [固定种子与 starter 知识入口](https://arcj137442.github.io/opennars-304-ts-lab/microworld.html?seed=19&knowledge=starter)。记录自己使用的模式：starter 显式注入示例知识，不能据此声称系统从零学会了规则。
++
++## 第三站：只改变一个条件
++
++- 想改变空间：打开 [Grid Microworld](https://arcj137442.github.io/opennars-304-ts-lab/gridworld.html)，选择一种网格，拖动虫体或食物，再对照同一组感知和操作面板。操作说明见 [[opennars304ts#格中虫脑-世界变了-观测方式不变|格中虫脑教程]]。
++- 想观察跨局记忆：打开 [NARS × 2048](https://arcj137442.github.io/opennars-304-ts-lab/nars2048.html)。项目页说明棋盘结束后自动重开、NARS 记忆默认保留；先记录多局结果，再讨论表现是否有变化。
++- 想换一个任务：从 [Demo Lab](https://arcj137442.github.io/opennars-304-ts-lab/) 选择 Pong 或其他环境，继续追踪“感知—推理—操作—反馈”。
++
++记录入口、种子、知识模式、运行时长，以及观察到的输入、操作和反馈。短暂得分上升、一次避障或一次获胜，都不足以单独证明长期学习收益；性能与尚未证明的能力边界见 [[opennars304ts#这些实验能证明什么|项目页的实验说明]]。
++
++## 想在本机运行 Java 版？
++
++转到 [[opennars|OpenNARS 项目页]]，从其仓库入口查看准备使用的版本。该页记录的环境信息为 Java 8+、Maven，README 提供 Lab、Applications、示例 Narsese 与 GUI 入口。
++
++页面下方的 [[opennars#快速入门-迁移自官网|历史快速入门]] 保留了旧版 Windows 目录、截图和命令，适合对照历史资料；先核对版本、依赖与文件路径，再使用其中的步骤。这里不把旧教程当作已在当前环境验证过的安装方案。
++
++接下来可以 [[learn/projects|选择一个项目深入]]，或到 [[learning_resources|学习资源链接]] 补上理论背景。
+diff --git a/content/research/nars/theory/learning_resources.md b/content/research/nars/theory/learning_resources.md
+index 57cbb46..043dfd3 100644
+--- a/content/research/nars/theory/learning_resources.md
++++ b/content/research/nars/theory/learning_resources.md
+@@ -1,4 +1,5 @@
+ ---
++title: 学习资源链接
+ comments: true
+ ---
+ 
+@@ -45,12 +46,10 @@ comments: true
+ 
+    图灵的一篇论文、侯世达的《哥德尔、艾舍尔、巴赫：集异璧之大成》（王培老师为译者之一）。首先指出AI目标，然后指出智能的现象。集异璧(GEB)。
+ 
+-#### 2. (TODO)
+-
+ ## 2. 编码实现
+ 
+-参见[[gti/chapter1/index|NARS 各个版本实现介绍]]
++先从 [[learn/try|动手试玩 NARS]] 输入一个最小推理例子，再到 [[projects/nars_impl/introduction|NARS 各个版本实现介绍]] 了解实现之间的区别。准备读源码或接入自己的环境时，可用 [[learn/projects|选择项目与工具]] 找到对应入口。
+ 
+ ## Christian G. Hahm（ccrock4t）NARS Python v0.3
+ 
+-里面有一份图指南。
++[[nars_python|NARS-Python 项目页]] 收录了 GUI、架构图与历史入门教程。阅读旧版 v0.3 资料时，请同时对照项目页所链接的仓库，区分教程版本与准备运行的版本。
+diff --git a/content/wiki/index.md b/content/wiki/index.md
+index b3b3df3..0ce82e7 100644
+--- a/content/wiki/index.md
++++ b/content/wiki/index.md
+@@ -8,16 +8,16 @@ AGI 领域的知识库，汇集 NARS 及其相关工程的实施细节与参考
+ 
+ ## NARS 工程实现
+ 
+-全球开发者社区已实现 **12 种**跨语言 NARS 版本，覆盖主流编程语言：
++从 [[learn/try|一次动手试玩]] 开始，或按 [[learn/projects|想做的事选择项目]]。各实现的语言、版本与维护信息见对应项目页：
+ 
+ - [[projects/nars_impl/introduction|实现介绍]]
+ - [[projects/nars_impl/index|实现总览]]
+-- [[projects/nars_impl/opennars|OpenNARS]] — Java / Kotlin
++- [[projects/nars_impl/opennars|OpenNARS]] — Java
+ - [[projects/nars_impl/opennars4|OpenNARS 4 (PyNARS)]] — Python
+ - [[projects/nars_impl/narust|NARust]] — Rust
+ - [[projects/nars_impl/ona|ONA]] — C
+ - [[projects/nars_impl/narjure|Narjure]] — Clojure
+-- [OpenNARS 304 TS](https://github.com/ARCJ137442/OpenNARS-304-ts) — TypeScript；项目正在活跃开发中，尚未开源；[在线 Demo](https://arcj137442.github.io/opennars-304-ts/)
++- [[opennars304ts|OpenNARS 304 TS]] — TypeScript；试玩入口、六路感知教程与版本状态统一见项目页
+ - [[projects/nars_impl/index|更多实现...]]
+ 
+ ## 思想书库

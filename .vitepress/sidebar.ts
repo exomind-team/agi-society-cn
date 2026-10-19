@@ -4,6 +4,7 @@ import GrayMatter from 'gray-matter'
 import { calculateSidebar as calc } from '@nolebase/vitepress-plugin-sidebar'
 
 const CONTENT_SECTIONS = [
+  'content/learn',
   'content/about',
   'content/research',
   'content/conference',

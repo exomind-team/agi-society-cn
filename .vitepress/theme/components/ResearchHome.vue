@@ -6,7 +6,7 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
 <template>
   <div class="research-home">
     <header class="research-masthead">
-      <div><p class="research-brand">AGI Wiki <span>研究与知识</span></p><h1>从研究现场，进入知识。</h1></div>
+      <div><p class="research-brand">AGI Society CN <span>中国通用人工智能协会</span></p><h1>从研究现场，进入知识。</h1></div>
       <p class="research-intro">中国通用人工智能协会<br>会议记录、理论原文与开源实践</p>
     </header>
     <div class="research-layout">
@@ -23,9 +23,9 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
         </section>
 
         <nav class="home-quick-nav" aria-label="快速导航">
-          <a :href="withBase('/news')"><strong>新闻动态</strong><span>会议报告、研究资料与来源</span></a>
-          <a href="#核心成员"><strong>研究团队</strong><span>认识协会成员</span></a>
-          <a href="#知识库"><strong>知识库</strong><span>理论、思想与组会档案</span></a>
+          <a :href="withBase('/learn/map')"><strong>开始学习</strong><span>从理论问题到动手实验</span></a>
+          <a :href="withBase('/learn/projects')"><strong>查阅研究</strong><span>选择实现、工具与源码</span></a>
+          <a :href="withBase('/conference/')"><strong>会议与交流</strong><span>年会回顾、组会记录与材料</span></a>
         </nav>
       </div>
       <aside class="research-rail" aria-label="知识与会议导航">
