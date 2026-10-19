@@ -88,6 +88,12 @@ export default defineConfig({
       await nolebaseMD.install(md)
     },
     config(md) {
+      // Only the homepage personnel presentation changes. Original source files
+      // remain untouched; the component loads every original biography verbatim.
+      md.core.ruler.before('normalize', 'homepage-people-view', (state) => {
+        if (state.env.relativePath !== 'index.md') return
+        state.src = state.src.replace(/<div class="team-grid">[\s\S]*?(?=\n<\/section>)/, '<PeopleDirectory />\n')
+      })
       md.use(obsidianCallouts)
       md.use(markdownItMark)
     },
@@ -98,6 +104,7 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
+      { text: '新闻动态', link: '/news' },
       { text: '协会简介', link: '/about/' },
       { text: '学术研究', link: '/research/' },
       { text: '学术会议', link: '/conference/' },

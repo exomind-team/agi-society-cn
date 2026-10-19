@@ -42,7 +42,12 @@ for (const file of manifest.files.filter(f => f.path.startsWith('content/') && f
 }
 const home = read('dist/index.html')
 assert.ok(home.includes('先锋体验版'))
-assert.ok(home.includes('来源与阅读路径'))
+const news = read('dist/news.html')
+assert.ok(!home.includes('来源与阅读路径'))
+assert.ok(news.includes('来源与阅读路径'))
+assert.ok(news.includes('未接入自动新闻采集'))
+assert.ok(home.includes('创办人与专家组'))
+assert.ok(home.includes('people-featured'))
 assert.ok(home.includes('VPNavBarSearch'))
 assert.ok(home.includes('关于协会')) // Original index body is retained in the rendered site.
 const document = parse(home)
@@ -58,6 +63,7 @@ function visit(node, inPreview = false) {
   for (const child of node.childNodes || []) visit(child, inPreview)
 }
 visit(document)
+visit(parse(news))
 assert.ok(checked > 20)
 console.log(`PASS: ${markdown}/${markdown} original Markdown files byte-identical; ${assets}/${assets} original content assets byte-identical.`)
 console.log(`PASS: all 140 original vault Markdown pages rendered; ${checked} rendered preview links and curated provenance checks passed.`)
