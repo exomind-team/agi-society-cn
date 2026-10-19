@@ -9,7 +9,7 @@ next:
 
 [英文原文↗](https://cis.temple.edu/~pwang/GTI-book/GTI-TOPICS/GTI-TopicList.html)
 
-[[index|🔙上一级]]
+[[../index|🔙上一级]]
 
 - [[amount_of_information|amount of information]]
 - NARS and probability theory

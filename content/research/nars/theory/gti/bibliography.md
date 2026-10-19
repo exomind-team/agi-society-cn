@@ -6,7 +6,7 @@ comments: true
 
 [英文原文↗](https://cis.temple.edu/~pwang/GTI-book/GTI-Bibliography.html)
 
-[[chapter1/index|🔙上一级]]
+[[index|🔙上一级]]
 
 1. Allport, Gordon W., [The Functional Autonomy of Motives](http://psychclassics.yorku.ca/Allport/autonomy.htm), American Journal of Psychology, 50, 141-156, 1937
 2. Barnett, S. A., Instinct and Intelligence: Behavior of Animals and Man. Englewood Cliffs, NJ: Prentice-Hall, 1967

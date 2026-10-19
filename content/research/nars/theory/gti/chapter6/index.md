@@ -9,7 +9,7 @@ next:
 
 [英文原文↗](https://cis.temple.edu/~pwang/GTI-book/GTI-CH6/GTI-6.html)
 
-[[index|🔙上一级]]
+[[../index|🔙上一级]]
 
 * * *
 

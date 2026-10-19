@@ -27,6 +27,6 @@ Python 方向的 [[opennars4|OpenNARS 4 (PyNARS)]] 延续了 PyNARS 的历史线
 > 1. **原创 NARS 推理器代码**——自己实现 Narsese 解析、NAL 规则、控制机制等核心组件；可以是 fork 后做大量二次改造（如 OpenNARS 系列的 C / Clojure / TypeScript / Swift / Python / Julia / Rust 重写），但不能是只换名搬运的纯 fork
 > 2. **对外提供基于 Narsese 的推理服务**——用户可向程序提交 Narsese 输入，得到 NARS 推理输出
 >
-> 只"受 NARS 启发"但用其他技术栈（LLM 提示工程、神经符号、强化学习等）的项目**不算** NARS 实现，归 [[index|NARS衍生项目]]；仅调用 NARS 作为子模块的项目（如 Agent 框架、可视化、教学），也归衍生项目。
+> 只"受 NARS 启发"但用其他技术栈（LLM 提示工程、神经符号、强化学习等）的项目**不算** NARS 实现，归 [[../index\|NARS衍生项目]]；仅调用 NARS 作为子模块的项目（如 Agent 框架、可视化、教学），也归衍生项目。
 >
 > 更多历史版本和相关项目可参考[天普大学 AGI 团队项目页](https://cis.temple.edu/tagit/#projects)。新增条目先进入总表并完成来源核验，再补充独立介绍页。
