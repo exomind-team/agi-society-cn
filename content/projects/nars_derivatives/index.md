@@ -6,7 +6,19 @@ comments: true
 
 本页汇总与 NARS 相关的衍生项目：基于 NARS 内核或 NAL 模型，但**不直接实现完整 NARS 推理引擎**的项目（典型如应用、工具、论文附属实现、跨学科扩展）。
 
-若为 NARS 各版实现的直接精简/重写，请见 [[../index|NARS各版实现]]。
+若为 NARS 各版实现的直接精简/重写，请见 [[projects/nars_impl/index|NARS各版实现]]。
+
+## OpenNARS 相关实现与分发仓库
+
+下面三项是 opennars 组织下的研究版、发行版和精简版，与应用或可视化工具分别查阅。仓库归属不等于它们拥有完全相同的内核能力；版本与运行方法以各仓库和 [[projects/nars_impl/opennars|OpenNARS 项目页]] 的来源记录为准。
+
+| 项目 | 语言 | 维护者 | 简介 | 仓库 |
+|---|---|---|---|---|
+| OpenNARS-for-Research | Java | opennars 项目 | OpenNARS 3.1.1 延伸版 | [仓库](https://github.com/opennars/OpenNARS-for-Research) |
+| opennars_v3.1.2 | Java | opennars 项目 | OpenNARS 3.1.2 release | [仓库](https://github.com/opennars/opennars_v3.1.2) |
+| opennars-demavenized | Java | opennars 项目 | 无 Maven，并移除部分控制功能的精简版 | [仓库](https://github.com/opennars/opennars-demavenized) |
+
+Java 核心的组件接入与应用示例另见下方 `opennars-applications`，以及 [[learn/projects|按用途选择项目]]。本页不将研究版、发行版、精简版与应用层合并为一个软件包，也不据仓库同属一个组织推断某示例已经内置。
 
 ## 主轴：NARS 在项目中的地位（深度由深到浅）
 
@@ -31,10 +43,7 @@ comments: true
 - [NARS-Web-GUI](https://github.com/ccrock4t/NARS-Web-GUI)（ccrock4t，JavaScript）— NARS Web GUI
 - [NARSBlocksWorldEvolution](https://github.com/ccrock4t/NARSBlocksWorldEvolution)（ccrock4t，C#，2025-10）— 块世界演化实验
 - [NARSGridWorldEvolution](https://github.com/ccrock4t/NARSGridWorldEvolution)（ccrock4t，C#，2025-10）— 网格世界演化实验
-- [OpenNARS-for-Research](https://github.com/opennars/OpenNARS-for-Research)（opennars 组织，Java）— OpenNARS 3.1.1（latest）延伸版
-- [opennars_v3.1.2](https://github.com/opennars/opennars_v3.1.2)（opennars 组织，Java）— OpenNARS 3.1.2 release 版
 - [opennars-applications](https://github.com/opennars/opennars-applications)（opennars 组织，Java）— OpenNARS v3.0.0+ 应用层（Lab 之外，MIT 许可）
-- [opennars-demavenized](https://github.com/opennars/opennars-demavenized)（opennars 组织，Java）— 无 Maven + 去 control features 的精简版
 
 ### B. 灵感启发自 NARS（不调用 NARS 引擎，也不完整实现 NAL）
 
@@ -62,7 +71,7 @@ comments: true
 | ONAT | Python | maxeeem | OpenNARS Bridge Agent | [仓库](https://github.com/maxeeem/ONAT) |
 | [[nars-fighterplane|NARS-FighterPlane]] | Python | Noctis-Xu（Boyang Xu） | NARS 控制战机游戏 AI 的 demo | [仓库](https://github.com/Noctis-Xu/NARS-FighterPlane) |
 
-#### A3. 框架 / 可视化 / 应用（13 项）
+#### A3. 框架 / 可视化 / 应用
 
 | 项目 | 语言 | 维护者 | 简介 | 仓库 |
 |---|---|---|---|---|
@@ -74,12 +83,9 @@ comments: true
 | NARS-Web-GUI | JavaScript | ccrock4t | NARS Web GUI | [仓库](https://github.com/ccrock4t/NARS-Web-GUI) |
 | NARSBlocksWorldEvolution | C# | ccrock4t | 块世界演化实验（2025-10） | [仓库](https://github.com/ccrock4t/NARSBlocksWorldEvolution) |
 | NARSGridWorldEvolution | C# | ccrock4t | 网格世界演化实验（2025-10） | [仓库](https://github.com/ccrock4t/NARSGridWorldEvolution) |
-| OpenNARS-for-Research | Java | opennars 项目 | OpenNARS 3.1.1 延伸版 | [仓库](https://github.com/opennars/OpenNARS-for-Research) |
-| opennars_v3.1.2 | Java | opennars 项目 | OpenNARS 3.1.2 release | [仓库](https://github.com/opennars/opennars_v3.1.2) |
 | opennars-applications | Java | opennars 项目 | OpenNARS 应用层（MIT） | [仓库](https://github.com/opennars/opennars-applications) |
-| opennars-demavenized | Java | opennars 项目 | 无 Maven 精简版 | [仓库](https://github.com/opennars/opennars-demavenized) |
 
-### B. 灵感启发自 NARS（3 项）
+### B. 灵感启发自 NARS
 
 | 项目 | 语言 | 维护者 | 简介 | 仓库 |
 |---|---|---|---|---|

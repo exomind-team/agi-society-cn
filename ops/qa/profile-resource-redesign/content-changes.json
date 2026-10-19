@@ -1,0 +1,83 @@
+{
+  "baseline": "474de816f800cd28871480d2d5fac7ceb332ec00",
+  "changes": [
+    {
+      "path": "content/about/index.md",
+      "before_sha256": "33ee9ab488ab2f4d3b0010cf62cf10db7693fc97c54212beffca9be00344f079",
+      "after_sha256": "d9b8cac56170b9ccf3e9f950ab227cce2cc389d2a03789a2b44d10186078b89d",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/about/index.md"
+    },
+    {
+      "path": "content/about/team.md",
+      "before_sha256": "38dd2b1874f81b52a3eb12f1b72e0ce80a7e20432474ed6ba2a525acef6bc9d2",
+      "after_sha256": "1cb40b8ebae7cf62d00201b9c0ec9b6d738724ea2b0c879d41d1f4fc349cd63d",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/about/team.md"
+    },
+    {
+      "path": "content/conference/index.md",
+      "before_sha256": "35d363adbdc3198c5326c3ec4219338c63e72134c5813d6dd3f662653dea29a2",
+      "after_sha256": "21af16551cd30ab4519adf3f81bc2937cf28cfd6b8d8b695d3878fb57a4540d3",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/conference/index.md"
+    },
+    {
+      "path": "content/contact/contributing/formats.md",
+      "before_sha256": "9d81ea9d3912250930bca607c2287ce1d13dfa5ca2f0fa9511d652b8d60ecf55",
+      "after_sha256": "8ca576c99915339b8074f4a19e7ed5fe0c2704915b32dcd724c478d07cd84144",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/contact/contributing/formats.md"
+    },
+    {
+      "path": "content/contact/documents_and_qq_group.md",
+      "before_sha256": "0da48b948db5c5c2ed561f7e5f63cf0202accdfdb96de9d12535898542989d80",
+      "after_sha256": "d272cf2d90c50e911762ded81356560f64321f9d2e889d5ba70a6ad7d5b682e0",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/contact/documents_and_qq_group.md"
+    },
+    {
+      "path": "content/contact/index.md",
+      "before_sha256": "f289fc13ac7627a59ca296ed8f977a1b238054253678b00d193c586acf024524",
+      "after_sha256": "233825b805414752d714a62c3e90cb79ff03685ab4e31fa34d483348937da6b7",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/contact/index.md"
+    },
+    {
+      "path": "content/index.md",
+      "before_sha256": "4701fa59f73d50114c73da1c12bd8d17e36184299b6aebf2e577f67743e74cdb",
+      "after_sha256": "8c816beea737abb3b02ede89fa4536f44d78b3120df2a4fb57fd192fb178244f",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/index.md"
+    },
+    {
+      "path": "content/learn/map.md",
+      "before_sha256": "b7f8b136662b3de369a279de2b2a119f571bb00ffdd58708eaa1b723c6c09a10",
+      "after_sha256": "276b8c83a9a023910989a2c93b42e132a179563f1c7dd744d19cb047973f7b2e",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/learn/map.md"
+    },
+    {
+      "path": "content/learn/projects.md",
+      "before_sha256": "3f684fcd118d24b593940edbc92b683078e9727424a79816e2c9214da2842ea6",
+      "after_sha256": "440a65080a73ea70bb220607424301144bc6863cf602ff955482155864de2b51",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/learn/projects.md"
+    },
+    {
+      "path": "content/learn/try.md",
+      "before_sha256": "ed86e03d3657a09711a1923ccb0347b56d1f2a3aca5119b651e8062e8cdc6fe2",
+      "after_sha256": "e6ae47e6d7928cb8c728341940a7af9e131a9019219d4a916b1608dccd1dfe7c",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/learn/try.md"
+    },
+    {
+      "path": "content/projects/nars_derivatives/index.md",
+      "before_sha256": "26a9e034a4924c7680526ab4fa7dc050ad01676ee6b77253e0b576cc540a8671",
+      "after_sha256": "b4ea1fb429f07a80ac9bfd54e8be28add0a42ac271ba54cf76e700477cc9d198",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/projects/nars_derivatives/index.md"
+    },
+    {
+      "path": "content/projects/nars_impl/index.md",
+      "before_sha256": "3896f2307181d09b8e898391bbfce01583e2b893fc9577f8077aaf430d64d045",
+      "after_sha256": "20268d1cb67b13f53bebae2de2f48e28f6b4be920f1deeb07e09417bb5f24cd3",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/projects/nars_impl/index.md"
+    },
+    {
+      "path": "content/projects/nars_impl/introduction.md",
+      "before_sha256": "469ca580b1384fd6faaeaac4de349b9474ed3dd0552da50c21db662e40f3f951",
+      "after_sha256": "960e92dde80e19f116d00f13d8143cb75309c67d2fd4bbf66964e48ba9d8b294",
+      "restore_command": "git show 474de816f800cd28871480d2d5fac7ceb332ec00:content/projects/nars_impl/introduction.md"
+    }
+  ]
+}

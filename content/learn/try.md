@@ -48,7 +48,27 @@ comments: true
 
 ## 想在本机运行 Java 版？
 
-转到 [[opennars|OpenNARS 项目页]]，从其仓库入口查看准备使用的版本。该页记录的环境信息为 Java 8+、Maven，README 提供 Lab、Applications、示例 Narsese 与 GUI 入口。
+先取 [官方 v3.0.4 完整预编译包](https://github.com/opennars/opennars-lab/releases/tag/v3.0.4)，不用把 GitHub 的 Source code ZIP 当成可执行发行物。该历史包包含 Lab 与 Applications 两个 JAR；下载及包内容已于 2026-10-19 核验，尚未运行验收。
+
+<details>
+<summary>包里有什么？从示例回到源码</summary>
+
+|想观察什么|包内模块与源码|本轮核验边界|
+|---|---|---|
+|词性与语法实验|Lab 的 [LanguageGUI](https://github.com/opennars/opennars-lab/blob/v3.0.4/src/main/java/org/opennars/lab/language/LanguageGUI.java)，附 language_knowledge.nal|源码、启动器连接及 JAR 类/资源存在；不是通用中文 NLP 产品|
+|小世界代理行为|Lab 的 [SimNAR](https://github.com/opennars/opennars-lab/blob/v3.0.4/src/main/java/org/opennars/lab/microworld/SimNAR.java)|源码、启动器连接及 JAR 类存在；未验收学习曲线|
+|概念与关系图|GUI 的 [NARGraphPanel、InheritanceGraph、ImplicationGraph](https://github.com/opennars/opennars-gui/tree/v3.0.4/src/main/java/org/opennars/gui/graph)|类已打入 Lab JAR；未证明与其他实验共享完整工作流|
+|路口与关系映射|[Applications 启动器](https://github.com/opennars/opennars-applications/blob/v3.0.4/src/main/java/org/opennars/applications/Launcher.java)中的 Crossing、Identity mapping|源码调用与 JAR 存在；不同于 C 语言 ONA|
+
+官方包的两个入口分别是 bin_lab/opennars-lab-3.0.4-SNAPSHOT.jar 与 bin_applications/opennars-applications-3.0.4-SNAPSHOT.jar；未发现一键启动脚本。README 的 Java 8+ 为上游历史要求，本轮没有验证各平台/JDK兼容性。
+
+[核心源码](https://github.com/opennars/opennars/tree/v3.0.4)与 Java Applications 使用 MIT；Lab 与 GUI 使用 GPL v3，各组件许可应分别保留。[v3.1.0 发布说明](https://github.com/opennars/opennars/releases/tag/v3.1.0)明确实验架构与过程学习限制，因此不按更大的版本号默认推荐。
+
+本次下载文件 SHA-256：de616fb31301d6d5f5550a41c35a034cb1f29ba6228880d073f202f19956ace7（本次计算，非上游签名）。此处提供上游发行物，没有声称已制作新的综合包或完成端到端运行验收。
+
+</details>
+
+转到 [[opennars|OpenNARS 项目页]] 继续查阅原始资料。
 
 页面下方的 [[opennars#快速入门-迁移自官网|历史快速入门]] 保留了旧版 Windows 目录、截图和命令，适合对照历史资料；先核对版本、依赖与文件路径，再使用其中的步骤。这里不把旧教程当作已在当前环境验证过的安装方案。
 

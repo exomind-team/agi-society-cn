@@ -157,9 +157,9 @@ AGI 认知科学，人工智能情感
 
 ### 交流与合作
 
-找研究团队、交流渠道和公开联系方式。
+带着研究问题、可复现实验或具体应用场景，了解研究团队与公开交流渠道。
 
-[联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
+[项目与工程入口](/learn/projects) · [联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
 
 </div>
 
@@ -179,6 +179,6 @@ AGI 认知科学，人工智能情感
 
 <div class="home-footer">
 
-内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
+文字内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可；第三方照片除外 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
 
 </div>

@@ -4,15 +4,25 @@ order: 3
 comments: true
 ---
 
+<script setup>
+import ProjectRoles from '../../.vitepress/theme/components/ProjectRoles.vue'
+</script>
+
 # 选择项目与工具
 
 先确定你要做什么，再选择代码。能直接接受 Narsese 的推理器、把推理器接入环境的工具，以及受 NARS 启发的实验，承担的是不同工作。
+
+## 先认清项目的来源与位置
+
+- **OpenNARS 主线及相关分发**：从 [[opennars|OpenNARS]] 进入核心、研究版、发行版和应用层。它们的版本、依赖和所带示例需要分别核对。
+- **社区实现与集成**：社区可以重新实现推理器，也可以只做桥接、工具和实验环境；先用 [[projects/nars_impl/index|实现总览]] 和 [[projects/nars_derivatives/index|应用与工具索引]] 区分这两类工作。
+- **外围影响与交叉探索**：受 NARS 思想启发的模型或论文附属实验，沿下方“与其他方法的结合”查阅；不把启发关系标成内核实现或官方背书。
 
 ## 我想先看一次推理和行动
 
 从 [[learn/try|动手试玩 NARS]] 开始。[[opennars304ts|OpenNARS 304 TS]] 提供浏览器终端和 Demo Lab，适合把输入、推理周期、感知、操作放在一起观察。
 
-准备继续读代码时，注意 Core 与 Demo 是不同仓库：前者实现推理核心，后者连接实验环境。项目页统一提供仓库、来源说明与维护信息。
+<ProjectRoles />
 
 ## 我想研究或修改推理内核
 

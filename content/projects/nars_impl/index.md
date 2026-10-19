@@ -1,5 +1,6 @@
 ---
 comments: true
+content-order: order
 ---
 
 # NARS各版实现 索引

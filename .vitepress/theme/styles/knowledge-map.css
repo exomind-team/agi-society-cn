@@ -30,3 +30,19 @@
 .knowledge-footnote { font-size:13px; color:var(--vp-c-text-2); margin-top:24px!important; }
 .knowledge-map a:focus-visible, .knowledge-map summary:focus-visible { outline:2px solid var(--vp-c-brand-1); outline-offset:3px; }
 @media(max-width:640px) { .learning-starts { grid-template-columns:1fr; gap:4px; margin:20px 0 28px; } .learning-starts a { padding:13px 0; gap:4px; } .knowledge-index-heading { flex-wrap:wrap; margin-bottom:12px; } .knowledge-index-heading h2 { margin-bottom:0; } .knowledge-branch-body { margin-left:5px; padding-left:9px; } .knowledge-group > ul { padding-left:5px; } }
+.conference-years { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 24px; margin:20px 0; }
+.conference-years a { display:flex; align-items:baseline; gap:12px; min-height:52px; padding:12px 0; border-bottom:1px solid var(--vp-c-divider); text-decoration:none!important; }
+.conference-years strong { font-variant-numeric:tabular-nums; font-size:15px; white-space:nowrap; }
+.conference-years a span:nth-child(2) { flex:1; font-size:13px; color:var(--vp-c-text-2); }
+.conference-years a:focus-visible { outline:2px solid var(--vp-c-brand-1); outline-offset:3px; }
+@media(max-width:600px) { .conference-years { grid-template-columns:1fr; } }
+.resource-entry { border-top:1px solid var(--vp-c-divider); padding:2px 0; }
+.resource-entry > summary { cursor:pointer; padding:14px 4px; min-height:44px; line-height:1.65; }
+.resource-entry > summary strong { font-weight:600; }
+.resource-entry > summary span { display:block; margin-left:18px; color:var(--vp-c-text-2); font-size:12px; font-weight:400; }
+.resource-entry[open] { padding-bottom:12px; }
+.resource-entry > summary:focus-visible { outline:2px solid var(--vp-c-brand-1); outline-offset:3px; }
+
+/* The visual markers distinguish ways to enter, without implying a required order. */
+.learning-starts .learning-stage { display:flex; align-items:center; gap:9px; color:var(--vp-c-brand-1); }
+.learning-stage svg { width:25px; height:25px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }

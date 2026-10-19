@@ -1,0 +1,711 @@
+diff --git a/content/about/index.md b/content/about/index.md
+index 16fc61b..e0ed19a 100644
+--- a/content/about/index.md
++++ b/content/about/index.md
+@@ -9,4 +9,4 @@ comments: true
+ 
+ 协会知识库以非公理推理系统（NARS）及其相关理论为重要内容，同时收录 NARS 工程实现、通用人工智能理论、学术会议与组会资料，以及协会成员的跨学科研究成果。
+ 
+-[[contact/team|查看研究团队]] · [[conference/index|查看学术会议]] · [[projects/nars_impl/index|查看 NARS 实现索引]]
++[[contact/team|查看研究团队]]
+diff --git a/content/about/team.md b/content/about/team.md
+index 4f43e55..ca373c2 100644
+--- a/content/about/team.md
++++ b/content/about/team.md
+@@ -4,6 +4,8 @@ comments: true
+ 
+ # 协会成员
+ 
++本页保留协会分组与原有介绍。创办人及专家的公开研究资料、现职与历史经历、照片来源和核验日期，见[人物资料](/about/people)。
++
+ 1. 创办人：[[#王培]]、胡祥恩
+ 2. 专家组：[[#徐英瑾]]、[[#魏屹东]]、桑新民、王伟军
+ 3. 秘书组：[[#刘凯]]、[[#李祥]]、[[#那孜古力·斯拉木(那迪)|那迪]]、黄英辉
+diff --git a/content/conference/index.md b/content/conference/index.md
+index e8bb7d1..333b378 100644
+--- a/content/conference/index.md
++++ b/content/conference/index.md
+@@ -13,10 +13,10 @@ comments: true
+ 
+ 每年一届的中国通用人工智能年会汇聚国内外 AGI 研究者、计算机科学家、哲学家与认知科学学者，围绕通用人工智能的理论基础、工程实践与跨学科影响展开深度讨论。自 2016 年起，已连续举办十一届。
+ 
+-[[annual/index|查看年会总览 →]]
++<ConferenceYears kind="annual" />
+ 
+ ## 组会
+ 
+ 组会是协会成员定期进行的学术讨论活动，涵盖 NARS 理论研读、论文分享、工程进展报告等。2016-2025 十学年共举行 200+ 场组会报告；2025-2026 学年页面目前保留为占位，后续学年待有可靠资料后再补充。
+ 
+-[[group/index|查看组会总览 →]]
++<ConferenceYears kind="group" />
+diff --git a/content/contact/contributing/formats.md b/content/contact/contributing/formats.md
+index fd6777a..4df412a 100644
+--- a/content/contact/contributing/formats.md
++++ b/content/contact/contributing/formats.md
+@@ -10,6 +10,14 @@ comments: true
+ 
+ 本 Wiki 在 VitePress 基础上集成了 [Nólëbase](https://nolebase.ayaka.io/) 与 [markdown-it-obsidian-callouts](https://github.com/ebullient/markdown-it-obsidian-callouts)，兼容 Obsidian 风格的 Callout 语法。
+ 
++## 正文与页面组件的编辑边界
++
++正文作者可以维护标题、段落、列表、引用、简单表格、代码围栏、外部链接及相对路径图片。图片需保留替代文字、来源和许可；frontmatter 的 title、order、comments 等字段保持原有类型。同名页面使用明确路径，修改后检查网站预览中的实际链接目标。
++
++首页布局、交互组件、导航，以及独立 JSON 人物与资料数据由工程维护者修改。Obsidian 能打开这些源文件，不代表能直接所见即所得编辑组件，或无损还原整站布局。复杂 HTML/Vue、未知字段和未知块应原样保留，不能被编辑器静默删除。
++
++目前未完成真实 Obsidian 编辑、重命名、移动附件后再发布的全流程验收；也未提供管理员在线可视化编辑器。后续先以同名链接、中文锚点、表格别名、图片、Callout 与未知块建立兼容样本，再验证网站与编辑器往返一致。管理员编辑计划将文案与受控布局分别建模，保存草稿、预览、审核发布及回退，不要求作者手改 Vue 或 JSON。
++
+ ## 文件规范
+ 
+ > [!warning] 文件名规范
+diff --git a/content/contact/documents_and_qq_group.md b/content/contact/documents_and_qq_group.md
+index c4b88de..f764d1a 100644
+--- a/content/contact/documents_and_qq_group.md
++++ b/content/contact/documents_and_qq_group.md
+@@ -1,58 +1,377 @@
+ ---
++title: AGI 资源与社群
+ order: 7
+ comments: true
+ ---
+ 
+-# 关于资料和Q群
++<span id="关于资料和q群"></span>
+ 
+-'''这边说一下 知道的和通用人工智能关系比较大的资源资料'''
++# AGI 资源导读：带着问题，走到实验
+ 
+-嗯 我（jc）现在的认识，
++第一次走进 AGI，最容易遇到的不是资料太少，而是每个人都在用“智能”说不同的事。先不急着选阵营：找一个问题，读清它的来历，再让代码或实验回答其中的一小部分。
+ 
+-通用人工智能（Artificial General Intelligence，AGI）算是传统的强人工智能，包含强人工智能，但是定义更严谨合理，。
++本页以协会原有资源清单为起点，整理 NARS / OpenNARS、OpenCog 及相关中文线索。它是一组可继续走下去的入口，不是整个 AGI 领域的排行榜。
+ 
+-OpenNARS是众多通用人工智能项目之一，是我们这边比较熟悉的
++**资料核验：2026 年 10 月 19 日。** 已读原文、只核对目录、未运行源码、未能访问的视频，各有不同的证据边界。展开每项即可看见作者、出处、适用读者和具体核验记录。
+ 
+-如果一定要给NARS从数学上找一个依托，是魔改了的贝叶斯网络。
++## 从这里开始，不必一次读完
+ 
+-但是出发点不同，哲学不同，哲学不同>建模不同>程序不同。然后就完全不同。NARS有一套自己的科学哲学体系，虽然也继承很多。
++### 先给“通用”一个具体含义
+ 
+-王老师在这个领域深入思考很多年，很多问题都是想过的。
++假如你想问的是“机器能聊天，是否就算拥有通用智能？”，先读[王培的 AGI 入门导读](https://cis.temple.edu/~pwang/AGI-Intro.html)，再对照[智能定义论文](https://cis.temple.edu/tagit/publications/PAGI-TR-9.pdf)。带走的不是一句统一答案，而是三个更精确的问题：系统要完成什么、面对什么限制、用什么证据判断进展。下面的 S09、S01 保留了原文与核验范围。
+ 
+----
++这里也值得停一下：AGI 与 strong AI 不能不加说明地画等号。前者通常讨论能力的通用性；Searle 在 1980 年的哲学语境里讨论的是程序是否真正具有理解和认知状态。两种问题可以相遇，却不应被一个标签抹平。参见 [Searle 原文](https://www.cs.tufts.edu/comp/50cog/readings/searle.html)及 S02。
++
++### 再让一个小问题进入系统
++
++想动手，就从[浏览器终端与六路感知教程](/learn/try)开始。提交两条判断，问第三条能否成立；再进入虫脑，区分输入、推理、操作和环境反馈。看到画面动起来之后，继续追问“刚才到底发生了哪一步”，比急着给它贴上“智能”的标签更有意思。
++
++准备改代码时，再读 [OpenNARS 仓库说明](https://github.com/opennars/opennars)或 [AtomSpace](https://github.com/opencog/atomspace)的构建与示例文档。两者承担的工作不同；提供安装步骤也不等于本页已经替你跑通。S07、S08 记录的是源码说明核验，不是运行成绩。
++
++### 最后回到理论，解释你看到的东西
++
++NARS 并不是一个可以用“改造的贝叶斯网络”概括的系统。它将真值和意义联系到已有经验，并把推理与有限资源下的控制放在一起研究。[经验语义论文](https://www.cis.temple.edu/~pwang/Publication/semantics.pdf)是继续往下读的起点。
++
++例如，在王培 [2001 年的置信度论文](https://www.cis.temple.edu/~pwang/Publication/confidence.pdf)中，频率 f=w+/w 表达正证据比例，置信度 c=w/(w+k)、k>0 保留证据量的信息。两组经验可以有相同的正证据比例，却有不同的证据量；这正是两个数而不是一个数有用的地方。置信度不等同于“命题为真的概率”。论文中的贝叶斯比较是作者的论证，也不意味着整个领域已经接受了同一结论。
++
++想系统阅读，可以沿[知识地图](/learn/map)进入理论正文，也可以从[人物研究资料](/about/people)追踪作者的问题、著作和会议报告。
++
++## 按用途选资料
++
++### 原始理论
++<details class="resource-entry" id="resource-s01">
++<summary><strong>S01 · On Defining Artificial Intelligence</strong><span>已核对相关原文</span></summary>
++
++[打开原始资料](https://cis.temple.edu/tagit/publications/PAGI-TR-9.pdf)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；已核对相关原文
++- **内容与证据**：PDF第1页摘要与第15–16页讨论定义，特别指出Strong AI在部分AGI语境中的用法不同于Searle原义。
++- **适合谁**：希望澄清术语的读者
++- **可以继续做什么**：分别写出某个项目的智能定义、目标与评价标准。
++- **限制与不确定性**：作者立场，不等于领域共识；本文仅核对相关段落，未逐页评审。
++
++</details>
++
++<details class="resource-entry" id="resource-s02">
++<summary><strong>S02 · Minds, Brains, and Programs (1980)</strong><span>已核对相关原文</span></summary>
++
++[打开原始资料](https://www.cs.tufts.edu/comp/50cog/readings/searle.html)
++
++- **作者 / 提供者**：John R. Searle
++- **核验日期与范围**：2026-10-19；已核对相关原文
++- **内容与证据**：开篇对strong AI的定义涉及程序计算机真正具有理解及认知状态；出版标识doi:10.1017/S0140525X00005756。
++- **适合谁**：关心AGI与心灵哲学区别的读者
++- **可以继续做什么**：辨别能力目标与“是否真正理解”的哲学命题。
++- **限制与不确定性**：链接为大学课程页转载原论文；不把作者反对strong AI的论证写成公认定论。
++
++</details>
++
++<details class="resource-entry" id="resource-s03">
++<summary><strong>S03 · Confidence as Higher-Order Uncertainty (2001)</strong><span>已核对相关原文</span></summary>
++
++[打开原始资料](https://www.cis.temple.edu/~pwang/Publication/confidence.pdf)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；已核对相关原文
++- **内容与证据**：第2–3页：f=w+/w，c=w/(w+k)，k>0；第4页修正规则要求不重复计数；第7–8页比较Bayesian及higher-order probability。
++- **适合谁**：有基础代数、想理解NAL真值的读者
++- **可以继续做什么**：手算同频率不同证据量时的置信度，并解释重复证据问题。
++- **限制与不确定性**：这是该论文的形式化；confidence不是“命题为真的概率”；未对所有NARS版本进行一致性检查。
++
++</details>
++
++<details class="resource-entry" id="resource-s04">
++<summary><strong>S04 · Experience-Grounded Semantics: A theory for intelligent systems</strong><span>已核对摘要与框架</span></summary>
++
++[打开原始资料](https://www.cis.temple.edu/~pwang/Publication/semantics.pdf)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；已核对摘要与框架
++- **内容与证据**：摘要把真值和意义联系到系统经验；第一页区分逻辑与记忆/控制。
++- **适合谁**：想理解NARS语义基础的进阶读者
++- **可以继续做什么**：区分真值、词项意义、推理规则和资源控制。
++- **限制与不确定性**：作者网站预印本标注2004-08-23，作者目录给出的期刊出版年为2005；二者不应混为版本错误。
++
++</details>
++
++<details class="resource-entry" id="resource-s05">
++<summary><strong>S05 · Selected Papers of Pei Wang</strong><span>已核对目录</span></summary>
++
++[打开原始资料](https://cis.temple.edu/~pwang/papers.html)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；已核对目录
++- **内容与证据**：作者目录含NARS、NAL、AGI定义及不确定性等分组；注明在线稿可能与发表版略异。
++- **适合谁**：准备系统阅读NARS的读者
++- **可以继续做什么**：按研究问题找到原文、作者和发表信息。
++- **限制与不确定性**：目录存在不代表每篇全文都已读；作者目录也不能替代独立效果评估。
++
++</details>
++
++<details class="resource-entry" id="resource-s06">
++<summary><strong>S06 · Non-Axiomatic Logic: A Model of Intelligent Reasoning；Rigid Flexibility: The Logic of Intelligence</strong><span>仅核对作者书目</span></summary>
++
++[打开原始资料](https://cis.temple.edu/~pwang/papers.html)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；仅核对作者书目
++- **内容与证据**：目录列NAL第二版2025与Rigid Flexibility 2006；后者描述NARS 4.3。
++- **适合谁**：准备长期研读逻辑体系的读者
++- **可以继续做什么**：确认书名与版本，再通过出版社或图书馆查找合法版本。
++- **限制与不确定性**：出版社链接本轮读取失败；未取得或阅读群文件、整本书，也未确认群内NAL是哪一版。
++
++</details>
++
++### 可运行实现
++<details class="resource-entry" id="resource-s07">
++<summary><strong>S07 · OpenNARS for Research 3.0+</strong><span>已核对README，未运行</span></summary>
++
++[打开原始资料](https://github.com/opennars/opennars)
++
++- **作者 / 提供者**：OpenNARS项目贡献者
++- **核验日期与范围**：2026-10-19；已核对README，未运行
++- **内容与证据**：README有Java/Maven构建流程、相关仓库和Narsese示例入口。
++- **适合谁**：具备Java/Maven基础的开发者
++- **可以继续做什么**：按README构建并复现实例，记录输入、输出、版本与失败情况。
++- **限制与不确定性**：“可运行实现”指提供源码和运行说明，不代表本轮构建通过；不能据此声称已实现人类水平AGI。
++
++</details>
++
++<details class="resource-entry" id="resource-s08">
++<summary><strong>S08 · AtomSpace</strong><span>已核对README相关部分，未运行</span></summary>
++
++[打开原始资料](https://github.com/opencog/atomspace)
++
++- **作者 / 提供者**：OpenCog项目贡献者
++- **核验日期与范围**：2026-10-19；已核对README相关部分，未运行
++- **内容与证据**：自述为超图数据库及图重写系统；有示例、构建与单元测试说明。
++- **适合谁**：熟悉图结构、愿意配置开发环境的读者
++- **可以继续做什么**：创建小型知识图并练习查询或图操作。
++- **限制与不确定性**：它是构件，不是装完即获得完整AGI；本轮未构建、未审计全部依赖。
++
++</details>
++
++### 导读与会议
++<details class="resource-entry" id="resource-s09">
++<summary><strong>S09 · Artificial General Intelligence — A Gentle Introduction</strong><span>已核对导读内容</span></summary>
++
++[打开原始资料](https://cis.temple.edu/~pwang/AGI-Intro.html)
++
++- **作者 / 提供者**：Pei Wang
++- **核验日期与范围**：2026-10-19；已核对导读内容
++- **内容与证据**：页面讨论AGI目标、理论/模型/实现与多种研究路径；标注2026年9月更新。
++- **适合谁**：零基础但愿意读英文的读者
++- **可以继续做什么**：先比较研究目标，再选一个系统深入。
++- **限制与不确定性**：这是有明确作者立场的导读，不是全领域唯一分类，也不是零基础视频替代品。
++
++</details>
++
++<details class="resource-entry" id="resource-s10">
++<summary><strong>S10 · 2012–2020年AGI会议资料线索</strong><span>仅核对部分会议论文书目</span></summary>
++
++[打开原始资料](https://cis.temple.edu/~pwang/papers.html)
++
++- **作者 / 提供者**：各年作者及会议组织方；具体群文件未知
++- **核验日期与范围**：2026-10-19；仅核对部分会议论文书目
++- **内容与证据**：作者目录含AGI-12论文及AGI-20论文，并有会议链接。
++- **适合谁**：需要按年代寻找论文的读者
++- **可以继续做什么**：从具体题名、作者、年份回溯正式论文记录。
++- **限制与不确定性**：并未核验完整九年会议文集；本轮2012/2020会议链接读取失败；群文件未访问，不能断言完整或有再分发授权。
++
++</details>
++
++### 历史线索
++<details class="resource-entry" id="resource-s11">
++<summary><strong>S11 · OpenCog旧主仓库</strong><span>已核对维护声明</span></summary>
++
++[打开原始资料](https://github.com/opencog/opencog)
++
++- **作者 / 提供者**：OpenCog项目贡献者
++- **核验日期与范围**：2026-10-19；已核对维护声明
++- **内容与证据**：README明确声明本仓库不再维护，并指向AtomSpace等子项目。
++- **适合谁**：研究OpenCog历史或寻找后续入口的读者
++- **可以继续做什么**：沿README查找具体组件；避免把旧主仓库当新手默认安装入口。
++- **限制与不确定性**：不把旧仓库停止维护扩大解释为整个OpenCog生态停止。
++
++</details>
++
++<details class="resource-entry" id="resource-s12">
++<summary><strong>S12 · 机器之心2018链接（原文标题待核）</strong><span>未取得正文</span></summary>
++
++[打开原始资料](https://www.jiqizhixin.com/articles/2018-11-15-6)
++
++- **作者 / 提供者**：作者待核；网站为机器之心
++- **核验日期与范围**：2026-10-19；未取得正文
++- **内容与证据**：读取结果只有文章库导航和登录提示。
++- **适合谁**：愿意补齐历史报道的读者
++- **可以继续做什么**：若能合法打开，补录标题、作者、日期和原文引用。
++- **限制与不确定性**：不能由URL日期推断完整发表信息，不能评价正文或声称读完。
++
++</details>
++
++<details class="resource-entry" id="resource-s13">
++<summary><strong>S13 · 博客链接（旧清单称“破尔狼”）</strong><span>本轮读取失败</span></summary>
++
++[打开原始资料](https://moketao.gitee.io/2019/10/11/agi-and-ai/)
++
++- **作者 / 提供者**：旧清单称破尔狼；页面署名未核
++- **核验日期与范围**：2026-10-19；本轮读取失败
++- **内容与证据**：研究工具无法访问该URL。
++- **适合谁**：整理早期中文讨论的读者
++- **可以继续做什么**：取得原文后核对其引用，再决定是否列为辅助阅读。
++- **限制与不确定性**：失败不等于永久失效；未核对标题、内容、署名或理论准确性。
++
++</details>
++
++### 未核验
++<details class="resource-entry" id="resource-s14">
++<summary><strong>S14 · 零基础视频（原始标题待核）</strong><span>本轮读取失败</span></summary>
++
++[打开原始资料](http://www.dushuren123.com/dushuren/video/share.html?id=1679351024)
++
++- **作者 / 提供者**：未知
++- **核验日期与范围**：2026-10-19；本轮读取失败
++- **内容与证据**：工具无法读取；返回中展示HTTPS地址。
++- **适合谁**：视频型入门读者，待内容审核后决定
++- **可以继续做什么**：目前仅可作为追查线索。
++- **限制与不确定性**：未确认标题、讲者、授权、难度或内容质量；暂不推荐为第一课。
++
++</details>
++
++<details class="resource-entry" id="resource-s15">
++<summary><strong>S15 · B站视频BV1zA411u7rC（旧清单称刘凯_AGI）</strong><span>本轮读取失败</span></summary>
++
++[打开原始资料](https://www.bilibili.com/video/BV1zA411u7rC)
++
++- **作者 / 提供者**：讲者/上传者待核
++- **核验日期与范围**：2026-10-19；本轮读取失败
++- **内容与证据**：未取得视频页面正文或字幕。
++- **适合谁**：偏好中文讲解的读者，待核
++- **可以继续做什么**：补齐标题、账号、日期与字幕后，再核对主张。
++- **限制与不确定性**：账号显示名不能单独证明身份；未观看。
++
++</details>
++
++<details class="resource-entry" id="resource-s16">
++<summary><strong>S16 · B站视频BV1wf4y1k7Yh第21分P（旧清单称朱松纯/暗物智能）</strong><span>本轮读取失败</span></summary>
++
++[打开原始资料](https://www.bilibili.com/video/BV1wf4y1k7Yh?p=21)
++
++- **作者 / 提供者**：讲者/上传者待核
++- **核验日期与范围**：2026-10-19；本轮读取失败
++- **内容与证据**：未取得视频页面正文或字幕。
++- **适合谁**：希望了解另一条研究路线的读者，待核
++- **可以继续做什么**：确认第21分P具体主题及原始演讲来源。
++- **限制与不确定性**：未确认分P标题、发布方和内容，不为该视频背书。
++
++</details>
++
++<details class="resource-entry" id="resource-s17">
++<summary><strong>S17 · Google Scholar学者页（旧清单称王培）</strong><span>本轮读取失败</span></summary>
++
++[打开原始资料](https://scholar.google.com/citations?hl=en&user=-EYJLoMAAAAJ)
++
++- **作者 / 提供者**：待页面确认
++- **核验日期与范围**：2026-10-19；本轮读取失败
++- **内容与证据**：未获取学者页内容。
++- **适合谁**：查论文与引用的读者
++- **可以继续做什么**：优先用S05作者网站核对具体论文。
++- **限制与不确定性**：未核实该profile当前身份及统计；引用次数不用于证明理论正确。
++
++</details>
++
++<details class="resource-entry" id="resource-s18">
++<summary><strong>S18 · SingularityNET YouTube频道</strong><span>仅取得频道标题</span></summary>
++
++[打开原始资料](https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw)
++
++- **作者 / 提供者**：频道标题显示SingularityNET；与官网关联待复核
++- **核验日期与范围**：2026-10-19；仅取得频道标题
++- **内容与证据**：工具返回SingularityNET - YouTube，正文极少。
++- **适合谁**：希望查找该生态演讲及演示的读者
++- **可以继续做什么**：找到单条视频后记录讲者、时间、主张及对应论文。
++- **限制与不确定性**：未获取列表、字幕或看完视频；本轮未从官网核实该精确channel ID，不能保证官方归属。
++
++</details>
++
++<details class="resource-entry" id="resource-s19">
++<summary><strong>S19 · YouTube检索词：OpenNARS</strong><span>仅保留检索提示</span></summary>
++
++- **作者 / 提供者**：不适用
++- **核验日期与范围**：2026-10-19；仅保留检索提示
++- **内容与证据**：旧清单只有搜索建议，没有确定资源。
++- **适合谁**：寻找演示视频的读者
++- **可以继续做什么**：优先选择能关联论文、代码版本和实验输入的演示。
++- **限制与不确定性**：不是已核验课程或频道；没有可引用的具体内容链接。
++
++</details>
+ 
+-＃0基础入门引入式视频：<http://www.dushuren123.com/dushuren/video/share.html?id=1679351024>
++<details class="resource-entry" id="resource-s20">
++<summary><strong>S20 · QQ群367446800；QQ群528053635</strong><span>仅核对旧清单中的群号线索</span></summary>
+ 
+-＃GitHub-[OpenNARS](http://www.opennars.org/)
++- **作者 / 提供者**：群主及管理方未知
++- **核验日期与范围**：2026-10-19；仅核对旧清单中的群号线索
++- **内容与证据**：旧清单分别称“协会QQ群”和“贴吧群”。
++- **适合谁**：愿意人工核实社群的读者
++- **可以继续做什么**：核实组织身份、群规和文件来源后，再决定是否加入。
++- **限制与不确定性**：未访问群、未加群；不保证有效、官方或安全，不能宣传为经认证协会入口。
+ 
+-＃Github-[OpenCog](https://wiki.opencog.org/w/The_Open_Cognition_Project)
++</details>
+ 
+-＃X-其他AGI项目 <https://www.jiqizhixin.com/articles/2018-11-15-6>
++<details class="resource-entry" id="resource-s21">
++<summary><strong>S21 · 公众号名称：赛先生</strong><span>仅名称线索</span></summary>
+ 
+-＃网站-通用人工智能协会群（主要是NARS的**367446800**）
++- **作者 / 提供者**：主体与账号ID待核
++- **核验日期与范围**：2026-10-19；仅名称线索
++- **内容与证据**：旧清单未提供账号ID或具体文章。
++- **适合谁**：偏好中文阅读的读者，待核
++- **可以继续做什么**：取得唯一账号标识及文章链接后逐篇核验。
++- **限制与不确定性**：名称可能同名或改名；不冒认官方，不推断运营主体。
+ 
+-＃Q群-通用人工智能贴吧群**528053635**
++</details>
+ 
+-＃视频和会议资料-b站：刘凯_AGI 给一个<https://www.bilibili.com/video/BV1zA411u7rC。会议记录里能看到大量其他学者的身影>
++<details class="resource-entry" id="resource-s22">
++<summary><strong>S22 · 公众号名称：反朴</strong><span>仅名称线索</span></summary>
+ 
+-＃X-王培的著作和Google Scholar页面<https://scholar.google.com/citations?hl=en&user=-EYJLoMAAAAJ> 虽然引用量是不是很好，AGI本来就是小圈子就是
++- **作者 / 提供者**：主体与账号ID待核
++- **核验日期与范围**：2026-10-19；仅名称线索
++- **内容与证据**：旧清单未提供账号ID或具体文章。
++- **适合谁**：偏好中文阅读的读者，待核
++- **可以继续做什么**：取得唯一账号标识及文章链接后逐篇核验。
++- **限制与不确定性**：名称可能同名或改名；不冒认官方，不推断运营主体。
+ 
+-＃X-大量文件资料-通用人工智能协会群群文件。包括12年到20年的AGI国际会议会议记录，关于NARS的几本书《NAL》《Rigid Flexibility》，以及等等等等。
++</details>
+ 
+-＃NARS的理论资料的讲解<https://cis.temple.edu/~pwang/papers.html>
++<details class="resource-entry" id="resource-s23">
++<summary><strong>S23 · 公众号名称：混沌巡洋舰</strong><span>仅名称线索</span></summary>
+ 
+-＃博客-研究者破尔狼的博客<https://moketao.gitee.io/2019/10/11/agi-and-ai/>
++- **作者 / 提供者**：主体与账号ID待核
++- **核验日期与范围**：2026-10-19；仅名称线索
++- **内容与证据**：旧清单未提供账号ID或具体文章。
++- **适合谁**：偏好中文阅读的读者，待核
++- **可以继续做什么**：取得唯一账号标识及文章链接后逐篇核验。
++- **限制与不确定性**：名称可能同名或改名；不冒认官方，不推断运营主体。
+ 
+-＃公众号-赛先生
++</details>
+ 
+-＃公众号-反朴
++<details class="resource-entry" id="resource-s24">
++<summary><strong>S24 · 公众号名称：真正的人工智能</strong><span>仅名称线索</span></summary>
+ 
+-＃公众号-混沌巡洋舰
++- **作者 / 提供者**：主体与账号ID待核
++- **核验日期与范围**：2026-10-19；仅名称线索
++- **内容与证据**：旧清单未提供账号ID或具体文章。
++- **适合谁**：偏好中文阅读的读者，待核
++- **可以继续做什么**：取得唯一账号标识及文章链接后逐篇核验。
++- **限制与不确定性**：名称可能同名或改名；不冒认官方，不推断运营主体。
+ 
+-＃公众号-真正的人工智能
++</details>
+ 
+-＃X-北大朱松纯 暗物智能理论。我不了解，这里有一个这边给的解读 <https://www.bilibili.com/video/BV1wf4y1k7Yh?p=21>
++## 把线索变成可引用的资料
+ 
+-＃视频-YouTube-用户SingularityNET <https://www.youtube.com/channel/UCbTE8vfz5zuEK5uRnc2yjrw>
++- 找到具体题名、作者、时间与原始出处，再引用观点；账号名称、群聊转述和搜索词先作为线索。
++- 实验记录保留版本、环境、输入、输出和失败情况。演示成功与通用能力证明，是不同层次的结论。
++- 会议文集与教材优先通过作者、出版社、会议或图书馆取得。群文件的完整性和再分发授权需要另查。
++- 本次访问失败，只说明这次未能核验；不据此断言链接永久失效或内容不存在。
+ 
+-＃视频-YouTube搜索OpenNARS。能搜索到一些
++如果你补到了旧视频的标题和讲者、博客的原文，或某条资料的更新入口，欢迎按[贡献指南](/contact/contributing/formats)附上出处。让下一位读者少绕一次路，就是一份有用的贡献。
+diff --git a/content/contact/index.md b/content/contact/index.md
+index fe313a2..fbc5695 100644
+--- a/content/contact/index.md
++++ b/content/contact/index.md
+@@ -1,5 +1,6 @@
+ ---
+ order: 6
++comments: false
+ ---
+ 
+ # 联系我们
+@@ -16,6 +17,13 @@ order: 6
+ 
+ 该通知是历史信息入口，不代表当前招生名额、截止日期或录取承诺；申请条件与当期安排请以目标院校及导师最新正式信息为准。
+ 
++## 公开学术联系
++
++以下是个人研究联系邮箱，不是协会统一收件箱。2026 年 10 月 19 日已核对对应机构/本人主页；来信请说明研究问题和相关材料。
++
++- 王培：<pei.wang@temple.edu> · [天普大学本人学术主页](https://cis.temple.edu/~pwang/)
++- 徐英瑾：<yjxu@fudan.edu.cn> · [复旦大学官方人物页](https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm)
++
+ ## 在线资源
+ 
+ - **QQ 群**：[[contact/documents_and_qq_group|查看群号和资源链接]]
+@@ -23,6 +31,14 @@ order: 6
+ - **Gitee（中国境内镜像）**：[Hailay/agi-society-cn](https://gitee.com/Hailay/agi-society-cn)
+ - **在线知识库**：[wiki.agi-society.cn](https://wiki.agi-society.cn/)
+ 
++## 研究与工程交流
++
++- **第一次接触 AGI**：从[知识地图](/learn/map)或[动手试玩](/learn/try)开始，带着具体观察交流。
++- **开展学术研究**：沿[理论原文](/research/nars/theory/)、[人物研究资料](/about/people)和[会议报告](/conference/)找到问题与出处。
++- **评估工程方向或合作可能**：先查看[项目与工具](/learn/projects)的源码、接口与实验边界，再通过上方公开渠道介绍应用场景、可用数据和希望验证的问题。
++
++项目收录、资料介绍不代表商业产品保证或协会对具体项目的背书。是否合作、范围与条件需由相关团队进一步沟通。
++
+ ## 参与贡献
+ 
+ 本站内容开放编辑，欢迎提交 Pull Request。
+diff --git a/content/index.md b/content/index.md
+index 15f183f..97a0767 100644
+--- a/content/index.md
++++ b/content/index.md
+@@ -157,9 +157,9 @@ AGI 认知科学，人工智能情感
+ 
+ ### 交流与合作
+ 
+-找研究团队、交流渠道和公开联系方式。
++带着研究问题、可复现实验或具体应用场景，了解研究团队与公开交流渠道。
+ 
+-[联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
++[项目与工程入口](/learn/projects) · [联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
+ 
+ </div>
+ 
+@@ -179,6 +179,6 @@ AGI 认知科学，人工智能情感
+ 
+ <div class="home-footer">
+ 
+-内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
++文字内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可；第三方照片除外 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
+ 
+ </div>
+diff --git a/content/learn/map.md b/content/learn/map.md
+index 19e5ca7..f0da4b8 100644
+--- a/content/learn/map.md
++++ b/content/learn/map.md
+@@ -18,3 +18,29 @@ outline: false
+ - [学习资源与推荐阅读](/research/nars/theory/learning_resources)
+ - [项目如何区分与选择](/learn/projects)
+ - [补充材料与修正文档](/contact/contributing/)
++
++## 一起维护这份知识库
++
++本站知识内容开放协作。你可以补充原始出处、纠正失效链接或完善教程；正文以 Markdown 保存，通过 [GitHub 修改与 Pull Request](https://github.com/exomind-team/agi-society-cn) 提交，具体格式与审核方式见[贡献指南](/contact/contributing/formats)。提交修改不等于自动发布，涉及版权或个人资料时先核实来源与许可。
++
++[旧维基入口](/wiki/)继续保留，理论、实现、应用、思想与会议材料已在上方统一索引。协会介绍、人物、联系、新闻与阅读入口归入“全站补充索引”；六组目录共同覆盖本站全部 Markdown 页面。
++
++## 外部资料与历史入口
++
++- [AGI 资源导读](/contact/documents_and_qq_group)：24项原文、代码、视频与社群线索，逐项保留核验范围。
++- [NARS 学习资源](/research/nars/theory/learning_resources)：课程、著作与外部研究入口。
++- [协会现行官网](https://www.agi-society.cn/)：原有协会信息与通知；本先锋版尚未替换其正式域名。
++
++<details>
++<summary>OpenNARS 国际项目与历史研讨资料</summary>
++
++以下入口于 2026-10-19 核验，分别服务于找项目、读历史讨论与追踪研究；旧活动不表示当前开放报名。
++
++- [OpenNARS 项目主页](https://www.opennars.org/)：原始源码、发行物、出版物和社区入口。本站已提供前向链接，上游是否加入本协会链接由其维护者决定。
++- [OpenNARS Discussion Group](https://groups.google.com/g/open-nars)：公开讨论列表可读，当前可见含 2026-07-08 的讨论；列表可见不等于所有附件与成员内容均开放。
++- [NARS Workshop 2020](https://www.opennars.org/workshop2020/)：2020-06-23 的历史教程、项目报告与议程，适合对照不同研究方向。
++- [NARS Workshop 2019](https://cis.temple.edu/tagit/events/NARS-AGI19.html)：项目主页仍提供此历史链接；本次正文解析为空，保留线索，不声称议程、录像均已读验。
++- [Temple AGI Team](https://cis.temple.edu/tagit/)：研究组出版物、演示、报告与资源导航；这是研究团队入口，不替代协会身份或组织归属。
++- [OpenNARS Blog](https://www.opennars.org/blog/index.html)：可读的历史评论入口，当前目录显示 2021-01-03 文章，不将其描述为持续更新新闻源。
++
++</details>
+diff --git a/content/learn/projects.md b/content/learn/projects.md
+index 899db5f..de01fa4 100644
+--- a/content/learn/projects.md
++++ b/content/learn/projects.md
+@@ -4,15 +4,25 @@ order: 3
+ comments: true
+ ---
+ 
++<script setup>
++import ProjectRoles from '../../.vitepress/theme/components/ProjectRoles.vue'
++</script>
++
+ # 选择项目与工具
+ 
+ 先确定你要做什么，再选择代码。能直接接受 Narsese 的推理器、把推理器接入环境的工具，以及受 NARS 启发的实验，承担的是不同工作。
+ 
++## 先认清项目的来源与位置
++
++- **OpenNARS 主线及相关分发**：从 [[opennars|OpenNARS]] 进入核心、研究版、发行版和应用层。它们的版本、依赖和所带示例需要分别核对。
++- **社区实现与集成**：社区可以重新实现推理器，也可以只做桥接、工具和实验环境；先用 [[projects/nars_impl/index|实现总览]] 和 [[projects/nars_derivatives/index|应用与工具索引]] 区分这两类工作。
++- **外围影响与交叉探索**：受 NARS 思想启发的模型或论文附属实验，沿下方“与其他方法的结合”查阅；不把启发关系标成内核实现或官方背书。
++
+ ## 我想先看一次推理和行动
+ 
+ 从 [[learn/try|动手试玩 NARS]] 开始。[[opennars304ts|OpenNARS 304 TS]] 提供浏览器终端和 Demo Lab，适合把输入、推理周期、感知、操作放在一起观察。
+ 
+-准备继续读代码时，注意 Core 与 Demo 是不同仓库：前者实现推理核心，后者连接实验环境。项目页统一提供仓库、来源说明与维护信息。
++<ProjectRoles />
+ 
+ ## 我想研究或修改推理内核
+ 
+diff --git a/content/learn/try.md b/content/learn/try.md
+index 8556d72..864e5dd 100644
+--- a/content/learn/try.md
++++ b/content/learn/try.md
+@@ -48,7 +48,27 @@ comments: true
+ 
+ ## 想在本机运行 Java 版？
+ 
+-转到 [[opennars|OpenNARS 项目页]]，从其仓库入口查看准备使用的版本。该页记录的环境信息为 Java 8+、Maven，README 提供 Lab、Applications、示例 Narsese 与 GUI 入口。
++先取 [官方 v3.0.4 完整预编译包](https://github.com/opennars/opennars-lab/releases/tag/v3.0.4)，不用把 GitHub 的 Source code ZIP 当成可执行发行物。该历史包包含 Lab 与 Applications 两个 JAR；下载及包内容已于 2026-10-19 核验，尚未运行验收。
++
++<details>
++<summary>包里有什么？从示例回到源码</summary>
++
++|想观察什么|包内模块与源码|本轮核验边界|
++|---|---|---|
++|词性与语法实验|Lab 的 [LanguageGUI](https://github.com/opennars/opennars-lab/blob/v3.0.4/src/main/java/org/opennars/lab/language/LanguageGUI.java)，附 language_knowledge.nal|源码、启动器连接及 JAR 类/资源存在；不是通用中文 NLP 产品|
++|小世界代理行为|Lab 的 [SimNAR](https://github.com/opennars/opennars-lab/blob/v3.0.4/src/main/java/org/opennars/lab/microworld/SimNAR.java)|源码、启动器连接及 JAR 类存在；未验收学习曲线|
++|概念与关系图|GUI 的 [NARGraphPanel、InheritanceGraph、ImplicationGraph](https://github.com/opennars/opennars-gui/tree/v3.0.4/src/main/java/org/opennars/gui/graph)|类已打入 Lab JAR；未证明与其他实验共享完整工作流|
++|路口与关系映射|[Applications 启动器](https://github.com/opennars/opennars-applications/blob/v3.0.4/src/main/java/org/opennars/applications/Launcher.java)中的 Crossing、Identity mapping|源码调用与 JAR 存在；不同于 C 语言 ONA|
++
++官方包的两个入口分别是 bin_lab/opennars-lab-3.0.4-SNAPSHOT.jar 与 bin_applications/opennars-applications-3.0.4-SNAPSHOT.jar；未发现一键启动脚本。README 的 Java 8+ 为上游历史要求，本轮没有验证各平台/JDK兼容性。
++
++[核心源码](https://github.com/opennars/opennars/tree/v3.0.4)与 Java Applications 使用 MIT；Lab 与 GUI 使用 GPL v3，各组件许可应分别保留。[v3.1.0 发布说明](https://github.com/opennars/opennars/releases/tag/v3.1.0)明确实验架构与过程学习限制，因此不按更大的版本号默认推荐。
++
++本次下载文件 SHA-256：de616fb31301d6d5f5550a41c35a034cb1f29ba6228880d073f202f19956ace7（本次计算，非上游签名）。此处提供上游发行物，没有声称已制作新的综合包或完成端到端运行验收。
++
++</details>
++
++转到 [[opennars|OpenNARS 项目页]] 继续查阅原始资料。
+ 
+ 页面下方的 [[opennars#快速入门-迁移自官网|历史快速入门]] 保留了旧版 Windows 目录、截图和命令，适合对照历史资料；先核对版本、依赖与文件路径，再使用其中的步骤。这里不把旧教程当作已在当前环境验证过的安装方案。
+ 
+diff --git a/content/projects/nars_derivatives/index.md b/content/projects/nars_derivatives/index.md
+index f3aed5c..aa76f28 100644
+--- a/content/projects/nars_derivatives/index.md
++++ b/content/projects/nars_derivatives/index.md
+@@ -6,7 +6,19 @@ comments: true
+ 
+ 本页汇总与 NARS 相关的衍生项目：基于 NARS 内核或 NAL 模型，但**不直接实现完整 NARS 推理引擎**的项目（典型如应用、工具、论文附属实现、跨学科扩展）。
+ 
+-若为 NARS 各版实现的直接精简/重写，请见 [[../index|NARS各版实现]]。
++若为 NARS 各版实现的直接精简/重写，请见 [[projects/nars_impl/index|NARS各版实现]]。
++
++## OpenNARS 相关实现与分发仓库
++
++下面三项是 opennars 组织下的研究版、发行版和精简版，与应用或可视化工具分别查阅。仓库归属不等于它们拥有完全相同的内核能力；版本与运行方法以各仓库和 [[projects/nars_impl/opennars|OpenNARS 项目页]] 的来源记录为准。
++
++| 项目 | 语言 | 维护者 | 简介 | 仓库 |
++|---|---|---|---|---|
++| OpenNARS-for-Research | Java | opennars 项目 | OpenNARS 3.1.1 延伸版 | [仓库](https://github.com/opennars/OpenNARS-for-Research) |
++| opennars_v3.1.2 | Java | opennars 项目 | OpenNARS 3.1.2 release | [仓库](https://github.com/opennars/opennars_v3.1.2) |
++| opennars-demavenized | Java | opennars 项目 | 无 Maven，并移除部分控制功能的精简版 | [仓库](https://github.com/opennars/opennars-demavenized) |
++
++Java 核心的组件接入与应用示例另见下方 `opennars-applications`，以及 [[learn/projects|按用途选择项目]]。本页不将研究版、发行版、精简版与应用层合并为一个软件包，也不据仓库同属一个组织推断某示例已经内置。
+ 
+ ## 主轴：NARS 在项目中的地位（深度由深到浅）
+ 
+@@ -31,10 +43,7 @@ comments: true
+ - [NARS-Web-GUI](https://github.com/ccrock4t/NARS-Web-GUI)（ccrock4t，JavaScript）— NARS Web GUI
+ - [NARSBlocksWorldEvolution](https://github.com/ccrock4t/NARSBlocksWorldEvolution)（ccrock4t，C#，2025-10）— 块世界演化实验
+ - [NARSGridWorldEvolution](https://github.com/ccrock4t/NARSGridWorldEvolution)（ccrock4t，C#，2025-10）— 网格世界演化实验
+-- [OpenNARS-for-Research](https://github.com/opennars/OpenNARS-for-Research)（opennars 组织，Java）— OpenNARS 3.1.1（latest）延伸版
+-- [opennars_v3.1.2](https://github.com/opennars/opennars_v3.1.2)（opennars 组织，Java）— OpenNARS 3.1.2 release 版
+ - [opennars-applications](https://github.com/opennars/opennars-applications)（opennars 组织，Java）— OpenNARS v3.0.0+ 应用层（Lab 之外，MIT 许可）
+-- [opennars-demavenized](https://github.com/opennars/opennars-demavenized)（opennars 组织，Java）— 无 Maven + 去 control features 的精简版
+ 
+ ### B. 灵感启发自 NARS（不调用 NARS 引擎，也不完整实现 NAL）
+ 
+@@ -62,7 +71,7 @@ comments: true
+ | ONAT | Python | maxeeem | OpenNARS Bridge Agent | [仓库](https://github.com/maxeeem/ONAT) |
+ | [[nars-fighterplane|NARS-FighterPlane]] | Python | Noctis-Xu（Boyang Xu） | NARS 控制战机游戏 AI 的 demo | [仓库](https://github.com/Noctis-Xu/NARS-FighterPlane) |
+ 
+-#### A3. 框架 / 可视化 / 应用（13 项）
++#### A3. 框架 / 可视化 / 应用
+ 
+ | 项目 | 语言 | 维护者 | 简介 | 仓库 |
+ |---|---|---|---|---|
+@@ -74,12 +83,9 @@ comments: true
+ | NARS-Web-GUI | JavaScript | ccrock4t | NARS Web GUI | [仓库](https://github.com/ccrock4t/NARS-Web-GUI) |
+ | NARSBlocksWorldEvolution | C# | ccrock4t | 块世界演化实验（2025-10） | [仓库](https://github.com/ccrock4t/NARSBlocksWorldEvolution) |
+ | NARSGridWorldEvolution | C# | ccrock4t | 网格世界演化实验（2025-10） | [仓库](https://github.com/ccrock4t/NARSGridWorldEvolution) |
+-| OpenNARS-for-Research | Java | opennars 项目 | OpenNARS 3.1.1 延伸版 | [仓库](https://github.com/opennars/OpenNARS-for-Research) |
+-| opennars_v3.1.2 | Java | opennars 项目 | OpenNARS 3.1.2 release | [仓库](https://github.com/opennars/opennars_v3.1.2) |
+ | opennars-applications | Java | opennars 项目 | OpenNARS 应用层（MIT） | [仓库](https://github.com/opennars/opennars-applications) |
+-| opennars-demavenized | Java | opennars 项目 | 无 Maven 精简版 | [仓库](https://github.com/opennars/opennars-demavenized) |
+ 
+-### B. 灵感启发自 NARS（3 项）
++### B. 灵感启发自 NARS
+ 
+ | 项目 | 语言 | 维护者 | 简介 | 仓库 |
+ |---|---|---|---|---|
+diff --git a/content/projects/nars_impl/index.md b/content/projects/nars_impl/index.md
+index 6f723fb..bf3194c 100644
+--- a/content/projects/nars_impl/index.md
++++ b/content/projects/nars_impl/index.md
+@@ -1,5 +1,6 @@
+ ---
+ comments: true
++content-order: order
+ ---
+ 
+ # NARS各版实现 索引
+diff --git a/content/projects/nars_impl/introduction.md b/content/projects/nars_impl/introduction.md
+index 6970144..49cfd12 100644
+--- a/content/projects/nars_impl/introduction.md
++++ b/content/projects/nars_impl/introduction.md
+@@ -1,5 +1,6 @@
+ ﻿---
+ comments: true
++order: -1
+ ---
+ 
+ # NARS各版实现 介绍

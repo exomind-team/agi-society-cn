@@ -6,6 +6,7 @@ import DocFooterLicense from './components/DocFooterLicense.vue'
 import ResearchHome from './components/ResearchHome.vue'
 import ResearchNews from './components/ResearchNews.vue'
 import KnowledgeMap from './components/KnowledgeMap.vue'
+import PeopleProfiles from './components/PeopleProfiles.vue'
 import PeopleDirectory from './components/PeopleDirectory.vue'
 import PreviewContext from './components/PreviewContext.vue'
 import PreviewDiscussion from './components/PreviewDiscussion.vue'
@@ -39,6 +40,7 @@ export default {
     ctx.app.component('ResearchHome', ResearchHome)
     ctx.app.component('ResearchNews', ResearchNews)
     ctx.app.component('PeopleDirectory', PeopleDirectory)
+    ctx.app.component('PeopleProfiles', PeopleProfiles)
     ctx.app.component('KnowledgeMap', KnowledgeMap)
   },
 } satisfies Theme

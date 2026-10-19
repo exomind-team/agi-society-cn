@@ -4,7 +4,7 @@ import path from 'node:path'
 import {execFileSync} from 'node:child_process'
 import {parse} from 'parse5'
 const baseline='f79d9c46654a2e566f26edd556d474c76bdbd6a6'
-const allowed=new Set(['content/index.md','content/research/nars/theory/learning_resources.md','content/wiki/index.md','content/contact/index.md'])
+const allowed=new Set(['content/index.md','content/research/nars/theory/learning_resources.md','content/wiki/index.md','content/contact/index.md','content/about/team.md','content/conference/index.md','content/projects/nars_impl/introduction.md','content/projects/nars_derivatives/index.md','content/contact/documents_and_qq_group.md','content/about/index.md','content/projects/nars_impl/index.md','content/contact/contributing/formats.md'])
 const files=execFileSync('git',['ls-tree','-r','--name-only',baseline,'content'],{encoding:'utf8'}).trim().split('\n')
 const changed=[]
 for(const file of files){
@@ -21,8 +21,9 @@ const map=parse(fs.readFileSync('dist/learn/map.html','utf8'))
 const tree=all(map,n=>(attrs(n).class||'').split(' ').includes('knowledge-groups'))[0]
 assert.ok(tree)
 const hrefs=new Set(all(tree,n=>n.tagName==='a').map(n=>attrs(n).href))
-const mapFiles=files.filter(f=>f.endsWith('.md')&&/^content\/(research|projects\/nars_impl|projects\/nars_derivatives|wiki\/thought_library|conference)\//.test(f))
-for(const file of mapFiles){const url='/'+file.slice(8).replace(/\.md$/,'').replace(/\/index$/,'/');assert.ok(hrefs.has(url),`Missing map page: ${file}`)}
+const allMarkdown=fs.readdirSync('content',{recursive:true}).filter(f=>f.endsWith('.md')).map(f=>'content/'+f)
+const mapFiles=allMarkdown
+for(const file of mapFiles){const url=file==='content/index.md' ? '/' : '/'+file.slice(8).replace(/\.md$/,'').replace(/\/index$/,'/');assert.ok(hrefs.has(url),`Missing map page: ${file}`)}
 let checked=0
 for(const filename of ['index.html','learn/map.html','learn/try.html','learn/projects.html','contact/index.html']){
  const doc=parse(fs.readFileSync('dist/'+filename,'utf8'))

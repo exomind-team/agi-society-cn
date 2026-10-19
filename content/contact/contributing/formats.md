@@ -10,6 +10,14 @@ comments: true
 
 本 Wiki 在 VitePress 基础上集成了 [Nólëbase](https://nolebase.ayaka.io/) 与 [markdown-it-obsidian-callouts](https://github.com/ebullient/markdown-it-obsidian-callouts)，兼容 Obsidian 风格的 Callout 语法。
 
+## 正文与页面组件的编辑边界
+
+正文作者可以维护标题、段落、列表、引用、简单表格、代码围栏、外部链接及相对路径图片。图片需保留替代文字、来源和许可；frontmatter 的 title、order、comments 等字段保持原有类型。同名页面使用明确路径，修改后检查网站预览中的实际链接目标。
+
+首页布局、交互组件、导航，以及独立 JSON 人物与资料数据由工程维护者修改。Obsidian 能打开这些源文件，不代表能直接所见即所得编辑组件，或无损还原整站布局。复杂 HTML/Vue、未知字段和未知块应原样保留，不能被编辑器静默删除。
+
+目前未完成真实 Obsidian 编辑、重命名、移动附件后再发布的全流程验收；也未提供管理员在线可视化编辑器。后续先以同名链接、中文锚点、表格别名、图片、Callout 与未知块建立兼容样本，再验证网站与编辑器往返一致。管理员编辑计划将文案与受控布局分别建模，保存草稿、预览、审核发布及回退，不要求作者手改 Vue 或 JSON。
+
 ## 文件规范
 
 > [!warning] 文件名规范

@@ -198,11 +198,6 @@
 .home-footer a { color: var(--ag-text-muted); text-decoration: none; }
 .home-footer a:hover { color: var(--ag-divider); }
 
-/* 搜索按钮 — 去掉 Ctrl | K 之间的竖线（改为空格间距） */
-.DocSearch-Button-Key + .DocSearch-Button-Key::before {
-  content: none !important;
-}
-
 /* ===========================================================
    响应式
    =========================================================== */

@@ -88,8 +88,22 @@ export default defineConfig({
       await nolebaseMD.install(md)
     },
     config(md) {
-      // Only the homepage personnel presentation changes. Original source files
-      // remain untouched; the component loads every original biography verbatim.
+      // Render the existing archive tables directly on the conference landing page.
+      // Original Markdown remains authoritative and its old URLs remain readable.
+      md.core.ruler.before('normalize', 'conference-parent-overview', (state) => {
+        if (state.env.relativePath !== 'conference/index.md') return
+        for (const kind of ['annual', 'group']) {
+          const source = readFileSync(path.join(process.cwd(), 'content/conference', kind, 'index.md'), 'utf8')
+          const marker = kind === 'annual' ? '## 年会列表' : '## 学年索引'
+          const body = source.split(marker)[1]
+          if (!body) throw new Error(`Missing conference source marker: ${kind}`)
+          const resolved = body.replace(/\[\[([^\]]+)\]\]/g, (_, value) => {
+            const [target, label] = value.replace(/\\\|/g, '|').split('|')
+            return `[${label || target}](/conference/${kind}/${target})`
+          }).replace(/^## /gm, '### ')
+          state.src = state.src.replace(`<ConferenceYears kind="${kind}" />`, `<div class="conference-overview conference-${kind}">\n\n${resolved}\n\n</div>`)
+        }
+      })
       md.core.ruler.before('normalize', 'homepage-people-view', (state) => {
         if (state.env.relativePath !== 'index.md') return
         state.src = state.src.replace(/<div class="team-grid">[\s\S]*?(?=\n<\/section>)/, '<PeopleDirectory />\n')
@@ -117,7 +131,7 @@ export default defineConfig({
       { text: '关于与联系', items: [
         { text: '协会简介', link: '/about/' },
         { text: '研究团队', link: '/contact/team' },
-        { text: '联系与参与', link: '/contact/' },
+        { text: '联系我们', link: '/contact/' },
         { text: '贡献指南', link: '/contact/contributing/' },
       ] },
     ],

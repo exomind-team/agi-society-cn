@@ -1,0 +1,982 @@
+[
+  {
+    "id": "wang-pei",
+    "name": "王培",
+    "affiliation": "天普大学 · Associate Professor of Instruction",
+    "summary": "研究知识与资源不足条件下的智能推理，构建非公理推理系统 NARS。",
+    "verifiedOn": "2026-10-19",
+    "portrait": {
+      "file": "wang-pei-existing.png",
+      "sourceUrl": "/about/team",
+      "originalUrl": null,
+      "sha256": "a1033d3009eeae17bdfebd4a8fddd7807cb3e4a946349a32689c4a8060d8dae2",
+      "caption": "沿用协会既有照片",
+      "rights": "沿用仓库已有素材；原始摄影者及授权记录未载明，不宣称开放许可。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "Temple University · Associate Professor of Instruction",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "核验时所列"
+          },
+          {
+            "text": "Artificial General Intelligence Society（国际组织） · Vice Chair",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "核验时所列"
+          },
+          {
+            "text": "Journal of Artificial General Intelligence · Chief Executive Editor",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "核验时所列"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "通用人工智能、非公理推理系统NARS、非公理逻辑、知识与资源不足条件下的推理",
+            "sources": [
+              "3",
+              "4"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "代表著作与论文",
+        "items": [
+          {
+            "text": "Rigid Flexibility: The Logic of Intelligence。专著；Springer",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2006"
+          },
+          {
+            "text": "Non-Axiomatic Logic: A Model of Intelligent Reasoning, Second Edition。专著；World Scientific",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2025"
+          },
+          {
+            "text": "On Defining Artificial Intelligence。论文；Journal of Artificial General Intelligence 10(2):1–37",
+            "sources": [
+              "4"
+            ],
+            "timeScope": "2019"
+          },
+          {
+            "text": "The OpenNARS implementation of the Non-Axiomatic Reasoning System。合著会议论文",
+            "sources": [
+              "4"
+            ],
+            "timeScope": "2016"
+          },
+          {
+            "text": "Intelligence: From Definition to Design。论文；PMLR 192:35–47",
+            "sources": [
+              "4"
+            ],
+            "timeScope": "2022"
+          }
+        ]
+      },
+      {
+        "title": "学习与任职经历",
+        "items": [
+          {
+            "text": "北京大学 · 计算机科学学士",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "1983"
+          },
+          {
+            "text": "北京大学 · 计算机科学硕士",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "1986"
+          },
+          {
+            "text": "Indiana University · 计算机科学与认知科学博士",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "1995"
+          },
+          {
+            "text": "北京大学计算机系讲师",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "1986-09—1991-04"
+          },
+          {
+            "text": "Indiana University认知心理实验室研究助理",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "1995-08—1996-01"
+          },
+          {
+            "text": "Webmind研究总监",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2000-01—2001-04"
+          },
+          {
+            "text": "Temple访问助理教授，后改称Lecturer",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2001-07—2008-05"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "学术主页",
+        "href": "https://cis.temple.edu/~pwang/"
+      },
+      {
+        "label": "CV",
+        "href": "https://www.cis.temple.edu/~pwang/PeiWangCV.html"
+      },
+      {
+        "label": "中文资料",
+        "href": "https://cis.temple.edu/~pwang/Chinese.html"
+      },
+      {
+        "label": "成果目录",
+        "href": "https://cis.temple.edu/~pwang/papers.html"
+      },
+      {
+        "label": "OpenNARS",
+        "href": "https://github.com/opennars/opennars"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "Temple官方名录",
+        "url": "https://cst.temple.edu/directory/pei-wang",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "本人CV",
+        "url": "https://www.cis.temple.edu/~pwang/PeiWangCV.html",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "3",
+        "label": "本人学术主页",
+        "url": "https://cis.temple.edu/~pwang/",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "4",
+        "label": "本人论文目录",
+        "url": "https://cis.temple.edu/~pwang/papers.html",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "5",
+        "label": "协会网站现有源文件",
+        "url": "/about/team",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "代表作和履历为精选资料，非完整成果目录。"
+  },
+  {
+    "id": "hu-xiangen",
+    "name": "胡祥恩",
+    "affiliation": "香港理工大学 · 学习科学与技术讲座教授",
+    "summary": "连接数学心理学、认知建模与智能教育，研究智能辅导和大语言模型支持的学习。",
+    "verifiedOn": "2026-10-19",
+    "portrait": {
+      "file": "hu-xiangen-memphis.jpg",
+      "sourceUrl": "https://classic.memphis.edu/psychology/people/faculty/hu.php",
+      "originalUrl": "https://www.memphis.edu/psychology/people/faculty/images/xiangen-hu.jpg",
+      "sha256": "302a1b523e189a7fc5937f260ae32fad8919fa264fba4da34fa50401feda0731",
+      "caption": "官方公开资料",
+      "rights": "Memphis页脚版权保留；https://www.memphis.edu/notice/index.php 声明所有内容除另注外归大学所有。本轮未见照片单独授权/明确禁转载条文；已采集，非开放许可，不赋予额外许可。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "The Hong Kong Polytechnic University · Chair Professor of Learning Sciences and Technologies",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "核验时所列"
+          },
+          {
+            "text": "The Hong Kong Polytechnic University · Director, Educational Research and Technologies Centre",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "核验时所列"
+          },
+          {
+            "text": "University of Memphis, Department of Psychology · Professor Emeritus",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "核验时所列"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "数学心理学、认知心理学、一般加工树（GPT）模型与分类数据统计、知识表示、智能辅导系统、分布式学习技术",
+            "sources": [
+              "4",
+              "1"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "代表著作与论文",
+        "items": [
+          {
+            "text": "Statistical analysis of general processing tree models with the EM algorithm。合著论文；Psychometrika 59(1):21–47",
+            "sources": [
+              "5"
+            ],
+            "timeScope": "1994"
+          },
+          {
+            "text": "Extending General Processing Tree Models to Analyze Reaction Time Experiments。论文；Journal of Mathematical Psychology 45(4):603–634",
+            "sources": [
+              "5"
+            ],
+            "timeScope": "2001"
+          },
+          {
+            "text": "A Revised Algorithm for Latent Semantic Analysis。合著会议论文；IJCAI 2003:1489–1491",
+            "sources": [
+              "5"
+            ],
+            "timeScope": "2003"
+          },
+          {
+            "text": "SPL: A Socratic Playground for Learning Powered by Large Language Model。合著预印本",
+            "sources": [
+              "6"
+            ],
+            "timeScope": "2024"
+          },
+          {
+            "text": "Advancing Generative Intelligent Tutoring Systems with GPT-4: Design, Evaluation, and a Modular Framework for Future Learning Platforms。合著论文；Electronics 13:4876；DOI 10.3390/electronics13244876",
+            "sources": [
+              "7"
+            ],
+            "timeScope": "2024"
+          }
+        ]
+      },
+      {
+        "title": "学习与任职经历",
+        "items": [
+          {
+            "text": "华中科技大学 · 应用数学学士",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "1982"
+          },
+          {
+            "text": "华中科技大学 · 应用数学硕士",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "1985"
+          },
+          {
+            "text": "University of California, Irvine · 社会科学硕士",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "1991"
+          },
+          {
+            "text": "University of California, Irvine · 认知心理学博士",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "1993"
+          },
+          {
+            "text": "孟菲斯大学助理教授",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "1993"
+          },
+          {
+            "text": "晋升副教授",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "2000"
+          },
+          {
+            "text": "晋升心理系教授",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "2009"
+          },
+          {
+            "text": "以访问身份任华中师范大学心理学院教授、院长",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "2016起（历史经历）"
+          },
+          {
+            "text": "加入香港理工大学，获任iHERD、ERC主任与学习科学及技术讲座教授",
+            "sources": [
+              "1",
+              "2"
+            ],
+            "timeScope": "2023-12-20"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "现任机构主页",
+        "href": "https://www.polyu.edu.hk/ertc/components/page-content/people/director/prof-hu/"
+      },
+      {
+        "label": "院系主页",
+        "href": "https://www.polyu.edu.hk/apss/people/academic-staff/prof-hu-xiangen/?sc_lang=en"
+      },
+      {
+        "label": "研究成果",
+        "href": "https://research.polyu.edu.hk/en/persons/xiangen-hu/"
+      },
+      {
+        "label": "个人主页（履历未同步）",
+        "href": "https://www.xiangenhu.info/"
+      },
+      {
+        "label": "ORCID",
+        "href": "https://orcid.org/0000-0001-9045-4070"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "PolyU ERTC官方现任主任页面",
+        "url": "https://www.polyu.edu.hk/ertc/components/page-content/people/director/prof-hu/",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "PolyU任命公告",
+        "url": "https://www.polyu.edu.hk/publications/excelximpact/issue/202401/polyu-community/senior-staff-appointments-and-promotions-Winter2023",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "3",
+        "label": "Memphis心理系官方资料",
+        "url": "https://classic.memphis.edu/psychology/people/faculty/hu.php",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "4",
+        "label": "PolyU应用社会科学系",
+        "url": "https://www.polyu.edu.hk/apss/people/academic-staff/prof-hu-xiangen/?sc_lang=en",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "5",
+        "label": "Memphis校方成果目录",
+        "url": "https://umwa.memphis.edu/fcv/viewprofile.php?uuid=xhu",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "6",
+        "label": "作者预印本",
+        "url": "https://arxiv.org/abs/2406.13919",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "7",
+        "label": "PolyU机构库论文",
+        "url": "https://ira.lib.polyu.edu.hk/bitstream/10397/113501/1/electronics-13-04876.pdf",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "代表作和履历为精选资料，非完整成果目录。"
+  },
+  {
+    "id": "xu-yingjin",
+    "name": "徐英瑾",
+    "affiliation": "复旦大学哲学学院 · 教授、博士生导师",
+    "summary": "研究人工智能哲学、心灵哲学和分析哲学，关注知识论与计算机编程之间的联系。",
+    "verifiedOn": "2026-10-19",
+    "portrait": {
+      "file": "xu-yingjin.jpg",
+      "sourceUrl": "https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm",
+      "originalUrl": "https://philosophy.fudan.edu.cn/_upload/article/images/80/f3/56b9138841bf9211ae5f80f9dfd9/5632d963-c229-48cc-99a9-cf1de8f79323.jpg",
+      "sha256": "22f68ed38bda58d1acc8f54ced36effd9a504d553dc737b637448ef3b7205bd1",
+      "caption": "校方公开人物资料",
+      "rights": "照片来自校方公开人物页，未见独立开放许可；版权归原权利人，不纳入本站正文的 CC BY-SA 授权。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "复旦大学哲学学院 · 教授、博士生导师",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "核验时所列"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "人工智能哲学、分析哲学史、心灵哲学、分析哲学与欧陆哲学比较",
+            "sources": [
+              "2"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "代表著作与论文",
+        "items": [
+          {
+            "text": "哲学证成与机器编程：人工智能、知识论与儒家的三方对话。专著；复旦大学出版社",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2023"
+          },
+          {
+            "text": "心智、语言和机器——维特根斯坦哲学与人工智能哲学的对话。专著；人民出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2013"
+          },
+          {
+            "text": "语境建模。专著；复旦大学出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2015"
+          },
+          {
+            "text": "Why is the Husserlian Notion of “Intentionality” Needed by Artificial General Intelligence?。论文；Philosophical Forum 49(4):401–425",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2018"
+          },
+          {
+            "text": "The Frame Problem, the Relevance Problem, and a Package Solution to Both。合著论文（Yingjin Xu, Pei Wang）；Synthese 187(S1):43–72",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2012"
+          }
+        ]
+      },
+      {
+        "title": "任职经历",
+        "items": [
+          {
+            "text": "复旦大学哲学系讲师",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2004-09—2007-09"
+          },
+          {
+            "text": "复旦大学哲学学院副教授",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2007-09—2013-10"
+          },
+          {
+            "text": "复旦大学哲学学院教授",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2013-09—官网未列结束时间"
+          }
+        ]
+      },
+      {
+        "title": "协会学术交流",
+        "items": [
+          {
+            "text": "2025年第十届年会报告：黑格尔的意识概念及其对认知科学与AGI的意义",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2025"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "学校人物主页",
+        "href": "https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm"
+      },
+      {
+        "label": "2025年会报告",
+        "href": "/conference/annual/2025"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "复旦大学哲学学院：徐英瑾",
+        "url": "https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "复旦大学哲学学院：新书速递",
+        "url": "https://philosophy.fudan.edu.cn/30/4b/c20799a667723/page.htm",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "3",
+        "label": "第十届中国通用人工智能年会",
+        "url": "https://www.agi-society.cn/wiki/conference/annual/2025",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "代表成果为精选，不代表完整或最新全部成果。官网职级日期有一个月重叠，本页保留其原始时间。"
+  },
+  {
+    "id": "wei-yidong",
+    "name": "魏屹东",
+    "affiliation": "山西大学哲学学院 · 二级教授、博士生导师",
+    "summary": "从事科学技术哲学、科学技术史和西方哲学研究，关注科学认知、适应性表征及人工智能的哲学问题。",
+    "verifiedOn": "2026-10-19",
+    "portrait": {
+      "file": "wei-yidong.jpg",
+      "sourceUrl": "https://zxxy.sxu.edu.cn/szdw/wgzx/07d4f2c384e7407986ec6e20c6b3419e.htm",
+      "originalUrl": "https://zxxy.sxu.edu.cn/images/2019-12/4008e1984e244f5b8bfe52820099eee9.jpg",
+      "sha256": "615b742bf741b95bd096b5ae28cce4afbc07cf03fb9a6e2c92ef509379a96394",
+      "caption": "校方公开人物资料",
+      "rights": "照片来自校方公开人物页，未见独立开放许可；版权归原权利人，不纳入本站正文的 CC BY-SA 授权。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "山西大学哲学学院 · 二级教授、博士生导师",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "核验时所列"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "科学技术哲学、科学技术史、西方哲学、科学认知与适应性表征",
+            "sources": [
+              "1"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "代表著作与论文",
+        "items": [
+          {
+            "text": "认知哲学手册。编著；科学出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2020"
+          },
+          {
+            "text": "科学表征：从结构解析到语境建构。专著；科学出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2018"
+          },
+          {
+            "text": "认知、模型与表征：一种基于认知哲学的探讨。专著；科学出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2016"
+          },
+          {
+            "text": "语境实在论：一种新科学哲学范式。专著；科学出版社",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2015"
+          },
+          {
+            "text": "人工智能对不确定性的适应性表征。论文；上海师范大学学报",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2020"
+          }
+        ]
+      },
+      {
+        "title": "任职经历",
+        "items": [
+          {
+            "text": "山西大学哲学系任教",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "1994-07—官网未列结束时间"
+          },
+          {
+            "text": "教授",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2000—官网未列结束时间"
+          },
+          {
+            "text": "山西大学哲学社会学学院院长",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2007—2013"
+          }
+        ]
+      },
+      {
+        "title": "协会学术交流",
+        "items": [
+          {
+            "text": "2025年第十届年会报告：通用人工智能：路在何方？",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2025"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "学校人物主页",
+        "href": "https://zxxy.sxu.edu.cn/szdw/wgzx/07d4f2c384e7407986ec6e20c6b3419e.htm"
+      },
+      {
+        "label": "2025年会报告",
+        "href": "/conference/annual/2025"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "山西大学哲学学院：魏屹东 教授",
+        "url": "https://zxxy.sxu.edu.cn/szdw/wgzx/07d4f2c384e7407986ec6e20c6b3419e.htm",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "第十届中国通用人工智能年会",
+        "url": "https://www.agi-society.cn/wiki/conference/annual/2025",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "代表成果为精选，不代表完整或最新全部成果。2007—2013年院长属于历史职务。"
+  },
+  {
+    "id": "sang-xinmin",
+    "name": "桑新民",
+    "affiliation": "南京大学 · 荣休教授",
+    "summary": "从教育哲学、教育技术到学习科学，关注人工智能时代的学习与教育创新。",
+    "verifiedOn": "2026-10-19",
+    "portrait": {
+      "file": "sang-xinmin-nju.jpg",
+      "sourceUrl": "https://edu.nju.edu.cn/f7/82/c13078a259970/page.htm",
+      "originalUrl": "https://edu.nju.edu.cn/_upload/article/images/1e/09/49e67c3945f59f41217579842af2/e7befb42-84e5-485e-b799-1f357666e42d.jpg",
+      "sha256": "d44f8cdcae14f7a2c25f5eae65cfc636b1325cca489e90d48b43df4584c78bb0",
+      "caption": "历史校园照",
+      "rights": "校方公开人物页图；未发现图片单独开放许可或明确禁止下载/转载文字。已保留来源，不称其为开源。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "南京大学 · 荣休教授",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2025-07-15"
+          },
+          {
+            "text": "南京大学终身教育学院 · 特聘研究顾问",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2025-09-06"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "教育哲学、教育技术学、学习科学、教育信息化、生成式人工智能与教育创新",
+            "sources": [
+              "3",
+              "1"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "代表著作与论文",
+        "items": [
+          {
+            "text": "当代教育哲学。专著；云南人民出版社",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1988"
+          },
+          {
+            "text": "呼唤新世纪的教育哲学。专著；教育科学出版社",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1993"
+          },
+          {
+            "text": "学习科学与技术。著作；高等教育出版社",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2004"
+          },
+          {
+            "text": "学习究竟是什么？——多学科视野中的学习研究论纲。论文；开放教育研究 第1期",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2005"
+          },
+          {
+            "text": "21世纪：学习向何处去？——绿色学习（G-Learning）研究论纲。论文；开放教育研究 第2期",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2011"
+          }
+        ]
+      },
+      {
+        "title": "学习与任职经历",
+        "items": [
+          {
+            "text": "北京师范大学 · 哲学系毕业",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1982"
+          },
+          {
+            "text": "北京师范大学教授",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1993"
+          },
+          {
+            "text": "创建未来教育研究中心",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1994"
+          },
+          {
+            "text": "北京师范大学教科所副所长",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1995"
+          },
+          {
+            "text": "调入华南师范大学，转向教育技术学",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "1997-10"
+          },
+          {
+            "text": "调入南京大学，创建教育技术学本科专业及网络化学习与管理研究所",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2004-03"
+          }
+        ]
+      },
+      {
+        "title": "教学与学术荣誉",
+        "items": [
+          {
+            "text": "国家级高校教学优秀成果一等奖",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2001"
+          },
+          {
+            "text": "首届国家级教学名师",
+            "sources": [
+              "3",
+              "1"
+            ],
+            "timeScope": "2003"
+          }
+        ]
+      },
+      {
+        "title": "学术交流",
+        "items": [
+          {
+            "text": "首届机器教育研讨会主席（与项贤明共同）",
+            "sources": [
+              "4"
+            ],
+            "timeScope": "2025"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "南京大学学术资料",
+        "href": "https://edu.nju.edu.cn/f7/82/c13078a259970/page.htm"
+      },
+      {
+        "label": "近年学术活动",
+        "href": "https://edu.nju.edu.cn/c2/4c/c8769a770636/page.htm"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "南京大学2025讲座报道",
+        "url": "https://edu.nju.edu.cn/c2/4c/c8769a770636/page.htm",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "南京大学终身教育学院",
+        "url": "https://slle.nju.edu.cn/fzlm/xwgg/20250906/i336408.html",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "3",
+        "label": "南京大学教师资料",
+        "url": "https://edu.nju.edu.cn/f7/82/c13078a259970/page.htm",
+        "observedOn": "2026-10-19"
+      },
+      {
+        "id": "4",
+        "label": "开放教育研究会议征稿",
+        "url": "https://openedu.sou.edu.cn/frontsite/notice_detail.aspx?lm=0&nID=359",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "代表作和履历为精选资料，非完整成果目录。旧资料中的所长、项目进行时均不作为现任或在研状态。"
+  },
+  {
+    "id": "wang-weijun",
+    "name": "王伟军",
+    "affiliation": "协会专家组",
+    "summary": "协会名录已收录；个人学术主页与照片的身份关联仍待核实。",
+    "verifiedOn": "2026-10-19",
+    "portrait": null,
+    "identityBoundary": "现有协会名录未列机构或个人主页，尚不足以确定与公开同名高校学者的对应关系。暂不将候选照片、单位和履历作为此人的资料展示。",
+    "sections": [
+      {
+        "title": "协会记录",
+        "items": [
+          {
+            "text": "协会成员名录将王伟军列入专家组。",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "既有名录"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "查看协会名录",
+        "href": "/about/team"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "协会成员名录",
+        "url": "/about/team",
+        "observedOn": "2026-10-19"
+      }
+    ],
+    "limitations": "缺少可把机构主页或肖像与协会名录直接关联的身份依据；研究合作中的同名线索不单独作为确证。"
+  }
+]

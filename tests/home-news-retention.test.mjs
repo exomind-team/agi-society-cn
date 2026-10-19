@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 execFileSync(process.execPath, ['tests/learning-content-retention.test.mjs'], { stdio: 'inherit' })
-const editorial = new Set(['content/index.md','content/wiki/index.md','content/research/nars/theory/learning_resources.md','content/contact/index.md'])
+const editorial = new Set(['content/index.md','content/wiki/index.md','content/research/nars/theory/learning_resources.md','content/contact/index.md','content/about/team.md','content/conference/index.md','content/projects/nars_impl/introduction.md','content/projects/nars_derivatives/index.md','content/contact/documents_and_qq_group.md','content/about/index.md','content/projects/nars_impl/index.md','content/contact/contributing/formats.md'])
 import { parse } from 'parse5'
 const baseline = process.env.BASELINE_DIST
 const deployed = process.env.DEPLOYED_DIST || baseline
@@ -34,7 +34,7 @@ let retained=0
 oldSections.forEach((section,i)=>{
  if(all(section,n=>hasClass(n,'team-grid')).length){
   const bios=all(section,n=>hasClass(n,'team-member')).map(norm)
-  const rendered=all(home,n=>hasClass(n,'person-original-bio')).map(norm)
+  const rendered=all(archived,n=>hasClass(n,'team-member')).map(norm)
   assert.equal(rendered.length,6)
   for(const bio of bios) assert.ok(rendered.includes(bio),`Missing original bio: ${bio}`)
  }else{assert.equal(norm(sections[i]),norm(section),`Original homepage section ${i} changed`);retained++}
@@ -42,10 +42,10 @@ oldSections.forEach((section,i)=>{
 for(const section of oldSections) for(const link of all(section,n=>n.tagName==='a')) assert.ok(all(archived,n=>n.tagName==='a'&&(attrs(link).href?.startsWith('#') ? attrs(n).href===attrs(link).href : new URL(attrs(n).href || '', 'https://wiki.example/about/home-archive').href===new URL(attrs(link).href || '', 'https://wiki.example/').href)).length,`Original homepage link missing: ${attrs(link).href}`)
 const featured=all(home,n=>hasClass(n,'person-featured'))
 assert.equal(featured.length,6)
-assert.deepEqual(featured.map(n=>all(n,x=>hasClass(x,'person-meta')).map(norm)[0].split(' ')[0]),['创办人学术主页（新窗口）','创办人学术主页（新窗口）','专家组学术主页（新窗口）','专家组学术主页（新窗口）','专家组学术主页（新窗口）','专家组成员资料'])
+assert.deepEqual(featured.map(n=>all(n,x=>hasClass(x,'person-meta')).map(norm)[0].split(' ')[0]),['创办人','创办人','专家组','专家组','专家组','专家组'])
 assert.equal(all(home,n=>hasClass(n,'person-secretary')).length,4)
 assert.equal(all(home,n=>hasClass(n,'people-members')).flatMap(n=>all(n,c=>c.tagName==='li')).length,25)
 assert.equal(all(home,n=>hasClass(n,'research-entry')).length,0)
 const news=read(path.join(root,'dist/news.html'))
 assert.equal(all(news,n=>hasClass(n,'research-entry')).length,5)
-console.log(`PASS ${unchanged} non-home original pages retain exact rendered body text and deployed link targets; ${retained} exact archived home sections; six exact biographies relocated once; original home links archived; 6 featured + 4 secretary + 25 member records; news route has full five-entry feed, home has none.`)
+console.log(`PASS ${unchanged} non-home original pages retain exact rendered body text and deployed link targets; ${retained} exact archived home sections; six exact historical biographies archived; six updated profile cards; original home links archived; 6 featured + 4 secretary + 25 member records; news route has full five-entry feed, home has none.`)

@@ -19,7 +19,7 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
             <a class="research-primary" :href="withBase('/conference/annual/2026')">阅读 2026 年会档案 <span aria-hidden="true">↗</span></a>
             <p class="research-note">武汉理工大学南湖校区 · 已举办<br>部分分论坛录像暂缺，完整议程与缺项说明保留在档案中。</p>
           </div>
-          <a class="feature-poster" :href="withBase('/conference/annual/2026#年会海报')" aria-label="查看 2026 年会原始海报与议程"><img :src="poster" alt="第十一届中国通用人工智能年会原始海报" width="1086" height="1448" /><span>查看原始海报与议程</span></a>
+          <a class="feature-poster" :href="withBase('/conference/annual/2026#年会海报')" aria-label="查看 2026 年会原始海报与议程"><img :src="poster" alt="第十一届中国通用人工智能年会原始海报" width="1086" height="1448" /></a>
         </section>
 
         <nav class="home-quick-nav" aria-label="快速导航">

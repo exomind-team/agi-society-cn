@@ -1,0 +1,29 @@
+.person-affiliation { font-size:13px!important; line-height:1.7!important; color:var(--rp-muted); margin:6px 0!important; }
+.person-summary { font-size:14px!important; line-height:1.8!important; color:var(--rp-muted); margin:6px 0!important; }
+.person-read-more { display:inline-block; padding:8px 0; font-size:12px; }
+.person-featured h4 a { color:inherit; }
+.people-source-link { margin-top:20px!important; font-size:12px; }
+.profile-jump { display:flex; flex-wrap:wrap; gap:8px 22px; margin:24px 0 36px; border-block:1px solid var(--vp-c-divider); padding:10px 0; }
+.profile-jump a { min-height:44px; display:flex; align-items:center; }
+.full-person { padding-block:28px 36px; border-bottom:1px solid var(--vp-c-divider); }
+.full-person-header { display:grid; grid-template-columns:180px minmax(0,1fr); gap:28px; align-items:start; }
+.full-person-header:not(:has(figure)) { grid-template-columns:1fr; }
+.full-person-header figure { margin:0; }
+.full-person-header figure img { width:180px; height:210px; object-fit:contain; background:var(--vp-c-bg-soft); }
+.full-person-header figcaption { font-size:11px; color:var(--vp-c-text-2); line-height:1.6; margin-top:8px; }
+.full-person-header h2 { margin:6px 0 8px; padding:0; border:0; font-size:28px; scroll-margin-top:100px; }
+.profile-role,.profile-verified { font-size:12px; color:var(--vp-c-text-2); margin:0!important; }
+.profile-affiliation { font-weight:600; }
+.profile-boundary { padding:12px 16px; background:var(--vp-c-bg-soft); border-left:3px solid var(--vp-c-divider); font-size:14px; }
+.profile-section h3 { font-size:18px; margin-top:24px; }
+.profile-section li { line-height:1.9; margin-block:8px; }
+.profile-time { display:inline-block; margin-right:8px; font-size:12px; color:var(--vp-c-text-2); }
+.profile-citations { font-size:12px; white-space:nowrap; }
+.profile-citations a { margin-inline:2px; }
+.profile-related { display:flex; flex-wrap:wrap; gap:10px 24px; margin:24px 0 16px; }
+.profile-related a { padding-block:6px; }
+.profile-sources { font-size:13px; color:var(--vp-c-text-2); }
+.profile-sources summary { min-height:44px; cursor:pointer; padding-block:10px; }
+.profile-sources li { scroll-margin-top:110px; overflow-wrap:anywhere; }
+.people-profiles :is(a,summary):focus-visible { outline:2px solid var(--vp-c-brand-1); outline-offset:3px; }
+@media(max-width:540px) { .full-person-header { grid-template-columns:110px minmax(0,1fr); gap:16px; } .full-person-header figure img { width:110px; height:145px; } .full-person-header h2 { font-size:25px; } .full-person-header p { font-size:13px; } .profile-jump { gap:4px 20px; } }
