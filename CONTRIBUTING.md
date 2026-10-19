@@ -22,3 +22,12 @@ npm run dev
 ```
 
 详见 [工具配置](content/contact/contributing/tools.md)。
+
+## 新增 NARS 实现条目
+
+任何向 `data/nars-implementations.json` 添加 NARS 实现的工作，请先按 `CLAUDE.md` §"收录 NARS 实现的查重纪律"做来源溯源：
+
+- 查清 GitHub `parent` / `source` 字段（fork 链是否在 OpenNARS 系列内）
+- 抽样对比源文件，与已知 OpenNARS 主线仓库核对
+- fork 透明 + 有二次改造 → 可入索引，并在 `notes` / `generation` 字段写明二次内容
+- 换名复刻、无改造证据 → 不收录；写"未核实 / 占位"也不适合，应直接拒绝

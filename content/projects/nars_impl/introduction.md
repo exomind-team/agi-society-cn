@@ -22,5 +22,10 @@ OpenNARS 后续出现了 3.0.4、3.1.1 等历史版本；相关仓库和资料�
 
 Python 方向的 [[opennars4|OpenNARS 4 (PyNARS)]] 延续了 PyNARS 的历史线索；原仓库 README 已标记为 Deprecated，并指向 OpenNARS 4。不同实现的维护状态和资料边界以各项目页的逐项核验为准。
 
-> [!info] 后续扩充
+> [!info] 收录口径
+> - 新增任何 NARS 实现条目须先做来源溯源：对照 GitHub `parent` / `source` 字段确认 fork 链，并抽样对比源文件
+> - 接受：fork 链透明 + 有明确二次改造（精简模块、增 NAL 层、改 GUI、换语言重写等）
+> - 拒绝：换名复刻（同一份代码换项目名/维护者，无可核验的二次改造）
+> - fork + 二次改造的条目，须在 `data/nars-implementations.json` 的 `notes` / `generation` 字段写明上游来源与本次改动范围
+>
 > 更多历史版本和相关项目可参考[天普大学 AGI 团队项目页](https://cis.temple.edu/tagit/#projects)。新增条目先进入总表并完成来源核验，再补充独立介绍页。

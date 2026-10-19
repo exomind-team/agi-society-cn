@@ -174,6 +174,19 @@ tests/
 - B 站候选审计需要先通过 web-access/CDP 打开协会官方空间，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`
 - B 站脚本只生成候选报告，不自动把视频归入年会或组会；正式入库前必须核对标题、发布时间、合集分页与议程
 - NARS 理论原始资料入口维护在 `content/research/nars/theory/nac/source-materials.md`
+
+### 收录 NARS 实现的查重纪律
+
+- 在 `data/nars-implementations.json` 新增任何 NARS 实现条目之前，必须做"代码/来源溯源"
+- 溯源手段（按可信度排序）：
+  1. 通过 `gh api repos/<owner>/<repo> --jq '{fork, parent, source}'` 拿 fork 链，明确上游（fork 透明可接受）
+  2. 抽样对比 mininars.nars_core_java/nars/main_nogui/*.java 与本地 OpenNARS v3.x 仓库 `src/nars/main/*.java` 的 package + 起始几行
+  3. 必要时整目录 `diff -rq` 或抽样全文比对
+- 明确边界：
+  - 接受：fork 链透明（GitHub parent/source 可见）+ 有具体二次改造（如精简模块、增 NAL 层、改 GUI、换语言重写）
+  - 拒绝：换名复刻（同一份代码换维护者/换项目名，无可核验的二次改造）——除非项目方明确说明
+- 文档化：所有 NARS 实现条目须在 `notes` / `generation` 字段写明上游来源与本次精简内容；若属 fork 链一目了然，在项目页正文也要再次注明
+- 例外（如特殊说明 fork 即停刊的归档项目）单独评估，且笔记里要写明评估依据
 - 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
 
 ---
