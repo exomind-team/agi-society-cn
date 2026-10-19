@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 import entries from '../../../data/research-preview.json'
 import poster from '../../../content/conference/image/2026/2026年会.jpg'
 
 const topic = ref('全部')
 const query = ref('')
+const searchInput = ref<HTMLInputElement | null>(null)
 const categories = ['全部', '会议报告', '研究资料', '工程实现']
 const filtered = computed(() => entries.filter(entry =>
   (topic.value === '全部' || entry.category === topic.value) &&
@@ -17,16 +18,25 @@ function sync() {
   history.replaceState(history.state, '', url)
 }
 function choose(value: string) { topic.value = value; sync() }
-function reset() { topic.value = '全部'; query.value = ''; sync() }
+async function reset() {
+  topic.value = '全部'; query.value = ''; sync()
+  await nextTick()
+  searchInput.value?.focus()
+}
 function remember() {
   try { sessionStorage.setItem('agi-preview-return', location.pathname + location.search + '#research-index') } catch {}
 }
-onMounted(() => {
+function restore() {
   const params = new URLSearchParams(location.search)
   const selected = params.get('topic')
-  if (selected && categories.includes(selected)) topic.value = selected
+  topic.value = selected && categories.includes(selected) ? selected : '全部'
   query.value = params.get('q') || ''
+}
+onMounted(() => {
+  restore()
+  window.addEventListener('popstate', restore)
 })
+onUnmounted(() => window.removeEventListener('popstate', restore))
 </script>
 
 <template>
@@ -52,7 +62,7 @@ onMounted(() => {
           <div class="research-section-head"><div><h2 id="index-title">研究动态与资料</h2><p>精选馆藏导读；日期沿用来源，不代表实时更新。</p></div><a :href="withBase('/research/')">全部研究</a></div>
           <div class="research-controls">
             <div class="research-filters" role="group" aria-label="按资料类型筛选"><button v-for="category in categories" :key="category" :aria-pressed="topic === category" @click="choose(category)">{{ category }}</button></div>
-            <label class="research-filter-search"><span class="sr-only">筛选本页资料</span><input v-model="query" type="search" placeholder="筛选本页资料" @input="sync" /></label>
+            <label class="research-filter-search"><span class="sr-only">筛选本页资料</span><input ref="searchInput" v-model="query" type="search" placeholder="筛选本页资料" @input="sync" /></label>
           </div>
           <p class="research-count" role="status" aria-live="polite">{{ filtered.length }} 条精选资料<span v-if="topic !== '全部'"> · {{ topic }}</span></p>
           <div v-if="!filtered.length" class="research-empty"><h3>没有匹配的资料</h3><p>试试「NARS」「认知」或清除条件。查找全部正文，请使用顶部全站搜索。</p><button @click="reset">清除筛选</button></div>

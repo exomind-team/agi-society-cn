@@ -5,7 +5,12 @@ const back = ref(withBase('/#research-index'))
 onMounted(() => {
   try {
     const saved = sessionStorage.getItem('agi-preview-return')
-    if (saved && saved.startsWith(withBase('/')) && !saved.startsWith('//')) back.value = saved
+    if (saved) {
+      const target = new URL(saved, location.origin)
+      if (target.origin === location.origin && target.pathname === withBase('/') && target.hash === '#research-index') {
+        back.value = target.pathname + target.search + target.hash
+      }
+    }
   } catch {}
 })
 </script>
