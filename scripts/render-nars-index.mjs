@@ -14,6 +14,13 @@ const escapeCell = (s) => String(s ?? '').replaceAll('|', '\\|')
 const pageCell = (entry) => entry.page ? `[[${entry.page}|${entry.name}]]` : entry.name
 const projectCell = (entry) => entry.page ? `[[${entry.page}|项目页]]` : '暂无独立页面'
 const repositoryCell = (entry) => entry.repository ? `[仓库](${entry.repository})` : ''
+// 项目可见状态。状态值与 emoji + 文案映射。
+const STATUS_LABELS = {
+  public:  '🟢 公开',
+  private: '🔴 内部',
+  unknown: '🟡 待核实',
+}
+const statusCell = (entry) => STATUS_LABELS[entry.publicStatus] ?? STATUS_LABELS.unknown
 
 // 说明：项目首次公开发布日期（firstPublicAt）尚未确立可靠字段；JSON 里有 repoCreatedAt
 // 仅记录仓库平台创建日，二者不等价。本表暂按 JSON entries 原顺序展示，待首发日期核实后再排序。
@@ -22,7 +29,7 @@ const rows = data.entries.map((entry) => {
   const author = entry.maintainers ?? '未声明'
   const repoPart = repositoryCell(entry)
   const tail = repoPart ? `${escapeCell(projectCell(entry))}；${escapeCell(repoPart)}` : escapeCell(projectCell(entry))
-  return `| ${escapeCell(pageCell(entry))} | ${escapeCell(entry.generation)} | ${escapeCell(language)} | ${escapeCell(author)} | ${tail} |`
+  return `| ${escapeCell(pageCell(entry))} | ${escapeCell(entry.generation)} | ${escapeCell(language)} | ${escapeCell(author)} | ${tail} | ${escapeCell(statusCell(entry))} |`
 })
 
 const output = `---
@@ -40,8 +47,8 @@ comments: true
 
 ## 实现索引
 
-| 实现 | 代际 / 定位 | 语言 | 作者 / 维护者 | 页面与代码 |
-|---|---|---|---|---|
+| 实现 | 代际 / 定位 | 语言 | 作者 / 维护者 | 页面与代码 | 状态 |
+|---|---|---|---|---|---|
 ${rows.join('\n')}
 
 ## 资料与理论入口

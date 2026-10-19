@@ -18,7 +18,8 @@
       "latestPublicCommit": "2025-05-30",
       "maintenanceStatus": "未判定",
       "notes": "README 明确说明它不是从旧 OpenNARS 代码库分支出来的独立平台，并包含控制机制与应用实验资料",
-      "repoCreatedAt": "2020-02-16"
+      "repoCreatedAt": "2020-02-16",
+      "publicStatus": "public"
     },
     {
       "id": "narjure",
@@ -36,7 +37,8 @@
       "latestPublicCommit": "2017-02-24",
       "maintenanceStatus": "未判定",
       "notes": "适合作为 OpenNARS 2.0 历史实现归档，不把仓库长期未更新直接等同于项目废弃",
-      "repoCreatedAt": "2016-03-12"
+      "repoCreatedAt": "2016-03-12",
+      "publicStatus": "public"
     },
     {
       "id": "opennars",
@@ -54,7 +56,8 @@
       "latestPublicCommit": "2021-03-31",
       "maintenanceStatus": "未判定",
       "notes": "相关仓库：[OpenNARS-for-Research 3.1.1](https://github.com/opennars/OpenNARS-for-Research)；[OpenNARS declarative core](https://github.com/patham9/opennars_declarative_core)",
-      "repoCreatedAt": "2014-07-18"
+      "repoCreatedAt": "2014-07-18",
+      "publicStatus": "public"
     },
     {
       "id": "nars_cxin_py_to_ts",
@@ -72,7 +75,8 @@
       "latestPublicCommit": "2024-04-12",
       "maintenanceStatus": "未判定",
       "notes": "Gitee API 当前返回默认分支 master；需要后续直接阅读源码与构建配置",
-      "repoCreatedAt": "2023-12-23"
+      "repoCreatedAt": "2023-12-23",
+      "publicStatus": "public"
     },
     {
       "id": "opennars304ts",
@@ -91,7 +95,8 @@
       "maintenanceStatus": "公开研究 / 集成 fix release（v1.0.7）",
       "notes": "Core 与 Web Demo 已公开；项目同时提供 Node.js CLI、ESM API、浏览器 Worker 与可交互 Demo Lab。持续 20 TPS、Java 同负载性能等价和 Shot 长期行为等价仍是未完成实验，不应写成已达标",
       "lastVerified": "2026-10-05",
-      "repoCreatedAt": "2025-08-25"
+      "repoCreatedAt": "2025-08-25",
+      "publicStatus": "public"
     },
     {
       "id": "openjunars",
@@ -109,7 +114,8 @@
       "latestPublicCommit": "2023-08-16",
       "maintenanceStatus": "未判定",
       "notes": "README 提示旧的多种实现方式已舍弃，后续应以当前仓库源码为准",
-      "repoCreatedAt": "2021-04-23"
+      "repoCreatedAt": "2021-04-23",
+      "publicStatus": "public"
     },
     {
       "id": "nars_python",
@@ -127,7 +133,8 @@
       "latestPublicCommit": "2025-08-19",
       "maintenanceStatus": "未判定",
       "notes": "与 PyNARS/OpenNARS 4 是不同仓库，不能因名称相近合并记录",
-      "repoCreatedAt": "2020-10-09"
+      "repoCreatedAt": "2020-10-09",
+      "publicStatus": "public"
     },
     {
       "id": "opennars4",
@@ -145,7 +152,8 @@
       "latestPublicCommit": "2024-11-27",
       "maintenanceStatus": "未判定",
       "notes": "本页将 PyNARS 视为 OpenNARS 4 的历史名称/前身，合并记录但保留原仓库链接作为迁移线索",
-      "repoCreatedAt": "2022-02-11"
+      "repoCreatedAt": "2022-02-11",
+      "publicStatus": "public"
     },
     {
       "id": "20nar1",
@@ -163,7 +171,8 @@
       "latestPublicCommit": "2021-08-21",
       "maintenanceStatus": "未判定",
       "notes": "项目自称 NARS-inspired GMI，不应不加限定地描述为标准 OpenNARS 克隆",
-      "repoCreatedAt": "2020-08-10"
+      "repoCreatedAt": "2020-08-10",
+      "publicStatus": "public"
     },
     {
       "id": "narst",
@@ -181,7 +190,8 @@
       "latestPublicCommit": "2023-09-21",
       "maintenanceStatus": "未判定",
       "notes": "应保留“实验性、非完全兼容”这一原始限定",
-      "repoCreatedAt": "2023-07-13"
+      "repoCreatedAt": "2023-07-13",
+      "publicStatus": "public"
     },
     {
       "id": "narust",
@@ -199,7 +209,8 @@
       "latestPublicCommit": "2026-05-23",
       "maintenanceStatus": "未判定",
       "notes": "README 还明确列出 language、entity、inference、control、storage、vm 等模块，可作为 NAC 源码分析入口",
-      "repoCreatedAt": "2024-06-13"
+      "repoCreatedAt": "2024-06-13",
+      "publicStatus": "public"
     },
     {
       "id": "nars_swift",
@@ -217,7 +228,8 @@
       "latestPublicCommit": "2025-07-01",
       "maintenanceStatus": "未判定",
       "notes": "在线 Demo 主要用于演示，README 明确提示 WebAssembly 性能限制",
-      "repoCreatedAt": "2021-12-27"
+      "repoCreatedAt": "2021-12-27",
+      "publicStatus": "public"
     },
     {
       "id": "exnars",
@@ -234,7 +246,8 @@
       "runDemo": "本轮未核实",
       "latestPublicCommit": "未知",
       "maintenanceStatus": "暂未公开发布",
-      "notes": "本轮未在 GitHub/Gitee 检索到公开仓库；待正式公开后再补充资料"
+      "notes": "本轮未在 GitHub/Gitee 检索到公开仓库；待正式公开后再补充资料",
+      "publicStatus": "private"
     }
   ]
 }
