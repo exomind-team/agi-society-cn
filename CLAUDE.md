@@ -175,6 +175,33 @@ tests/
 - B 站脚本只生成候选报告，不自动把视频归入年会或组会；正式入库前必须核对标题、发布时间、合集分页与议程
 - NARS 理论原始资料入口维护在 `content/research/nars/theory/nac/source-materials.md`
 
+#### 标准化 NARS 项目收录流程
+
+新项目从发现到正式收录统一走这套（脚本 + 人工两步）：
+
+1. **运行 `scripts/ingest-nars-project.mjs` 起草元数据**
+   ```bash
+   node scripts/ingest-nars-project.mjs \
+     --owner=<owner> --repo=<repo> \
+     --target=impl|derivatives \
+     --tier=A1|A2|A3|B1|B2 \
+     [--page=<page-id>] [--name=<display-name>]
+   ```
+   脚本自动拉 GitHub 元数据（fork 链 / parent / source / stars / README 前 30 行），按 §"收录 NARS 实现的查重纪律" 做出 PASS / WARN 提示，并把项目页骨架打印到 stdout。脚本**不修改任何文件**
+
+2. **人工根据骨架写项目页**
+   - README 取摘要、改正语言、补 author / license / 来源溯源
+   - 顶部"层级"标注保留用户的 --tier 提示
+   - 写文件到 `content/projects/nars_{impl,derivatives}/<page>.md`
+
+3. **同步索引页 / JSON 数据源**（按目标分类）
+   - `target=impl`：在 `data/nars-implementations.json` 加 entry 后跑 `npm run nars:catalog`，render-nars-index.mjs 自动把行加到 nars_impl/index.md
+   - `target=derivatives`：手工在 `content/projects/nars_derivatives/index.md` 的"已收录"表格加行；分类体系用 A/B + 子档 1/2/3
+
+4. **commit + push** 后执行 `npm run publish:tencent --confirm=tencent-main` 让腾讯云镜像同步
+
+5. **复核**：`npm run build` + `npm run check:content-links`，确保 wikilink 与表格 `\|` 转义符合 §9
+
 ### 收录 NARS 实现的查重纪律
 
 - 在 `data/nars-implementations.json` 新增任何 NARS 实现条目之前，必须做"代码/来源溯源"
