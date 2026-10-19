@@ -1,0 +1,42 @@
+[
+  {
+    "id": "knowledge-sharing-2026", "category": "会议报告", "dateLabel": "2026-07-18 · 年会报告",
+    "title": "基于 NARS 资源管理的智能代理知识共享平台", "summary": "李汤睿在第十一届年会报告中，以 NARS 资源管理为切入点讨论智能代理知识共享平台。沿录像进入方法，再回到有限资源下的推理基础。",
+    "path": "/conference/annual/2026#第一天下午-·-认知哲学、agi理论及nars分论坛", "sourceFile": "content/conference/annual/2026.md", "tags": ["NARS", "资源管理", "智能代理"],
+    "boundary": "原档案提供报告标题与录像，没有论文摘要或评测结果；本导读不补写未经核实的实验结论。",
+    "sources": [{"label": "李汤睿年会报告 · B 站录像", "url": "https://www.bilibili.com/video/BV1kuGc6uExY?p=2"}],
+    "related": [{"label": "AIKR：不足知识与资源预设", "path": "/research/nars/theory/aikr"}, {"label": "非公理认知架构", "path": "/research/nars/theory/nac/"}]
+  },
+  {
+    "id": "vision-2026", "category": "会议报告", "dateLabel": "2026-05-13 · 视频发布",
+    "title": "视觉的语法：对幼年失明成年复明者的案例调查", "summary": "组会录像围绕幼年失明、成年复明者的案例调查展开。可与感知、经验和感知运动机制的基础材料对照阅读。",
+    "path": "/conference/group/2025-2026", "sourceFile": "content/conference/group/2025-2026.md", "tags": ["感知", "认知", "学术组会"],
+    "boundary": "此处日期是原目录记录的视频发布日期，不是已核实的组会举行日期；原目录未列报告人。",
+    "sources": [{"label": "视觉的语法 · B 站录像", "url": "https://www.bilibili.com/video/BV1965y69EkA/"}],
+    "related": [{"label": "感知运动机制", "path": "/research/nars/theory/gti/chapter5/5.1"}, {"label": "组会完整目录", "path": "/conference/group/"}]
+  },
+  {
+    "id": "temple-2025", "category": "研究资料", "dateLabel": "2025 · 具体日期待补",
+    "title": "NARS Workshop 2025 · 天普大学", "summary": "天普大学 TAGIT 发布的 NARS 工作坊官方入口。研究讨论的原始出处，与站内 NARS 学习材料相互参照。",
+    "path": "/research/nars/news", "sourceFile": "content/research/nars/news.md", "tags": ["NARS", "工作坊", "原始资料"],
+    "boundary": "站内尚待补充正式议程、录像与论文资料。原页面的最后更新日期不作为本次活动日期。",
+    "sources": [{"label": "NARS Workshop 2025 · TAGIT 官方页面", "url": "https://cis.temple.edu/tagit/events/workshop2025/"}],
+    "related": [{"label": "NARS 学习资源", "path": "/research/nars/theory/learning_resources"}, {"label": "NARS 理论入口", "path": "/research/nars/"}]
+  },
+  {
+    "id": "reasoning-2025", "category": "会议报告", "dateLabel": "2025-06-14 · 年会报告",
+    "title": "以推理为例比较对「通用人工智能」的不同解读", "summary": "王培在第十届年会主会场报告中，以推理比较对通用人工智能的不同解读。从具体问题进入研究术语与定义的边界。",
+    "path": "/conference/annual/2025", "sourceFile": "content/conference/annual/2025.md", "tags": ["推理", "AGI 定义", "王培"],
+    "boundary": "标题与报告人来自年会目录；日期对应原档案第一天上午。研究主张请以原报告为准。",
+    "sources": [{"label": "王培年会报告 · B 站录像", "url": "https://www.bilibili.com/video/BV1YRN7zTEjZ?p=2"}],
+    "related": [{"label": "智能的工作定义", "path": "/research/nars/theory/gti/topics/working_definition"}, {"label": "通用智能理论：第二章", "path": "/research/nars/theory/gti/chapter2/"}]
+  },
+  {
+    "id": "ona-2024", "category": "工程实现", "dateLabel": "2024-07-13–14 · 年会期间",
+    "title": "OpenNARS for Applications：从报告走向实现", "summary": "第九届年会收录 Patrick Hammer 的 OpenNARS for Applications 报告。继续查阅 ONA 实现资料、原始仓库与使用入口。",
+    "path": "/projects/nars_impl/ona", "sourceFile": "content/conference/annual/2024.md", "tags": ["ONA", "开源实现", "Narsese"],
+    "boundary": "原年会页面没有单独标注该报告的举行日。本页提供阅读路径，没有运行软件或验证其性能。",
+    "sources": [{"label": "Patrick Hammer 年会报告 · B 站录像", "url": "https://www.bilibili.com/video/BV1p4421D78q?p=1"}, {"label": "OpenNARS for Applications · 原始代码", "url": "https://github.com/opennars/OpenNARS-for-Applications"}],
+    "related": [{"label": "2024 年会档案", "path": "/conference/annual/2024"}, {"label": "NARS 实现索引", "path": "/projects/nars_impl/"}]
+  }
+]

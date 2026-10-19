@@ -13,14 +13,4 @@
 @import './callout.css';
 @import './layout.css';
 
-/* ==荧光笔高亮== → <mark> */
-mark {
-  background: #ffe066;
-  padding: 0.1em 0.2em;
-  border-radius: 2px;
-}
-
-html.dark mark {
-  background: #6b5b00;
-  color: #f0e0a0;
-}
+@import './research-preview.css';

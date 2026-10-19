@@ -20,7 +20,7 @@ const nolebaseMD = presetMarkdownIt({
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '中国通用人工智能协会',
+  title: 'AGI Wiki',
   description: '中国通用人工智能协会 — 学术知识库',
   srcDir: './content',
   outDir: './dist',
@@ -94,6 +94,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    previewEnvironment: process.env.VITEPRESS_PREVIEW === 'true',
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
@@ -133,7 +134,9 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/exomind-team/agi-society-cn/edit/main/content/:path',
+      pattern: process.env.VITEPRESS_PREVIEW === 'true'
+        ? 'https://github.com/exomind-team/agi-society-cn/edit/dot/dev-agi-society-cn-20261019/content/:path'
+        : 'https://github.com/exomind-team/agi-society-cn/edit/main/content/:path',
       text: '在 GitHub 上编辑此页',
     },
 

@@ -1,0 +1,741 @@
+{
+  "baseline": "a92951d90fb7a9431864a84375c4902fdbcf82b1",
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "sha256": "5f3d3fb9ff16d310b1251e12046a5c3334506f5bbb4f53507207be3b31dcf73c"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "bd40287d281ada49fc0aa85715ee37e3ca7c6ba0ce1210c80869b832064aa703"
+    },
+    {
+      "path": "README.md",
+      "sha256": "df999e160ac4ef9e9ab57d43b4c40f7f537ba96bc67395cc7561575fe2622390"
+    },
+    {
+      "path": "content/.obsidian/app.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "content/.obsidian/appearance.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "content/about/agi.md",
+      "sha256": "21906453b8007162984c09fc1af14302b4219ff1c93fca7445901eef09590cc7"
+    },
+    {
+      "path": "content/about/image/contributing/tools/Snipaste_2024-07-26_18-03-28.png",
+      "sha256": "e6fc202a3b700b5e47c8d7d739b4c7536393c1562be7e8da3f1a9fa930c0a61a"
+    },
+    {
+      "path": "content/about/image/contributing/tools/vscode_windows_preview_2024-07-27_1.png",
+      "sha256": "04896d156e4faf59bc3e27bd610d8e3bad78e5ed4011c40d9223c73a15d96a8e"
+    },
+    {
+      "path": "content/about/image/contributing/tools/vscode_windows_preview_2024-07-27_2.png",
+      "sha256": "f9713295c26700bf28c1ae0cc87b34bda51e25d433e9f5c0587a2e6a1eb24b69"
+    },
+    {
+      "path": "content/about/image/team/王培老师相片.png",
+      "sha256": "a1033d3009eeae17bdfebd4a8fddd7807cb3e4a946349a32689c4a8060d8dae2"
+    },
+    {
+      "path": "content/about/index.md",
+      "sha256": "33ee9ab488ab2f4d3b0010cf62cf10db7693fc97c54212beffca9be00344f079"
+    },
+    {
+      "path": "content/about/team.md",
+      "sha256": "38dd2b1874f81b52a3eb12f1b72e0ce80a7e20432474ed6ba2a525acef6bc9d2"
+    },
+    {
+      "path": "content/conference/annual/2016.md",
+      "sha256": "c88accd834650333b1d9cc7772acebb93b835c0a2fdb23c11acb35940d593847"
+    },
+    {
+      "path": "content/conference/annual/2017.md",
+      "sha256": "147394bb01e0d998e2f6a3a5b7321407aa4abad4331118fc94671a0ef45f2cf2"
+    },
+    {
+      "path": "content/conference/annual/2018.md",
+      "sha256": "c1e86907fb3bff2228584b50fd1ec5fac3b0756376e0bfc678a7126d372c09cd"
+    },
+    {
+      "path": "content/conference/annual/2019.md",
+      "sha256": "7fa33e9b1322ff423ddd5b253decb6a2c549068b5f8e3e610f8fe9c498b03e10"
+    },
+    {
+      "path": "content/conference/annual/2020.md",
+      "sha256": "f964be8b8e08cfb4e4fa15cf33114f1e5c876f56bd5b642bdf6b84cc1f67b3fe"
+    },
+    {
+      "path": "content/conference/annual/2021.md",
+      "sha256": "5d746e9769d3f36ab6cd8243074996b2716cb193677d36f31e29c5399b1285dd"
+    },
+    {
+      "path": "content/conference/annual/2022.md",
+      "sha256": "1797b63f9ae20a4200228df1fd7dbe34ed9c90c5e161bd8957a7190615c4b73b"
+    },
+    {
+      "path": "content/conference/annual/2023.md",
+      "sha256": "5fbe836cf9d54ac31eb77063a1d1c71e002f7993cf9f98f788dc8385b0a58e43"
+    },
+    {
+      "path": "content/conference/annual/2024.md",
+      "sha256": "a06be33359b67de22a612d2a67dcbf8dde9ae018772e0d8ef5d69431512bd430"
+    },
+    {
+      "path": "content/conference/annual/2025.md",
+      "sha256": "aaa91cc4bac602dde2f84779125db9f6dc4810ffb67bfc84807146cbbfa287d9"
+    },
+    {
+      "path": "content/conference/annual/2026.md",
+      "sha256": "1236eb7e0da75f7fa87b8666d9261fad0dfaaa66aef0d5aaf6dd2e6634e9fc47"
+    },
+    {
+      "path": "content/conference/annual/index.md",
+      "sha256": "db42cb4cb1c51ea9da4564d867a3e5d0049369734d8142c53038ac01cecd079d"
+    },
+    {
+      "path": "content/conference/group/2016-2017.md",
+      "sha256": "e4f20e7a047856e1a3dacb72011c6b93e9887c3010bc173ef9e5a67bb11a1979"
+    },
+    {
+      "path": "content/conference/group/2017-2018.md",
+      "sha256": "110b9f4c84172aceafc71a1ef467ded716b91fb6dc681ef8861493ca0909e25c"
+    },
+    {
+      "path": "content/conference/group/2018-2019.md",
+      "sha256": "1142480f1d7f926f6f13737a419431e2231a75b3a33298189da6b890def06e79"
+    },
+    {
+      "path": "content/conference/group/2019-2020.md",
+      "sha256": "2332794f2523afcab9ac6dc38ed0e30590f777fb267397fcf8f69698ba093ea3"
+    },
+    {
+      "path": "content/conference/group/2020-2021.md",
+      "sha256": "2fc041c81897b51da7e709848fe96129a8f31fe3e0dd5b4c7a9c17cf67803d1c"
+    },
+    {
+      "path": "content/conference/group/2021-2022.md",
+      "sha256": "5861579fffa0033f085bf9f9175e32eebebb3071925e3e6aa68c7d9a74ab4f22"
+    },
+    {
+      "path": "content/conference/group/2022-2023.md",
+      "sha256": "2d38ee676681cd3f95676954b9629409bd6832590096bcb03e25740f1933f93b"
+    },
+    {
+      "path": "content/conference/group/2023-2024.md",
+      "sha256": "40b175bb7ddba695105e88ef5990aac88b7458409f177cd3ed59c758fe3bcca1"
+    },
+    {
+      "path": "content/conference/group/2024-2025.md",
+      "sha256": "53d84c64b818d283f621a2d43d4b2a1f5aa325eda43a6df21d0f237a6ad798cc"
+    },
+    {
+      "path": "content/conference/group/2025-2026.md",
+      "sha256": "44a8979b9bc605aff23658f4799c2f79e50c273623ea1ed921b349d947c0d483"
+    },
+    {
+      "path": "content/conference/group/index.md",
+      "sha256": "e01a81e94572dead7414a1c5b42c4463aa39bf4c6f85584152bac2d25c7fea1d"
+    },
+    {
+      "path": "content/conference/image/2022/2022年会.jpg",
+      "sha256": "885a5487e7b526cae3541463c44681156d600b8da4001d5a9310a9968a3d97ea"
+    },
+    {
+      "path": "content/conference/image/2023/2023年会.jpg",
+      "sha256": "63b6f91ee5e68fc6b462ba3f7f5309581adaf5533537282b579f26c9da28ec85"
+    },
+    {
+      "path": "content/conference/image/2024/2024南京年会海报.png",
+      "sha256": "a745f6f8320815953ba72f796aad43152aeca6fea00212f48d47bfd0bb444388"
+    },
+    {
+      "path": "content/conference/image/2025/2025年会1.png",
+      "sha256": "0483a60247c5116421dd92769024396e5f0d8a6f799832ebebc8405a5d92eb5f"
+    },
+    {
+      "path": "content/conference/image/2025/2025年会2.png",
+      "sha256": "7a841ad47a7bdaa4f4318ef21d2702a0f467f0dd07df2ed260e1dc8bd93a52db"
+    },
+    {
+      "path": "content/conference/image/2026/2026年会.jpg",
+      "sha256": "27b97a7c048215884a55ddb6e5dc1f802180c491367e94e80f5f8212c3c5c7bb"
+    },
+    {
+      "path": "content/conference/image/2026/2026年会议程.png",
+      "sha256": "3b1e29869364509fcb88725f01c0f75dce8e78b5c2ce1a8e8bfcb989125e4a11"
+    },
+    {
+      "path": "content/conference/index.md",
+      "sha256": "35d363adbdc3198c5326c3ec4219338c63e72134c5813d6dd3f662653dea29a2"
+    },
+    {
+      "path": "content/contact/contributing/formats.md",
+      "sha256": "9d81ea9d3912250930bca607c2287ce1d13dfa5ca2f0fa9511d652b8d60ecf55"
+    },
+    {
+      "path": "content/contact/contributing/index.md",
+      "sha256": "d15084c4911eb13b49a08fa16c24ca61d994e9725a3944b960f5e68daffec811"
+    },
+    {
+      "path": "content/contact/contributing/obsidian.md",
+      "sha256": "2e1d3260d9f19ddef8e857612f26b299d192408f5ae0b13d753e1e6e0be2e414"
+    },
+    {
+      "path": "content/contact/contributing/tools.md",
+      "sha256": "674f4cbf6f64167934cb9889b4ff3d3ea3b0a44a922df34837652127a2060f87"
+    },
+    {
+      "path": "content/contact/documents_and_qq_group.md",
+      "sha256": "0da48b948db5c5c2ed561f7e5f63cf0202accdfdb96de9d12535898542989d80"
+    },
+    {
+      "path": "content/contact/index.md",
+      "sha256": "6649c13a0d4121251a0a3eff8cde00c116d40f28dd64a39259d605ee68e0d1c7"
+    },
+    {
+      "path": "content/contact/team.md",
+      "sha256": "bae7c6f80a63a0a125765c43f7001a27d74af7dcb827a14630cc00a945aaea88"
+    },
+    {
+      "path": "content/index.md",
+      "sha256": "c0254d0555d8f539a67122737032889f0b4b4c0a8c4ba27882d8531a7a3cb0b7"
+    },
+    {
+      "path": "content/projects/index.md",
+      "sha256": "eff4a772a6644023233d4cede0303b3dfbad81b320f5a624e858346f136e27c2"
+    },
+    {
+      "path": "content/projects/nars_derivatives/babelnar.md",
+      "sha256": "1b447046f9ff638698d1ea16eab7f07529c69c3e554ddd558223c98b1923fb8f"
+    },
+    {
+      "path": "content/projects/nars_derivatives/channels.md",
+      "sha256": "0e6874dfd7e394faae8a66470134d44bac769f4afc76fee3f3d0a70f750899b2"
+    },
+    {
+      "path": "content/projects/nars_derivatives/index.md",
+      "sha256": "26a9e034a4924c7680526ab4fa7dc050ad01676ee6b77253e0b576cc540a8671"
+    },
+    {
+      "path": "content/projects/nars_derivatives/introduction.md",
+      "sha256": "dd5363d687f4b859aeaff463008a5ba2477e96e636af05d6f3eb3d4824fcd383"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nace.md",
+      "sha256": "a3ec96ddbd60552d849e6d7400edfd7c5133286d788f3eda2d8132ad639fa9c1"
+    },
+    {
+      "path": "content/projects/nars_derivatives/narca.md",
+      "sha256": "fe5cc3a884cce61fca3c88b2c87e28512bccb483b1d85fe8f87e385b2cd7f727"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-fighterplane.md",
+      "sha256": "17bf5537c6e0cca10feb590ea4e13eac1536efb75fb88aa4378ba5ecfb023490"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-gpt.md",
+      "sha256": "1851aa874a03103dc40d3353898bfe362960ec2ed7d3f116d7e2df0f734337cd"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-pong.md",
+      "sha256": "f29de52a13c9c50192c39266a9d833cf6d3afca09670f5c0a5ed86222ad5a971"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-unity.md",
+      "sha256": "4845517d6a2d4655fe1cf571c5a6b113e9f02659efbf22e88ef7c76056d51610"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-visualization.md",
+      "sha256": "24a353d4a8a289f1b924d8ab07d4e7b2f20920cdaaff69d089f7ee61d684d2db"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nars-web-gui.md",
+      "sha256": "7e5712e1444b4bb838eabe8118d47b0065f8aa0c32b9705b83e730cc6863db85"
+    },
+    {
+      "path": "content/projects/nars_derivatives/nnesycef.md",
+      "sha256": "899722edc718412e2a81cc1f960cb4d1166f2b1a0b05dc1655cedfac2de29b95"
+    },
+    {
+      "path": "content/projects/nars_derivatives/pixel-to-concept-reader.md",
+      "sha256": "97966d5461aa61dfad32f629d76ec337c0c1aa872fc4a8e9e088c318b95b6209"
+    },
+    {
+      "path": "content/projects/nars_impl/20nar1.md",
+      "sha256": "7c9c05ad9b3b9a15b00cc0e63fd5dd1847302ab6404f1592b999c7813878072b"
+    },
+    {
+      "path": "content/projects/nars_impl/exnars.md",
+      "sha256": "4132df84c9ffca595840435fe87f8bc8bb01a7575e55985b6e94d8ca95f009a2"
+    },
+    {
+      "path": "content/projects/nars_impl/hybrid-nars-rust.md",
+      "sha256": "a0dda1ef890261ba0e6832b79d7d64d6e9f4b36b94d46a43886c3f57b53aa055"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_1.png",
+      "sha256": "6270d67343708c99d25750f7522816efadd014e6f75441f529ab6969f970fe6e"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_2.png",
+      "sha256": "7229613fe36457d906254cdaebdef4d7a0ef3cfe7db97ae6c02134f867ccd1b4"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_3.png",
+      "sha256": "6909df6223a4233496df201f323e01464f2ab253ca394cfcf4b9333e9e2cff5e"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_4.png",
+      "sha256": "9108dbf4f536497ca9aaf57f7c5d9f8061073e007da30e183b28029570f217bf"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_5.png",
+      "sha256": "83b9ee5d6072be74c5cba8a57a4b0ae9bd79c1758724a8ee496f13a4965a150c"
+    },
+    {
+      "path": "content/projects/nars_impl/images/nars_python/tutorial_6.png",
+      "sha256": "27158ec8a299c7df5915bd11b879fa21900144a183c0073d95b88501db9ece85"
+    },
+    {
+      "path": "content/projects/nars_impl/images/narust/narust-158.svg",
+      "sha256": "5cc959b3054f1674d0fe1b2d5136f8a11da22f96db40735793d63f6ab02ddac6"
+    },
+    {
+      "path": "content/projects/nars_impl/images/opennars/nars_c_pan.png",
+      "sha256": "2c7da9e17981918eb96eb33b84c0bc6490d15687d18fae444a4f2b5f02702a6d"
+    },
+    {
+      "path": "content/projects/nars_impl/images/opennars/nars_idea_setting.png",
+      "sha256": "ae4d5ca14a54cbd4ca3e85d72cbad0f31faf5c5dc209cdb992e04f66b475cfeb"
+    },
+    {
+      "path": "content/projects/nars_impl/images/opennars/nars_lab_ui.png",
+      "sha256": "f0cb4ed4871190b1e7178dcb04bfc0a7bbfc524cc936f671aa46acac6b0fa0e8"
+    },
+    {
+      "path": "content/projects/nars_impl/images/opennars/nars_run_lab.png",
+      "sha256": "3a22d8ade68bd13a35f745e022e9f0a84d809373c9206fa95779ef38b2e1c9e7"
+    },
+    {
+      "path": "content/projects/nars_impl/images/opennars/run_nars_in_cmd.png",
+      "sha256": "f40c454da7db513ecf0daf2b006c1a6724740bb1e5a22247f0fa1c29a68ef1a7"
+    },
+    {
+      "path": "content/projects/nars_impl/index.md",
+      "sha256": "3896f2307181d09b8e898391bbfce01583e2b893fc9577f8077aaf430d64d045"
+    },
+    {
+      "path": "content/projects/nars_impl/introduction.md",
+      "sha256": "469ca580b1384fd6faaeaac4de349b9474ed3dd0552da50c21db662e40f3f951"
+    },
+    {
+      "path": "content/projects/nars_impl/narjure.md",
+      "sha256": "4b6a2f6df96023bc06af078e1b2313c43e4f234b27f7a34f67baa2c427f10881"
+    },
+    {
+      "path": "content/projects/nars_impl/nars_cxin_py_to_ts.md",
+      "sha256": "34ad5b5479178edb01b55b3b1d3a6606336841dc7824b258f58cef3ce5cdf8c9"
+    },
+    {
+      "path": "content/projects/nars_impl/nars_python.md",
+      "sha256": "106c66bcecaeeef48eef5b8bcf27f7461a86dadee3abb0f728e140d6c03dd23b"
+    },
+    {
+      "path": "content/projects/nars_impl/nars_swift.md",
+      "sha256": "8b532cdc261aefc6a9532b43cdef19956664fe42372d403b1f5054fe378d6ce9"
+    },
+    {
+      "path": "content/projects/nars_impl/narst.md",
+      "sha256": "8e5605bc27f44d08caf849f0a93722ff1b1297e6cc49d7a8f8b3c1bf6973e90c"
+    },
+    {
+      "path": "content/projects/nars_impl/narust.md",
+      "sha256": "1bf028c7fd025c5854b8486c41bdaedc06cc92fcb754958dd266c91e27b8617b"
+    },
+    {
+      "path": "content/projects/nars_impl/ona.md",
+      "sha256": "1b3c9dc1d30bd58403f6ffd8a10e53896d4f9cacec6e1600e86aae9e9f5980bb"
+    },
+    {
+      "path": "content/projects/nars_impl/openjunars.md",
+      "sha256": "7425399051e90108a805bd01f751c4592876ef43fa17876f3f2085e006e30ae9"
+    },
+    {
+      "path": "content/projects/nars_impl/opennars-core.md",
+      "sha256": "0e5b8a8412cd940f3a611609d3e7fdae26e27581b664acb40b23a13ac921a0c0"
+    },
+    {
+      "path": "content/projects/nars_impl/opennars.md",
+      "sha256": "a52135fff117d25e0671a23c5870a691d5f06f8f9105015780abbc7a2e1d3b7e"
+    },
+    {
+      "path": "content/projects/nars_impl/opennars304ts.md",
+      "sha256": "c5f4f1d89ce208d2b3008c99e030b5569aa74cfce0c060192da692d75a8ec02e"
+    },
+    {
+      "path": "content/projects/nars_impl/opennars4.md",
+      "sha256": "a2983f6133c8c70bad8c012b7856ea5602ca3c0f443c01ad1ce6cd71e031e1c5"
+    },
+    {
+      "path": "content/projects/nars_impl/pynars.md",
+      "sha256": "c972cf652c446b85522399f7dae3c60a9d66804244fdde95068b56ce71a5c255"
+    },
+    {
+      "path": "content/projects/nars_impl/yan.md",
+      "sha256": "18092add1cd185308a2b4c2175c273405db20da00adcbf2facbf75d57f243ba0"
+    },
+    {
+      "path": "content/public/demo/narust-158/narust-158/96d3cf0072e902260d64.module.wasm",
+      "sha256": "df9445d587cce655c638b196575dbd64eb6dcde53f3714dec902bb9f4e4ed41b"
+    },
+    {
+      "path": "content/public/demo/narust-158/narust-158/bootstrap.js",
+      "sha256": "2420f625e9b30c0fcbf0d1635eeee19840330ef971e07720824028a06bbfef9c"
+    },
+    {
+      "path": "content/public/demo/narust-158/narust-158/index.html",
+      "sha256": "dc6d38820d8d00419d017c9c8d791792bb05624c4582d928a8c1b29eb2ed4a55"
+    },
+    {
+      "path": "content/public/demo/narust-158/narust-158/src_index_ts.bootstrap.js",
+      "sha256": "a777007c5d40328c9b9f46c1c5b4f120ef8b6a1ded365227acbfb61c63e6845d"
+    },
+    {
+      "path": "content/public/favicon.ico",
+      "sha256": "d7a5f4627ab8aa87df2f2e736f03fac92791a62e9132256e8d34235834039cf1"
+    },
+    {
+      "path": "content/public/logo.png",
+      "sha256": "d7a5f4627ab8aa87df2f2e736f03fac92791a62e9132256e8d34235834039cf1"
+    },
+    {
+      "path": "content/research/index.md",
+      "sha256": "a228f8b823f002564071c6b98767846737238f706a4d2ae66f4830c99ce905b5"
+    },
+    {
+      "path": "content/research/nars/images/202408_nars_workshop.png",
+      "sha256": "5345455daa25f07ca8140ab18422e2aa8c0bb7667849f4c4db32951f7e65757e"
+    },
+    {
+      "path": "content/research/nars/index.md",
+      "sha256": "d8e994eaa00bab46dd23548aec1937ddf2ec6519b39229c098a2673a7c919550"
+    },
+    {
+      "path": "content/research/nars/news.md",
+      "sha256": "6504ccba5973bb030c5f366c9af9354617eea3983f95e7f43ae0d4f679353a00"
+    },
+    {
+      "path": "content/research/nars/theory/3c.md",
+      "sha256": "b14848a9e663980b2ed57ea43a8e6c95ffe94f84a74ca306fb23af1291d1ea76"
+    },
+    {
+      "path": "content/research/nars/theory/aikr.md",
+      "sha256": "4c76b213979e4b8eb542aec8a499ece064bd09540e0945785faf5a8a95f0f0c8"
+    },
+    {
+      "path": "content/research/nars/theory/gti/acknowledgment.md",
+      "sha256": "c3b6df67d0cbe326ed17cb38c80634059b796e6b7bf9fe0de62478f10e566726"
+    },
+    {
+      "path": "content/research/nars/theory/gti/bibliography.md",
+      "sha256": "e65cba33ad6381d0d3747433addf0e28fb858ce342bf978ed1fb476808110bb1"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter1/1.1.md",
+      "sha256": "c49da3da5ee9c9c69eaeadf4de8e9245ac9b91df65de5fb8e50acd376bf90123"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter1/1.2.md",
+      "sha256": "ab40223d57dfcbc537a03db14906dbeece40b52443b9b4359357a20868589ca9"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter1/1.3.md",
+      "sha256": "e465692d12a3c58a6c88d81d9402ba840c3582e7c5e6fa0b6ce548b5e1ae95b0"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter1/index.md",
+      "sha256": "242ad5ae1b4419d51b7dd8cc1548d0a5a4c9f0732e13584e3b0dde42eb40f97a"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter2/2.1.md",
+      "sha256": "d23eb7dd164c416685a933156eaf063147127b63a795686532c172b7706d20a7"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter2/2.2.md",
+      "sha256": "576405fedb72d4a70587e0c38a5e66c02025d2382dc2f8971dd4edf27f682d3e"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter2/2.3.md",
+      "sha256": "d66646e7f297ecffb380d2c4486fa802148d39d4cba691b5a0aeb1fa8cb18f54"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter2/2.4.md",
+      "sha256": "b78e1f3419a38d218fba44e55cae9131ef42c7e4a7868debe0b4183997ad7a5a"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter2/index.md",
+      "sha256": "c31250d1ab6feb7ad9a178349cfec2f305592e8b6ae69a13c412d85266ccdbf8"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/3.1.md",
+      "sha256": "1d0ba51e24cb51a661a90f609d3271b7b120d2be5e3c1971797a310956521fcf"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/3.2.md",
+      "sha256": "da2132d405767249a6b9f42b0303515e0e60a9d2dc5988c24f6431b82acae11a"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/3.3.md",
+      "sha256": "b8cca89b5d7b0f8624765c5e9b66e16472f805d861834c86efefffff20c3bb72"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/3.4.md",
+      "sha256": "c02cec773fbe9f4951fa84c79f1f04bde1eb1b0a3e13c5d192d7a0868902d378"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/3.5.md",
+      "sha256": "e2f648bc560eae0c3a813ec8243053a3e836840ca1a10bed5779e84cd2b60ec3"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter3/index.md",
+      "sha256": "9ae4e954d7f4afb44c7f4d62387c506937e959d43602dfd1ff1dc1f7912226bb"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/4.1.md",
+      "sha256": "b1310af7c2746939e81cf2423197ca2a39233c458765b977fabf4c9ada1e04a3"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/4.2.md",
+      "sha256": "d0a31f1aead7249efd5bb1cc271949de6fa787d6c2315b728c580ca098bc6af5"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/4.3.md",
+      "sha256": "9a051acecc4e268c4eb4aad04100b3dfa3e1796ec835044e4e180a84394ca02e"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/4.4.md",
+      "sha256": "fbc881c8555123646c4453f6749a18ecf144beef329656ab1601a1422f0dc6eb"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/4.5.md",
+      "sha256": "fda543d975ac9378173d8b830ec4f1b7b9153dfd067bc1e5efcc7b398d5b6bf2"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter4/index.md",
+      "sha256": "9c18814fa911127de882fc6a15bed60305a637d9be191d069aea09eaf07f3bbe"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/5.1.md",
+      "sha256": "efd8a59340a6d005ef767b8a86c4e4d31d3ee8f7aac22749e9ec8648eaf1e9d8"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/5.2.md",
+      "sha256": "568dce4ff63821cc5950b0e8aaf4d83ade4de1dc035b179831cbfdbac60a2313"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/5.3.md",
+      "sha256": "989266c5763e0e5e9175a5f665cd1c4df6241cde44a69922e054a60a69759832"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/5.4.md",
+      "sha256": "fc9af94196569efd067a5217e1a8780cdf81e6b3112735e3c76b665526b1ad61"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/5.5.md",
+      "sha256": "a6e0067cefde53c6587feaa30fbef3da324bf862e297a3371dbc52451d933de0"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter5/index.md",
+      "sha256": "1a1fc1af6349d80c3815bcffa7efb36235846cfae39602a42fe47e3f93560c9a"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter6/6.1.md",
+      "sha256": "0a74fad594421b528041848d5674343dd2ae14797fe7d958d2c88962d94933d9"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter6/6.2.md",
+      "sha256": "59aa69969742f3ce9c7165896ceacb2b8a64398e99456777feb735a547718e7e"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter6/6.3.md",
+      "sha256": "4da619167dafe9fd20ea7b475fc40d77fc06cc94dd266db999ee3e2535a571d2"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter6/6.4.md",
+      "sha256": "bf0e45b2ecf58456af5f663c9e5f4d90ddb1ce1750f7a54b2e7b69b1777b0d8d"
+    },
+    {
+      "path": "content/research/nars/theory/gti/chapter6/index.md",
+      "sha256": "3eb7cbdeeffafcc44801fe121e9811fa03a84e4462639f2482acf55b55aa27d0"
+    },
+    {
+      "path": "content/research/nars/theory/gti/index.md",
+      "sha256": "a43b3b14bfd48e9efca1c424b941218bc2b7290db047ad2a8e06f03bae5e3f7a"
+    },
+    {
+      "path": "content/research/nars/theory/gti/preface.md",
+      "sha256": "b9dedc57e486a98602108e494544f52b7f129a8d8a84c033603c58a0d9623fdc"
+    },
+    {
+      "path": "content/research/nars/theory/gti/topics/amount_of_information.md",
+      "sha256": "edcdb74fa722a60a77a1848779129df266c174d05b0904f262808e415fa4f87c"
+    },
+    {
+      "path": "content/research/nars/theory/gti/topics/index.md",
+      "sha256": "a11e206cf289c39dcec15eb4dc95176b617048cab1cd0be69bc010d86c5b6575"
+    },
+    {
+      "path": "content/research/nars/theory/gti/topics/working_definition.md",
+      "sha256": "c1a51250a0248df09f5d6bbf1d33d4387b039478508ef897ac2ecdb03fc38f79"
+    },
+    {
+      "path": "content/research/nars/theory/index.md",
+      "sha256": "a59f6ca7f6060e7e37c0793cd806bb34284c7c36a327c364c6ed5940e92ba71b"
+    },
+    {
+      "path": "content/research/nars/theory/learning_resources.md",
+      "sha256": "582d5f48818f48893f4de9c582e34085c641d30e2b8c4049b8d58b872e14251c"
+    },
+    {
+      "path": "content/research/nars/theory/nac/index.md",
+      "sha256": "c720fa89750daebb19602a8cbc48e5954b3f6c2294b3924872ebc7485d18b48d"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/index.md",
+      "sha256": "babdaff4931c8d611658317f1f937b6636b79f20f2d9dff984497fbfa542ed52"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/ona.md",
+      "sha256": "e3a692f5decb86bbcc276c39597b987e8e68292656d002bf904360a5e32c4fce"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/opennars_15x.md",
+      "sha256": "9a551c98f3cd79657d7da6fffaafb31156d7ef74bb145a433f2ab1e4bb56b5b0"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/opennars_30x.md",
+      "sha256": "1642de5308253b2e6a871e97e49295c50a75c3393b7593419dc663df02623b6a"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/opennars_31x.md",
+      "sha256": "722858bd92b7a43c5eae10a63c2195274d69875733a67e2b9710d8d6bb08045e"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_classic_versions/pynars.md",
+      "sha256": "5f5d822470b7e78c865e0bef5f12a1d82639fab9e1101c99980e5a81b62957e6"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_overview/index.md",
+      "sha256": "e62ace04e240f5c8c44aee064806781d848bd9edbf93bdeb4eeb1aff839721f7"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_principles/aikr.md",
+      "sha256": "a1b01c64239bc716e3335ac8ba8f8fa22ebb7c065f9a05113a06d76cf9f8aad9"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_principles/index.md",
+      "sha256": "e73d8515c74d24212c91cc5428f6563bbe82f3561b6a4039d749614d852ed284"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nac_principles/inference_step_o_n.md",
+      "sha256": "fc9e4d11193accd8632d0bc853287060d14c09c54c6a2ff84124e8229cc7f482"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nal_and_nac/index.md",
+      "sha256": "34c06e985f2c95df796a4749efa47ecb1ee8f50816236fe2bd5edd42d9181d17"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nal_and_nac/nal_7.md",
+      "sha256": "a3f1c72dcdb08aca99d708c9931128efdece62e79cf26b078e2007bd2caddd18"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nal_and_nac/nal_8.md",
+      "sha256": "9f51c611d5cb1c12074e3f1b9f38cd460e80333f93c1f3d81803456d1bda01dc"
+    },
+    {
+      "path": "content/research/nars/theory/nac/nal_and_nac/nal_9.md",
+      "sha256": "5831517f61977da68238727297e9f292375cf6d06317d6b3f57089eb69a8eac0"
+    },
+    {
+      "path": "content/research/nars/theory/nac/source-materials.md",
+      "sha256": "be6c8df324a1998b68cde25c071a2931bc208c47221952b4cc42add95152dcb3"
+    },
+    {
+      "path": "content/research/sai/index.md",
+      "sha256": "c6fae2ed073c56df991730aceb3ab0f63f5a52b315f21467c2f1db265911c15f"
+    },
+    {
+      "path": "content/research/sai/llms.md",
+      "sha256": "03895c13fe581b1f5ff47cd7aab912b03c37a7047698a02c7a38f06b9c72b12c"
+    },
+    {
+      "path": "content/wiki/index.md",
+      "sha256": "d46925238a34957ad6c1501b9dcd80b71a5bae66bc5da7a21d4b0ab8dc2933f6"
+    },
+    {
+      "path": "content/wiki/thought_library/bingfengdecao.md",
+      "sha256": "3de503cf0f254994b5095e5a4c8ed63b3ef8955a6f4614ff2151ed4673a8cb0d"
+    },
+    {
+      "path": "content/wiki/thought_library/identity_of_intelligence.md",
+      "sha256": "436b0f119f1ba1dc23b6e22124834b2b724edd34ac41a9224b44f72cead29811"
+    },
+    {
+      "path": "content/wiki/thought_library/images/联想.png",
+      "sha256": "c215b68797ef45ac454cefff56d2f8debc6162fcde2cf4b246219a7e81209895"
+    },
+    {
+      "path": "content/wiki/thought_library/index.md",
+      "sha256": "5bff28c531cf4d7bd69a69e80f7a253cd990505a127d02835ed93d1a1aaae81a"
+    },
+    {
+      "path": "content/wiki/thought_library/lazero.md",
+      "sha256": "135fa84352d99bc8c7684c4697f7a7e740c99fc3427f865a360bdb60f1e75e09"
+    },
+    {
+      "path": "content/wiki/thought_library/meaning_network.md",
+      "sha256": "7ef0f22e891caf280f449e2851a50a8fe7c1d6a262f51fc435fabf0e79cce964"
+    },
+    {
+      "path": "content/wiki/thought_library/mimicry_operation.md",
+      "sha256": "f7d4a1d78e261389ded56b92232fc5ad333f77b165d503ce2a2fac0420272dcd"
+    },
+    {
+      "path": "ops/bilibili-conference-audit-2026-09-19.md",
+      "sha256": "84042b953c2325ba924b6284c2b328efe1867418d12bc7546af2ddac7969777c"
+    },
+    {
+      "path": "ops/bilibili-conference-audit-2026-09-20.md",
+      "sha256": "e8e32e7afea1bcdd9626d143ed339277afd7eb1ed52f3aaeb7269e4a9d742678"
+    },
+    {
+      "path": "ops/conference-2026-video-research-2026-09-18.md",
+      "sha256": "e04b1f0178cb9fc472c683b010e9ff5c7cf166076267019c2e8bfd898ca80ce8"
+    },
+    {
+      "path": "ops/conference-and-group-video-audit-2026-09-19.md",
+      "sha256": "cee47d4a7cc8d0c80bba5a640da03fb1ac541fde60499f48d77ec5ccfe5384b9"
+    },
+    {
+      "path": "ops/dns-tencent-deployment-handoff-2026-09-18.md",
+      "sha256": "ebedba0cfd919c5d20955e75dd9047e247a2fa3e1df79619fcfeec0471854b11"
+    },
+    {
+      "path": "ops/gitea-mirror-deployment-2026-09-19.md",
+      "sha256": "5396f0ba334e8ae7e21e2cfb1d712c30e9feb070629399ccdfac8f2e2de2e03f"
+    },
+    {
+      "path": "ops/nars-implementation-catalog-template-2026-09-19.md",
+      "sha256": "09d1454de62a57d9bd83582dca982e30ef0c1f734430a1dba202814fec17accf"
+    },
+    {
+      "path": "ops/tencent-cloud-network-baseline-2026-09-18.md",
+      "sha256": "861965dd4f2daced3078f2cb4a571f56cfe8d85d50b826fd61d28364046700f7"
+    }
+  ]
+}
