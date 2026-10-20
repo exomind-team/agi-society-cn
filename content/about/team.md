@@ -60,7 +60,9 @@ comments: true
 
 ## 刘凯
 
-> 博士，渤海大学，教育科学学院，教育技术学学硕及心理健康教育专硕硕士生导师，中国通用人工智能协会（筹）召集人
+> 博士，渤海大学教育科学学院教师、硕士生导师，中国通用人工智能协会（筹）召集人；用户提供的个人简介材料列职称为副教授（未独立核验）。
+
+[[../wiki/people/liu-kai|完整人物资料]]
 
 [知乎↗](https://www.zhihu.com/people/wuyuezhidian)
 [Bilibili↗](https://space.bilibili.com/475410405)

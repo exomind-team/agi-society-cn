@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import crypto from 'node:crypto'
 import { parse } from 'parse5'
 const profiles=JSON.parse(fs.readFileSync('data/people-profiles.json','utf8'))
-assert.deepEqual(profiles.map(p=>p.name),['王培','胡祥恩','徐英瑾','魏屹东','桑新民','王伟军','那孜古力·斯拉木'])
+assert.deepEqual(profiles.map(p=>p.name),['王培','胡祥恩','徐英瑾','魏屹东','桑新民','王伟军','那孜古力·斯拉木','刘凯'])
 const attrs=n=>Object.fromEntries((n.attrs||[]).map(x=>[x.name,x.value]))
 const all=(n,fn)=>[...(fn(n)?[n]:[]),...(n.childNodes||[]).flatMap(c=>all(c,fn))]
 const cls=(n,name)=>(attrs(n).class||'').split(' ').includes(name)
@@ -25,7 +25,7 @@ assert.ok(text(nadyRow).includes('秘书组'))
 assert.ok(!/D:\\|H:\\|身份证|电话|出生/.test(JSON.stringify(nady)))
 assert.ok(fs.readFileSync('content/about/team.md','utf8').includes('[[../wiki/people/naziguli-slam|'))
 for(const [i,p] of profiles.entries()){
- if(cards[i])assert.equal(text(cards[i]).split(p.name).length-1,1);else assert.equal(p.id,'naziguli-slam')
+ if(cards[i])assert.equal(text(cards[i]).split(p.name).length-1,1);else assert.ok(['naziguli-slam','liu-kai'].includes(p.id))
  assert.ok(text(rows[i]).includes(p.summary));if(cards[i])assert.ok(text(cards[i]).includes(p.summary))
  const ids=new Set(p.sources.map(s=>s.id))
  assert.equal(ids.size,p.sources.length)
@@ -44,7 +44,7 @@ for(const [i,p] of profiles.entries()){
   if(cards[i])assert.equal(all(cards[i],n=>n.tagName==='img').length,1)
   assert.ok(p.portrait.rights)
  }else{
-  assert.equal(p.name,'王伟军');assert.ok(p.identityBoundary);assert.equal(all(rows[i],n=>n.tagName==='img').length,0);if(cards[i])assert.equal(all(cards[i],n=>n.tagName==='img').length,0)
+  assert.ok(['王伟军','刘凯'].includes(p.name));assert.ok(p.identityBoundary);assert.equal(all(rows[i],n=>n.tagName==='img').length,0);if(cards[i])assert.equal(all(cards[i],n=>n.tagName==='img').length,0)
   assert.ok(!JSON.stringify(p).includes('psych.ccnu.edu.cn'))
  }
 }
