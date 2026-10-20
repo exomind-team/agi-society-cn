@@ -40,15 +40,19 @@ def package(source, destination, allow_dirty=False):
         '可用 PowerShell Get-FileHash -Algorithm SHA256 wiki-preview.html 检查。\n').encode('utf-8')
     files['SHA256SUMS.txt'] = ''.join(f'{sha(v)}  {k}\n' for k,v in sorted(files.items())).encode()
     archive=destination / f'agi-wiki-preview-{commit[:12]}.zip'
+    standalone=destination / f'wiki-preview-{commit[:12]}.html'
+    if standalone.exists(): raise FileExistsError(standalone)
     with zipfile.ZipFile(archive, 'x', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for name,data in sorted(files.items()): z.writestr(name,data)
     with zipfile.ZipFile(archive) as z:
         if z.testzip(): raise ValueError('ZIP integrity failed')
         for name,data in files.items():
             if z.read(name) != data: raise ValueError('ZIP roundtrip mismatch')
-    (destination/'SHA256SUMS.txt').write_text(f'{sha(archive.read_bytes())}  {archive.name}\n')
+    with standalone.open('xb') as output: output.write(html)
+    if standalone.read_bytes() != html: raise ValueError('Standalone HTML roundtrip mismatch')
+    (destination/'SHA256SUMS.txt').write_text(f'{sha(archive.read_bytes())}  {archive.name}\n{sha(html)}  {standalone.name}\n')
     (destination/'release-manifest.json').write_bytes(files['release-manifest.json'])
-    (destination/'release-notes.md').write_text(f'AGI Wiki 单文件离线预览。源码 `{commit}`。\n\n下载 ZIP、解压并打开 `wiki-preview.html`。社区功能仅本地演示，不发布。未索引原料仍可访问，不是私密资料。\n\nHTML SHA256: `{sha(html)}`\n\nDist manifest SHA256: `{sha(manifest)}`\n')
+    (destination/'release-notes.md').write_text(f'AGI Wiki 单文件离线预览。源码 `{commit}`。\n\n直接下载 `{standalone.name}` 后在浏览器打开；也可下载 ZIP、解压并打开 `wiki-preview.html`。两者 HTML 字节完全相同。这是本地阅读文件，不是 GitHub 托管的在线预览；外部视频、论文链接仍需网络。社区功能仅本地演示，不发布。未索引原料仍可访问，不是私密资料。\n\nHTML SHA256: `{sha(html)}`\n\nDist manifest SHA256: `{sha(manifest)}`\n')
     return metadata
 if __name__ == '__main__':
     p=argparse.ArgumentParser(); p.add_argument('--source',default=str(ROOT/'delivery/offline')); p.add_argument('--output',default=str(ROOT/'delivery/release')); p.add_argument('--allow-dirty',action='store_true',help='Local QA only; workflow never uses this')

@@ -150,4 +150,4 @@ npm run serve        # 预览构建产物
 
 ### 单文件离线预发行版
 
-先锋分支可通过修改 `release/offline-preview.json` 触发全站离线打包。预发行版 ZIP 解压后直接打开 HTML，不再需要聊天分块合并；附源码 commit 与 SHA256。社区仅本地演示，未索引原料仍可访问，不是私密资料。发布边界、手动入口限制与验收见[离线预发行规范](docs/specs/offline-prerelease.md)。
+先锋分支可通过修改 `release/offline-preview.json` 触发全站离线打包。预发行版同时提供独立 HTML 与 ZIP；可直接下载 HTML 后用浏览器打开，或解压 ZIP 阅读，两者正文文件完全相同，不再需要聊天分块合并（不是 GitHub 在线托管预览）；附源码 commit 与 SHA256。社区仅本地演示，未索引原料仍可访问，不是私密资料。发布边界、手动入口限制与验收见[离线预发行规范](docs/specs/offline-prerelease.md)。

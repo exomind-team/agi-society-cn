@@ -12,6 +12,11 @@ class ReleaseTests(unittest.TestCase):
     self.assertEqual(len(z.namelist()),6);self.assertIn('wiki-preview.html',z.namelist())
     self.assertEqual(mod.sha(z.read('wiki-preview.html')),meta['htmlSha256'])
     self.assertEqual(len(meta['unlisted']),12)
+    standalone=next(Path(td).glob('*.html'))
+    self.assertEqual(standalone.read_bytes(),z.read('wiki-preview.html'))
+    sums=dict(line.split('  ',1)[::-1] for line in (Path(td)/'SHA256SUMS.txt').read_text().splitlines())
+    self.assertEqual(sums[standalone.name],meta['htmlSha256'])
+    self.assertEqual(sums[archive.name],mod.sha(archive.read_bytes()))
    with self.assertRaises(FileExistsError):mod.package(ROOT/'delivery/offline',td,True)
  def test_invalid_source_identity(self):
   for mutation in [{'sourceCommit':'not-a-sha'},{'sourceDirty':True}]:

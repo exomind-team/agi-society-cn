@@ -56,7 +56,7 @@ jobs:
             echo "Same-commit release already exists; refusing to overwrite or duplicate."
             exit 1
           fi
-          gh release create "$tag" delivery/release/*.zip delivery/release/SHA256SUMS.txt delivery/release/release-manifest.json \
+          gh release create "$tag" delivery/release/*.zip delivery/release/*.html delivery/release/SHA256SUMS.txt delivery/release/release-manifest.json \
             --target "$GITHUB_SHA" --prerelease --latest=false \
             --title "AGI Wiki 离线预览 ${GITHUB_SHA:0:12}" --notes-file delivery/release/release-notes.md
           gh release view "$tag" --json url,targetCommitish,isPrerelease,assets
