@@ -28,7 +28,7 @@ const profilePath = (name: string) => '/wiki/people/' + profileFor(name)?.id
       <article v-for="person in data.secretariat" :key="person.name" class="person-secretary">
         <div v-if="person.originalBio" class="person-original-bio" v-html="person.originalBio" />
         <h4 v-else>{{ person.name }}</h4>
-        <a :href="withBase(person.path)">查看介绍</a>
+        <a :href="withBase(person.name === '李祥' ? profilePath(person.name) : person.path)">查看介绍</a>
       </article>
     </div>
     <details class="people-members"><summary>会员组 <span>{{ data.members.length }} 位成员</span></summary><ul><li v-for="person in data.members" :key="person.name">{{ person.name }}</li></ul></details>

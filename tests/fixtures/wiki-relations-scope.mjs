@@ -21,6 +21,8 @@ export const wikiRelationsChanged = [
   "content/wiki/index.md"
 ]
 export const wikiRelationsAdded = [
+  "content/wiki/people/li-xiang.md",
+  "content/about/image/people/li-xiang.jpg",
   "content/wiki/people/naziguli-slam.md",
   "content/about/image/people/naziguli-slam-xbmu.jpg",
   "docs/specs/offline-prerelease.md",

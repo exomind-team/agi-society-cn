@@ -29,7 +29,7 @@ assert.equal(restored,original(aca),'Preserve existing ACA source and limits out
 const priorProfiles=JSON.parse(original('data/people-profiles.json')), nextProfiles=JSON.parse(read('data/people-profiles.json'))
 const priorIds = new Set(priorProfiles.map(p=>p.id))
 assert.deepEqual(nextProfiles.filter(p=>priorIds.has(p.id)&&p.id!=='wang-weijun'),priorProfiles.filter(p=>p.id!=='wang-weijun'),'All historical non-exception profiles remain unchanged')
-assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['liu-kai','naziguli-slam'])
+assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['li-xiang','liu-kai','naziguli-slam'])
 assert.equal(new Set(nextProfiles.map(p=>p.id)).size,nextProfiles.length)
 await import('./profile-additions.test.mjs')
 assert.equal(nextProfiles.find(p=>p.id==='wang-weijun').portrait.sha256,'168ed54774e49e245c4d3a882a508a19ac353adf780ab62f6d9802de90346497')

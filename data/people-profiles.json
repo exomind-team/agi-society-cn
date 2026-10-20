@@ -1692,5 +1692,123 @@
       }
     ],
     "limitations": "PPTX 为一页个人简介，未附外部来源。经历与研究方向按材料列示，尚未逐条独立核验；材料所列博士后与访学时间有重叠，本页分项照录，不推断其安排。招生要求和个人属性等与常设人物简介无关的内容未纳入。"
+  },
+  {
+    "id": "li-xiang",
+    "name": "李祥",
+    "aliases": [],
+    "affiliation": "辽宁工业大学 · 内聘副教授、硕士生导师（官方页所列）",
+    "summary": "研究通用人工智能、智能情感与认知科学，探索NARS中的功能主义情感模型。",
+    "verifiedOn": "2026-10-20",
+    "portrait": {
+      "file": "li-xiang.jpg",
+      "sourceUrl": "https://jckxyjy.lnut.edu.cn/info/14480/184821.htm",
+      "originalUrl": "https://jckxyjy.lnut.edu.cn/__local/1/59/CC/1C4F63E9CC80FD37960F7D207A1_FC1B9AAA_45AB.jpg",
+      "sha256": "ed732531b6cd833b8996c4648979b9099f2f992be2e853abeb81188de44c19ac",
+      "caption": "官方个人页所用照片",
+      "rights": "照片取自本人所在高校官方个人页，版权归原权利人；未见开放许可声明，不适用本站文字的 CC BY-SA 许可。"
+    },
+    "sections": [
+      {
+        "title": "公开资料所列职务",
+        "items": [
+          {
+            "text": "辽宁工业大学内聘副教授、硕士生导师",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2024-09-27页面"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "通用人工智能、智能情感、认知科学、神经科学、人工智能哲学",
+            "sources": [
+              "1"
+            ],
+            "timeScope": ""
+          }
+        ]
+      },
+      {
+        "title": "教育经历",
+        "items": [
+          {
+            "text": "美国天普大学 · 哲学博士",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2021-08"
+          }
+        ]
+      },
+      {
+        "title": "研究项目",
+        "items": [
+          {
+            "text": "主持“通用人工智能中自我意识以及情感的研究”（博士科研启动基金）",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2022-07起；官网所列"
+          },
+          {
+            "text": "主持“情感在实现自主化通用人工智能中的作用与机制”（辽宁省教育厅面上项目）",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2022-09起；官网所列"
+          }
+        ]
+      },
+      {
+        "title": "代表性论文",
+        "items": [
+          {
+            "text": "Emotional Intelligence: Abstract Cognition Innovation in Artificial General Intelligence Systems。合著；IEEE Transactions on Cognitive and Developmental Systems 17(5):1272–1285",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2025"
+          },
+          {
+            "text": "Functionalist emotion model in NARS。合著；Artificial General Intelligence Conference",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2018"
+          },
+          {
+            "text": "A decision-making model under the assumption of insufficient knowledge and resource。合著；Chinese Control and Decision Conference",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "2020"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "辽宁工业大学官方个人页",
+        "href": "https://jckxyjy.lnut.edu.cn/info/14480/184821.htm"
+      },
+      {
+        "label": "协会成员名录",
+        "href": "/about/team"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "辽宁工业大学交叉科学学院：李祥（页面日期2024-09-27，正文含2025年成果）",
+        "url": "https://jckxyjy.lnut.edu.cn/info/14480/184821.htm",
+        "observedOn": "2026-10-20"
+      }
+    ],
+    "limitations": "职务按核验时所见官方页面记载，页面标注日期不等于正文所有内容更新时间。论文列表依据学院介绍，未逐篇独立核验出版元数据；不是完整成果目录。"
   }
 ]

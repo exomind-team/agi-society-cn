@@ -157,6 +157,8 @@ comments: true
 
 ## 李祥
 
+[查看独立人物页与关联成果](/wiki/people/li-xiang)
+
 > 博士，辽宁工业大学计算机讲师，人工智能方向硕士生导师。博士师从王培
 
 [学术主页↗](https://seie.lnut.edu.cn/info/14393/185134.htm)
