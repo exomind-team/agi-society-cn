@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress'
 import path from 'node:path'
+import matter from 'gray-matter'
+import { isDiscoverable, annotateConferenceRows } from './relations/index.mjs'
+import { annualOverview, conferenceOverviewBody } from './relations/conference.mjs'
 import { writeFileSync, readFileSync } from 'node:fs'
 import { presetMarkdownIt } from '@nolebase/integrations/vitepress/markdown-it'
 import { GitChangelog } from '@nolebase/vitepress-plugin-git-changelog/vite'
@@ -9,6 +12,7 @@ import markdownItMark from 'markdown-it-mark'
 import { generateSidebar, hasSidebarChanged, commitSidebarUpdate } from './sidebar'
 
 const siteBase = process.env.VITEPRESS_BASE ?? '/agi-society-cn/'
+const previewEditBranch = process.env.VITEPRESS_EDIT_BRANCH ?? 'dot/dev-agi-society-cn-20261019'
 
 const nolebaseMD = presetMarkdownIt({
   bidirectionalLinks: {
@@ -27,6 +31,12 @@ export default defineConfig({
   base: siteBase,
   ignoreDeadLinks: true,
   cleanUrls: true,
+  transformPageData(pageData) {
+    if (!isDiscoverable(pageData.frontmatter)) {
+      Object.assign(pageData.frontmatter, { search: false, comments: false, sidebar: false, sidebarHide: true, sitemap: false, prev: false, next: false, editLink: false, lastUpdated: false })
+      pageData.frontmatter.head = [...(pageData.frontmatter.head || []), ['meta', { name: 'robots', content: 'noindex, nofollow' }]]
+    }
+  },
 
   // CRITICAL: optimizeDeps.exclude 避免 Vite dev 模式预打包含 virtual module 的 Nólëbase 包
   vite: {
@@ -88,14 +98,23 @@ export default defineConfig({
       await nolebaseMD.install(md)
     },
     config(md) {
+      md.core.ruler.after('inline', 'conference-report-anchors', state => {
+        if (state.env.relativePath?.startsWith('conference/')) annotateConferenceRows(state.tokens)
+      })
       // Render the existing archive tables directly on the conference landing page.
       // Original Markdown remains authoritative and its old URLs remain readable.
       md.core.ruler.before('normalize', 'conference-parent-overview', (state) => {
+        if (state.env.relativePath === 'conference/annual/index.md') {
+          state.src = state.src.replace(/(## 年会列表)[\s\S]*$/, '$1\n\n' + annualOverview(path.resolve('content')))
+          return
+        }
+        if (state.env.relativePath === 'conference/group/index.md') {
+          state.src = state.src.replace(/(## 学年索引)[\s\S]*$/, '$1\n\n' + conferenceOverviewBody({root: path.resolve('content'), kind: 'group'}))
+          return
+        }
         if (state.env.relativePath !== 'conference/index.md') return
         for (const kind of ['annual', 'group']) {
-          const source = readFileSync(path.join(process.cwd(), 'content/conference', kind, 'index.md'), 'utf8')
-          const marker = kind === 'annual' ? '## 年会列表' : '## 学年索引'
-          const body = source.split(marker)[1]
+          const body = conferenceOverviewBody({root: path.resolve('content'), kind})
           if (!body) throw new Error(`Missing conference source marker: ${kind}`)
           const resolved = body.replace(/\[\[([^\]]+)\]\]/g, (_, value) => {
             const [target, label] = value.replace(/\\\|/g, '|').split('|')
@@ -127,6 +146,7 @@ export default defineConfig({
         { text: '应用与工具', link: '/projects/nars_derivatives/' },
       ] },
       { text: '会议与交流', link: '/conference/' },
+      { text: '社区 · 演示', link: '/community' },
       { text: '新闻动态', link: '/news' },
       { text: '关于与联系', items: [
         { text: '协会简介', link: '/about/' },
@@ -145,6 +165,11 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
+        _render(src, env, md) {
+          if (!isDiscoverable(matter(src).data)) return ''
+          const html = md.render(src, env)
+          return env.frontmatter?.search === false ? '' : html
+        },
         translations: {
           button: {
             buttonText: '搜索',
@@ -165,7 +190,7 @@ export default defineConfig({
 
     editLink: {
       pattern: process.env.VITEPRESS_PREVIEW === 'true'
-        ? 'https://github.com/exomind-team/agi-society-cn/edit/dot/dev-agi-society-cn-20261019/content/:path'
+        ? `https://github.com/exomind-team/agi-society-cn/edit/${previewEditBranch}/content/:path`
         : 'https://github.com/exomind-team/agi-society-cn/edit/main/content/:path',
       text: '在 GitHub 上编辑此页',
     },

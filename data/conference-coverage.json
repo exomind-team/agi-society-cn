@@ -1,0 +1,194 @@
+[
+  {
+    "file": "conference/annual/2016.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/annual/2017.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/annual/2018.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/annual/2019.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/annual/2020.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2021.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2022.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2023.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2024.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2025.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/2026.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/annual/index.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/group/2016-2017.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/group/2017-2018.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/group/2018-2019.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  },
+  {
+    "file": "conference/group/2019-2020.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2020-2021.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2021-2022.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2022-2023.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2023-2024.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2024-2025.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-19",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/2025-2026.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": "2026-09-20",
+    "status": "访问受限，不能确认最新",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/group/index.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": true,
+    "attemptedAt": "2026-10-20"
+  },
+  {
+    "file": "conference/index.md",
+    "localAuditAt": "2026-10-20",
+    "lastVerified": null,
+    "status": "无新增确认（仅本地结构核对）",
+    "blocked": false,
+    "attemptedAt": null
+  }
+]

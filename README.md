@@ -136,3 +136,14 @@ npm run serve        # 预览构建产物
 ## 许可证
 
 内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可。代码采用 MIT 许可。
+
+
+## 先锋版人物与社区融合演示
+
+预览分支 `dot/dev-agi-society-cn-20261019` 包含人物、论文、会议报告反链与 `/community` 精简社区本地演示。社区仅保存本机草稿并可导出，不连接真实 Discourse、不提供账号或发帖服务。引用带条目、段落摘录和快照版本，讨论可返回来源；规则候选不等同已确认事实。
+
+构建完整离线 HTML：先执行 `VITEPRESS_PREVIEW=true VITEPRESS_BASE=/ npm run build`，再运行 `node scripts/offline/build.mjs`，结果位于 `delivery/offline/AGI-Wiki-完整离线预览.html`。Windows 可先在 PowerShell 设置 `$env:VITEPRESS_PREVIEW="true"; $env:VITEPRESS_BASE="/"` 后执行构建。外部视频和论文需联网；原始转写不进搜索和目录，但持有文件者可直接读取，不属于私密访问控制。
+
+详见 [社区演示规格](docs/specs/community-demo.md) 与 [人物关系规格](docs/specs/wiki-relations.md)。历史保留测试还需要对应旧 Git 对象／构建基线，不能把本地复跑通过误认为干净 clone 已自带全部历史夹具。
+
+分块交付可运行 `python scripts/offline/package.py delivery/offline/AGI-Wiki-完整离线预览.html delivery/parts`。每块不超过 5,000,000 字节；生成的清单与 PowerShell/Python 合并脚本校验逐块与总 SHA256，保留原分块，不修改系统执行策略。

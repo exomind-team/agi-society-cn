@@ -1,0 +1,54 @@
+# Run with PowerShell from this file's folder. Does not change execution policy.
+$ErrorActionPreference = 'Stop'
+$ManifestSHA256 = '@MANIFEST_SHA256@'
+function Hash-File([string]$Path) { return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant() }
+function Safe-Name([string]$Name) {
+    if ($Name -notmatch '^[A-Za-z0-9][A-Za-z0-9._-]*$' -or $Name.Contains('..') -or $Name.EndsWith('.') -or $Name -match '^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\.|$)') { throw 'Unsafe filename in manifest' }
+    return $Name
+}
+$tmp = $null
+try {
+    $root = $PSScriptRoot
+    if (-not $root) { $root = (Get-Location).Path }
+    $manifest = Join-Path $root 'manifest.json'
+    if ((Hash-File $manifest) -ne $ManifestSHA256) { throw 'Manifest changed; use the original manifest and scripts' }
+    $m = Get-Content -LiteralPath $manifest -Raw -Encoding UTF8 | ConvertFrom-Json
+    $outputName = Safe-Name $m.output
+    $output = Join-Path $root $outputName
+    if ($m.schema -ne 1 -or $m.parts.Count -lt 1) { throw 'Invalid manifest' }
+    $index = 0
+    foreach ($p in $m.parts) {
+        $index++
+        $name = Safe-Name $p.name
+        if ($name -cne ('{0}.{1:D4}.part' -f $outputName,$index) -or $p.index -ne $index -or $p.size -le 0 -or $p.size -gt 5000000) { throw 'Invalid part sequence/size' }
+        $path = Join-Path $root $name
+        $item = Get-Item -LiteralPath $path
+        if ($item.PSIsContainer -or ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -or $item.Length -ne $p.size -or (Hash-File $path) -ne $p.sha256) { throw "Missing, renamed or corrupt part: $name" }
+    }
+    if (Test-Path -LiteralPath $output) {
+        $item = Get-Item -LiteralPath $output
+        if (-not $item.PSIsContainer -and -not ($item.Attributes -band [IO.FileAttributes]::ReparsePoint) -and $item.Length -eq $m.size -and (Hash-File $output) -eq $m.sha256) {
+            Write-Output "Already verified, unchanged: $outputName"; exit 0
+        }
+        throw 'Output already exists and differs; nothing overwritten'
+    }
+    $tmp = Join-Path $root ('.wiki-merge-' + [Guid]::NewGuid().ToString('N') + '.tmp')
+    $out = [IO.File]::Open($tmp,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+    try {
+        foreach ($p in $m.parts) {
+            $src = [IO.File]::OpenRead((Join-Path $root $p.name))
+            try { $src.CopyTo($out) } finally { $src.Dispose() }
+        }
+        $out.Flush($true)
+    } finally { $out.Dispose() }
+    if ((Get-Item -LiteralPath $tmp).Length -ne $m.size -or (Hash-File $tmp) -ne $m.sha256) { throw 'Full output verification failed' }
+    # Two-argument Move refuses overwrite, including a target created after validation.
+    [IO.File]::Move($tmp,$output)
+    $tmp = $null
+    Write-Output "Verified: $outputName`nSHA256: $($m.sha256)`nAll parts retained."
+} catch {
+    Write-Error $_ -ErrorAction Continue
+    exit 1
+} finally {
+    if ($tmp -and (Test-Path -LiteralPath $tmp)) { Remove-Item -LiteralPath $tmp -Force }
+}

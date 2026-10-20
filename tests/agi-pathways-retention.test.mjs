@@ -6,11 +6,12 @@ import { parse as parseSfc } from '@vue/compiler-sfc'
 import { parse } from 'parse5'
 import { pathwaysBaselineTree, pathwaysChanged, pathwaysAdded, withoutPathwaysEntries } from './fixtures/agi-pathways-scope.mjs'
 
+import { wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-relations-scope.mjs'
 const read = file => fs.readFileSync(file, 'utf8')
 const original = file => execFileSync('git', ['show', `${pathwaysBaselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
 const inSource = file => /^(content|data|\.vitepress|docs)\//.test(file)
 const originalFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', pathwaysBaselineTree], { encoding: 'utf8' }).trim().split('\n').filter(inSource)
-const scope = new Set(pathwaysChanged)
+const scope = new Set([...pathwaysChanged, ...wikiRelationsChanged])
 let unchanged = 0
 for (const file of originalFiles) {
   assert.ok(fs.existsSync(file), `Deleted current-base source: ${file}`)
@@ -20,7 +21,7 @@ for (const file of originalFiles) {
   }
 }
 const sourceFiles = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], { encoding: 'utf8' }).trim().split('\n').filter(inSource)
-assert.deepEqual(sourceFiles.filter(file => !originalFiles.includes(file)).sort(), [...pathwaysAdded].sort(), 'Only the two approved pages may be added')
+assert.deepEqual(sourceFiles.filter(file => !originalFiles.includes(file)).sort(), [...pathwaysAdded, ...wikiRelationsAdded].sort(), 'Only explicitly approved cross-route and wiki-relationship sources may be added')
 
 const researchFile = 'content/research/index.md'
 const oldIntro = '这里整理协会的研究资料。想了解 NARS 从什么问题出发，可以先读基本预设；需要进一步核对论述，再查理论正文与参考书籍。'
@@ -52,7 +53,7 @@ assert.ok(!aca.includes('/projects/nars_derivatives/'), 'ACA is not classified a
 assert.ok(aca.includes('https://github.com/exomind-team/agi-society-cn/blob/60f852704f678ff03b3faa381ede75a2dbc16c0c/content/conference/annual/2026.md'), 'Pin ACA conference evidence')
 assert.ok(guide.includes('https://github.com/trueagi-io/hyperon-experimental/blob/2f2b23401aea8c4301dd149771635ffc9583571e/README.md#L3-L8'), 'Pin the dated pre-alpha self-description')
 for (const file of pathwaysAdded) assert.equal(sourceFiles.filter(candidate => path.basename(candidate) === path.basename(file)).length, 1, `New wiki basenames must remain unique: ${file}`)
-console.log(`PASS cross-route source scope: ${unchanged} existing source/config/data/asset files byte-identical to ${pathwaysBaselineTree}; three narrow entry edits and two unique new pages; full prior NARS text, map and home structure retained.`)
+console.log(`PASS cross-route source scope: ${unchanged} existing source/config/data/asset files byte-identical to ${pathwaysBaselineTree}; three prior entry edits and two cross-route pages plus explicit wiki-iteration scope; full prior NARS text, map and home structure retained.`)
 if (process.argv.includes('--source-only')) process.exit(0)
 
 const attrs = node => Object.fromEntries((node.attrs || []).map(attr => [attr.name, attr.value]))

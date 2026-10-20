@@ -1,6 +1,7 @@
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import GrayMatter from 'gray-matter'
+import { isDiscoverable } from './relations/index.mjs'
 import { calculateSidebar as calc } from '@nolebase/vitepress-plugin-sidebar'
 
 const CONTENT_SECTIONS = [
@@ -98,7 +99,11 @@ function fixLink(link) { return link ? link.replace('/content', '') : link }
 
 function fixItems(arr, parentDir) {
   const sorted = sortByContentOrder(arr, parentDir)
-  return sorted.map(item => {
+  return sorted.filter(item => {
+    if (!item.link) return true
+    const file = join('content', fixLink(item.link).replace(/^\//, '') + '.md')
+    return !existsSync(file) || isDiscoverable(GrayMatter(readFileSync(file, 'utf8')).data)
+  }).map(item => {
     const fixed = { ...item }
     if (fixed.link) fixed.link = fixLink(fixed.link)
     // VitePress serializes a trailing-slash directory link as `.../index`,

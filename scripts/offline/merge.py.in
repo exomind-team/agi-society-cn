@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""Verify immutable package manifest, every part and full output; publish without overwrite."""
+import hashlib, json, os, re, sys, tempfile
+from pathlib import Path
+MANIFEST_SHA256 = '@MANIFEST_SHA256@'
+
+def digest(path):
+    h = hashlib.sha256()
+    with path.open('rb') as f:
+        for block in iter(lambda: f.read(1024 * 1024), b''): h.update(block)
+    return h.hexdigest()
+
+def safe(name):
+    if not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', name) or '..' in name:
+        raise ValueError('Unsafe filename in manifest')
+    if name.split('.')[0].upper() in {'CON','PRN','AUX','NUL',*(f'COM{i}' for i in range(1,10)),*(f'LPT{i}' for i in range(1,10))} or name.endswith('.'):
+        raise ValueError('Reserved filename in manifest')
+    return name
+
+def main():
+    root = Path(__file__).resolve().parent
+    raw = (root / 'manifest.json').read_bytes()
+    if hashlib.sha256(raw).hexdigest() != MANIFEST_SHA256: raise ValueError('Manifest changed; use the original manifest and scripts')
+    m = json.loads(raw)
+    output = root / safe(m['output'])
+    parts = m['parts']
+    if not parts or m['schema'] != 1: raise ValueError('Invalid manifest')
+    for i, p in enumerate(parts, 1):
+        name = safe(p['name'])
+        if name != f"{m['output']}.{i:04d}.part" or p['index'] != i or not 0 < p['size'] <= 5_000_000:
+            raise ValueError('Invalid part sequence/size')
+        path = root / name
+        if not path.is_file() or path.is_symlink() or path.stat().st_size != p['size'] or digest(path) != p['sha256']:
+            raise ValueError(f'Missing, renamed or corrupt part: {name}')
+    if output.exists() or output.is_symlink():
+        if output.is_file() and not output.is_symlink() and output.stat().st_size == m['size'] and digest(output) == m['sha256']:
+            print(f'Already verified, unchanged: {output.name}'); return
+        raise ValueError('Output already exists and differs; nothing overwritten')
+    fd, tmp = tempfile.mkstemp(prefix='.wiki-merge-', suffix='.tmp', dir=root)
+    try:
+        h = hashlib.sha256(); size = 0
+        with os.fdopen(fd, 'wb') as out:
+            for p in parts:
+                ph = hashlib.sha256(); ps = 0
+                with (root / p['name']).open('rb') as src:
+                    for block in iter(lambda: src.read(1024*1024), b''):
+                        out.write(block); h.update(block); ph.update(block); size += len(block); ps += len(block)
+                if ps != p['size'] or ph.hexdigest() != p['sha256']: raise ValueError('Part changed during merge')
+            out.flush(); os.fsync(out.fileno())
+        if size != m['size'] or h.hexdigest() != m['sha256']: raise ValueError('Full output verification failed')
+        # Atomic no-clobber publication; hard links require a supporting filesystem (e.g. NTFS).
+        os.link(tmp, output)
+        print(f'Verified: {output.name}\nSHA256: {h.hexdigest()}\nAll parts retained.')
+    finally:
+        if os.path.exists(tmp): os.unlink(tmp)
+
+if __name__ == '__main__':
+    try: main()
+    except Exception as e:
+        print(f'ERROR: {e}', file=sys.stderr); sys.exit(1)

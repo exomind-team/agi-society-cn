@@ -10,9 +10,10 @@ import { pathwaysLinkAdditions, pathwaysHeadingAdditions, withoutPathwaysEntries
 // fixed-base guard also proves that all pre-expansion source passages survive.
 execFileSync(process.execPath, ['tests/agi-pathways-retention.test.mjs', '--source-only'], { stdio: 'inherit' })
 
+import { wikiRelationsChanged } from './fixtures/wiki-relations-scope.mjs'
 const original = file => execFileSync('git', ['show', `${baselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
 const read = file => fs.readFileSync(file, 'utf8')
-const scope = new Set([...editorialPages, ...editorialComponents, ...editorialData])
+const scope = new Set([...editorialPages, ...editorialComponents, ...editorialData, ...wikiRelationsChanged])
 const files = execFileSync('git', ['ls-tree', '-r', '--name-only', baselineTree], { encoding: 'utf8' }).trim().split('\n')
   .filter(file => /^(content|data|\.vitepress|docs)\//.test(file))
 let untouched = 0
@@ -91,5 +92,5 @@ preserve('content/learn/try.md', '## 想在本机运行 Java 版？')
 preserve('content/research/nars/theory/learning_resources.md', '> [!warning]+ 王培老师的备注', '在内容上大致分为：')
 preserve('content/about/agi.md', 'AGI研究追求')
 
-console.log(`PASS editorial revision: ${scope.size} exact target files; ${untouched} other source/config/data/asset files byte-identical to ${baselineTree}; all old anchors, frontmatter, code, images and link targets retained; original two AGI sources and one NAC link plus separately checked cross-route entry additions.`)
+console.log(`PASS editorial revision: ${editorialPages.length + editorialComponents.length + editorialData.length} editorial target files with explicit wiki-iteration exceptions; ${untouched} other source/config/data/asset files byte-identical to ${baselineTree}; all old anchors, frontmatter, code, images and link targets retained; original two AGI sources and one NAC link plus separately checked cross-route entry additions.`)
 console.log('PASS original component structure/scripts/styles retained after the two explicitly checked new home links; news provenance; 24 resource records; historical quotations; OpenNARS lineage, Java package evidence and project policy passages.')

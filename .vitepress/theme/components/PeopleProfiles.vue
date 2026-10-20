@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress'
 import { onMounted } from 'vue'
-import profiles from '../../../data/people-profiles.json'
+import allProfiles from '../../../data/people-profiles.json'
+import { computed } from 'vue'
+const props = defineProps<{ personId?: string }>()
+const profiles = computed(() => props.personId ? allProfiles.filter(person => person.id === props.personId) : allProfiles)
 import { data } from './people.data'
 import { portraitUrl } from './people-profile-assets'
 function revealSource(id: string) {
@@ -14,11 +17,11 @@ const roleFor = (name: string) => data.featured.find(person => person.name === n
 </script>
 <template>
   <div class="people-profiles">
-    <nav class="profile-jump" aria-label="选择人物"><a v-for="person in profiles" :key="person.id" :href="'#'+person.id">{{ person.name }}</a></nav>
-    <article v-for="person in profiles" :key="person.id" class="full-person" :aria-labelledby="person.id">
+    <nav v-if="!personId" class="profile-jump" aria-label="选择人物"><a v-for="person in profiles" :key="person.id" :href="'#'+person.id">{{ person.name }}</a></nav>
+    <article v-for="person in profiles" :key="person.id" class="full-person" :aria-labelledby="personId ? undefined : person.id" :aria-label="personId ? person.name : undefined">
       <header class="full-person-header">
         <figure v-if="portraitUrl(person.portrait?.file)"><img :src="portraitUrl(person.portrait.file)" :alt="person.name" loading="lazy" width="400" height="400" /><figcaption><a :href="person.portrait.sourceUrl.startsWith('/') ? withBase(person.portrait.sourceUrl) : person.portrait.sourceUrl">照片来源</a><span v-if="person.portrait.caption"> · {{ person.portrait.caption }}</span></figcaption></figure>
-        <div><p class="profile-role">{{ roleFor(person.name) }} · 中国通用人工智能协会</p><h2 :id="person.id">{{ person.name }}</h2><p class="profile-affiliation">{{ person.affiliation }}</p><p>{{ person.summary }}</p><p class="profile-verified">资料核验：{{ person.verifiedOn }}</p></div>
+        <div><p class="profile-role">{{ roleFor(person.name) }} · 中国通用人工智能协会</p><h2 v-if="!personId" :id="person.id"><a :href="withBase('/wiki/people/'+person.id)">{{ person.name }}</a></h2><p class="profile-affiliation">{{ person.affiliation }}</p><p>{{ person.summary }}</p><p class="profile-verified">资料核验：{{ person.verifiedOn }}</p></div>
       </header>
       <p v-if="person.identityBoundary" class="profile-boundary">{{ person.identityBoundary }}</p>
       <section v-for="section in person.sections" :key="section.title" class="profile-section">

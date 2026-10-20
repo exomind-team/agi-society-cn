@@ -4,7 +4,7 @@ import { data } from './people.data'
 import profiles from '../../../data/people-profiles.json'
 import { portraitUrl } from './people-profile-assets'
 const profileFor = (name: string) => profiles.find(person => person.name === name)
-const profilePath = (name: string) => '/about/people#' + profileFor(name)?.id
+const profilePath = (name: string) => '/wiki/people/' + profileFor(name)?.id
 </script>
 
 <template>

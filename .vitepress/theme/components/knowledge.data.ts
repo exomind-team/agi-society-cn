@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
+import { isDiscoverable } from '../../relations/index.mjs'
 
 // Build from the Markdown tree, rather than maintain a second table of contents.
 export interface KnowledgeNode { title: string; href: string; children: KnowledgeNode[]; count: number }
@@ -18,6 +19,7 @@ function tree(dir: string): KnowledgeNode {
     const full = path.join(dir,entry.name)
     if(entry.isDirectory()) { const child=tree(full); return child.count ? [child] : [] }
     if(!entry.name.endsWith('.md') || entry.name === 'index.md') return []
+    if (!isDiscoverable(matter(fs.readFileSync(full, 'utf8')).data)) return []
     return [{...page(full), children:[], count:1}]
   }).sort((a,b)=> ('order' in a ? Number(a.order) : 999)-('order' in b ? Number(b.order) : 999) || a.title.localeCompare(b.title,'zh-CN'))
   return {...own,children,count:children.reduce((sum,c)=>sum+c.count,fs.existsSync(index)?1:0)}

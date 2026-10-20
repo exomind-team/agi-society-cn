@@ -3,11 +3,14 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {execFileSync} from 'node:child_process'
 import {parse} from 'parse5'
+import { wikiRelationsChanged } from './fixtures/wiki-relations-scope.mjs'
+import { isDiscoverable } from '../.vitepress/relations/index.mjs'
+import matter from 'gray-matter'
 import {editorialPages} from './fixtures/editorial-revision-scope.mjs'
 execFileSync(process.execPath, ['tests/editorial-revision-retention.test.mjs'], { stdio: 'inherit' })
 const baseline='f79d9c46654a2e566f26edd556d474c76bdbd6a6'
 const allowed=new Set(['content/index.md','content/research/nars/theory/learning_resources.md','content/wiki/index.md','content/contact/index.md','content/about/team.md','content/conference/index.md','content/projects/nars_impl/introduction.md','content/projects/nars_derivatives/index.md','content/contact/documents_and_qq_group.md','content/about/index.md','content/projects/nars_impl/index.md','content/contact/contributing/formats.md'])
-editorialPages.forEach(file => allowed.add(file))
+;[...editorialPages, ...wikiRelationsChanged].forEach(file => allowed.add(file))
 const files=execFileSync('git',['ls-tree','-r','--name-only',baseline,'content'],{encoding:'utf8'}).trim().split('\n')
 const changed=[]
 for(const file of files){
@@ -25,7 +28,7 @@ const tree=all(map,n=>(attrs(n).class||'').split(' ').includes('knowledge-groups
 assert.ok(tree)
 const hrefs=new Set(all(tree,n=>n.tagName==='a').map(n=>attrs(n).href))
 const allMarkdown=fs.readdirSync('content',{recursive:true}).filter(f=>f.endsWith('.md')).map(f=>'content/'+f)
-const mapFiles=allMarkdown
+const mapFiles=allMarkdown.filter(file => isDiscoverable(matter(fs.readFileSync(file, 'utf8')).data))
 for(const file of mapFiles){const url=file==='content/index.md' ? '/' : '/'+file.slice(8).replace(/\.md$/,'').replace(/\/index$/,'/');assert.ok(hrefs.has(url),`Missing map page: ${file}`)}
 let checked=0
 for(const filename of ['index.html','learn/map.html','learn/try.html','learn/projects.html','contact/index.html']){

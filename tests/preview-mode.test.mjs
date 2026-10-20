@@ -2,6 +2,8 @@
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import path from 'node:path'
+import matter from 'gray-matter'
+import { isDiscoverable } from '../.vitepress/relations/index.mjs'
 import { parse, compileTemplate } from '@vue/compiler-sfc'
 import { parse as parseHtml } from 'parse5'
 import * as Vue from 'vue'
@@ -31,7 +33,8 @@ for (const file of fs.readdirSync('dist', { recursive: true }).filter(file => fi
 }
 const markdown = fs.readdirSync('content', { recursive: true }).filter(file => file.endsWith('.md')).length
 assert.equal(pages, markdown + 1, 'Every Markdown page plus 404 must carry the preview configuration')
-assert.ok(editLinks >= markdown - 2)
+const unlisted = fs.readdirSync('content', { recursive: true }).filter(file => file.endsWith('.md') && !isDiscoverable(matter(read(path.join('content', file))).data)).length
+assert.ok(editLinks >= markdown - unlisted - 2)
 console.log(`PASS ${pages} VitePress HTML files: preview=true, base=/, feature-branch edit configuration; ${editLinks} rendered feature-branch edit links; ${standalone} standalone HTML; no live/rendered Giscus instance.`)
 
 const { descriptor } = parse(read('.vitepress/theme/components/PreviewDiscussion.vue'))

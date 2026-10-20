@@ -3,7 +3,7 @@ title: 组会
 sidebarTitle: 组会
 order: 2
 content-order: date
-content-order-reversed: false
+content-order-reversed: true
 sidebarCollapsed: false
 comments: true
 ---
@@ -43,5 +43,5 @@ comments: true
 > [!info] 更早的组会
 > 2018-2019 及更早的组会录像在**优酷**上，详见各学年独立页面。
 
-> [!info] 2026及以后的新组会
-> 2026年开始，组会视频在B站上单独上传，一个组会一个视频
+> [!info] 单独上传的组会视频
+> 2025–2026 学年已收录单独上传视频，见相应学年页面；这不表示此后所有组会均已完整收录。

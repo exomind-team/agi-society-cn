@@ -3,11 +3,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { execFileSync } from 'node:child_process'
+import { wikiRelationsChanged } from './fixtures/wiki-relations-scope.mjs'
 import { editorialPages } from './fixtures/editorial-revision-scope.mjs'
 // Fixed-base audit validates the narrowly authorized editorial changes and archive.
 execFileSync(process.execPath, ['tests/learning-content-retention.test.mjs'], { stdio: 'inherit' })
 const editorial = new Set(['content/index.md','content/wiki/index.md','content/research/nars/theory/learning_resources.md','content/contact/index.md','content/about/team.md','content/conference/index.md','content/projects/nars_impl/introduction.md','content/projects/nars_derivatives/index.md','content/contact/documents_and_qq_group.md','content/about/index.md','content/projects/nars_impl/index.md','content/contact/contributing/formats.md'])
-editorialPages.forEach(file => editorial.add(file))
+;[...editorialPages, ...wikiRelationsChanged].forEach(file => editorial.add(file))
 import { parse } from 'parse5'
 const root = path.resolve(import.meta.dirname, '..')
 const read = p => fs.readFileSync(path.join(root, p), 'utf8')
