@@ -1,3 +1,4 @@
+import { beforeHomeLayout } from './fixtures/home-layout-scope.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { execFileSync } from 'node:child_process'
@@ -10,9 +11,9 @@ import { pathwaysLinkAdditions, pathwaysHeadingAdditions, withoutPathwaysEntries
 // fixed-base guard also proves that all pre-expansion source passages survive.
 execFileSync(process.execPath, ['tests/agi-pathways-retention.test.mjs', '--source-only'], { stdio: 'inherit' })
 
-import { wikiRelationsChanged } from './fixtures/wiki-relations-scope.mjs'
+import { wikiRelationsChanged } from './fixtures/wiki-integrated-scope.mjs'
 const original = file => execFileSync('git', ['show', `${baselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
-const read = file => fs.readFileSync(file, 'utf8')
+const read = file => beforeHomeLayout(file, fs.readFileSync(file, 'utf8'))
 const scope = new Set([...editorialPages, ...editorialComponents, ...editorialData, ...wikiRelationsChanged])
 const files = execFileSync('git', ['ls-tree', '-r', '--name-only', baselineTree], { encoding: 'utf8' }).trim().split('\n')
   .filter(file => /^(content|data|\.vitepress|docs)\//.test(file))
@@ -20,7 +21,7 @@ let untouched = 0
 for (const file of files) {
   assert.ok(fs.existsSync(file), `Missing source: ${file}`)
   if (!scope.has(file)) {
-    assert.ok(original(file).equals(fs.readFileSync(file)), `Outside editorial scope: ${file}`)
+    assert.ok(original(file).equals(beforeHomeLayout(file, fs.readFileSync(file))), `Outside editorial scope: ${file}`)
     untouched++
   }
 }

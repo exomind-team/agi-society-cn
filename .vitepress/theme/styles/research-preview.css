@@ -89,3 +89,39 @@
 .VPHome .home-journey p,.VPHome .home-meeting-paths p { font-size:14px; color:var(--rp-muted); line-height:1.9; }
 .VPHome .home-journey a,.VPHome .home-meeting-paths a { display:inline-block; padding-block:5px; }
 @media(max-width:700px) { .home-journey,.home-meeting-paths { grid-template-columns:1fr; gap:18px; } .VPHome > .vp-doc .section { padding:28px 0!important; } }
+
+/* Homepage-only normal flow: the lead and complete Markdown share one main
+   column. A tall navigation rail can no longer delay the body or its footer. */
+.association-home .research-layout { align-items:start; }
+.association-home .home-body { min-width:0; margin-top:0; }
+.association-home .home-body > div { max-width:none; }
+.association-home .home-body .section {
+  border:0; border-top:1px solid var(--rp-line); border-radius:0;
+  background:transparent; padding:38px 0; color:var(--rp-ink);
+}
+.association-home .home-body .section > * { max-width:none; }
+.association-home .home-body .section > h2 {
+  margin:0 0 20px; padding:0; border:0; font-family:var(--rp-serif);
+  font-size:24px; line-height:1.5; color:var(--rp-ink);
+}
+.association-home .home-body .section > p { margin:16px 0; font-size:14px; line-height:1.9; color:var(--rp-muted); }
+.association-home .home-body .association-intro { border-top:0; }
+.association-home .home-body .association-intro > p { font-size:16px; }
+.association-home .home-body .section-divider { display:none; }
+.association-home .home-body :is(.home-journey,.home-meeting-paths) p { margin:16px 0; }
+.association-home .home-body :is(h2,h3,h4) { scroll-margin-top:calc(var(--vp-nav-height) + 24px); }
+.association-home .research-bottom { display:block; max-width:none; margin:0; padding:24px 0 32px; text-align:left; }
+.association-home .research-bottom nav { display:flex; flex-wrap:wrap; gap:4px 24px; margin-bottom:8px; }
+.association-home .research-bottom nav a { display:inline-flex; align-items:center; min-height:44px; }
+.association-home .research-bottom .home-footer { padding:0; text-align:left; }
+.association-home .home-body .people-secondary-title { border-top:1px solid var(--rp-line); padding-top:28px; }
+.association-home .research-bottom p { font-size:11px; color:var(--rp-muted); }
+@media(max-width:1100px) and (min-width:801px) {
+  .association-home .home-journey { grid-template-columns:1fr; gap:20px; }
+  .association-home .people-featured,.association-home .people-secretariat { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:800px) {
+  .association-home .research-rail { border-top:1px solid var(--rp-line); padding-top:24px; }
+  .association-home .home-body .section { padding:28px 0; }
+  .association-home .research-bottom { margin-top:24px; }
+}

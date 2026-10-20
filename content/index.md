@@ -1,8 +1,11 @@
 ---
 layout: home
 sidebar: false
+markdownStyles: false
 content-order: order
 ---
+
+<ResearchHome>
 
 <section class="section association-intro" id="协会">
 
@@ -177,8 +180,14 @@ AGI 认知科学，人工智能情感
 
 </section>
 
+<template #footer>
+
 <div class="home-footer">
 
 文字内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可；第三方照片除外 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
 
 </div>
+
+</template>
+
+</ResearchHome>

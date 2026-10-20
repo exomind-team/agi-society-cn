@@ -1,0 +1,21 @@
+{
+  "baseline": "b6bd20044ed4f9b87a5984164b3a238530d76cd2",
+  "files": {
+    ".vitepress/theme/components/ResearchHome.vue": {
+      "before": "0205631ca2c8ecf888818782034a3a3beab2dd009fac6156afed7bb279c01530",
+      "after": "f12a247e809693a4a3030d42df34b640bcfec9043fc1d6174ee0852e971557ff"
+    },
+    ".vitepress/theme/index.ts": {
+      "before": "aef898d79d6d8a477b5f778fc7107885d9060cc3cdfecd758f97008df94779f6",
+      "after": "20dc9efc08dd9049ef0306eef9bcee4694c2f5a6ffac30fa0e2ebba530460e54"
+    },
+    ".vitepress/theme/styles/research-preview.css": {
+      "before": "d092f86eb2f42daca9512b1ed9ed47c84900dff3538f7da4782d0fbc32aeeecb",
+      "after": "ce3ef476f4534dd0f2e0b21c52f77ed3299b2b9a0ecaa5394642c00d1643a343"
+    },
+    "content/index.md": {
+      "before": "3cc9e5971fc2efc9ca9ba5f122100dab0e10796b4e3f0d27b3c5d8f07e8af9ac",
+      "after": "d5d1358432345a021822f6cd35505e48a27ac7ecb274d7ac33cb45e285231a32"
+    }
+  }
+}

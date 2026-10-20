@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { wikiRelationsChanged } from './fixtures/wiki-relations-scope.mjs'
+import { wikiRelationsChanged } from './fixtures/wiki-integrated-scope.mjs'
 import { editorialPages } from './fixtures/editorial-revision-scope.mjs'
 // Fixed-base audit validates the narrowly authorized editorial changes and archive.
 execFileSync(process.execPath, ['tests/learning-content-retention.test.mjs'], { stdio: 'inherit' })

@@ -35,7 +35,6 @@ export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      'home-hero-before': () => h(ResearchHome),
       'nav-bar-title-after': () => h('span', { class: 'preview-badge', title: '独立开发预览；研究内容沿用公开资料' }, '先锋体验版'),
       'doc-before': () => [h(PreviewContext), h(ConferenceCoverage)],
       'doc-after': () => [h(PageRelations), h(CommunityCitation), h(PreviewDiscussion)],

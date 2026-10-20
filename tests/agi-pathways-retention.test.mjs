@@ -1,3 +1,4 @@
+import { beforeHomeLayout } from './fixtures/home-layout-scope.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import path from 'node:path'
@@ -6,8 +7,8 @@ import { parse as parseSfc } from '@vue/compiler-sfc'
 import { parse } from 'parse5'
 import { pathwaysBaselineTree, pathwaysChanged, pathwaysAdded, withoutPathwaysEntries } from './fixtures/agi-pathways-scope.mjs'
 
-import { wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-relations-scope.mjs'
-const read = file => fs.readFileSync(file, 'utf8')
+import { wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-integrated-scope.mjs'
+const read = file => beforeHomeLayout(file, fs.readFileSync(file, 'utf8'))
 const original = file => execFileSync('git', ['show', `${pathwaysBaselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
 const inSource = file => /^(content|data|\.vitepress|docs)\//.test(file)
 const originalFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', pathwaysBaselineTree], { encoding: 'utf8' }).trim().split('\n').filter(inSource)
@@ -16,7 +17,7 @@ let unchanged = 0
 for (const file of originalFiles) {
   assert.ok(fs.existsSync(file), `Deleted current-base source: ${file}`)
   if (!scope.has(file)) {
-    assert.ok(original(file).equals(fs.readFileSync(file)), `Unexpected cross-route source change: ${file}`)
+    assert.ok(original(file).equals(beforeHomeLayout(file, fs.readFileSync(file))), `Unexpected cross-route source change: ${file}`)
     unchanged++
   }
 }

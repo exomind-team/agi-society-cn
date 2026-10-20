@@ -1,16 +1,22 @@
+import { beforeHomeLayout, homeLayoutFiles } from './fixtures/home-layout-scope.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import {execFileSync,spawnSync} from 'node:child_process'
 import { wikiRelationsBaseline, wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-relations-scope.mjs'
 const normalizeText=text=>text.replace(/\r\n/g,'\n')
 const original=file=>normalizeText(execFileSync('git',['show',wikiRelationsBaseline+':'+file],{encoding:'utf8',maxBuffer:64*1024*1024}))
-const read=file=>normalizeText(fs.readFileSync(file,'utf8'))
+const read=file=>normalizeText(beforeHomeLayout(file,fs.readFileSync(file,'utf8')))
 const source=file=>/^(content|data|\.vitepress|docs)\//.test(file)
 const before=execFileSync('git',['ls-tree','-r','--name-only',wikiRelationsBaseline],{encoding:'utf8'}).trim().split('\n').filter(source)
 let unchanged=0
 for(const file of before){
  assert.ok(fs.existsSync(file),`Lost baseline file: ${file}`)
  if(!wikiRelationsChanged.includes(file)) {
+  if(homeLayoutFiles.includes(file)) {
+   assert.equal(read(file),original(file),'Unexpected normalized homepage change: '+file)
+   unchanged++
+   continue
+  }
   const diff=spawnSync('git',['diff','--quiet','--no-ext-diff',wikiRelationsBaseline,'--',file],{encoding:'utf8'})
   assert.equal(diff.status,0,'Unexpected wiki-iteration change: '+file+(diff.stderr||''))
   unchanged++

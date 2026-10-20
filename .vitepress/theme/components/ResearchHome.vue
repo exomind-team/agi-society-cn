@@ -4,13 +4,13 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
 </script>
 
 <template>
-  <div class="research-home">
+  <div class="research-home association-home">
     <header class="research-masthead">
       <div><p class="research-brand">AGI Society CN <span>中国通用人工智能协会</span></p><h1>通用人工智能的研究与实践</h1></div>
       <p class="research-intro">中国通用人工智能协会<br>会议记录、理论原文与开源实践</p>
     </header>
     <div class="research-layout">
-      <div class="research-main">
+      <main class="research-main">
         <section class="research-feature" aria-labelledby="feature-title">
           <div class="feature-copy">
             <p class="research-meta"><span class="research-kind">年会档案</span><time datetime="2026-07-18">2026 年 7 月 18–19 日</time></p>
@@ -27,7 +27,10 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
           <a :href="withBase('/learn/projects')"><strong>查阅项目</strong><span>按用途找实现、工具与源码</span></a>
           <a :href="withBase('/conference/')"><strong>会议与交流</strong><span>年会回顾、组会记录与材料</span></a>
         </nav>
-      </div>
+
+        <!-- The complete homepage continues in the same main column as the lead. -->
+        <div class="home-body vp-doc"><slot /></div>
+      </main>
       <aside class="research-rail" aria-label="知识与会议导航">
         <section><h2>从哪里读起</h2><a class="knowledge-path" data-research-entry="cross-route" :href="withBase('/research/agi-pathways')"><span>跨路线阅读</span><strong>从 Ben Goertzel 读起</strong><small>综述、认知协同、架构与学术交流</small></a><a class="knowledge-path" :href="withBase('/research/nars/theory/aikr')"><span>理论起点</span><strong>有限知识与资源下的智能</strong><small>AIKR：NARS 从什么假设出发</small></a><a class="knowledge-path" :href="withBase('/research/nars/theory/')"><span>理论目录</span><strong>NARS 理论</strong><small>概念、逻辑与认知架构</small></a><a class="knowledge-path" :href="withBase('/projects/nars_impl/')"><span>工程实践</span><strong>NARS 实现索引</strong><small>语言、版本与原始代码仓库</small></a><a class="knowledge-path" data-research-entry="aca" :href="withBase('/research/aca')"><span>独立研究入口</span><strong>ACA · 人工认知生命</strong><small>身体、感知运动与机器教育报告</small></a></section>
         <section class="conference-shelf"><h2>会议书架</h2><p class="shelf-years">2016 <span aria-hidden="true">—</span> 2026</p><p>十一届年会的议程、报告与录像，按年份查阅。</p><a :href="withBase('/conference/annual/')">历届年会</a><a :href="withBase('/conference/group/')">学术组会</a></section>
@@ -35,6 +38,9 @@ import poster from '../../../content/conference/image/2026/2026年会.jpg'
         <section class="research-contribute"><h2>补充与修正</h2><p>缺了出处，链接打不开，或有值得补入的研究材料，都可以附上来源提交修改。</p><a :href="withBase('/contact/contributing/formats')">查看贡献指南</a></section>
       </aside>
     </div>
-    <footer class="research-bottom"><span>开放阅读 · 内容采用 CC BY-SA 4.0</span><a :href="withBase('/about/')">关于协会</a><a :href="withBase('/contact/team')">全部团队成员与学术主页</a><a :href="withBase('/contact/')">联系与参与</a></footer>
+    <footer class="research-bottom home-footer">
+      <nav aria-label="协会与参与"><a :href="withBase('/about/')">关于协会</a><a :href="withBase('/contact/team')">全部团队成员与学术主页</a><a :href="withBase('/contact/')">联系与参与</a></nav>
+      <slot name="footer" />
+    </footer>
   </div>
 </template>
