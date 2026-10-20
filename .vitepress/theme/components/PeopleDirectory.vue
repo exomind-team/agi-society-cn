@@ -20,7 +20,7 @@ const profilePath = (name: string) => '/wiki/people/' + profileFor(name)?.id
         <h4><a :href="withBase(profilePath(person.name))">{{ person.name }}</a></h4>
         <p class="person-affiliation">{{ profileFor(person.name)?.affiliation }}</p>
         <p class="person-summary">{{ profileFor(person.name)?.summary }}</p>
-        <a class="person-read-more" :href="withBase(profilePath(person.name))">研究与经历 <span aria-hidden="true">↗</span></a>
+        <a class="person-read-more" :href="withBase(profilePath(person.name))">人物独页与关联 <span aria-hidden="true">↗</span></a>
       </article>
     </div>
     <h3 class="people-secondary-title">秘书组</h3>

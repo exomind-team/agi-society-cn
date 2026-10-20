@@ -2,6 +2,7 @@
 // Older baseline layers remain intact; this layer checks their newly authorized exceptions.
 export const wikiRelationsBaseline = 'e34b91748f5ecc752d5586dcc6f6d195178a32f8'
 export const wikiRelationsChanged = [
+  "data/people-profiles.json",
   ".vitepress/config.ts",
   ".vitepress/sidebar.ts",
   ".vitepress/theme/components/PeopleDirectory.vue",
@@ -18,6 +19,8 @@ export const wikiRelationsChanged = [
   "content/wiki/index.md"
 ]
 export const wikiRelationsAdded = [
+  "docs/specs/offline-prerelease.md",
+  "content/about/image/people/wang-weijun-official.jpg",
   "docs/specs/community-demo.md",
   ".vitepress/community/controller.mjs",
   ".vitepress/community/template.html",

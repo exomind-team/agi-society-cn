@@ -944,11 +944,18 @@
   {
     "id": "wang-weijun",
     "name": "王伟军",
-    "affiliation": "协会专家组",
-    "summary": "协会名录已收录；个人学术主页与照片的身份关联仍待核实。",
-    "verifiedOn": "2026-10-19",
-    "portrait": null,
-    "identityBoundary": "现有协会名录未列机构或个人主页，尚不足以确定与公开同名高校学者的对应关系。暂不将候选照片、单位和履历作为此人的资料展示。",
+    "affiliation": "华中师范大学心理学院 · 教授、博士生导师（2023年官方资料）",
+    "summary": "研究青少年网络素养、网络用户心理行为，以及基于数据分析的个性化服务。",
+    "verifiedOn": "2026-10-20",
+    "portrait": {
+      "file": "wang-weijun-official.jpg",
+      "sourceUrl": "https://www.ccnu.edu.cn/jyb/info/1010/1104.htm",
+      "originalUrl": "https://www.ccnu.edu.cn/virtual_attach_file.vsb?afc=0L46aRnNWVL4NDLPmARM4nfnmAfU49Y8nRUDMlMkUNLZnR-0gihFp2hmCIa0MYyan1hRUYyZoRNaLlWfL4TRoRL4L4NiUz67nzU8MNLinmWFUzVknzNaUmTFUz9DLkb/v2veo4OeqjT1gDTJQty0LzGPLkyPLzG8gtA8pU4cc&oid=1982913542&tid=1010&nid=1104&e=.jpg",
+      "sha256": "168ed54774e49e245c4d3a882a508a19ac353adf780ab62f6d9802de90346497",
+      "caption": "华中师范大学官方人物资料（2023-12-05）",
+      "rights": "照片版权归原权利人；未发现独立开放许可，不纳入本站正文 CC BY-SA 授权。"
+    },
+    "identityBoundary": "维护者确认协会名录中的王伟军为华中师范大学学者；机构与肖像采用校方2023年12月5日人物页。该历史资料不等于现职已重新核验。",
     "sections": [
       {
         "title": "协会记录",
@@ -961,12 +968,40 @@
             "timeScope": "既有名录"
           }
         ]
+      },
+      {
+        "title": "官方资料所列职务",
+        "items": [
+          {
+            "text": "华中师范大学心理学院教授、博士生导师",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2023-12-05页面"
+          }
+        ]
+      },
+      {
+        "title": "研究方向",
+        "items": [
+          {
+            "text": "青少年网络素养、网络用户心理行为、基于数据分析的个性化服务",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2023-12-05页面"
+          }
+        ]
       }
     ],
     "related": [
       {
         "label": "查看协会名录",
         "href": "/about/team"
+      },
+      {
+        "label": "华中师范大学官方人物页",
+        "href": "https://www.ccnu.edu.cn/jyb/info/1010/1104.htm"
       }
     ],
     "sources": [
@@ -975,8 +1010,14 @@
         "label": "协会成员名录",
         "url": "/about/team",
         "observedOn": "2026-10-19"
+      },
+      {
+        "id": "2",
+        "label": "华中师范大学：王伟军（2023-12-05）",
+        "url": "https://www.ccnu.edu.cn/jyb/info/1010/1104.htm",
+        "observedOn": "2026-10-20"
       }
     ],
-    "limitations": "缺少可把机构主页或肖像与协会名录直接关联的身份依据；研究合作中的同名线索不单独作为确证。"
+    "limitations": "导师关系另以维护者提供标注，尚未独立核验公开来源；本页非完整履历与成果目录。"
   }
 ]

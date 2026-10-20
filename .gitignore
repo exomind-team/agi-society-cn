@@ -13,3 +13,8 @@ bash.exe.stackdump
 
 # Obsidian 个人配置（每个协作者自行设置）
 content/.obsidian/
+
+# Generated offline previews and Python test caches
+delivery/
+__pycache__/
+*.pyc

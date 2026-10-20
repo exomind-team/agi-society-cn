@@ -147,3 +147,7 @@ npm run serve        # 预览构建产物
 详见 [社区演示规格](docs/specs/community-demo.md) 与 [人物关系规格](docs/specs/wiki-relations.md)。历史保留测试还需要对应旧 Git 对象／构建基线，不能把本地复跑通过误认为干净 clone 已自带全部历史夹具。
 
 分块交付可运行 `python scripts/offline/package.py delivery/offline/AGI-Wiki-完整离线预览.html delivery/parts`。每块不超过 5,000,000 字节；生成的清单与 PowerShell/Python 合并脚本校验逐块与总 SHA256，保留原分块，不修改系统执行策略。
+
+### 单文件离线预发行版
+
+先锋分支可通过修改 `release/offline-preview.json` 触发全站离线打包。预发行版 ZIP 解压后直接打开 HTML，不再需要聊天分块合并；附源码 commit 与 SHA256。社区仅本地演示，未索引原料仍可访问，不是私密资料。发布边界、手动入口限制与验收见[离线预发行规范](docs/specs/offline-prerelease.md)。

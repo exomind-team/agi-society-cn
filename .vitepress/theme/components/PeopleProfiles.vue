@@ -21,7 +21,7 @@ const roleFor = (name: string) => data.featured.find(person => person.name === n
     <article v-for="person in profiles" :key="person.id" class="full-person" :aria-labelledby="personId ? undefined : person.id" :aria-label="personId ? person.name : undefined">
       <header class="full-person-header">
         <figure v-if="portraitUrl(person.portrait?.file)"><img :src="portraitUrl(person.portrait.file)" :alt="person.name" loading="lazy" width="400" height="400" /><figcaption><a :href="person.portrait.sourceUrl.startsWith('/') ? withBase(person.portrait.sourceUrl) : person.portrait.sourceUrl">照片来源</a><span v-if="person.portrait.caption"> · {{ person.portrait.caption }}</span></figcaption></figure>
-        <div><p class="profile-role">{{ roleFor(person.name) }} · 中国通用人工智能协会</p><h2 v-if="!personId" :id="person.id"><a :href="withBase('/wiki/people/'+person.id)">{{ person.name }}</a></h2><p class="profile-affiliation">{{ person.affiliation }}</p><p>{{ person.summary }}</p><p class="profile-verified">资料核验：{{ person.verifiedOn }}</p></div>
+        <div><p class="profile-role">{{ roleFor(person.name) }} · 中国通用人工智能协会</p><h2 v-if="!personId" :id="person.id"><a :href="withBase('/wiki/people/'+person.id)">{{ person.name }}</a></h2><p v-if="!personId"><a :href="withBase('/wiki/people/'+person.id)">打开人物独页与关联资料 ↗</a></p><p class="profile-affiliation">{{ person.affiliation }}</p><p>{{ person.summary }}</p><p class="profile-verified">资料核验：{{ person.verifiedOn }}</p></div>
       </header>
       <p v-if="person.identityBoundary" class="profile-boundary">{{ person.identityBoundary }}</p>
       <section v-for="section in person.sections" :key="section.title" class="profile-section">

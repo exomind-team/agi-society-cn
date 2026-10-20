@@ -1,4 +1,5 @@
-export const COMMUNITY_SNAPSHOT = 'wiki-people-community-20261020-v1'
+import releaseMarker from '../../release/offline-preview.json' with { type: 'json' }
+export const COMMUNITY_SNAPSHOT = releaseMarker.request
 export const DRAFT_KEY = 'agi-wiki-community-drafts-v1'
 export const CATEGORIES = ['研究讨论', '实验复现', 'Wiki改进']
 export function readDrafts(storage) {
