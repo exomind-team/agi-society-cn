@@ -23,9 +23,9 @@ onBeforeUnmount(() => map.value?.removeEventListener('toggle', save, true))
 <template>
   <div class="knowledge-map" ref="map">
     <nav class="learning-starts" aria-label="选择学习起点">
-      <a :href="withBase('/research/nars/theory/aikr')"><span class="learning-stage"><UiIcon name="book" />理解</span><strong>从 NARS 的基本问题开始</strong><small>知识和资源有限，系统怎样推理？</small></a>
-      <a :href="withBase('/learn/try')"><span class="learning-stage"><UiIcon name="experiment" />观察</span><strong>亲手做一个实验</strong><small>先看感知、操作与反馈，再读原理</small></a>
-      <a :href="withBase('/learn/projects')"><span class="learning-stage"><UiIcon name="code" />实现</span><strong>找到适合的项目</strong><small>选推理器、接入工具或阅读源码</small></a>
+      <a :href="withBase('/research/nars/theory/aikr')"><span class="learning-stage"><UiIcon name="book" />理解</span><strong>先读 NARS 的基本假设</strong><small>知识和资源有限，系统怎样推理？</small></a>
+      <a :href="withBase('/learn/try')"><span class="learning-stage"><UiIcon name="experiment" />观察</span><strong>在浏览器里试一试</strong><small>输入判断，看推理和环境反馈</small></a>
+      <a :href="withBase('/learn/projects')"><span class="learning-stage"><UiIcon name="code" />实现</span><strong>按要做的事找项目</strong><small>读内核源码，或把推理器接入环境</small></a>
     </nav>
     <div class="knowledge-index-heading"><h2 id="完整目录">完整目录</h2><span>按主题展开 · 概览在前</span></div>
     <div class="knowledge-groups">
@@ -34,6 +34,6 @@ onBeforeUnmount(() => map.value?.removeEventListener('toggle', save, true))
         <ul><KnowledgeBranch v-for="node in group.nodes" :key="node.href" :node="node" /></ul>
       </details>
     </div>
-    <p class="knowledge-footnote">目录直接来自本站 Markdown。查找具体术语，可用顶部搜索；版本与维护状态以各项目页注明的来源和核验日期为准。</p>
+    <p class="knowledge-footnote">目录随本站 Markdown 页面生成。找具体术语可用顶部搜索；查项目版本和维护状态时，请同时看该页的来源与核验日期。</p>
   </div>
 </template>

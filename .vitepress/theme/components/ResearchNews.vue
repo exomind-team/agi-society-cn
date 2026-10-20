@@ -56,12 +56,12 @@ onUnmounted(() => window.removeEventListener('popstate', restore))
 <template>
   <div class="research-home research-news">
         <section id="research-index" class="research-index" aria-labelledby="index-title">
-          <div class="research-section-head"><div><h2 id="index-title">新闻动态</h2><p>会议与研究资料导读。日期沿用原始来源；人工整理，未接入自动新闻采集。</p></div><a :href="withBase('/research/')">全部研究</a></div>
+          <div class="research-section-head"><div><h2 id="index-title">新闻动态</h2><p>这里整理会议报告、研究资料与项目入口。日期按原始资料标注；人工维护，未接入自动新闻采集。</p></div><a :href="withBase('/research/')">全部研究</a></div>
           <div class="research-controls">
             <div class="research-filters" role="group" aria-label="按资料类型筛选"><button v-for="category in categories" :key="category" :aria-pressed="topic === category" @click="choose(category)">{{ category }}</button></div>
             <label class="research-filter-search"><span class="sr-only">筛选本页资料</span><input ref="searchInput" v-model="query" type="search" placeholder="筛选本页资料" @input="sync" /></label>
           </div>
-          <p class="research-count" role="status" aria-live="polite">{{ filtered.length }} 条精选资料<span v-if="topic !== '全部'"> · {{ topic }}</span></p>
+          <p class="research-count" role="status" aria-live="polite">{{ filtered.length }} 条资料<span v-if="topic !== '全部'"> · {{ topic }}</span></p>
           <div v-if="!filtered.length" class="research-empty"><h3>没有匹配的资料</h3><p>试试「NARS」「认知」或清除条件。查找全部正文，请使用顶部全站搜索。</p><button @click="reset">清除筛选</button></div>
           <article v-for="entry in filtered" :key="entry.id" class="research-entry">
             <div class="entry-marker" :data-kind="entry.category" aria-hidden="true"><svg viewBox="0 0 24 24"><path v-if="entry.category === '会议报告'" d="M4 4h16v11H4zM8 20l4-5 4 5M8 8h8M8 11h5"/><path v-else-if="entry.category === '工程实现'" d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/><path v-else d="M12 5c-3-2-6-2-10-1v15c4-1 7-1 10 1 3-2 6-2 10-1V4c-4-1-7-1-10 1Zm0 0v15"/></svg></div>

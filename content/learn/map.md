@@ -9,7 +9,7 @@ outline: false
 
 # 知识地图
 
-从一个问题开始，沿着原文、代码与实验继续。这里汇集理论、推理器、应用、思想与会议材料。
+不知道先看哪一页，可以从下面三个入口选一个：了解基本假设、试一个推理例子，或找项目代码。完整目录按主题展开，理论、实现、应用、思想与会议资料都在其中。
 
 <KnowledgeMap />
 
@@ -21,20 +21,20 @@ outline: false
 
 ## 一起维护这份知识库
 
-本站知识内容开放协作。你可以补充原始出处、纠正失效链接或完善教程；正文以 Markdown 保存，通过 [GitHub 修改与 Pull Request](https://github.com/exomind-team/agi-society-cn) 提交，具体格式与审核方式见[贡献指南](/contact/contributing/formats)。提交修改不等于自动发布，涉及版权或个人资料时先核实来源与许可。
+资料缺少出处、链接失效，或者教程里有一步说不清，都可以提交修改。正文以 Markdown 保存，通过 [GitHub 修改与 Pull Request](https://github.com/exomind-team/agi-society-cn) 协作，格式与审核方式见[贡献指南](/contact/contributing/formats)。提交后仍需审核；涉及版权或个人资料时，请先核实来源与许可。
 
-[旧维基入口](/wiki/)继续保留，理论、实现、应用、思想与会议材料已在上方统一索引。协会介绍、人物、联系、新闻与阅读入口归入“全站补充索引”；六组目录共同覆盖本站全部 Markdown 页面。
+[旧维基入口](/wiki/)仍可使用。上方五组主题目录整理理论、实现、应用、思想与会议材料，剩余的协会介绍、人物、联系、新闻等页面放在“全站补充索引”中；六组目录覆盖本站全部 Markdown 页面。
 
 ## 外部资料与历史入口
 
-- [AGI 资源导读](/contact/documents_and_qq_group)：24项原文、代码、视频与社群线索，逐项保留核验范围。
+- [AGI 资源导读](/contact/documents_and_qq_group)：24 项原文、代码、视频与社群线索，每项注明核验范围。
 - [NARS 学习资源](/research/nars/theory/learning_resources)：课程、著作与外部研究入口。
 - [协会现行官网](https://www.agi-society.cn/)：原有协会信息与通知；本先锋版尚未替换其正式域名。
 
 <details>
 <summary>OpenNARS 国际项目与历史研讨资料</summary>
 
-以下入口于 2026-10-19 核验，分别服务于找项目、读历史讨论与追踪研究；旧活动不表示当前开放报名。
+以下入口于 2026-10-19 核验，可用于找项目、查历史讨论和研究资料。工作坊链接中包含往年活动，请留意日期，不作为当前报名入口。
 
 - [OpenNARS 项目主页](https://www.opennars.org/)：原始源码、发行物、出版物和社区入口。本站已提供前向链接，上游是否加入本协会链接由其维护者决定。
 - [OpenNARS Discussion Group](https://groups.google.com/g/open-nars)：公开讨论列表可读，当前可见含 2026-07-08 的讨论；列表可见不等于所有附件与成员内容均开放。

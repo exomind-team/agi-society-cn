@@ -10,7 +10,7 @@ import ProjectRoles from '../../.vitepress/theme/components/ProjectRoles.vue'
 
 # 选择项目与工具
 
-先确定你要做什么，再选择代码。能直接接受 Narsese 的推理器、把推理器接入环境的工具，以及受 NARS 启发的实验，承担的是不同工作。
+找代码前，先确定要做哪件事：观察一次推理、修改推理内核，还是把它接到自己的环境里？能直接接受 Narsese 的推理器、负责接入的工具，以及受 NARS 启发的实验，用途各不相同。下面按任务整理入口。
 
 ## 先认清项目的来源与位置
 
@@ -32,7 +32,7 @@ import ProjectRoles from '../../.vitepress/theme/components/ProjectRoles.vue'
 - [[opennars304ts|OpenNARS 304 TS]]：ARCJ137442 维护的 TypeScript 实现；从项目页追踪 OpenNARS 3.0.4 来源与宿主接口边界。
 - [[projects/nars_impl/ona|ONA]]、[[opennars4|OpenNARS 4]]、[[narust|NARust]]：从各自项目页查看实现方式和适用范围，不把语言差异当成能力排名。
 
-选定后，先跑该仓库自己的最小示例，再研究解析、推理规则和控制机制。版本号、最近提交与许可证以项目页和所链接的原仓库为准。
+选定实现后，先跑仓库自带的最小示例，记下输入和输出，再读解析、推理规则与控制机制。这样遇到问题时，比较容易分清是运行环境没配好，还是对代码的理解有偏差。版本号、最近提交与许可证仍以项目页和原仓库为准。
 
 ## 我想把 NARS 接进自己的环境
 
@@ -46,7 +46,7 @@ import ProjectRoles from '../../.vitepress/theme/components/ProjectRoles.vue'
 | 研究游戏感知与操作循环 | [[nars-fighterplane\|NARS-FighterPlane]] · Noctis-Xu；[[nars-pong\|NARS-Pong]] · ccrock4t | 游戏环境与控制集成；按项目页查看所调用引擎和依赖 |
 | 查看 Web 界面工具 | [[nars-web-gui\|NARS-Web-GUI]] · ccrock4t | GUI 项目；先读仓库说明确认连接方式 |
 
-这里保留索引原有分类。框架、示例与内核之间的连接关系，要按具体仓库判断；同一个维护者名下的项目也不一定属于同一内核。
+表中沿用索引的分类。框架、示例具体连接哪个内核，要看各仓库的说明；同一维护者名下的项目也可能使用不同内核。
 
 ### 找 Java 相关仓库时，先辨认用途
 

@@ -3,8 +3,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {execFileSync} from 'node:child_process'
 import {parse} from 'parse5'
+import {editorialPages} from './fixtures/editorial-revision-scope.mjs'
+execFileSync(process.execPath, ['tests/editorial-revision-retention.test.mjs'], { stdio: 'inherit' })
 const baseline='f79d9c46654a2e566f26edd556d474c76bdbd6a6'
 const allowed=new Set(['content/index.md','content/research/nars/theory/learning_resources.md','content/wiki/index.md','content/contact/index.md','content/about/team.md','content/conference/index.md','content/projects/nars_impl/introduction.md','content/projects/nars_derivatives/index.md','content/contact/documents_and_qq_group.md','content/about/index.md','content/projects/nars_impl/index.md','content/contact/contributing/formats.md'])
+editorialPages.forEach(file => allowed.add(file))
 const files=execFileSync('git',['ls-tree','-r','--name-only',baseline,'content'],{encoding:'utf8'}).trim().split('\n')
 const changed=[]
 for(const file of files){
