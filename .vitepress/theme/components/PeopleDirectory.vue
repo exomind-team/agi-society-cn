@@ -2,9 +2,16 @@
 import { withBase } from 'vitepress'
 import { data } from './people.data'
 import profiles from '../../../data/people-profiles.json'
+import identities from '../../../data/people-identities.json'
 import { portraitUrl } from './people-profile-assets'
-const profileFor = (name: string) => profiles.find(person => person.name === name)
-const profilePath = (name: string) => '/wiki/people/' + profileFor(name)?.id
+const people = [...profiles, ...identities]
+const personFor = (name: string) => people.find(person => person.name === name || person.aliases?.includes(name))
+const profileFor = (name: string) => profiles.find(person => person.name === name || person.aliases?.includes(name))
+const personPath = (name: string) => {
+  const person = personFor(name)
+  return person ? '/wiki/people/' + person.id : ''
+}
+const profilePath = (name: string) => personPath(name) || '/about/team'
 </script>
 
 <template>
@@ -28,10 +35,10 @@ const profilePath = (name: string) => '/wiki/people/' + profileFor(name)?.id
       <article v-for="person in data.secretariat" :key="person.name" class="person-secretary">
         <div v-if="person.originalBio" class="person-original-bio" v-html="person.originalBio" />
         <h4 v-else>{{ person.name }}</h4>
-        <a :href="withBase(person.name === '李祥' ? profilePath(person.name) : person.path)">查看介绍</a>
+        <a :href="withBase(personPath(person.name) || person.path)">{{ personPath(person.name) ? '人物独页与关联' : '查看成员介绍' }}</a>
       </article>
     </div>
-    <details class="people-members"><summary>会员组 <span>{{ data.members.length }} 位成员</span></summary><ul><li v-for="person in data.members" :key="person.name">{{ person.name }}</li></ul></details>
+    <details class="people-members"><summary>会员组 <span>{{ data.members.length }} 位成员</span></summary><ul><li v-for="person in data.members" :key="person.name"><a v-if="personPath(person.name)" :href="withBase(personPath(person.name))">{{ person.name }}</a><span v-else>{{ person.name }}</span></li></ul></details>
     <p class="people-source-link"><a :href="withBase('/about/team')">协会完整名录与原有资料</a><span> · 照片版权归原权利人，按人物页标注来源使用，不适用本站文字许可。</span></p>
   </div>
 </template>

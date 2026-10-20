@@ -3,10 +3,13 @@
 // profile-additions and Li Xiang expansion contracts.
 export const wikiRelationsBaseline = '542b1bef55ae5e2addbf00eb4c12335e69f3881e'
 export const wikiRelationsChanged = [
+  ".vitepress/config.ts",
   ".vitepress/theme/components/PeopleDirectory.vue",
   ".vitepress/theme/components/PeopleProfiles.vue",
+  ".vitepress/theme/components/people.data.ts",
   "content/about/people.md",
   "content/about/team.md",
+  "content/contact/team.md",
   "data/people-identities.json",
   "data/people-profiles.json"
 ]

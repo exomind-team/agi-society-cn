@@ -150,6 +150,7 @@ export default defineConfig({
       { text: '新闻动态', link: '/news' },
       { text: '关于与联系', items: [
         { text: '协会简介', link: '/about/' },
+        { text: '人物索引', link: '/wiki/people/' },
         { text: '研究团队', link: '/contact/team' },
         { text: '联系我们', link: '/contact/' },
         { text: '贡献指南', link: '/contact/contributing/' },

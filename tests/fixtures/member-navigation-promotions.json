@@ -1,0 +1,17 @@
+[
+  { "from": "/about/team", "to": "/wiki/people/hu-xiangen", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/jia-min", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/liu-kai", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/sang-xinmin", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/wang-pei", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/wang-weijun", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/wei-yidong", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/wu-yuxi", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/xu-yingjin", "rule": "explicit-wikilink" },
+  { "from": "/about/team", "to": "/wiki/people/yang-yaya", "rule": "explicit-wikilink" },
+  { "from": "/contact/team", "to": "/wiki/people/liu-kai", "rule": "explicit-markdown-link" },
+  { "from": "/contact/team", "to": "/wiki/people/naziguli-slam", "rule": "explicit-markdown-link" },
+  { "from": "/contact/team", "to": "/wiki/people/wang-pei", "rule": "explicit-markdown-link" },
+  { "from": "/contact/team", "to": "/wiki/people/wei-yidong", "rule": "explicit-markdown-link" },
+  { "from": "/contact/team", "to": "/wiki/people/xu-yingjin", "rule": "explicit-markdown-link" }
+]

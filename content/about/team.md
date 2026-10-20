@@ -4,12 +4,12 @@ comments: true
 
 # 协会成员
 
-本页保留协会分组与原有介绍。创办人及专家的公开研究资料、现职与历史经历、照片来源和核验日期，见[人物资料](/about/people)。
+本页保留协会分组与原有介绍，不据此扩展成员身份。可从[人物索引](/wiki/people/)浏览已建档成员的独立页面；现职、经历与照片来源见[人物资料](/about/people)。
 
-1. 创办人：[[#王培]]、胡祥恩
-2. 专家组：[[#徐英瑾]]、[[#魏屹东]]、桑新民、王伟军
-3. 秘书组：[[#刘凯]]、[[#李祥]]、[[#那孜古力·斯拉木(那迪)|那迪]]、黄英辉
-4. 会员组：陈礼军、冯博杰、贾敏、贾晓刚、柯东、李光辉、李汤睿、林嘉濠、刘子莫、马翰林、墨\_AGI、沈建铭、王涛、王泰然、吴雨曦、吴叶、吴震宇、徐博文、徐川皓、杨亚亚、杨旭、杨金才、于志浩、张涛、周泽恩
+1. 创办人：[[#王培]]（[[../wiki/people/wang-pei|人物独页]]）、[[../wiki/people/hu-xiangen|胡祥恩]]
+2. 专家组：[[#徐英瑾]]（[[../wiki/people/xu-yingjin|人物独页]]）、[[#魏屹东]]（[[../wiki/people/wei-yidong|人物独页]]）、[[../wiki/people/sang-xinmin|桑新民]]、[[../wiki/people/wang-weijun|王伟军]]
+3. 秘书组：[[#刘凯]]（[[../wiki/people/liu-kai|人物独页]]）、[[#李祥]]（[[../wiki/people/li-xiang|人物独页]]）、[[#那孜古力·斯拉木(那迪)|那迪]]（[[../wiki/people/naziguli-slam|人物独页]]）、黄英辉
+4. 会员组：陈礼军、冯博杰、[[../wiki/people/jia-min|贾敏]]、贾晓刚、柯东、李光辉、李汤睿、林嘉濠、刘子莫、马翰林、墨\_AGI、沈建铭、王涛、王泰然、[[../wiki/people/wu-yuxi|吴雨曦]]、吴叶、吴震宇、徐博文、徐川皓、[[../wiki/people/yang-yaya|杨亚亚]]、杨旭、杨金才、于志浩、张涛、周泽恩
 
 ---
 
@@ -60,7 +60,7 @@ comments: true
 
 ## 刘凯
 
-> 博士，渤海大学教育科学学院教师、硕士生导师，中国通用人工智能协会（筹）召集人；用户提供的个人简介材料列职称为副教授（未独立核验）。
+> 渤海大学教育科学学院教师、硕士生导师，中国通用人工智能协会（筹）召集人。职称和学历的来源及核验状态见人物独页。
 
 [[../wiki/people/liu-kai|完整人物资料]]
 
@@ -95,6 +95,8 @@ comments: true
 ## 徐英瑾
 
 > 哲学博士，复旦大学哲学学院教授，博士生导师
+
+[[../wiki/people/xu-yingjin|人物独页与关联资料]]
 
 [学术主页↗](https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm)
 [百度百科↗](https://baike.baidu.com/item/%E5%BE%90%E8%8B%B1%E7%91%BE/1778275)
@@ -144,6 +146,8 @@ comments: true
 ## 魏屹东
 
 > 博士，山西大学教授，哲学方向博士生导师
+
+[[../wiki/people/wei-yidong|人物独页与关联资料]]
 
 [学术主页↗](https://cap.sxu.edu.cn/yjry/2358.htm)
 [知网↗](https://chn.oversea.cnki.net/kcms2/author/detail?v=wRD08hUPYgym68S7GHd2poHMO-BDlA-GdxcWHe-R3H4JseLdQZ2VugdAtBPQIQnqVd2rPnJWpGXF8IQ_BKdhrwZnUrFnLUSwvC8RPbBMj0E_1-ZNNWcNYYVZ8VQ8TSPD&uniplatform=NZKPT&language=CHS)

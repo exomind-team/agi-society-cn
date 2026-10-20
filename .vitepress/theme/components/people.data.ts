@@ -17,7 +17,9 @@ export default {
     const groups = [...team.matchAll(/^\d\. (创办人|专家组|秘书组|会员组)：(.+)$/gm)].map(match => ({
       label: match[1],
       people: match[2].split('、').map(raw => {
-        const name = raw.replace(/\[\[#([^|\]]+)\|([^\]]+)\]\]/g, '$2').replace(/\[\[#([^\]]+)\]\]/g, '$1').replace(/\\_/g, '_')
+        const anchorLink = raw.match(/\[\[#([^|\]]+)(?:\|([^\]]+))?\]\]/)
+        const labelledLink = raw.match(/\[\[[^|\]]+\|([^\]]+)\]\]/)
+        const name = (anchorLink ? (anchorLink[2] || anchorLink[1]) : labelledLink?.[1] || raw.replace(/\[\[([^\]]+)\]\]/g, '$1')).replace(/\\_/g, '_')
         const anchor = name === '那迪' ? '那孜古力·斯拉木-那迪' : name
         return { name, role: match[1], originalBio: originals[name] || '', path: '/about/team' + (originals[name] ? '#' + anchor : '') }
       })
