@@ -32,13 +32,28 @@ const profilePath = (name: string) => personPath(name) || '/about/team'
     </div>
     <h3 class="people-secondary-title">秘书组</h3>
     <div class="people-secretariat">
-      <article v-for="person in data.secretariat" :key="person.name" class="person-secretary">
+      <article v-for="person in data.secretariat" :key="person.name" class="person-secretary" :data-person-id="personFor(person.name)?.id">
+        <a v-if="portraitUrl(profileFor(person.name)?.portrait?.file)" class="secretary-portrait" :href="withBase(profilePath(person.name))" :aria-label="`阅读${person.name}的介绍与照片来源`">
+          <img :src="portraitUrl(profileFor(person.name)?.portrait?.file)" alt="" loading="lazy" width="88" height="110" />
+        </a>
+        <div class="secretary-introduction">
         <div v-if="person.originalBio" class="person-original-bio" v-html="person.originalBio" />
         <h4 v-else>{{ person.name }}</h4>
         <a :href="withBase(personPath(person.name) || person.path)">{{ personPath(person.name) ? '人物独页与关联' : '查看成员介绍' }}</a>
+        </div>
       </article>
     </div>
     <details class="people-members"><summary>会员组 <span>{{ data.members.length }} 位成员</span></summary><ul><li v-for="person in data.members" :key="person.name"><a v-if="personPath(person.name)" :href="withBase(personPath(person.name))">{{ person.name }}</a><span v-else>{{ person.name }}</span></li></ul></details>
     <p class="people-source-link"><a :href="withBase('/about/team')">协会完整名录与原有资料</a><span> · 照片版权归原权利人，按人物页标注来源使用，不适用本站文字许可。</span></p>
   </div>
 </template>
+
+<style scoped>
+.person-secretary { display:flex; align-items:flex-start; gap:16px; min-width:0; }
+.secretary-introduction { min-width:0; overflow-wrap:anywhere; }
+.secretary-introduction>a { font-size:12px; display:inline-block; margin-top:10px; }
+.person-secretary>.secretary-portrait { display:block; flex:0 0 88px; margin-top:0; overflow:hidden; border-radius:4px; background:var(--rp-soft); }
+.secretary-portrait img { display:block; width:88px; height:110px; object-fit:contain; object-position:center; }
+.secretary-portrait:focus-visible { outline:2px solid var(--rp-ink); outline-offset:4px; }
+@media(max-width:360px) { .person-secretary { gap:12px; } .person-secretary>.secretary-portrait { flex-basis:64px; } .secretary-portrait img { width:64px; height:80px; } }
+</style>

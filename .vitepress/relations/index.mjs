@@ -123,6 +123,9 @@ export function buildRelations({ pages, people }) {
     }
     for (const relation of page.frontmatter.relations || []) {
       if (!ids.has(relation.person) || !['author','speaker','subject','doctoral-advisor','postdoctoral-advisor'].includes(relation.role) || !/^https?:\/\/|^\//.test(relation.source || '') || !relation.confidence || !['confirmed','maintainer-provided'].includes(relation.status)) throw new Error(`Invalid relation in ${page.file}: ${JSON.stringify(relation)}`)
+      // A maintainer statement is not verified evidence of a mentor relationship.
+      // Fail closed instead of leaking an unverified edge into public backlinks.
+      if (relation.role.endsWith('-advisor') && (relation.status !== 'confirmed' || relation.confidence === 'explicit-maintainer-statement')) throw new Error(`Unverified mentor relation in ${page.file}`)
       add({ from, to: `/wiki/people/${relation.person}`, role: relation.role, label: page.title, rule: 'editorial-evidence', source: relation.source, status: relation.status, confidence: relation.confidence })
     }
     if (page.file.startsWith('conference/')) for (const row of conferenceRows(tokens)) {

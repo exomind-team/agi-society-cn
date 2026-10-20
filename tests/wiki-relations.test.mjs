@@ -121,10 +121,15 @@ const site=JSON.parse(JSON.parse(siteMatch[1]))
 assert.ok(!JSON.stringify(site.themeConfig.sidebar).includes('/sources/transcripts/'),'No raw sources in sidebar or pager navigation')
 for(const file of fs.readdirSync('dist',{recursive:true}).filter(file=>/sitemap.*\.xml$/.test(file))) assert.ok(!fs.readFileSync('dist/'+file,'utf8').includes('/sources/transcripts/'))
 const mentor=actual.edges.filter(edge=>edge.role.endsWith('-advisor'))
-assert.equal(mentor.length,2)
-assert.ok(mentor.every(edge=>edge.status==='maintainer-provided' && edge.rule==='editorial-evidence' && edge.confidence==='explicit-maintainer-statement'))
-assert.ok(!actual.edges.some(edge=>edge.role==='advisor'&&edge.rule!=='editorial-evidence'))
-console.log('PASS raw sidebar/sitemap exclusion and explicit maintainer provenance for both mentor records; no co-occurrence mentor inference.')
+assert.equal(mentor.length,0,'Withdrawn mentor relationships must not appear in public graph')
+for(const role of ['doctoral-advisor','postdoctoral-advisor']) {
+ for(const [status,confidence] of [['maintainer-provided','explicit-maintainer-statement'],['maintainer-provided','external-source'],['confirmed','explicit-maintainer-statement']]) {
+  assert.throws(()=>buildRelations({pages:[page('mentor.md','',{relations:[{person:person.id,role,source:'https://example.org/bio',status,confidence}]})],people:[person]}),/Unverified mentor relation/)
+ }
+ const verified=buildRelations({pages:[page('mentor.md','',{relations:[{person:person.id,role,source:'https://example.org/bio',status:'confirmed',confidence:'institutional-biography'}]})],people:[person]})
+ assert.equal(verified.edges.filter(e=>e.role===role).length,1,'Explicit verified evidence remains supported')
+}
+console.log('PASS raw sidebar/sitemap exclusion; withdrawn mentor claims absent and unverified mentor metadata rejected.')
 for (const edge of actual.edges) for (const href of [edge.from, edge.to, edge.source, edge.href].filter(href=>typeof href==='string'&&href.startsWith('/'))) {
  const [route, fragment]=href.split('#')
  const file=['dist'+route+'.html','dist'+route.replace(/\/$/,'')+'/index.html'].find(file=>fs.existsSync(file))

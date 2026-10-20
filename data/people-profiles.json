@@ -1018,7 +1018,7 @@
         "observedOn": "2026-10-20"
       }
     ],
-    "limitations": "导师关系另以维护者提供标注，尚未独立核验公开来源；本页非完整履历与成果目录。"
+    "limitations": "本页非完整履历与成果目录。"
   },
   {
     "id": "naziguli-slam",
@@ -1816,5 +1816,70 @@
       }
     ],
     "limitations": "职务按核验时所见官方页面记载，页面标注日期不等于正文所有内容更新时间。论文列表依据学院介绍，未逐篇独立核验出版元数据；不是完整成果目录。"
+  },
+  {
+    "id": "huang-yinghui",
+    "name": "黄英辉",
+    "aliases": [],
+    "affiliation": "武汉理工大学管理学院",
+    "summary": "协会秘书组成员；研究健康信息学、数字化心理健康与可信人工智能。",
+    "verifiedOn": "2026-10-20",
+    "portrait": {
+      "file": "huang-yinghui-ccnu.png",
+      "sourceUrl": "https://psych.ccnu.edu.cn/info/1059/6871.htm",
+      "originalUrl": "https://psych.ccnu.edu.cn/virtual_attach_file.vsb?afc=XMlM/VMzCbnzGaoKz7iLzlPLmUZLRCODnznVLN74UlMfUz90gihFp2hmCIa0USyDoSyYL1ybL8nVnlrkLz9YU8C4M8-aMzGZn7r7Lm9sLzAFMm-aM8LPozrFoRGaLSbaptveo4OevdMbCD90qIbtpYyPLRlbg4CZM47Jqdxnx&oid=1223991228&tid=1059&nid=6871&e=.png",
+      "sha256": "19449e697ed1c7f20093cf003d6ba3569cf69afda154800142a13789f0cb250e",
+      "caption": "华中师范大学心理学院公开会议资料中的肖像（2023）",
+      "rights": "照片来自华中师范大学心理学院公开会议资料，图片下方姓名与单位对应黄英辉。页面保留版权，未见照片单独开放许可或明确禁止转载说明；不主张已获额外授权，不适用本站文字的 CC BY-SA 许可。"
+    },
+    "identityBoundary": "依协会既有秘书组名单及公开会议资料识别，不合并同名医生或其他同名人士。",
+    "sections": [
+      {
+        "title": "身份与研究",
+        "items": [
+          {
+            "text": "协会秘书组成员。",
+            "sources": [
+              "1"
+            ]
+          },
+          {
+            "text": "武汉理工大学管理学院硕士生导师。",
+            "sources": [
+              "3"
+            ],
+            "timeScope": "2026年5月招生资料"
+          },
+          {
+            "text": "武汉理工大学管理学院；研究领域为健康信息学、数字化心理健康、可信人工智能。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2023年会议资料所列，不据此推断后续职务变化"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "协会成员名录",
+        "url": "/about/team",
+        "observedOn": "2026-10-20"
+      },
+      {
+        "id": "2",
+        "label": "华中师范大学心理学院：公开会议通知及专家简介（2023-09-28）",
+        "url": "https://psych.ccnu.edu.cn/info/1059/6871.htm",
+        "observedOn": "2026-10-20"
+      },
+      {
+        "id": "3",
+        "label": "协会：黄英辉老师招生信息（2026-05-14）",
+        "url": "https://www.agi-society.cn/?p=789",
+        "observedOn": "2026-10-20"
+      }
+    ],
+    "limitations": "本页仅补充照片及最小身份资料，不扩展学位、现任职称或履历。照片来源公开不等于开放授权。"
   }
 ]

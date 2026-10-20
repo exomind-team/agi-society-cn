@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
+          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
@@ -38,6 +39,9 @@ jobs:
       - name: Build offline HTML and reviewed release boundary
         run: |
           node scripts/offline/build.mjs
+          node tests/home-secretariat-portraits.test.mjs
+          node tests/offline-people-portraits.test.mjs
+          node tests/mentor-withdrawal.test.mjs
           python3 tests/offline-release.test.py
           python3 scripts/offline/release.py
       - name: Publish unique prerelease (never Latest, never overwrite)

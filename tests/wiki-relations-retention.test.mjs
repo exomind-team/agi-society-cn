@@ -1,3 +1,4 @@
+import { beforeMentorWithdrawal } from './fixtures/withdrawn-mentor-contract.mjs'
 import { beforeHomeLayout, homeLayoutFiles } from './fixtures/home-layout-scope.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
@@ -40,8 +41,8 @@ assert.ok(read(aca).includes('暂不据此填写已核定的官方英文全称�
 assert.equal(read(aca),original(aca),'Preserve the accepted ACA source and limits from the stable baseline')
 const priorProfiles=JSON.parse(original('data/people-profiles.json')), nextProfiles=JSON.parse(read('data/people-profiles.json'))
 const priorIds=new Set(priorProfiles.map(p=>p.id))
-assert.deepEqual(nextProfiles.filter(p=>priorIds.has(p.id)),priorProfiles,'All profiles from the stable baseline remain unchanged')
-assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['li-xiang','liu-kai','naziguli-slam'],'Only the reviewed Li Xiang, Nady and Liu profiles are added')
+assert.deepEqual(nextProfiles.filter(p=>priorIds.has(p.id)).map(beforeMentorWithdrawal),priorProfiles,'All profiles from the stable baseline remain unchanged')
+assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['huang-yinghui','li-xiang','liu-kai','naziguli-slam'],'Only the reviewed Li Xiang, Nady and Liu profiles are added')
 assert.equal(new Set(nextProfiles.map(p=>p.id)).size,nextProfiles.length)
 await import('./profile-additions.test.mjs')
 assert.equal(nextProfiles.find(p=>p.id==='wang-weijun').portrait.sha256,'168ed54774e49e245c4d3a882a508a19ac353adf780ab62f6d9802de90346497')

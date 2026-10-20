@@ -3,6 +3,9 @@
 // profile-additions and Li Xiang expansion contracts.
 export const wikiRelationsBaseline = '542b1bef55ae5e2addbf00eb4c12335e69f3881e'
 export const wikiRelationsChanged = [
+  ".vitepress/relations/index.mjs",
+  "content/wiki/people/liu-kai.md",
+  "content/wiki/people/wang-weijun.md",
   ".vitepress/config.ts",
   ".vitepress/theme/components/PeopleDirectory.vue",
   ".vitepress/theme/components/PeopleProfiles.vue",
@@ -14,6 +17,8 @@ export const wikiRelationsChanged = [
   "data/people-profiles.json"
 ]
 export const wikiRelationsAdded = [
+  "content/about/image/people/huang-yinghui-ccnu.png",
+  "content/wiki/people/huang-yinghui.md",
   "content/about/image/people/li-xiang.jpg",
   "content/about/image/people/liu-kai-personal-introduction-pptx.jpeg",
   "content/about/image/people/naziguli-slam-xbmu.jpg",
