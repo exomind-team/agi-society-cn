@@ -4,6 +4,11 @@ import { execFileSync } from 'node:child_process'
 import { parse as parseSfc } from '@vue/compiler-sfc'
 import { parse as parseTemplate } from '@vue/compiler-dom'
 import { baselineTree, editorialPages, editorialComponents, editorialData } from './fixtures/editorial-revision-scope.mjs'
+import { pathwaysLinkAdditions, pathwaysHeadingAdditions, withoutPathwaysEntries } from './fixtures/agi-pathways-scope.mjs'
+
+// Only the explicitly added links/headings/cards are normalized below. The newer
+// fixed-base guard also proves that all pre-expansion source passages survive.
+execFileSync(process.execPath, ['tests/agi-pathways-retention.test.mjs', '--source-only'], { stdio: 'inherit' })
 
 const original = file => execFileSync('git', ['show', `${baselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
 const read = file => fs.readFileSync(file, 'utf8')
@@ -28,13 +33,13 @@ const newAgiSources = ['https://cis.temple.edu/~pwang/AGI-Intro.html', 'https://
 for (const file of editorialPages) {
   const before = original(file).toString(), after = read(file)
   assert.equal(after.match(/^\ufeff?---\n[\s\S]*?\n---/)?.[0], before.match(/^\ufeff?---\n[\s\S]*?\n---/)?.[0], `Frontmatter changed: ${file}`)
-  const headings = matches(after, /^#{1,6} .+$/gm).map(heading => file === 'content/research/index.md' && heading === '### 进一步阅读' ? '### 参考书籍' : heading)
+  const headings = matches(after, /^#{1,6} .+$/gm).filter(heading => !(pathwaysHeadingAdditions[file] || []).includes(heading)).map(heading => file === 'content/research/index.md' && heading === '### 进一步阅读' ? '### 参考书籍' : heading)
   assert.deepEqual(headings, matches(before, /^#{1,6} .+$/gm), `Heading/anchor changed: ${file}`)
   if (file === 'content/research/index.md') assert.ok(after.includes('<span id="参考书籍"></span>'), 'Retain the old reading-section anchor')
   assert.deepEqual(matches(after, /^```[^\n]*\n[\s\S]*?^```/gm), matches(before, /^```[^\n]*\n[\s\S]*?^```/gm), `Code sample changed: ${file}`)
   assert.deepEqual(matches(after, /!\[[^\]]*\]\([^)]*\)/g), matches(before, /!\[[^\]]*\]\([^)]*\)/g), `Image changed: ${file}`)
   const additions = file === 'content/about/agi.md' ? newAgiSources : file === 'content/research/index.md' ? ['research/nars/theory/nac/index'] : []
-  const expected = [...targets(before), ...additions].sort()
+  const expected = [...targets(before), ...additions, ...(pathwaysLinkAdditions[file] || [])].sort()
   assert.deepEqual(targets(after), expected, `Link target changed: ${file}`)
 }
 
@@ -55,7 +60,7 @@ for (const file of editorialComponents) {
   assert.equal(after.script?.content, before.script?.content)
   assert.equal(after.scriptSetup?.content, before.scriptSetup?.content)
   assert.deepEqual(after.styles.map(style => style.content), before.styles.map(style => style.content))
-  assert.deepEqual(structure(parseTemplate(after.template.content)), structure(parseTemplate(before.template.content)), `UI structure changed: ${file}`)
+  assert.deepEqual(structure(parseTemplate(file === '.vitepress/theme/components/ResearchHome.vue' ? withoutPathwaysEntries(after.template.content) : after.template.content)), structure(parseTemplate(before.template.content)), `UI structure changed: ${file}`)
 }
 const entries = JSON.parse(read(editorialData[0])), oldEntries = JSON.parse(original(editorialData[0]))
 const withoutSummary = values => values.map(({ summary, ...rest }) => rest)
@@ -86,5 +91,5 @@ preserve('content/learn/try.md', '## 想在本机运行 Java 版？')
 preserve('content/research/nars/theory/learning_resources.md', '> [!warning]+ 王培老师的备注', '在内容上大致分为：')
 preserve('content/about/agi.md', 'AGI研究追求')
 
-console.log(`PASS editorial revision: ${scope.size} exact target files; ${untouched} other source/config/data/asset files byte-identical to ${baselineTree}; all old anchors, frontmatter, code, images and link targets retained; two AGI sources and one NAC link added.`)
-console.log('PASS unchanged component structure/scripts/styles; news provenance; 24 resource records; historical quotations; OpenNARS lineage, Java package evidence and project policy passages.')
+console.log(`PASS editorial revision: ${scope.size} exact target files; ${untouched} other source/config/data/asset files byte-identical to ${baselineTree}; all old anchors, frontmatter, code, images and link targets retained; original two AGI sources and one NAC link plus separately checked cross-route entry additions.`)
+console.log('PASS original component structure/scripts/styles retained after the two explicitly checked new home links; news provenance; 24 resource records; historical quotations; OpenNARS lineage, Java package evidence and project policy passages.')

@@ -9,12 +9,14 @@ outline: false
 
 # 知识地图
 
-不知道先看哪一页，可以从下面三个入口选一个：了解基本假设、试一个推理例子，或找项目代码。完整目录按主题展开，理论、实现、应用、思想与会议资料都在其中。
+不知道先看哪一页，可以从下面三个入口选一个：了解基本假设、试一个推理例子，或找项目代码。完整目录按主题展开，理论、实现、应用、思想与会议资料都在其中。NARS 是已有资料较完整的起点；想了解其他 AGI 路线，可接着看下方导读与 ACA 专题。
 
 <KnowledgeMap />
 
 ## 继续学习与参与
 
+- [AGI 路线导读：从 Ben Goertzel 读起](/research/agi-pathways)
+- [ACA · 人工认知生命：项目与年会报告](/research/aca)
 - [学习资源与推荐阅读](/research/nars/theory/learning_resources)
 - [项目如何区分与选择](/learn/projects)
 - [补充材料与修正文档](/contact/contributing/)
