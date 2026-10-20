@@ -1019,5 +1019,475 @@
       }
     ],
     "limitations": "导师关系另以维护者提供标注，尚未独立核验公开来源；本页非完整履历与成果目录。"
+  },
+  {
+    "id": "naziguli-slam",
+    "name": "那孜古力·斯拉木",
+    "aliases": [
+      "那迪"
+    ],
+    "affiliation": "西北民族大学人工智能学院、中国民族信息技术研究院 · 讲师、工学博士、硕士生导师",
+    "summary": "从通用人工智能（特别是非公理化推理）、认知心理学与科学哲学等交叉视角研究智能决策通用模型，并面向应急决策建模与教学实践。",
+    "verifiedOn": "2026-10-20",
+    "identityBoundary": "协会名录使用“那迪”这一称呼，与西北民族大学师资页所列全名“那孜古力·斯拉木”对应同一人物。本人简历由维护者转交，简历内容按本人提供原文整理；除高校页面明确支持的部分外，未逐条独立核验。论文作者拼写按简历原文保留，不据相似拼写扩展身份。",
+    "portrait": {
+      "file": "naziguli-slam-xbmu.jpg",
+      "sourceUrl": "https://www.xbmu.edu.cn/xxy/info/2851/6932.htm",
+      "originalUrl": "https://www.xbmu.edu.cn/__local/6/0B/91/45D4F4DAD7C1AD6DDEDFB90264E_9DE9B696_5BBB.jpg",
+      "sha256": "a1a779271d94d3476ef876b00f2eca8940a65ee95393fbe9f1969efcfb0fc401",
+      "caption": "西北民族大学人工智能学院师资页肖像",
+      "rights": "图片来自西北民族大学人工智能学院师资页；著作权归原权利人，当前未见开放许可。本站仅作人物识别并保留来源说明，不适用本站文字 CC BY-SA 许可。"
+    },
+    "sections": [
+      {
+        "title": "现职与研究方向",
+        "items": [
+          {
+            "text": "讲师、工学博士、硕士生导师；工作单位为西北民族大学人工智能学院、中国民族信息技术研究院。",
+            "sources": [
+              "1"
+            ],
+            "timeScope": "高校师资页所列；页面发布时间 2025-12-11"
+          },
+          {
+            "text": "从通用人工智能技术（特别是非公理化推理系统）、认知心理学与科学哲学等交叉视角，探索智能决策通用模型，并将理论成果用于应急决策建模与教学实践。",
+            "sources": [
+              "1"
+            ]
+          },
+          {
+            "text": "本人简历列出的研究领域：智能决策通用模型、面向智慧消防的智能决策技术及软件体系架构。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "招生专业：计算机技术、人工智能、大数据技术与工程。",
+            "sources": [
+              "1"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "教育经历",
+        "items": [
+          {
+            "text": "新疆大学信息科学与工程学院，学士。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2001.09–2005.06"
+          },
+          {
+            "text": "新疆大学信息科学与工程学院，硕士；简历另注明网络远程教育。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2005.09–2008.06"
+          },
+          {
+            "text": "天津大学计算机科学与技术学院，博士，研究方向为人工智能；简历列导师为王文俊教授、王培教授。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2011.09–2016.06"
+          }
+        ]
+      },
+      {
+        "title": "博士后与工作经历",
+        "items": [
+          {
+            "text": "新疆大学计算机科学与技术博士后流动站，博士后。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2016.11–2019.11"
+          },
+          {
+            "text": "北京新奥特科技有限公司，软件工程师。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2010.06–2011.01"
+          },
+          {
+            "text": "新疆计算机应用研究所（简历注明隶属新疆维吾尔自治区科学技术厅），软件工程师。",
+            "sources": [
+              "2"
+            ],
+            "timeScope": "2008.06–2010.04"
+          }
+        ]
+      },
+      {
+        "title": "主持项目",
+        "items": [
+          {
+            "text": "中国博士后科学基金资助（2018M633610）：捷思法引导的决策模型：从认知科学基础到计算机实现；简历标注结项。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "新疆维吾尔自治区自然科学面上基金（2017D01C041）：基于案例推理的网络舆情危机决策计算模型研究；简历标注结项。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "新疆维吾尔自治区优秀博士后研究人员资助（400600307）：通用人工智能技术——非公理推理机的应用方法研究。",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "期刊论文",
+        "items": [
+          {
+            "text": "Slam.Nady, Wang, et al. A framework with reasoning capabilities for crisis response decision-support systems. Engineering Applications of Artificial Intelligence, 2015, 46(Pt. B): 346–353。（本人简历标注 SCI 二区）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Slam.Nady, W. Slamu, W. Wang, et al. A Prototype Intelligent Decision Support System with a Unified Planning and Learning Capabilities. International Journal of Artificial Intelligence Tools, 2017。（本人简历标注 SCI 四区）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Slam.Nady, Slamu W, Wang P. A Case Representation and Similarity Measurement Model with Experience-Grounded Semantics. International Journal of Software Engineering and Knowledge Engineering, 2020, 30(1): 119–146。（本人简历标注 SCI 四区）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "那孜古力·斯拉木：《面向城市消防领域的智能决策系统的研究》，《现代电子技术》，2020，43(12)：169–172、177。（本人简历标注北大核心）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "那孜古力·斯拉木、王文俊、李祥、冯博杰：《考虑知识和资源相对受限的智能决策模型》，《计算机科学》，2026（本人简历标注已录用待刊；原简历另记“11”，卷期页待核）。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Feng B, Slam.Nady, Xu Y. A Social Self-Awareness Agent with Embodied Reasoning. Journal of Artificial Intelligence and Consciousness, 2024, 11(01): 17–33。（本人简历标注 Scopus）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Wang, Jingrong Slam.Nady, et al. A Multiple Attribute Decision-Making Model for Firefighting Integrating Entropy Weights and Preferences with Intuitionistic Fuzzy Sets. Journal of Intelligent & Fuzzy Systems, 50 (2025): 1559–1584。（本人简历标注 EI 源刊）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Zhou, X.; Slam.Nady. A multi-stage decision-making model for urban fire emergency with multi-granularity uncertain linguistic information and prospect theory. Advances in Difference Equations and Control Processes, 2026。（本人简历标注 SCI 四区；卷期页未提供）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "郑子温、那孜古力·斯拉木、王婧蓉、王旭东：《基于 AHP 与熵值法构建的火灾预测组合灰色模型》，《现代电子技术》，2024(9)。（本人简历标注北大核心；页码未提供）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "冯博杰、那孜古力·斯拉木：《一种基于非公理推理系统的乌鸦悖论解决方案》，《逻辑学研究》，2026（本人简历标注已录用待刊、CSSCI、北大核心）。",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "会议论文",
+        "items": [
+          {
+            "text": "Nady S, Feng B. A Belief Evolution Model with Non-axiomatic Logic. International Conference on Knowledge Science, Engineering and Management, Springer Singapore, 2024。DOI: 10.1007/978-981-97-5498-4_16。（本人简历标注 CPCI-S）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Nady S, Li X. A Decision-Making Model under the Assumption of Insufficient Knowledge and Resource. Chinese Control and Decision Conference (CCDC), 2020。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Nady S, W. Wang, P. Wang. An Improvisational Decision-Making Agent Based on Non-axiomatic Reasoning System. International Joint Conferences on Web Intelligence (WI) and Intelligent Agent Technologies (IAT), Warsaw, 2014, pp. 360–364。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Nady S, Li X, Feng B. A Heuristic-Primed Decision-Making Model under the Assumption of Bounded Resources. Computer Sciences & Mathematics Forum, MDPI, 2023, 8(1): 42。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Feng B, Slam N. A Decision-Making Model with Interoceptive Expectations. 2024 4th International Conference on Computer, Control and Robotics (ICCCR)，2024。DOI: 10.1109/ICCCR61138.2024.10585370。（本人简历标注 CPCI-S）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Zheng Z, Slam N. A VGG Fire Image Classification Model with Attention Mechanism. 2024 5th International Conference on Computer Vision, Image and Deep Learning (CVIDL)，2024。DOI: 10.1109/CVIDL62147.2024.10603830。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Zhang Zixiang, Nady S, Di Zhengqiang. A Hierarchical Software Architecture for Smart Firefighting Platform. 2024 4th International Conference on Computer Network Security and Software Engineering (CNSSE2024), 2024。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Yang, Mignxin, Nady Slam, Zheng Ziwen. A Classification Model of Urban Fire Level with Stacking Ensemble Learning. 2023 IEEE International Conference on Electrical, Automation and Computer Engineering (ICEACE), Changchun, 2023, pp. 22–26。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Zheng Z, Nady S, Wang J, et al. A prediction model of urban fire with grey Markov model. Second International Conference on Applied Statistics, Computational Mathematics, and Software Engineering (ASCMSE 2023). SPIE, 2023, 12784: 170–176。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Wang X, Nady S, Zhang Z. Knowledge Graph of Urban Firefighting with Rule-Based Entity Extraction. International Conference on Engineering Applications of Neural Networks, Cham: Springer Nature Switzerland, 2023, pp. 168–177。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Zhang M, Nady S, Zhang Z. Assessment of Urban Firefighting Plans with Classical Decision Theory. Proceedings of the 2023 International Conference on Frontiers of Artificial Intelligence and Machine Learning, 2023, pp. 160–164。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Mingtong Zhang, Nady Slam, Zixiang Zhang, Jingrong Wang. Causal discovery and inference for urban fire. Proc. SPIE 13291, Ninth International Symposium on Advances in Electrical, Electronics, and Computer Engineering (ISAEECE 2024), 132912X, 2024-10-16。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Shuqi Chen, Slam N, Mingxin Yang, Xiao Ma. A model for dynamic monitoring of urban fire with improved YOLOv8. Proc. SPIE 13780, Second International Conference on Image Processing and Artificial Intelligence (ICIPAI 2025), 137800T, 2025-08-11。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "Ma, Xiao, et al. A Path Planning Model for Urban Firefighting Integrating Visual Geometry Group and Deep Q-network. 2025 8th International Conference on Advanced Electronic Materials, Computers and Software Engineering (AEMCSE), 2025, pp. 607–611。（本人简历标注 EI 会议）",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "软件著作权与专著",
+        "items": [
+          {
+            "text": "高校个人简介称有软件登记3项；本人简历在该项下列出其中一项。",
+            "sources": [
+              "1",
+              "2"
+            ]
+          },
+          {
+            "text": "软件著作权：城市消防数据分析与管理系统，登记号 2021SR1293999。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "《智能决策通用模型及其应用方法研究》，中国科学技术出版社，2026。",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "教学与教研",
+        "items": [
+          {
+            "text": "本科课程：编译原理、数据仓库与数据挖掘、Python 数据分析、Web 前端开发（HTML、CSS、JavaScript）。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "高校个人简介还列有《人工智能通识课》。",
+            "sources": [
+              "1"
+            ]
+          },
+          {
+            "text": "硕士研究生课程：软件体系结构、科技论文写作指导、通用人工智能技术与应用、E-Prime 程序设计。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "那孜古力·斯拉木、戴玉刚：《硕士研究生软件体系架构翻转课堂教学模式构建》，《西部素质教育》，2023。（本人简历标注知网检索）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "那孜古力·斯拉木、曹晖：《AI 赋能视角下硕士软件体系结构课程建设方案》，《教育教学论坛》，2026。（本人简历标注知网检索）",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "那孜古力·斯拉木、李祥、刘凯：《研究生通用人工智能课程建设——从五大学派观点与技术路线视角》，《大学》，本人简历列为 2027 年；刊发状态未注明，暂不表述为已刊出。",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "语言与专业资格",
+        "items": [
+          {
+            "text": "外语：简历列出 IELTS 5.5、大学英语六级（CET-6）515 分，并自述可熟练阅读英语资料、使用英语作报告和写作。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "汉语：简历列出普通话水平测试二级乙等，并记载 HSK-B。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "专业资格与考试：简历列出系统架构设计师资格、系统架构设计师，以及全国计算机等级考试二级（Java、C、数据库）。",
+            "sources": [
+              "2"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "学术服务与会员",
+        "items": [
+          {
+            "text": "国际信息研究学会会员、CCF 专业会员。",
+            "sources": [
+              "1"
+            ]
+          },
+          {
+            "text": "中国人工智能学会委员。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "担任《计算机与自主智能研究进展》《Artificial Intelligence Research Journal》《Journal of Autonomous Intelligence》《Software Engineering》等期刊审稿人。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "多次担任国际通用人工智能年会评审委员会成员。",
+            "sources": [
+              "1"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "教学团队与个人荣誉",
+        "items": [
+          {
+            "text": "2026 年第三届中国安全应急科学与技术装备大会“优秀科技创新团队奖”。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "2026 年甘肃省教师人工智能应用优秀案例：“AI 赋能下的《软件体系结构》课程建设方案”。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "2025 全国高校人工智能教育大会优秀论文二等奖。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "带领的硕士研究生团队获第十六届数字科技创新赛（非命题赛道）国家级三等奖；第四届、第六届全国计算机能力挑战赛团队赛省级二等奖、三等奖。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "本人简历另列第十五届蓝桥杯省级二等奖、2024 年国际大学生创新大赛校内选拔赛一等奖、第十届统计建模大赛三等奖。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "本人简历列有 2000–2001 年新疆大学优秀学生一等奖学金、2000–2001 年三好学生、2002–2003 年三好学生、2003–2004 年优秀学生二等奖学金。",
+            "sources": [
+              "2"
+            ]
+          },
+          {
+            "text": "西北民族大学师资页还列出第十五届蓝桥杯国家级二等奖；该奖项与简历所列省级二等奖的对应关系未核实，故未合并为一项等级结论。",
+            "sources": [
+              "1",
+              "2"
+            ]
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "西北民族大学官方人物页",
+        "href": "https://www.xbmu.edu.cn/xxy/info/2851/6932.htm"
+      },
+      {
+        "label": "协会成员名录",
+        "href": "/about/team"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "西北民族大学人工智能学院：那孜古力·斯拉木（页面标注发布时间 2025-12-11）",
+        "url": "https://www.xbmu.edu.cn/xxy/info/2851/6932.htm",
+        "observedOn": "2026-10-20"
+      },
+      {
+        "id": "2",
+        "label": "本人提供简历（由维护者转交；原件不公开）",
+        "kind": "user-provided",
+        "observedOn": "2026-10-20"
+      }
+    ],
+    "limitations": "现职、研究概述、部分教学与学术服务由西北民族大学页面支持；教育经历、项目、论文目录及其他学术服务依据本人提供的简历整理，尚未逐条独立核验。简历中 2026 年论文明确标注已录用待刊；另有一篇列为 2027 年、刊发状态未注明，本页按原简历注明，不表述为已刊出。联系方式、家庭地址、生日、民族等非本页所需个人字段未公开。"
   }
 ]

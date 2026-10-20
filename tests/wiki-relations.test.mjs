@@ -71,6 +71,11 @@ try {
  assert.ok(overview.includes('原地点'));assert.ok(overview.includes('待补充'))
 } finally { fs.rmSync(root,{recursive:true,force:true}) }
 const pages=readPages('content'), people=readPeople(), actual=buildRelations({pages,people})
+const nadyIdentity=people.find(p=>p.id==='naziguli-slam')
+assert.deepEqual(nadyIdentity.aliases,['那迪'])
+const nadyReports=actual.edges.filter(e=>e.to==='/wiki/people/naziguli-slam'&&e.role==='speaker')
+assert.ok(nadyReports.length>0)
+assert.equal(new Set(nadyReports.map(e=>e.href)).size,nadyReports.length)
 const raw=pages.filter(p=>!isDiscoverable(p.frontmatter))
 assert.equal(raw.length,12)
 assert.equal(actual.edges.filter(e=>e.role==='author').length,18)

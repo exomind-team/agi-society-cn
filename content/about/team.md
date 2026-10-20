@@ -135,27 +135,9 @@ comments: true
 
 ## 那孜古力·斯拉木(那迪)
 
-> 博士，西北民族大学，中国民族信息技术研究院，计算机技术、人工智能、大数据方向的硕士研究生导师
+> 讲师、工学博士、硕士生导师；西北民族大学人工智能学院、中国民族信息技术研究院。
 
-[知网↗](https://chn.oversea.cnki.net/kcms2/author/detail?v=wRD08hUPYgwHqv6pqt1Lry077C8HmYeFUg_u_vKAKELr9EuNyzuelYm8aFEHWLCDlsaQ35mKa0ssz5y7seHPRwYweIqJYvLqGRxektNLWL-gjim3eRBvXXRWBg--mAzQraqInCBc1Zy03vfEnEBPhEIi3C0Kz5X0byKD64Kg2olxmlgOimKHfRjBS1efeJAW&uniplatform=NZKPT&language=CHS)
-
-主要研究领域：
-
-1. 智能决策
-2. 数据科学
-3. 通用人工智能理论与技术
-
-个人履历：
-
-- 2005年毕业于新疆大学信息科学与工程学院并获计算机科学与技术专业工学学士学位
-- 2008年毕业于新疆大学信息科学与工程学院并获计算机应用技术专业工学硕士学位
-- 2016年毕业于天津大学计算机科学与技术学院并获计算机应用技术专业博士学位
-
-中国计算机学会专业会员。
-
-在SCI期刊、EI检索会议和国内核心期刊发表论多篇论文；
-
-作为项目负责人获得新疆维吾尔自治区自然科学面向基金、国家博士后基金、西北民族大学人才引进项目启动基金等三项基金资助。
+[[../wiki/people/naziguli-slam|人物资料：履历、成果与协会报告]] · [西北民族大学主页↗](https://www.xbmu.edu.cn/xxy/info/2851/6932.htm) · [知网作者检索↗](https://chn.oversea.cnki.net/kcms2/author/detail?v=wRD08hUPYgwHqv6pqt1Lry077C8HmYeFUg_u_vKAKELr9EuNyzuelYm8aFEHWLCDlsaQ35mKa0ssz5y7seHPRwYweIqJYvLqGRxektNLWL-gjim3eRBvXXRWBg--mAzQraqInCBc1Zy03vfEnEBPhEIi3C0Kz5X0byKD64Kg2olxmlgOimKHfRjBS1efeJAW&uniplatform=NZKPT&language=CHS)
 
 ## 魏屹东
 
