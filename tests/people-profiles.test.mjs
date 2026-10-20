@@ -48,7 +48,8 @@ for(const [i,p] of profiles.entries()){
   assert.ok(!JSON.stringify(p).includes('psych.ccnu.edu.cn'))
  }
 }
-assert.equal(photos,profiles.filter(p=>p.portrait).length)
+await import('./profile-additions.test.mjs')
+assert.equal(photos,7,'Six preserved portraits plus the reviewed Nady portrait')
 assert.ok(profiles.find(p=>p.name==='桑新民').affiliation.includes('荣休'))
 assert.ok(profiles.find(p=>p.name==='王培').affiliation.includes('Associate Professor of Instruction'))
 assert.ok(text(home).includes('照片版权归原权利人'))
