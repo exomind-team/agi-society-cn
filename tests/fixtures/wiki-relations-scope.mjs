@@ -15,6 +15,7 @@ export const wikiRelationsChanged = [
 ]
 export const wikiRelationsAdded = [
   "content/about/image/people/li-xiang.jpg",
+  "content/about/image/people/liu-kai-personal-introduction-pptx.jpeg",
   "content/about/image/people/naziguli-slam-xbmu.jpg",
   "content/wiki/people/li-xiang.md",
   "content/wiki/people/naziguli-slam.md"

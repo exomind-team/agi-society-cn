@@ -35,7 +35,7 @@ for(const id of ['liu-2018-machine-education','liu-2023-dual-paradigm','liu-2023
  const title=matter(fs.readFileSync(`content/wiki/papers/${id}.md`,'utf8')).data.title
  assert.equal(liu.related.find(r=>r.href===`/wiki/papers/${id}`).label,`论文：${title}`)
 }
-console.log(`PASS profile additions: 15 historical identities, 6 full historical profiles, 628 historical relations (${promotedRelations} member-name edges resolve to explicit links), 7 fixed portrait hashes; two added full profiles and exactly one new person ID; three precise paper titles.`)
+console.log(`PASS profile additions: 15 historical identities, 6 full historical profiles, 628 historical relations (${promotedRelations} member-name edges resolve to explicit links), ${Object.keys(contract.expectedPortraits).length} fixed portrait hashes; two added full profiles and exactly one new person ID; three precise paper titles.`)
 
 // The explicit new layer must validate every excluded Li Xiang record and all d594 state.
 await import('./li-xiang-expansion.test.mjs')

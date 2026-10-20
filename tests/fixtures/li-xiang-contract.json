@@ -8,7 +8,7 @@
     "sang-xinmin": "77c119dcfc0eaaf567fbff660509fccfe2482588a5d09d2bc11215ff3a326c8d",
     "wang-weijun": "696be87ab17eb4320de4ef61038d259418ae7f777dbc724bb846da68a9c75aa7",
     "naziguli-slam": "05e1be7a49e180541085ee373eb4c424367e605024c18fdfca5e515dc8af2f83",
-    "liu-kai": "ed7b6c42fdf6307b181bdbfd983a0c63342a81e3537de4782d905400cced667c"
+    "liu-kai": "8746ff0ed2a7203111596751fd4761e70e788b4f20c3e2fd768177a8d1308a75"
   },
   "identities": [
     {
@@ -786,6 +786,10 @@
     "naziguli-slam": {
       "file": "naziguli-slam-xbmu.jpg",
       "sha256": "a1a779271d94d3476ef876b00f2eca8940a65ee95393fbe9f1969efcfb0fc401"
+    },
+    "liu-kai": {
+      "file": "liu-kai-personal-introduction-pptx.jpeg",
+      "sha256": "4c04fafa3fc895cca57c5534c41ee75ddfad8819182dc268f9d92320a3f4304c"
     }
   },
   "boundary": {
