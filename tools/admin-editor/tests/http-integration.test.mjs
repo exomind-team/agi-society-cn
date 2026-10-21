@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {ContentStore} from '../server/store.mjs';
+import {createHandler} from '../server/http.mjs';
+import {seedV7} from '../server/seed-v7.mjs';
+test('real loopback HTTP: pinned site text draft → comparison → local version → restore',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'agi-http-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));const store=new ContentStore(root);await seedV7(store);
+ let handler;const server=http.createServer((req,res)=>handler(req,res));await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve)});t.after(()=>new Promise(resolve=>server.close(resolve)));
+ const origin=`http://127.0.0.1:${server.address().port}`;handler=createHandler(store,{origin});
+ const list=await(await fetch(origin+'/api/pages')).json();assert.equal(list.capabilities.websitePublish,false);const id=list.pages[0].id;
+ const action=async body=>{const response=await fetch(origin+'/api/action',{method:'POST',headers:{'Content-Type':'application/json',Origin:origin},body:JSON.stringify(body)});return {status:response.status,data:await response.json()}};
+ const original=(await action({action:'read',id})).data;const draft=(await action({action:'saveDraft',id,content:'它支持文字编辑、内容整理与知识关联。',baseRevision:original.revision,expectedDraftRevision:null})).data;
+ assert.equal((await action({action:'preview',id})).data.content,draft.content);assert.equal(store.head(),original.revision);
+ const published=(await action({action:'publish',id,expectedRevision:original.revision,expectedDraftRevision:draft.draftRevision})).data;assert.equal(published.publishedToWebsite,false);assert.equal(published.synced,false);
+ assert.equal((await action({action:'read',id})).data.draft.status,'matches-published');
+ const stale=await action({action:'publish',id,expectedRevision:original.revision,expectedDraftRevision:draft.draftRevision});assert.equal(stale.status,409);
+ const restored=await action({action:'restore',id,targetRevision:original.revision,expectedRevision:published.revision});assert.equal(restored.status,200);assert.equal((await action({action:'read',id})).data.content,original.content);
+ const cross=await fetch(origin+'/api/action',{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://attacker.invalid'},body:JSON.stringify({action:'read',id})});assert.equal(cross.status,403);
+ const privateGet=await fetch(origin+'/private-drafts');assert.equal(privateGet.status,404);
+});

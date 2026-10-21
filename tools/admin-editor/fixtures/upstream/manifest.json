@@ -1,0 +1,13 @@
+{
+  "repository": "exomind-team/agi-society-cn",
+  "commit": "b719c21c079f8f1c1026be209aac96206c67864e",
+  "files": [
+    {
+      "local": "obsidian.md",
+      "path": "content/contact/contributing/obsidian.md",
+      "blob": "36e0b1b52bc78f1d502e3676a8c53cc4a015c25c",
+      "url": "https://github.com/exomind-team/agi-society-cn/blob/b719c21c079f8f1c1026be209aac96206c67864e/content/contact/contributing/obsidian.md"
+    }
+  ],
+  "purpose": "Read-only exact upstream fixture for integration testing; not live website state."
+}

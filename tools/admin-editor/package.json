@@ -1,0 +1,14 @@
+{
+  "name": "agi-admin-editor-prototype",
+  "version": "0.1.0-prototype",
+  "private": true,
+  "type": "commonjs",
+  "description": "Local-only administrator text editing prototype; not a production CMS",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs tests/*.test.cjs",
+    "build:demo": "node scripts/build-demo.mjs",
+    "init:fixture": "node server/cli.mjs init-v7-fixture ./v7-editor-data",
+    "serve:fixture": "node server/cli.mjs serve ./v7-editor-data 8787"
+  }
+}

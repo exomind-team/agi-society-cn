@@ -1,0 +1,13 @@
+# Never commit private runtime stores, Git objects, or editor drafts.
+/local-editor-data/
+/v7-editor-data/
+*.git/
+private-drafts/
+.write-lock/
+index-*
+*.tmp
+# Local evidence and temporary outputs; source tests remain tracked.
+/reports/
+/tests/*-results.txt
+/node_modules/
+*.log
