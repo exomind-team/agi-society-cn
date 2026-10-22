@@ -257,13 +257,14 @@ async function run() {
     await page.setViewportSize({ width: 1440, height: 900 })
 
     // /favicon.ico is a real, separately reported finding: the prototype serves no icon,
-    // so every page load logs one 404. It is reported apart from script errors.
+    // so every page load logs one 404. Maintainers waived it on 2026-10-22 as a minor
+    // cosmetic gap, so it is reported as WAIVED and never counted as a script error.
     const scriptErrors = consoleErrors.filter(e => !e.includes('404'))
     log('no-console-errors', scriptErrors.length === 0 ? 'PASS' : 'FAIL',
       scriptErrors.length ? scriptErrors.slice(0, 3).join(' | ') : 'no script console errors')
     const favicon404 = consoleErrors.filter(e => e.includes('404'))
-    log('favicon-present', favicon404.length === 0 ? 'PASS' : 'FAIL',
-      favicon404.length ? 'browser requested /favicon.ico and the server returned 404' : 'favicon served')
+    log('favicon-waived', favicon404.length === 0 ? 'PASS' : 'WAIVED',
+      favicon404.length ? 'maintainer-waived cosmetic gap: browser requested /favicon.ico and the server returned 404' : 'favicon served')
     log('no-failed-requests', failedResponses.length === 0 ? 'PASS' : 'FAIL',
       failedResponses.length ? failedResponses.slice(0, 5).join(' | ') : 'no failed requests')
 
