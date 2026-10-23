@@ -14,11 +14,12 @@ const fail = (code, message, status) => {
   throw new EditorError(code, message, status);
 };
 class ContentStore {
-  constructor(root, { beforeAdvance } = {}) {
+  constructor(root, { beforeAdvance, reviewWorkflow = false } = {}) {
     this.root = path.resolve(root);
     this.repo = path.join(this.root, "content.git");
     this.private = path.join(this.root, "private-drafts");
     this.beforeAdvance = beforeAdvance;
+    this.reviewWorkflow = reviewWorkflow;
   }
   git(args, input, env = {}) {
     return execFileSync("git", ["--git-dir", this.repo, "-c", "core.hooksPath=/dev/null", ...args], { input, encoding: "utf8", env: { ...process.env, ...env }, stdio: ["pipe", "pipe", "pipe"] }).trimEnd();
@@ -172,7 +173,83 @@ class ContentStore {
       if (baseRevision !== this.head()) fail("VERSION_CONFLICT", "正式内容已更新，请先比较新版，草稿未覆盖。", 409);
       const old = await this.draft(id);
       if (expectedDraftRevision !== (old?.draftRevision ?? null)) fail("DRAFT_CONFLICT", "草稿已被修改，请先读取最新草稿。", 409);
-      const draft = { id, content, baseRevision, draftRevision: randomUUID(), updatedAt: (new Date()).toISOString() };
+      const draftRevision = randomUUID();
+      const updatedAt = (new Date()).toISOString();
+      const oldReviewEvents = Array.isArray(old?.reviewEvents) ? old.reviewEvents : [];
+      const draft = {
+        id,
+        content,
+        baseRevision,
+        draftRevision,
+        updatedAt,
+        ...(this.reviewWorkflow ? {
+          reviewStatus: "draft",
+          reviewRevision: null,
+          reviewRequestedAt: null,
+          reviewDecidedAt: null,
+          reviewReason: null,
+          reviewEvents: [...oldReviewEvents, {
+            action: "draft-saved",
+            draftRevision,
+            at: updatedAt,
+            actor: "本机流程模拟（未认证）"
+          }].slice(-100)
+        } : {})
+      };
+      await this.atomic(this.draftPath(id), JSON.stringify(draft));
+      return draft;
+    });
+  }
+  async submitForReview({ id, expectedRevision, expectedDraftRevision }) {
+    if (!this.reviewWorkflow) fail("REVIEW_DISABLED", "当前服务未启用本机审核流程演示。", 404);
+    return this.lock(async () => {
+      await this.allowed(id);
+      const draft = await this.draft(id);
+      if (!draft) fail("NO_DRAFT", "尚无草稿。", 404);
+      if (draft.draftRevision !== expectedDraftRevision) fail("DRAFT_CONFLICT", "草稿已变化，请重新读取后再提交审核。", 409);
+      if (expectedRevision !== this.head() || draft.baseRevision !== expectedRevision) fail("VERSION_CONFLICT", "正式内容已更新，请先比较最新版。", 409);
+      if (draft.reviewStatus === "in-review") fail("REVIEW_PENDING", "该草稿已在待审核状态。", 409);
+      if (draft.reviewStatus === "approved") fail("REVIEW_ALREADY_APPROVED", "该草稿修订已批准，请先保存新修订再重新提交。", 409);
+      if (draft.reviewStatus === "returned" && draft.reviewRevision === draft.draftRevision) fail("REVIEW_UNCHANGED", "退回后的草稿尚未修改，请先保存新修订。", 409);
+      const at = (new Date()).toISOString();
+      draft.reviewStatus = "in-review";
+      draft.reviewRevision = draft.draftRevision;
+      draft.reviewRequestedAt = at;
+      draft.reviewDecidedAt = null;
+      draft.reviewReason = null;
+      draft.reviewEvents = [...(Array.isArray(draft.reviewEvents) ? draft.reviewEvents : []), {
+        action: "submitted",
+        draftRevision: draft.draftRevision,
+        at,
+        actor: "本机流程模拟（未认证）"
+      }].slice(-100);
+      await this.atomic(this.draftPath(id), JSON.stringify(draft));
+      return draft;
+    });
+  }
+  async decideReview({ id, expectedDraftRevision, decision, reason = "" }) {
+    if (!this.reviewWorkflow) fail("REVIEW_DISABLED", "当前服务未启用本机审核流程演示。", 404);
+    if (!new Set(["approve", "return"]).has(decision)) fail("INVALID_REVIEW_DECISION", "审核操作无效。");
+    const cleanReason = typeof reason === "string" ? reason.trim().slice(0, 500) : "";
+    if (decision === "return" && !cleanReason) fail("REVIEW_REASON_REQUIRED", "退回修改时请说明原因。");
+    return this.lock(async () => {
+      await this.allowed(id);
+      const draft = await this.draft(id);
+      if (!draft) fail("NO_DRAFT", "尚无草稿。", 404);
+      if (draft.draftRevision !== expectedDraftRevision || draft.reviewRevision !== expectedDraftRevision) fail("DRAFT_CONFLICT", "待审核草稿已变化，请重新读取。", 409);
+      if (draft.reviewStatus !== "in-review") fail("REVIEW_NOT_PENDING", "该草稿当前不在待审核状态。", 409);
+      if (draft.baseRevision !== this.head()) fail("VERSION_CONFLICT", "正式内容已更新；不能批准基于旧版的草稿。", 409);
+      const at = (new Date()).toISOString();
+      draft.reviewStatus = decision === "approve" ? "approved" : "returned";
+      draft.reviewDecidedAt = at;
+      draft.reviewReason = decision === "return" ? cleanReason : null;
+      draft.reviewEvents = [...(Array.isArray(draft.reviewEvents) ? draft.reviewEvents : []), {
+        action: decision === "approve" ? "approved" : "returned",
+        draftRevision: draft.draftRevision,
+        at,
+        actor: "本机流程模拟（未认证）",
+        reason: draft.reviewReason
+      }].slice(-100);
       await this.atomic(this.draftPath(id), JSON.stringify(draft));
       return draft;
     });
@@ -220,6 +297,9 @@ class ContentStore {
       if (!draft) fail("NO_DRAFT", "尚无草稿。", 404);
       if (draft.draftRevision !== expectedDraftRevision) fail("DRAFT_CONFLICT", "草稿已变化，请重新检查。", 409);
       if (draft.baseRevision !== expectedRevision) fail("VERSION_CONFLICT", "草稿基于其他版本。", 409);
+      if (this.reviewWorkflow && (draft.reviewStatus !== "approved" || draft.reviewRevision !== draft.draftRevision)) {
+        fail("REVIEW_REQUIRED", "本机流程演示要求先批准当前草稿修订。", 409);
+      }
       const result = await this.advance(id, draft.content, expectedRevision, `发布文字：${id}`);
       // Retention avoids post-commit cleanup failure being misreported as no publication.
       return { ...result, draftRetained: true };

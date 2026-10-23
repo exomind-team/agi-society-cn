@@ -4,9 +4,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { EditorError } from "./store.mjs";
 const BODY_LIMIT_BYTES = 1024 * 1024;
-const ACTIONS = new Set(["read", "saveDraft", "preview", "publish", "history", "restore", "readVersion", "syncStatus"]);
+const ACTIONS = new Set(["read", "saveDraft", "preview", "submitForReview", "decideReview", "publish", "history", "restore", "readVersion", "syncStatus"]);
 const WEB_FILES = { "/": "index.html", "/index.html": "index.html", "/styles.css": "styles.css", "/core.js": "core.js", "/app.js": "app.js" };
-function createHandler(store, { origin, readOnly = false, webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../web") } = {}) {
+function createHandler(store, { origin, readOnly = false, reviewWorkflow = false, webRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../web") } = {}) {
   const expected = new URL(origin);
   return async function handle(req, res) {
     const json = (status, value) => {
@@ -17,7 +17,7 @@ function createHandler(store, { origin, readOnly = false, webRoot = path.resolve
       if (req.headers.host !== expected.host) throw new EditorError("HOST_DENIED", "请求地址不匹配。", 403);
       if (req.headers.origin && req.headers.origin !== expected.origin) throw new EditorError("ORIGIN_DENIED", "不接受其他网站的请求。", 403);
       if (req.method === "GET" && req.url === "/api/pages") {
-        json(200, { ...await store.list(), capabilities: { readOnly, authentication: "local-trusted-user-only", websitePublish: false, remoteSync: false } });
+        json(200, { ...await store.list(), capabilities: { readOnly, authentication: "local-trusted-user-only", reviewWorkflow: reviewWorkflow ? "local-simulation" : false, websitePublish: false, remoteSync: false } });
         return;
       }
       if (req.method === "POST" && req.url === "/api/action") {
@@ -37,7 +37,8 @@ function createHandler(store, { origin, readOnly = false, webRoot = path.resolve
           throw new EditorError("INVALID_JSON", "请求不是有效 JSON。");
         }
         if (!body || typeof body !== "object" || Array.isArray(body) || !ACTIONS.has(body.action)) throw new EditorError("UNKNOWN_ACTION", "不支持此操作。");
-        if (readOnly && ["saveDraft", "publish", "restore"].includes(body.action)) throw new EditorError("READ_ONLY", "当前服务为只读，未保存此次修改。", 403);
+        if (["submitForReview", "decideReview"].includes(body.action) && !reviewWorkflow) throw new EditorError("REVIEW_DISABLED", "当前服务未启用本机审核流程演示。", 404);
+        if (readOnly && ["saveDraft", "submitForReview", "decideReview", "publish", "restore"].includes(body.action)) throw new EditorError("READ_ONLY", "当前服务为只读，未保存此次修改。", 403);
         json(200, await store[body.action](body));
         return;
       }
@@ -56,9 +57,9 @@ function createHandler(store, { origin, readOnly = false, webRoot = path.resolve
     }
   };
 }
-function createLocalServer(store, { port = 8787, webRoot, readOnly = false } = {}) {
+function createLocalServer(store, { port = 8787, webRoot, readOnly = false, reviewWorkflow = false } = {}) {
   if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error("Use an unprivileged port between 1024 and 65535");
-  return http.createServer(createHandler(store, { origin: `http://127.0.0.1:${port}`, webRoot, readOnly }));
+  return http.createServer(createHandler(store, { origin: `http://127.0.0.1:${port}`, webRoot, readOnly, reviewWorkflow }));
 }
 export {
   BODY_LIMIT_BYTES,

@@ -1,5 +1,6 @@
 # Never commit private runtime stores, Git objects, or editor drafts.
 /local-editor-data/
+/local-review-demo-data/
 /v7-editor-data/
 *.git/
 private-drafts/

@@ -11,6 +11,8 @@
   let operation = false;
   let composing = false;
   let readOnly = false;
+  let reviewWorkflow = false;
+  let reviewRole = 'editor';
   let dialogAction = null;
 
   $('demo-banner').hidden = !demo;
@@ -34,6 +36,8 @@
   function update() {
     const p = session.page;
     const dirty = session.dirty;
+    const draft = p?.draft;
+    const reviewStatus = draft?.reviewStatus || 'draft';
     const sameAsPublished = p?.draft && p.draft.content === p.content;
     let state = '当前为正式版本';
     if (p?.draft && !sameAsPublished) state = '草稿已保存，尚未成为正式版本';
@@ -46,9 +50,38 @@
     if (operation) state = '正在处理…';
     $('state').textContent = p ? state : '载入内容后即可开始。';
     const locked = operation || readOnly || session.reconcileRequired;
-    $('save').disabled = !p || locked || (!dirty && !(p?.draft?.stale && !sameAsPublished));
-    $('publish').disabled = !p?.draft || dirty || locked || sameAsPublished;
-    $('editor').disabled = !p || operation || readOnly;
+    const canEdit = !reviewWorkflow || reviewRole === 'editor';
+    $('review-simulation').hidden = !reviewWorkflow;
+    $('review-role').value = reviewRole;
+    $('review-status').textContent = !draft ? '先保存草稿，再提交审核。'
+      : reviewStatus === 'in-review' && draft.stale ? '待审核草稿基于旧正式版本；编辑者需先比较并保存新修订。'
+        : reviewStatus === 'in-review' ? `待审核修订 ${String(draft.reviewRevision || '').slice(0, 8)}；提交后修改草稿会使本次审核失效。`
+          : reviewStatus === 'approved' && sameAsPublished && draft.baseRevision !== p.revision ? `已批准修订 ${String(draft.reviewRevision || '').slice(0, 8)} 已写入本地正式版本；网站未更新。`
+            : reviewStatus === 'approved' && sameAsPublished ? '批准的草稿与当前正式内容相同，无需重复写入。'
+              : reviewStatus === 'approved' ? `修订 ${String(draft.reviewRevision || '').slice(0, 8)} 已由模拟审核员批准，可确认写入本地正式版本。`
+                : reviewStatus === 'returned' ? `已退回修改：${draft.reviewReason || '请修订后重新提交。'}`
+                  : '草稿尚未提交审核。该状态流程仅用于本机体验，不代表真实人员身份。';
+    const eventLabels = { 'draft-saved': '保存新草稿', submitted: '提交审核', approved: '模拟批准', returned: '模拟退回' };
+    const reviewEvents = Array.isArray(draft?.reviewEvents) ? draft.reviewEvents.slice(-8).reverse() : [];
+    $('review-events').replaceChildren();
+    for (const event of reviewEvents) {
+      const item = document.createElement('li');
+      const date = new Date(event.at);
+      const timestamp = Number.isNaN(date.getTime()) ? '' : date.toLocaleString();
+      item.textContent = `${timestamp} · ${eventLabels[event.action] || '审核状态更新'} · ${String(event.draftRevision || '').slice(0, 8)}${event.reason ? ' · ' + event.reason : ''}`;
+      $('review-events').append(item);
+    }
+    $('review-submit').hidden = !reviewWorkflow || reviewRole !== 'editor';
+    $('review-submit').disabled = !draft || draft.stale || dirty || locked || reviewStatus === 'in-review' || reviewStatus === 'approved' || (reviewStatus === 'returned' && draft.reviewRevision === draft.draftRevision);
+    const canDecide = reviewWorkflow && reviewRole === 'reviewer' && reviewStatus === 'in-review' && !draft?.stale;
+    $('review-approve').hidden = !canDecide;
+    $('review-return').hidden = !canDecide;
+    $('review-approve').disabled = locked;
+    $('review-return').disabled = locked;
+    $('save').disabled = !p || locked || !canEdit || (!dirty && !(p?.draft?.stale && !sameAsPublished));
+    $('publish').disabled = !p?.draft || dirty || locked || sameAsPublished || !canEdit || (reviewWorkflow && reviewStatus !== 'approved');
+    $('publish').textContent = reviewWorkflow ? '确认本地正式版本…' : '确认正式版本…';
+    $('editor').disabled = !p || operation || readOnly || !canEdit;
     $('counts').textContent = Array.from(session.text).length.toLocaleString() + ' 字';
     $('history').disabled = !p || operation;
     document.querySelectorAll('.page-button').forEach(b => b.disabled = operation);
@@ -179,15 +212,93 @@
       notice(demo ? '示例草稿已保存到当前页面内，刷新即重置。'
         : '草稿已保存到本机内容服务，未成为正式版本，也未对外同步。');
     });
-    if (stale) {
-      showDialog('以当前正式版本重新保存草稿？',
-        '正式内容已在其他编辑中发生变化。请先查看变化，确认你的文字仍然适用。这次保存只更新草稿，不覆盖正式内容。',
-        '重新保存草稿', write);
+    const reviewInvalidated = reviewWorkflow && ['in-review', 'approved'].includes(session.page?.draft?.reviewStatus);
+    if (stale || reviewInvalidated) {
+      const title = stale ? '以当前正式版本重新保存草稿？' : '修改会使当前审核失效';
+      const message = stale
+        ? '正式内容已在其他编辑中发生变化。请先查看变化，确认你的文字仍然适用。这次保存只更新草稿，不覆盖正式内容。'
+        : '保存会创建新的草稿修订，并撤回待审核或已批准状态。之后需要重新提交审核。';
+      showDialog(title, message, stale ? '重新保存草稿' : '保存新修订', write);
     } else {
       await write();
     }
   }
   $('save').onclick = save;
+
+  $('review-role').addEventListener('change', () => {
+    const nextRole = $('review-role').value === 'reviewer' ? 'reviewer' : 'editor';
+    if (session.dirty && nextRole !== reviewRole) {
+      $('review-role').value = reviewRole;
+      notice('请先保存草稿或下载当前文字，再切换本机模拟角色。', true);
+      return;
+    }
+    reviewRole = nextRole;
+    update();
+  });
+
+  $('review-submit').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'editor' || session.dirty || !session.page?.draft || operation) return;
+    run(async () => {
+      const id = session.page.id;
+      await adapter.action('submitForReview', {
+        id,
+        expectedRevision: session.page.revision,
+        expectedDraftRevision: session.page.draft.draftRevision
+      });
+      await session.load(id);
+      $('editor').value = session.text;
+      notice('已把当前草稿修订加入本机审核流程；这没有认证操作者身份。');
+    });
+  };
+
+  $('review-approve').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation) return;
+    showDialog('批准此草稿修订？',
+      '本机流程演示会记录一个模拟审核决定。当前服务没有真实登录或角色权限，不能把此结果用于生产审核。',
+      '模拟批准', () => run(async () => {
+        const id = session.page.id;
+        await adapter.action('decideReview', {
+          id,
+          expectedDraftRevision: session.page.draft.draftRevision,
+          decision: 'approve'
+        });
+        await session.load(id);
+        $('editor').value = session.text;
+        notice('演示审核已批准；仍需编辑者切回模拟角色并确认写入本地正式版本。网站没有更新。');
+      }));
+  };
+
+  $('review-return').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation) return;
+    const field = document.createElement('div');
+    const label = document.createElement('label');
+    label.htmlFor = 'review-return-reason';
+    label.textContent = '退回原因';
+    const input = document.createElement('textarea');
+    input.id = 'review-return-reason';
+    input.maxLength = 500;
+    input.rows = 4;
+    input.required = true;
+    input.placeholder = '说明需要作者修改的内容';
+    field.append(label, input);
+    showDialog('退回草稿修改', field, '退回修改', () => run(async () => {
+      const reason = input.value.trim();
+      if (!reason) {
+        notice('请填写退回原因。', true);
+        return;
+      }
+      const id = session.page.id;
+      await adapter.action('decideReview', {
+        id,
+        expectedDraftRevision: session.page.draft.draftRevision,
+        decision: 'return',
+        reason
+      });
+      await session.load(id);
+      $('editor').value = session.text;
+      notice('草稿已退回模拟编辑者；该状态仅保存在本机原型。');
+    }));
+  };
 
   async function mutateThenRead(mutation, successMessage) {
     const outcome = await session.commitAndReload(mutation);
@@ -246,7 +357,8 @@
       : '当前状态：' + data.state + '。此处不等同于官网已上线。');
   });
   $('help').onclick = () => showDialog('先保存，再确认正式版本',
-    '保存草稿不会公开内容。“查看变化”用 + / − 展示与正式内容的不同。“确认正式版本”只写入本机内容仓库，本原型不执行网站上线或对外同步。文字预览不执行页面代码。键盘可用 Ctrl / ⌘ + S 保存。');
+    '保存草稿不会公开内容。“查看变化”用 + / − 展示与正式内容的不同。“确认正式版本”只写入本机内容仓库，本原型不执行网站上线或对外同步。文字预览不执行页面代码。键盘可用 Ctrl / ⌘ + S 保存。'
+      + (reviewWorkflow ? ' 本机审核演示中的角色切换没有真实身份认证或权限保护。' : ''));
 
   async function showVersion(id, version) {
     await run(async () => {
@@ -315,6 +427,8 @@
   run(async () => {
     const result = await adapter.list();
     readOnly = result.capabilities?.readOnly === true;
+    reviewWorkflow = result.capabilities?.reviewWorkflow === 'local-simulation';
+    $('review-simulation').hidden = !reviewWorkflow;
     pages = result.pages;
     renderPages();
     if (pages.length) {
