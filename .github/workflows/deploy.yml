@@ -54,7 +54,9 @@ jobs:
           VITEPRESS_BASE: /
 
       - name: Preserve Tencent Cloud artifact
-        run: mv dist dist-mirror
+        run: |
+          mv dist dist-mirror
+          printf '%s\n' "$GITHUB_SHA" > dist-mirror/deployment-revision.txt
 
       - name: Check Tencent Cloud mirror content links and assets
         run: node scripts/check-content-links.mjs --dist=dist-mirror --base=/
@@ -65,7 +67,9 @@ jobs:
           VITEPRESS_BASE: /wiki/
 
       - name: Preserve WordPress subpath artifact
-        run: mv dist dist-wordpress-wiki
+        run: |
+          mv dist dist-wordpress-wiki
+          printf '%s\n' "$GITHUB_SHA" > dist-wordpress-wiki/deployment-revision.txt
 
       - name: Check WordPress subpath content links and assets
         run: node scripts/check-content-links.mjs --dist=dist-wordpress-wiki --base=/wiki/
@@ -177,6 +181,8 @@ jobs:
 
       - name: Pack and checksum mirror artifact
         run: |
+          test "$(cat dist-mirror/deployment-revision.txt)" = "$GITHUB_SHA"
+          test "$(cat dist-wordpress-wiki/deployment-revision.txt)" = "$GITHUB_SHA"
           tar -czf "wiki-mirror-${GITHUB_SHA}.tar.gz" -C dist-mirror .
           sha256sum "wiki-mirror-${GITHUB_SHA}.tar.gz" > "wiki-mirror-${GITHUB_SHA}.tar.gz.sha256"
           tar -czf "wiki-wordpress-wiki-${GITHUB_SHA}.tar.gz" -C dist-wordpress-wiki .
@@ -238,14 +244,20 @@ jobs:
             -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
             "/usr/local/sbin/agi-wiki-deploy sync-gitea $GITHUB_SHA"
 
+      - name: Verify Gitea-pulled mirror content
+        id: gitea_verify
+        if: ${{ steps.gitea_sync.outcome == 'success' }}
+        continue-on-error: true
+        run: bash scripts/verify-public-mirror.sh "$GITHUB_SHA"
+
       - name: Pack mirror artifact
-        if: ${{ steps.gitea_sync.outcome != 'success' }}
+        if: ${{ steps.gitea_sync.outcome != 'success' || steps.gitea_verify.outcome != 'success' }}
         run: |
           tar -czf wiki-mirror.tar.gz -C dist-mirror .
           tar -czf wiki-wp-mirror.tar.gz -C dist-wordpress-wiki .
 
       - name: Upload mirror release
-        if: ${{ steps.gitea_sync.outcome != 'success' }}
+        if: ${{ steps.gitea_sync.outcome != 'success' || steps.gitea_verify.outcome != 'success' }}
         run: |
           curl -4 -sS -o /dev/null --max-time 20 \
             -w 'github_runner_to_tencent_http status=%{http_code} connect=%{time_connect}s total=%{time_total}s\n' \
@@ -269,7 +281,7 @@ jobs:
             "$upload_start" "$upload_end" "$upload_bytes" "$upload_seconds" "$upload_rate"
 
       - name: Activate mirror release atomically
-        if: ${{ steps.gitea_sync.outcome != 'success' }}
+        if: ${{ steps.gitea_sync.outcome != 'success' || steps.gitea_verify.outcome != 'success' }}
         run: |
           ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
             -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
@@ -277,3 +289,6 @@ jobs:
           ssh -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
             -i "$HOME/.ssh/agi-wiki-deploy" "$WIKI_DEPLOY_USER@$WIKI_DEPLOY_HOST" \
             "/usr/local/sbin/agi-wiki-deploy activate-wp $GITHUB_SHA"
+
+      - name: Verify Tencent Cloud serves this revision
+        run: bash scripts/verify-public-mirror.sh "$GITHUB_SHA"
