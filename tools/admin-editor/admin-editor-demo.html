@@ -1,14 +1,26 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AGI Wiki · 内容工作台</title><style>:root{color-scheme:light;--ink:#19364a;--muted:#526a78;--line:#cdd9e0;--paper:#fff;--wash:#f1f6f9;--accent:#165d85;--add:#135e39;--add-bg:#e8f5ed;--remove:#972f3b;--remove-bg:#fff0f0;--warn:#77520d;font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}*{box-sizing:border-box}body{margin:0}button,input,textarea{font:inherit}button{cursor:pointer;min-height:40px;padding:8px 14px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:6px}button:hover{background:var(--wash)}button:disabled{cursor:not-allowed;opacity:.5}button.primary{background:var(--accent);border-color:var(--accent);color:white}button.primary:hover{background:#124b6c}button.quiet{background:transparent;border-color:transparent}button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #dd9c22;outline-offset:3px}.top{display:flex;align-items:center;gap:24px;padding:16px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}.brand{color:var(--ink);font-weight:750;font-size:25px;text-decoration:none;letter-spacing:-.7px}.brand span{font-weight:400}.workspace-title{border-left:1px solid var(--line);padding-left:24px;font-size:17px}.workspace-title small{font-size:11px;color:var(--muted);padding-left:8px}.mode{margin-left:auto;font-size:12px;color:var(--muted)}.top #help{border:1px solid var(--line);border-radius:50%;width:36px;min-height:36px;padding:0}.demo-banner{padding:8px 28px;background:#fff7dc;color:#6d5217;font-size:13px}.layout{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:calc(100vh - 78px)}.sidebar{background:var(--wash);border-right:1px solid var(--line);padding:24px 14px;display:flex;flex-direction:column;gap:12px}.sidebar h2{font-size:15px;margin:0 10px}.search-label{font-size:12px;color:var(--muted);margin:0 10px -6px}.sidebar input{min-width:0;width:100%;background:white;border:1px solid var(--line);border-radius:6px;padding:10px}.sidebar nav{display:grid;align-content:start;gap:4px}.page-button{text-align:left;border-color:transparent;background:transparent;overflow-wrap:anywhere}.page-button[aria-current=page]{border-color:#b9d0df;background:#dfeef7;color:#104d74;font-weight:650}.sidebar-bottom{margin-top:auto;padding-top:28px}.sidebar-bottom button{font-size:12px}main{padding:30px clamp(20px,4vw,64px);max-width:1400px;width:100%;margin:0 auto}.document-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}.breadcrumbs{font-size:12px;color:var(--muted);margin-bottom:8px}.breadcrumbs span{padding:0 8px;color:#7f96a5}h1{font-size:27px;line-height:1.3;margin:0 0 8px;font-weight:650}.state{font-size:13px;min-height:20px;color:var(--muted);margin:0}.actions{display:flex;gap:10px;flex-shrink:0}.viewbar{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap}.viewbar button{border:0;border-bottom:3px solid transparent;border-radius:0;padding:10px 12px;background:transparent;color:var(--muted)}.viewbar button[aria-pressed=true]{color:var(--accent);border-bottom-color:var(--accent);font-weight:650}.viewbar .history{margin-left:auto}#change-count{font-size:11px}.notice{border-left:3px solid var(--accent);background:var(--wash);padding:12px 16px;margin-bottom:16px;font-size:14px}.notice.error{border-color:var(--remove);color:var(--remove);background:var(--remove-bg)}.conflict{border:1px solid #d8b56b;background:#fff9e9;padding:16px;margin-bottom:20px;font-size:14px}.conflict p{line-height:1.7}.conflict button{margin:0 8px 4px 0}textarea{display:block;width:100%;resize:vertical;min-height:440px;height:52vh;padding:22px;border:1px solid var(--line);border-radius:5px;background:#fff;color:#223c4d;line-height:1.9;font-size:16px;tab-size:2}.editor-foot{display:flex;justify-content:space-between;gap:12px;padding-top:10px;font-size:12px;color:var(--muted)}.format-help{margin-top:25px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}summary{cursor:pointer}.format-help p{max-width:70ch;line-height:1.8}.panel-caption{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 18px}.diff{border:1px solid var(--line);border-radius:5px;overflow:hidden}.diff-row{display:grid;grid-template-columns:78px minmax(0,1fr);border-bottom:1px solid #dae3e9;font-size:15px;line-height:1.8}.diff-row:last-child{border:0}.diff-label{padding:10px 8px;font-size:12px;border-right:1px solid #0001;text-align:center}.diff-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:10px 16px}.diff-row.added{background:var(--add-bg);color:var(--add)}.diff-row.removed{background:var(--remove-bg);color:var(--remove)}.empty{padding:26px;color:var(--muted)}.reading{white-space:pre-wrap;overflow-wrap:anywhere;font-family:"Noto Serif CJK SC","Songti SC",SimSun,serif;font-size:18px;line-height:2;max-width:70ch;margin:0 auto;min-height:360px;padding:12px 0}dialog{border:1px solid var(--line);border-radius:10px;padding:24px;max-width:680px;width:calc(100% - 32px);color:var(--ink)}dialog::backdrop{background:#19364a66}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.dialog-head h2{font-size:21px;margin:0}.dialog-head button{font-size:22px;padding:3px 10px;border:0}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}#dialog-body{line-height:1.8;max-height:60vh;overflow:auto;margin-top:16px;overflow-wrap:anywhere}.version-row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}.version-row small{display:block;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip{position:absolute;left:-1000px}.skip:focus{left:12px;top:8px;background:white;padding:8px;z-index:3}[hidden]{display:none!important}@media(max-width:760px){.top{padding:14px 16px;gap:12px}.workspace-title{padding-left:12px}.layout{grid-template-columns:1fr}.sidebar{border-right:0;border-bottom:1px solid var(--line);padding:16px;gap:8px}.sidebar nav{display:flex;overflow:auto}.page-button{flex-shrink:0}.sidebar-bottom{margin-top:0;padding-top:0}.sidebar h2,.search-label{margin-left:0}.document-head{align-items:flex-start;flex-direction:column;gap:12px}.actions{width:100%}.actions button{flex:1}main{padding:24px 16px}.mode{margin-left:0}.viewbar{gap:0}.viewbar button{padding:10px 8px;font-size:14px}.viewbar .history{margin-left:0}textarea{min-height:330px;padding:16px}.editor-foot{flex-wrap:wrap}.diff-row{grid-template-columns:66px minmax(0,1fr)}.demo-banner{padding:8px 16px}.version-row{align-items:flex-start;flex-wrap:wrap}}
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AGI Wiki · 内容工作台</title><style>:root{color-scheme:light;--ink:#19364a;--muted:#526a78;--line:#cdd9e0;--paper:#fff;--wash:#f1f6f9;--accent:#165d85;--add:#135e39;--add-bg:#e8f5ed;--remove:#972f3b;--remove-bg:#fff0f0;--warn:#77520d;font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer;min-height:40px;padding:8px 14px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:6px}button:hover{background:var(--wash)}button:disabled{cursor:not-allowed;opacity:.5}button.primary{background:var(--accent);border-color:var(--accent);color:white}button.primary:hover{background:#124b6c}button.quiet{background:transparent;border-color:transparent}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #dd9c22;outline-offset:3px}.top{display:flex;align-items:center;gap:24px;padding:16px 28px;border-bottom:1px solid var(--line);flex-wrap:wrap}.brand{color:var(--ink);font-weight:750;font-size:25px;text-decoration:none;letter-spacing:-.7px}.brand span{font-weight:400}.workspace-title{border-left:1px solid var(--line);padding-left:24px;font-size:17px}.workspace-title small{font-size:11px;color:var(--muted);padding-left:8px}.mode{margin-left:auto;font-size:12px;color:var(--muted)}.top #help{border:1px solid var(--line);border-radius:50%;width:36px;min-height:36px;padding:0}.demo-banner{padding:8px 28px;background:#fff7dc;color:#6d5217;font-size:13px}.layout{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:calc(100vh - 78px)}.sidebar{background:var(--wash);border-right:1px solid var(--line);padding:24px 14px;display:flex;flex-direction:column;gap:12px}.sidebar h2{font-size:15px;margin:0 10px}.search-label{font-size:12px;color:var(--muted);margin:0 10px -6px}.sidebar input{min-width:0;width:100%;background:white;border:1px solid var(--line);border-radius:6px;padding:10px}.sidebar nav{display:grid;align-content:start;gap:4px}.page-button{text-align:left;border-color:transparent;background:transparent;overflow-wrap:anywhere}.page-button[aria-current=page]{border-color:#b9d0df;background:#dfeef7;color:#104d74;font-weight:650}.sidebar-bottom{margin-top:auto;padding-top:28px}.sidebar-bottom button{font-size:12px}main{padding:30px clamp(20px,4vw,64px);max-width:1400px;width:100%;margin:0 auto}.document-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}.breadcrumbs{font-size:12px;color:var(--muted);margin-bottom:8px}.breadcrumbs span{padding:0 8px;color:#7f96a5}h1{font-size:27px;line-height:1.3;margin:0 0 8px;font-weight:650}.state{font-size:13px;min-height:20px;color:var(--muted);margin:0}.actions{display:flex;gap:10px;flex-shrink:0}.viewbar{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:20px;flex-wrap:wrap}.viewbar button{border:0;border-bottom:3px solid transparent;border-radius:0;padding:10px 12px;background:transparent;color:var(--muted)}.viewbar button[aria-pressed=true]{color:var(--accent);border-bottom-color:var(--accent);font-weight:650}.viewbar .history{margin-left:auto}#change-count{font-size:11px}.notice{border-left:3px solid var(--accent);background:var(--wash);padding:12px 16px;margin-bottom:16px;font-size:14px}.notice.error{border-color:var(--remove);color:var(--remove);background:var(--remove-bg)}.conflict{border:1px solid #d8b56b;background:#fff9e9;padding:16px;margin-bottom:20px;font-size:14px}.conflict p{line-height:1.7}.conflict button{margin:0 8px 4px 0}textarea{display:block;width:100%;resize:vertical;min-height:440px;height:52vh;padding:22px;border:1px solid var(--line);border-radius:5px;background:#fff;color:#223c4d;line-height:1.9;font-size:16px;tab-size:2}.editor-foot{display:flex;justify-content:space-between;gap:12px;padding-top:10px;font-size:12px;color:var(--muted)}.format-help{margin-top:25px;border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}summary{cursor:pointer}.format-help p{max-width:70ch;line-height:1.8}.panel-caption{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 18px}.diff{border:1px solid var(--line);border-radius:5px;overflow:hidden}.diff-row{display:grid;grid-template-columns:78px minmax(0,1fr);border-bottom:1px solid #dae3e9;font-size:15px;line-height:1.8}.diff-row:last-child{border:0}.diff-label{padding:10px 8px;font-size:12px;border-right:1px solid #0001;text-align:center}.diff-text{white-space:pre-wrap;overflow-wrap:anywhere;padding:10px 16px}.diff-row.added{background:var(--add-bg);color:var(--add)}.diff-row.removed{background:var(--remove-bg);color:var(--remove)}.empty{padding:26px;color:var(--muted)}.reading{white-space:pre-wrap;overflow-wrap:anywhere;font-family:"Noto Serif CJK SC","Songti SC",SimSun,serif;font-size:18px;line-height:2;max-width:70ch;margin:0 auto;min-height:360px;padding:12px 0}dialog{border:1px solid var(--line);border-radius:10px;padding:24px;max-width:680px;width:calc(100% - 32px);color:var(--ink)}dialog::backdrop{background:#19364a66}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.dialog-head h2{font-size:21px;margin:0}.dialog-head button{font-size:22px;padding:3px 10px;border:0}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}#dialog-body{line-height:1.8;max-height:60vh;overflow:auto;margin-top:16px;overflow-wrap:anywhere}.version-row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}.version-row small{display:block;color:var(--muted)}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip{position:absolute;left:-1000px}.skip:focus{left:12px;top:8px;background:white;padding:8px;z-index:3}[hidden]{display:none!important}@media(max-width:760px){.top{padding:14px 16px;gap:12px}.workspace-title{padding-left:12px}.layout{grid-template-columns:1fr}.sidebar{border-right:0;border-bottom:1px solid var(--line);padding:16px;gap:8px}.sidebar nav{display:flex;overflow:auto}.page-button{flex-shrink:0}.sidebar-bottom{margin-top:0;padding-top:0}.sidebar h2,.search-label{margin-left:0}.document-head{align-items:flex-start;flex-direction:column;gap:12px}.actions{width:100%}.actions button{flex:1}main{padding:24px 16px}.mode{margin-left:0}.viewbar{gap:0}.viewbar button{padding:10px 8px;font-size:14px}.viewbar .history{margin-left:0}textarea{min-height:330px;padding:16px}.editor-foot{flex-wrap:wrap}.diff-row{grid-template-columns:66px minmax(0,1fr)}.demo-banner{padding:8px 16px}.version-row{align-items:flex-start;flex-wrap:wrap}}
 
 .historical-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}
+
+.review-simulation{margin:0 0 18px;padding:16px 18px;border:1px solid #d6c79f;border-radius:8px;background:#fffaf0}
+.review-heading,.review-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.review-heading h2{margin:0 0 4px;font-size:16px}
+.review-heading p,.review-status{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.review-heading label{display:grid;gap:5px;font-size:12px;color:var(--muted)}
+.review-heading select{min-height:38px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);font:inherit}
+.review-actions{margin-top:12px;justify-content:flex-start}
+.review-status{flex:1 1 260px}
+.review-events{flex:1 1 100%;margin:4px 0 0;padding:10px 0 0 22px;border-top:1px solid #e9dfc8;color:var(--muted);font-size:12px;line-height:1.7}
+@media(max-width:760px){.review-simulation{margin:0 0 16px;padding:14px}.review-heading{align-items:stretch}.review-heading label{width:100%}.review-actions>*{flex:1 1 100%}}
 </style></head><body data-demo="true">
 <a class="skip" href="#editor">跳到正文编辑</a>
 <header class="top"><a class="brand" href="#">AGI <span>Wiki</span></a><div class="workspace-title">内容工作台 <small>原型 0.1</small></div><span id="mode" class="mode">正在连接</span><button id="help" class="quiet" aria-label="查看使用说明">?</button></header>
 <div id="demo-banner" class="demo-banner" hidden>交互演示 · 修改只保留在当前页面，刷新会重置，不影响官网。</div>
 <div class="layout"><aside class="sidebar" aria-label="选择要编辑的内容"><h2>内容</h2><label class="search-label" for="search">查找页面</label><input id="search" type="search" placeholder="搜索标题" autocomplete="off"><nav id="pages" aria-label="页面列表"></nav><div class="sidebar-bottom"><button id="sync" class="quiet">对外同步状态</button></div></aside>
 <main><section class="document-head"><div><div class="breadcrumbs">官网内容 <span aria-hidden="true">/</span> 管理员编辑</div><h1 id="title">选择一个页面</h1><p id="state" class="state">载入内容后即可开始。</p></div><div class="actions"><button id="save" disabled>保存草稿</button><button id="publish" class="primary" disabled>确认正式版本…</button></div></section>
+<section id="review-simulation" class="review-simulation" aria-labelledby="review-heading" hidden><div class="review-heading"><div><h2 id="review-heading">审核流程演示</h2><p>本机单用户流程模拟 · 角色选择不做身份认证或权限保护</p></div><label for="review-role">当前模拟角色<select id="review-role"><option value="editor">编辑者（模拟）</option><option value="reviewer">审核者（模拟）</option></select></label></div><div class="review-actions"><p id="review-status" role="status" aria-live="polite">先保存草稿。</p><button id="review-submit" disabled>提交审核</button><button id="review-approve" class="primary" hidden disabled>批准此修订</button><button id="review-return" hidden disabled>退回修改…</button></div><ol id="review-events" class="review-events" aria-label="本机模拟审核记录"></ol></section>
 <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
-<section id="conflict" class="conflict" role="alert" hidden><strong>内容已有新版本，尚未覆盖</strong><p>你的输入仍在编辑框中。先下载当前文字，再查看服务器最新版；比较后重新编辑和保存。</p><button id="download-local">下载当前文字</button><button id="reload">查看最新版…</button></section>
+<section id="conflict" class="conflict" role="alert" hidden><strong>请先核对服务器状态</strong><p>你的输入仍在编辑框中。先下载当前文字，再查看服务器最新版；比较后重新编辑和保存。</p><button id="download-local">下载当前文字</button><button id="reload">查看最新版…</button></section>
 <div class="viewbar" role="group" aria-label="内容视图"><button data-view="edit" aria-pressed="true">编辑正文</button><button data-view="changes" aria-pressed="false">查看变化 <span id="change-count"></span></button><button data-view="preview" aria-pressed="false">阅读预览</button><button id="history" class="history">历史版本</button></div>
 <section id="edit-panel"><label for="editor" class="sr-only">正文文字</label><textarea id="editor" placeholder="从左侧选择页面，开始编辑。" spellcheck="false" disabled></textarea><footer class="editor-foot"><span id="counts">0 字</span><span>Ctrl / ⌘ + S 保存草稿</span></footer><details class="format-help"><summary>文字格式与来源</summary><p>本轮编辑已有正文文字，不编辑网站组件或页面布局。保留原有标题、链接及来源；新增事实请附可靠来源。阅读预览按纯文本显示，不执行 HTML 或脚本。</p></details></section>
 <section id="changes-panel" hidden aria-label="修改前后对照"><p class="panel-caption">与正式内容比较。− 删除，+ 新增；未变化的首尾段落已收起。中间整段替换不代表每一行都发生改变。</p><div id="diff" class="diff"></div></section>
@@ -233,7 +245,10 @@
   let operation = false;
   let composing = false;
   let readOnly = false;
+  let reviewWorkflow = false;
+  let reviewRole = 'editor';
   let dialogAction = null;
+  const dialogForm = $('dialog').querySelector('form');
 
   $('demo-banner').hidden = !demo;
   $('mode').textContent = demo ? '离线交互演示' : '本机内容服务 · 非生产后台';
@@ -256,6 +271,8 @@
   function update() {
     const p = session.page;
     const dirty = session.dirty;
+    const draft = p?.draft;
+    const reviewStatus = draft?.reviewStatus || 'draft';
     const sameAsPublished = p?.draft && p.draft.content === p.content;
     let state = '当前为正式版本';
     if (p?.draft && !sameAsPublished) state = '草稿已保存，尚未成为正式版本';
@@ -268,9 +285,38 @@
     if (operation) state = '正在处理…';
     $('state').textContent = p ? state : '载入内容后即可开始。';
     const locked = operation || readOnly || session.reconcileRequired;
-    $('save').disabled = !p || locked || (!dirty && !(p?.draft?.stale && !sameAsPublished));
-    $('publish').disabled = !p?.draft || dirty || locked || sameAsPublished;
-    $('editor').disabled = !p || operation || readOnly;
+    const canEdit = !reviewWorkflow || reviewRole === 'editor';
+    $('review-simulation').hidden = !reviewWorkflow;
+    $('review-role').value = reviewRole;
+    $('review-status').textContent = !draft ? '先保存草稿，再提交审核。'
+      : reviewStatus === 'in-review' && draft.stale ? '待审核草稿基于旧正式版本；编辑者需先比较并保存新修订。'
+        : reviewStatus === 'in-review' ? `待审核修订 ${String(draft.reviewRevision || '').slice(0, 8)}；提交后修改草稿会使本次审核失效。`
+          : reviewStatus === 'approved' && sameAsPublished && draft.baseRevision !== p.revision ? `已批准修订 ${String(draft.reviewRevision || '').slice(0, 8)} 已写入本地正式版本；网站未更新。`
+            : reviewStatus === 'approved' && sameAsPublished ? '批准的草稿与当前正式内容相同，无需重复写入。'
+              : reviewStatus === 'approved' ? `修订 ${String(draft.reviewRevision || '').slice(0, 8)} 已由模拟审核员批准，可确认写入本地正式版本。`
+                : reviewStatus === 'returned' ? `已退回修改：${draft.reviewReason || '请修订后重新提交。'}`
+                  : '草稿尚未提交审核。该状态流程仅用于本机体验，不代表真实人员身份。';
+    const eventLabels = { 'draft-saved': '保存新草稿', submitted: '提交审核', approved: '模拟批准', returned: '模拟退回' };
+    const reviewEvents = Array.isArray(draft?.reviewEvents) ? draft.reviewEvents.slice(-8).reverse() : [];
+    $('review-events').replaceChildren();
+    for (const event of reviewEvents) {
+      const item = document.createElement('li');
+      const date = new Date(event.at);
+      const timestamp = Number.isNaN(date.getTime()) ? '' : date.toLocaleString();
+      item.textContent = `${timestamp} · ${eventLabels[event.action] || '审核状态更新'} · ${String(event.draftRevision || '').slice(0, 8)}${event.reason ? ' · ' + event.reason : ''}`;
+      $('review-events').append(item);
+    }
+    $('review-submit').hidden = !reviewWorkflow || reviewRole !== 'editor';
+    $('review-submit').disabled = !draft || draft.stale || dirty || locked || reviewStatus === 'in-review' || reviewStatus === 'approved' || (reviewStatus === 'returned' && draft.reviewRevision === draft.draftRevision);
+    const canDecide = reviewWorkflow && reviewRole === 'reviewer' && reviewStatus === 'in-review' && !draft?.stale;
+    $('review-approve').hidden = !canDecide;
+    $('review-return').hidden = !canDecide;
+    $('review-approve').disabled = locked;
+    $('review-return').disabled = locked;
+    $('save').disabled = !p || locked || !canEdit || (!dirty && !(p?.draft?.stale && !sameAsPublished));
+    $('publish').disabled = !p?.draft || dirty || locked || sameAsPublished || !canEdit || (reviewWorkflow && reviewStatus !== 'approved');
+    $('publish').textContent = reviewWorkflow ? '确认本地正式版本…' : '确认正式版本…';
+    $('editor').disabled = !p || operation || readOnly || !canEdit;
     $('counts').textContent = Array.from(session.text).length.toLocaleString() + ' 字';
     $('history').disabled = !p || operation;
     document.querySelectorAll('.page-button').forEach(b => b.disabled = operation);
@@ -354,11 +400,15 @@
     if (!$('dialog').open) $('dialog').showModal();
   }
 
-  $('dialog').addEventListener('close', () => {
+  dialogForm.addEventListener('submit', event => {
     const action = dialogAction;
     dialogAction = null;
-    if ($('dialog').returnValue === 'confirm' && action) action();
+    if (event.submitter?.value !== 'confirm' || !action) return;
+    event.preventDefault();
+    $('dialog').close('confirm');
+    action();
   });
+  $('dialog').addEventListener('cancel', () => { dialogAction = null; });
 
   async function load(id) {
     await run(async () => {
@@ -401,21 +451,95 @@
       notice(demo ? '示例草稿已保存到当前页面内，刷新即重置。'
         : '草稿已保存到本机内容服务，未成为正式版本，也未对外同步。');
     });
-    if (stale) {
-      showDialog('以当前正式版本重新保存草稿？',
-        '正式内容已在其他编辑中发生变化。请先查看变化，确认你的文字仍然适用。这次保存只更新草稿，不覆盖正式内容。',
-        '重新保存草稿', write);
+    const reviewInvalidated = reviewWorkflow && ['in-review', 'approved'].includes(session.page?.draft?.reviewStatus);
+    if (stale || reviewInvalidated) {
+      const title = stale ? '以当前正式版本重新保存草稿？' : '修改会使当前审核失效';
+      const message = stale
+        ? '正式内容已在其他编辑中发生变化。请先查看变化，确认你的文字仍然适用。这次保存只更新草稿，不覆盖正式内容。'
+        : '保存会创建新的草稿修订，并撤回待审核或已批准状态。之后需要重新提交审核。';
+      showDialog(title, message, stale ? '重新保存草稿' : '保存新修订', write);
     } else {
       await write();
     }
   }
   $('save').onclick = save;
 
+  $('review-role').addEventListener('change', () => {
+    const nextRole = $('review-role').value === 'reviewer' ? 'reviewer' : 'editor';
+    if (session.dirty && nextRole !== reviewRole) {
+      $('review-role').value = reviewRole;
+      notice('请先保存草稿或下载当前文字，再切换本机模拟角色。', true);
+      return;
+    }
+    reviewRole = nextRole;
+    update();
+  });
+
+  $('review-submit').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'editor' || session.dirty || !session.page?.draft || operation || session.reconcileRequired || composing) return;
+    run(async () => {
+      const id = session.page.id;
+      await mutateThenRead(() => adapter.action('submitForReview', {
+        id,
+        expectedRevision: session.page.revision,
+        expectedDraftRevision: session.page.draft.draftRevision
+      }), '已把当前草稿修订加入本机审核流程；这没有认证操作者身份。');
+    });
+  };
+
+  $('review-approve').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation || session.reconcileRequired || composing) return;
+    showDialog('批准此草稿修订？',
+      '本机流程演示会记录一个模拟审核决定。当前服务没有真实登录或角色权限，不能把此结果用于生产审核。',
+      '模拟批准', () => run(async () => {
+        const id = session.page.id;
+        await mutateThenRead(() => adapter.action('decideReview', {
+          id,
+          expectedDraftRevision: session.page.draft.draftRevision,
+          decision: 'approve'
+        }), '演示审核已批准；仍需编辑者切回模拟角色并确认写入本地正式版本。网站没有更新。');
+      }));
+  };
+
+  $('review-return').onclick = () => {
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation || session.reconcileRequired || composing) return;
+    const field = document.createElement('div');
+    const label = document.createElement('label');
+    label.htmlFor = 'review-return-reason';
+    label.textContent = '退回原因';
+    const input = document.createElement('textarea');
+    input.id = 'review-return-reason';
+    input.maxLength = 500;
+    input.rows = 4;
+    input.required = true;
+    input.placeholder = '说明需要作者修改的内容';
+    field.append(label, input);
+    showDialog('退回草稿修改', field, '退回修改', () => run(async () => {
+      const reason = input.value.trim();
+      if (!reason) {
+        notice('请填写退回原因。', true);
+        return;
+      }
+      const id = session.page.id;
+      await mutateThenRead(() => adapter.action('decideReview', {
+        id,
+        expectedDraftRevision: session.page.draft.draftRevision,
+        decision: 'return',
+        reason
+      }), '草稿已退回模拟编辑者；该状态仅保存在本机原型。');
+    }));
+  };
+
   async function mutateThenRead(mutation, successMessage) {
     const outcome = await session.commitAndReload(mutation);
     if (outcome.refreshError) {
+      if (outcome.result?.reviewStatus && session.page?.draft) {
+        // The mutation reply is authoritative for that completed review event;
+        // keep it visible while the failed read leaves newer state unknown.
+        session.page.draft = {...session.page.draft, ...outcome.result};
+      }
       $('conflict').hidden = false;
-      const revision = outcome.result?.revision;
+      const revision = outcome.result?.revision ?? outcome.result?.draftRevision;
       notice(successMessage + (revision ? ' 版本凭据：' + revision + '。' : '')
         + ' 但读取最新内容失败；请勿重复提交，保留当前文字并载入最新版。', true);
     } else {
@@ -468,7 +592,9 @@
       : '当前状态：' + data.state + '。此处不等同于官网已上线。');
   });
   $('help').onclick = () => showDialog('先保存，再确认正式版本',
-    '保存草稿不会公开内容。“查看变化”用 + / − 展示与正式内容的不同。“确认正式版本”只写入本机内容仓库，本原型不执行网站上线或对外同步。文字预览不执行页面代码。键盘可用 Ctrl / ⌘ + S 保存。');
+    '保存草稿不会公开内容。“查看变化”用 + / − 展示与正式内容的不同。“确认正式版本”只写入本机内容仓库，本原型不执行网站上线或对外同步。文字预览不执行页面代码。键盘可用 Ctrl / ⌘ + S 保存。'
+      + ' 全局内容称谓规则：不得用面向学生/下级的称谓称呼教师、导师；涉及上级时可写“副院长”；已毕业且具有导师头衔者，不写“博士”头衔。'
+      + (reviewWorkflow ? ' 本机审核演示中的角色切换没有真实身份认证或权限保护。' : ''));
 
   async function showVersion(id, version) {
     await run(async () => {
@@ -537,6 +663,8 @@
   run(async () => {
     const result = await adapter.list();
     readOnly = result.capabilities?.readOnly === true;
+    reviewWorkflow = result.capabilities?.reviewWorkflow === 'local-simulation';
+    $('review-simulation').hidden = !reviewWorkflow;
     pages = result.pages;
     renderPages();
     if (pages.length) {

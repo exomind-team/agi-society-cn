@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {ContentStore} from '../server/store.mjs';
+import {verifyPinnedFixture} from '../server/seed-v7.mjs';
 const id='content/wiki/demo.md';
 async function fixture(t,options){const root=await fs.mkdtemp(path.join(os.tmpdir(),'agi-editor-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));const store=new ContentStore(root,options);await store.initialize({[id]:'# 原文\n\n保留原始文字。\n','content/wiki/other.md':'其他页面\n'});return store}
 async function save(store,content){const current=await store.read({id});return store.saveDraft({id,content,baseRevision:current.revision,expectedDraftRevision:current.draft?.draftRevision??null})}
@@ -19,10 +20,11 @@ test('initialization refuses destructive reinitialization',async t=>{const s=awa
 
 test('real v7 source: protected text replacement and restore preserve every outside byte',async t=>{
  const {defineTextBlock}=await import('../server/text-block.mjs');
- const source=await fs.readFile(new URL('../fixtures/upstream/obsidian.md',import.meta.url),'utf8');
+ const bytes=await fs.readFile(new URL('../fixtures/upstream/obsidian.md',import.meta.url));
  const manifest=JSON.parse(await fs.readFile(new URL('../fixtures/upstream/manifest.json',import.meta.url),'utf8'));
+ const source=verifyPinnedFixture(bytes,manifest.files[0].blob);
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'agi-v7-block-'));t.after(()=>fs.rm(root,{recursive:true,force:true}));
- const s=new ContentStore(root);const id=manifest.files[0].path;const {createHash}=await import('node:crypto');assert.equal(createHash('sha1').update('blob '+Buffer.byteLength(source)+'\0').update(source).digest('hex'),manifest.files[0].blob);const fragment='它提供了优秀的 Markdown 编辑体验和知识管理功能。';
+ const s=new ContentStore(root);const id=manifest.files[0].path;const fragment='它提供了优秀的 Markdown 编辑体验和知识管理功能。';
  const mapping=defineTextBlock({source,fragment,title:'Obsidian指南 · 正文说明',baselineCommit:manifest.commit});
  await s.initialize({[id]:source},{[id]:mapping});const initial=s.head();
  assert.equal((await s.read({id})).content,fragment);

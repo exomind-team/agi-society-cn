@@ -14,6 +14,7 @@
   let reviewWorkflow = false;
   let reviewRole = 'editor';
   let dialogAction = null;
+  const dialogForm = $('dialog').querySelector('form');
 
   $('demo-banner').hidden = !demo;
   $('mode').textContent = demo ? '离线交互演示' : '本机内容服务 · 非生产后台';
@@ -165,11 +166,15 @@
     if (!$('dialog').open) $('dialog').showModal();
   }
 
-  $('dialog').addEventListener('close', () => {
+  dialogForm.addEventListener('submit', event => {
     const action = dialogAction;
     dialogAction = null;
-    if ($('dialog').returnValue === 'confirm' && action) action();
+    if (event.submitter?.value !== 'confirm' || !action) return;
+    event.preventDefault();
+    $('dialog').close('confirm');
+    action();
   });
+  $('dialog').addEventListener('cancel', () => { dialogAction = null; });
 
   async function load(id) {
     await run(async () => {
@@ -237,39 +242,33 @@
   });
 
   $('review-submit').onclick = () => {
-    if (!reviewWorkflow || reviewRole !== 'editor' || session.dirty || !session.page?.draft || operation) return;
+    if (!reviewWorkflow || reviewRole !== 'editor' || session.dirty || !session.page?.draft || operation || session.reconcileRequired || composing) return;
     run(async () => {
       const id = session.page.id;
-      await adapter.action('submitForReview', {
+      await mutateThenRead(() => adapter.action('submitForReview', {
         id,
         expectedRevision: session.page.revision,
         expectedDraftRevision: session.page.draft.draftRevision
-      });
-      await session.load(id);
-      $('editor').value = session.text;
-      notice('已把当前草稿修订加入本机审核流程；这没有认证操作者身份。');
+      }), '已把当前草稿修订加入本机审核流程；这没有认证操作者身份。');
     });
   };
 
   $('review-approve').onclick = () => {
-    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation) return;
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation || session.reconcileRequired || composing) return;
     showDialog('批准此草稿修订？',
       '本机流程演示会记录一个模拟审核决定。当前服务没有真实登录或角色权限，不能把此结果用于生产审核。',
       '模拟批准', () => run(async () => {
         const id = session.page.id;
-        await adapter.action('decideReview', {
+        await mutateThenRead(() => adapter.action('decideReview', {
           id,
           expectedDraftRevision: session.page.draft.draftRevision,
           decision: 'approve'
-        });
-        await session.load(id);
-        $('editor').value = session.text;
-        notice('演示审核已批准；仍需编辑者切回模拟角色并确认写入本地正式版本。网站没有更新。');
+        }), '演示审核已批准；仍需编辑者切回模拟角色并确认写入本地正式版本。网站没有更新。');
       }));
   };
 
   $('review-return').onclick = () => {
-    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation) return;
+    if (!reviewWorkflow || reviewRole !== 'reviewer' || !session.page?.draft || operation || session.reconcileRequired || composing) return;
     const field = document.createElement('div');
     const label = document.createElement('label');
     label.htmlFor = 'review-return-reason';
@@ -288,23 +287,25 @@
         return;
       }
       const id = session.page.id;
-      await adapter.action('decideReview', {
+      await mutateThenRead(() => adapter.action('decideReview', {
         id,
         expectedDraftRevision: session.page.draft.draftRevision,
         decision: 'return',
         reason
-      });
-      await session.load(id);
-      $('editor').value = session.text;
-      notice('草稿已退回模拟编辑者；该状态仅保存在本机原型。');
+      }), '草稿已退回模拟编辑者；该状态仅保存在本机原型。');
     }));
   };
 
   async function mutateThenRead(mutation, successMessage) {
     const outcome = await session.commitAndReload(mutation);
     if (outcome.refreshError) {
+      if (outcome.result?.reviewStatus && session.page?.draft) {
+        // The mutation reply is authoritative for that completed review event;
+        // keep it visible while the failed read leaves newer state unknown.
+        session.page.draft = {...session.page.draft, ...outcome.result};
+      }
       $('conflict').hidden = false;
-      const revision = outcome.result?.revision;
+      const revision = outcome.result?.revision ?? outcome.result?.draftRevision;
       notice(successMessage + (revision ? ' 版本凭据：' + revision + '。' : '')
         + ' 但读取最新内容失败；请勿重复提交，保留当前文字并载入最新版。', true);
     } else {
@@ -358,6 +359,7 @@
   });
   $('help').onclick = () => showDialog('先保存，再确认正式版本',
     '保存草稿不会公开内容。“查看变化”用 + / − 展示与正式内容的不同。“确认正式版本”只写入本机内容仓库，本原型不执行网站上线或对外同步。文字预览不执行页面代码。键盘可用 Ctrl / ⌘ + S 保存。'
+      + ' 全局内容称谓规则：不得用面向学生/下级的称谓称呼教师、导师；涉及上级时可写“副院长”；已毕业且具有导师头衔者，不写“博士”头衔。'
       + (reviewWorkflow ? ' 本机审核演示中的角色切换没有真实身份认证或权限保护。' : ''));
 
   async function showVersion(id, version) {

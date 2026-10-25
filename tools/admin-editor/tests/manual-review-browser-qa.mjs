@@ -47,13 +47,19 @@ async function run() {
   const consoleErrors = [];
   const pageErrors = [];
   const failedRequests = [];
+  const failedResponses = [];
   browser = await chromium.launch({ channel: 'chrome', headless: false });
   const browserVersion = `Chrome ${browser.version()}`;
   const context = await browser.newContext({ viewport: { width: 1365, height: 900 } });
   page = await context.newPage();
-  page.on('console', message => { if (message.type() === 'error') consoleErrors.push(message.text()); });
+  page.on('console', message => {
+    if (message.type() === 'error') consoleErrors.push({ text: message.text(), url: message.location().url });
+  });
   page.on('pageerror', error => pageErrors.push(String(error)));
   page.on('requestfailed', request => failedRequests.push(request.url()));
+  page.on('response', response => {
+    if (response.status() >= 400) failedResponses.push({ status: response.status(), url: response.url() });
+  });
 
   try {
     await page.goto(BASE, { waitUntil: 'domcontentloaded' });
@@ -142,6 +148,17 @@ async function run() {
       && listing.capabilities.remoteSync === false);
     record('review-event-trail-persists', loaded.body.draft?.reviewEvents?.map(event => event.action).join(',')
       === 'draft-saved,submitted,returned,draft-saved,submitted,approved');
+    const committedRevision = loaded.body.revision;
+    const approvedDraftRevision = loaded.body.draft.draftRevision;
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('#editor:not([disabled])', { timeout: 15000 });
+    loaded = await readPage(id);
+    record('approved-version-survives-real-reload', loaded.status === 200
+      && loaded.body.revision === committedRevision
+      && loaded.body.draft?.draftRevision === approvedDraftRevision
+      && loaded.body.draft?.reviewStatus === 'approved'
+      && (await page.locator('#editor').inputValue()) === revisedText
+      && await page.locator('#publish').isDisabled());
     record('approved-status-survives-reload', await page.locator('#review-status').textContent().then(t => t.includes('已写入本地正式版本')));
     await screenshot('04-local-version');
 
@@ -152,11 +169,14 @@ async function run() {
     record('narrow-no-horizontal-overflow', await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1));
     await screenshot('05-narrow');
 
-    const scriptConsoleErrors = consoleErrors.filter(error => !error.includes('404'));
+    // Only the exact missing favicon resource is waived, never arbitrary 404 text.
+    const favicon = new URL('/favicon.ico', BASE).href;
+    const scriptConsoleErrors = consoleErrors.filter(error => !(error.url === favicon && /status of 404\b/.test(error.text)));
     record('no-page-or-console-errors', pageErrors.length === 0 && scriptConsoleErrors.length === 0,
-      [...pageErrors, ...scriptConsoleErrors].slice(0, 3).join(' | '));
-    record('no-failed-requests-except-known-favicon', failedRequests.every(url => url.endsWith('/favicon.ico')),
-      failedRequests.filter(url => !url.endsWith('/favicon.ico')).join(' | '));
+      [...pageErrors, ...scriptConsoleErrors.map(error => error.text)].slice(0, 3).join(' | '));
+    record('no-failed-requests', failedRequests.length === 0, failedRequests.join(' | '));
+    const unexpectedResponses = failedResponses.filter(response => !(response.url === favicon && response.status === 404));
+    record('no-http-errors-except-favicon-404', unexpectedResponses.length === 0, JSON.stringify(unexpectedResponses));
   } catch (error) {
     results.push({ name: 'harness', status: 'FAIL', detail: String(error?.stack || error) });
     await fs.mkdir(SHOTS, { recursive: true });
@@ -169,6 +189,7 @@ async function run() {
       browser: browserVersion || 'Chrome launch failed',
       review_mode: 'local persona simulation; unauthenticated',
       generated_at: new Date().toISOString(),
+      diagnostics: { consoleErrors, pageErrors, failedRequests, failedResponses },
       results
     }, null, 2), 'utf8');
   }
