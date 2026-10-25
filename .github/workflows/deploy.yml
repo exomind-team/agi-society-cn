@@ -208,6 +208,8 @@ jobs:
       WIKI_DEPLOY_USER: ${{ vars.WIKI_DEPLOY_USER || 'wiki-deploy-20260918-5f921eef' }}
       WIKI_DEPLOY_ROOT: /var/www/agi-wiki
     steps:
+      - uses: actions/checkout@v7
+
       - name: Download Tencent Cloud mirror artifact
         uses: actions/download-artifact@v7
         with:
