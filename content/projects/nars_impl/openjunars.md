@@ -14,7 +14,7 @@ comments: true
 |---|---|
 | 代际 / 定位 | Junars 的开源版本 |
 | 编程语言 | Julia |
-| 作者 / 维护组织 | 孙常新（AIxer） |
+| 作者 / 维护组织 | [[/wiki/people/sun-changxin\|孙常新]]（AIxer） |
 | 代码仓库 | [仓库](https://github.com/AIxer/OpenJunars) |
 | 许可证 | GPL-3.0 |
 | Narsese / NAL 边界 | README 明确写出 NAL 1–6，用于教育和演示 |
@@ -25,7 +25,7 @@ comments: true
 
 <!-- END GENERATED NARS PROFILE -->
 
-- 作者：*孙常新 (Changxin Sun)*
+- 作者：*[[/wiki/people/sun-changxin|孙常新]] (Changxin Sun)*
     - [GitHub↗](https://github.com/AIxer)
 - 源码链接
     - [Github↗](https://github.com/AIxer/OpenJunars)

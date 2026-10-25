@@ -30,7 +30,7 @@ search: false
 
 ## 关于协会
 
-中国通用人工智能协会（AGI Society CN）由**王培教授**发起创立，致力于推动通用人工智能理论与开源实现的研究、教育与交流。协会以 **NARS**（Non-Axiomatic Reasoning System，非公理推理系统）为核心理论锚点，汇聚哲学、计算机科学、认知科学、教育科学等多学科力量。
+中国通用人工智能协会（AGI Society CN）由**[[/wiki/people/wang-pei|王培]]教授**发起创立，致力于推动通用人工智能理论与开源实现的研究、教育与交流。协会以 **NARS**（Non-Axiomatic Reasoning System，非公理推理系统）为核心理论锚点，汇聚哲学、计算机科学、认知科学、教育科学等多学科力量。
 
 自 2016 年起，协会已连续举办**十一届**中国通用人工智能年会，并组织超过百场学术组会。
 
@@ -172,7 +172,7 @@ search: false
 
 <div class="team-member">
 
-**王培** · 教授
+**[[/wiki/people/wang-pei|王培]]** · 教授
 *美国天普大学计算机系*
 NARS 理论创始人，AGI 协会发起人
 
@@ -180,7 +180,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**刘凯** · 硕士生导师
+**[[/wiki/people/liu-kai|刘凯]]** · 硕士生导师
 *渤海大学教育科学学院*
 协会召集人，通用人工智能与教育
 
@@ -188,7 +188,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**徐英瑾** · 教授
+**[[/wiki/people/xu-yingjin|徐英瑾]]** · 教授
 *复旦大学哲学学院*
 人工智能哲学，心灵哲学
 
@@ -196,7 +196,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**那迪** · 讲师、硕士生导师
+**[[/wiki/people/naziguli-slam|那迪]]** · 讲师、硕士生导师
 *西北民族大学*
 智能决策，数据科学，AGI 理论
 
@@ -204,7 +204,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**魏屹东** · 教授
+**[[/wiki/people/wei-yidong|魏屹东]]** · 教授
 *山西大学哲学学院*
 适应性表征，认知哲学
 
@@ -212,7 +212,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**李祥** · 硕士生导师
+**[[/wiki/people/li-xiang|李祥]]** · 硕士生导师
 *辽宁工业大学*
 AGI 认知科学，人工智能情感
 

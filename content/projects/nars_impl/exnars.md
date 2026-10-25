@@ -14,7 +14,7 @@ comments: true
 |---|---|
 | 代际 / 定位 | 暂未公开（项目方未提供代号或定位说明） |
 | 编程语言 | Elixir |
-| 作者 / 维护组织 | 孙常新 |
+| 作者 / 维护组织 | [[/wiki/people/sun-changxin\|孙常新]] |
 | 代码仓库 | [仓库]() |
 | 许可证 | 未知 |
 | Narsese / NAL 边界 | 本轮未核实 |
@@ -26,7 +26,7 @@ comments: true
 <!-- END GENERATED NARS PROFILE -->
 
 > [!warning] 暂未公开
-> 本站核验记录：该实现的编程语言为 Elixir，作者为孙常新。
+> 本站核验记录：该实现的编程语言为 Elixir，作者为[[/wiki/people/sun-changxin|孙常新]]。
 > 本轮在 GitHub/Gitee 上未检索到公开仓库；暂不收录实现细节，待项目正式发布后再补充基础资料。
 
 ## 项目观察

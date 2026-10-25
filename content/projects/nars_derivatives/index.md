@@ -66,18 +66,18 @@ Java 核心的组件接入与应用示例另见下方 `opennars-applications`，
 
 | 项目 | 语言 | 维护者 | 简介 | 仓库 |
 |---|---|---|---|---|
-| [[channels|OpenNARS Channels]] | Python | opennars 项目 | OpenNARS NAR shell 的自然语言 / 知识库 / 传感器通道 | [仓库](https://github.com/opennars/Channels) |
-| [[narca|NARCA]] | Python | ntoxeg | 基于 NARS 的可控智能体框架 | [仓库](https://github.com/ntoxeg/narca) |
+| [[channels\|OpenNARS Channels]] | Python | opennars 项目 | OpenNARS NAR shell 的自然语言 / 知识库 / 传感器通道 | [仓库](https://github.com/opennars/Channels) |
+| [[narca\|NARCA]] | Python | ntoxeg | 基于 NARS 的可控智能体框架 | [仓库](https://github.com/ntoxeg/narca) |
 | ONAT | Python | maxeeem | OpenNARS Bridge Agent | [仓库](https://github.com/maxeeem/ONAT) |
-| [[nars-fighterplane|NARS-FighterPlane]] | Python | Noctis-Xu（Boyang Xu） | NARS 控制战机游戏 AI 的 demo | [仓库](https://github.com/Noctis-Xu/NARS-FighterPlane) |
+| [[nars-fighterplane\|NARS-FighterPlane]] | Python | Noctis-Xu（Boyang Xu） | NARS 控制战机游戏 AI 的 demo | [仓库](https://github.com/Noctis-Xu/NARS-FighterPlane) |
 
 #### A3. 框架 / 可视化 / 应用
 
 | 项目 | 语言 | 维护者 | 简介 | 仓库 |
 |---|---|---|---|---|
-| [[babelnar|BabelNAR 项目集 / NAVM 模型]] | Rust / Julia | ARCJ137442 | 围绕 NAVM + CIN 的项目群 | [NAVM.rs](https://github.com/ARCJ137442/NAVM.rs) ｜ [BabelNAR.rs](https://github.com/ARCJ137442/BabelNAR.rs) |
-| [[nace|NACE]] | Python / Julia | patham9 / ntoxeg | 因果探索器 | [Python](https://github.com/patham9/NACE) ｜ [Julia](https://github.com/ntoxeg/NACE.jl) |
-| [[nars-pong|NARS-Pong]] | Tcl / Unity3D | ccrock4t | NARS 驱动游戏 NPC 的 Pong demo | [仓库](https://github.com/ccrock4t/NARS-Pong) |
+| [[babelnar\|BabelNAR 项目集 / NAVM 模型]] | Rust / Julia | ARCJ137442 | 围绕 NAVM + CIN 的项目群 | [NAVM.rs](https://github.com/ARCJ137442/NAVM.rs) ｜ [BabelNAR.rs](https://github.com/ARCJ137442/BabelNAR.rs) |
+| [[nace\|NACE]] | Python / Julia | patham9 / ntoxeg | 因果探索器 | [Python](https://github.com/patham9/NACE) ｜ [Julia](https://github.com/ntoxeg/NACE.jl) |
+| [[nars-pong\|NARS-Pong]] | Tcl / Unity3D | ccrock4t | NARS 驱动游戏 NPC 的 Pong demo | [仓库](https://github.com/ccrock4t/NARS-Pong) |
 | NARS-Unity | C# | ccrock4t | C# NARS for Unity | [仓库](https://github.com/ccrock4t/NARS-Unity) |
 | NARS-Visualization | C# | ccrock4t | NARS graphical visualization | [仓库](https://github.com/ccrock4t/NARS-Visualization) |
 | NARS-Web-GUI | JavaScript | ccrock4t | NARS Web GUI | [仓库](https://github.com/ccrock4t/NARS-Web-GUI) |
@@ -89,10 +89,10 @@ Java 核心的组件接入与应用示例另见下方 `opennars-applications`，
 
 | 项目 | 语言 | 维护者 | 简介 | 仓库 |
 |---|---|---|---|---|
-| [[nnesycef|NNeSyCeF]] | F# | PtrMan | NAL + AIKR 神经符号 AGI 框架 | [仓库](https://github.com/PtrMan/NNeSyCeF) |
+| [[nnesycef\|NNeSyCeF]] | F# | PtrMan | NAL + AIKR 神经符号 AGI 框架 | [仓库](https://github.com/PtrMan/NNeSyCeF) |
 | MacNARS / autonars | C++ | maxeeem | Apple Silicon Metal 加速的 "NARS-inspired" CartPole prototype | [仓库](https://github.com/maxeeem/autonars) |
-| [[nars-gpt|NarsGPT]] | Python | patham9 + narsgpt 组织 | GPT 模型模拟 NAL 推理（AAAI 2023 提交版 + patham9 版） | [patham9/NarsGPT](https://github.com/patham9/NarsGPT) ｜ [narsgpt/NARS-GPT](https://github.com/narsgpt/NARS-GPT) |
-| [[pixel-to-concept-reader|Pixel-to-Concept Reader]] | TypeScript | poerlang | 结构化 NAL 词条 + 手写数字识别论文附属 | [仓库](https://github.com/poerlang/pixel-to-concept-reader) |
+| [[nars-gpt\|NarsGPT]] | Python | patham9 + narsgpt 组织 | GPT 模型模拟 NAL 推理（AAAI 2023 提交版 + patham9 版） | [patham9/NarsGPT](https://github.com/patham9/NarsGPT) ｜ [narsgpt/NARS-GPT](https://github.com/narsgpt/NARS-GPT) |
+| [[pixel-to-concept-reader\|Pixel-to-Concept Reader]] | TypeScript | poerlang | 结构化 NAL 词条 + 手写数字识别论文附属 | [仓库](https://github.com/poerlang/pixel-to-concept-reader) |
 | nars-workshop-2024 | Python | maxeeem | miniKanren-based NAL inference talk 笔记 | [仓库](https://github.com/maxeeem/nars-workshop-2024) |
 
 ## 候选与待收录

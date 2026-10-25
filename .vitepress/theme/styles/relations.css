@@ -1,6 +1,6 @@
 .page-relations { margin-top: 40px; border-top: 1px solid var(--vp-c-divider); padding-top: 20px; }
 .page-relations h2 { border: 0; margin: 0 0 12px; padding: 0; font-size: 20px; }
-.relation-scope, .person-identity { color: var(--vp-c-text-2); font-size: 13px; }
+.relation-scope { color: var(--vp-c-text-2); font-size: 13px; }
 .relation-list { list-style: none; padding: 0; }
 .relation-list > li { padding: 10px 0; border-bottom: 1px solid var(--vp-c-divider); }
 .relation-kind { display: inline-block; color: var(--vp-c-text-2); font-size: 12px; margin-right: 12px; }

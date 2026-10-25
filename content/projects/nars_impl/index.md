@@ -19,16 +19,16 @@ content-order: order
 | [[ona\|ONA]] | OpenNARS for Applications | C | OpenNARS 项目；README 署名与项目资料以 Patrick Hammer 等贡献者为主 | [[ona\|项目页]]；[仓库](https://github.com/opennars/OpenNARS-for-Applications) | 🟢 公开 |
 | [[narjure\|Narjure]] | OpenNARS 2.0 | Clojure | The OpenNARS team | [[narjure\|项目页]]；[仓库](https://github.com/opennars/narjure) | 🟢 公开 |
 | [[opennars\|OpenNARS]] | OpenNARS 1.x / 3.x；相关研究版 3.1.1 | Java | OpenNARS 项目团队 | [[opennars\|项目页]]；[仓库](https://github.com/opennars/opennars) | 🟢 公开 |
-| [[nars_cxin_py_to_ts\|NARS CXin Py to TS]] | Python 到 TypeScript 的迁移实现 | TypeScript（仓库 API 未声明语言） | 孙常新（原作者）；破耳狼（现作者） | [[nars_cxin_py_to_ts\|项目页]]；[仓库](https://gitee.com/poerlang/nars_cxin_py_to_ts) | 🟢 公开 |
+| [[nars_cxin_py_to_ts\|NARS CXin Py to TS]] | Python 到 TypeScript 的迁移实现 | TypeScript（仓库 API 未声明语言） | [[/wiki/people/sun-changxin\|孙常新]]（原作者）；破耳狼（现作者） | [[nars_cxin_py_to_ts\|项目页]]；[仓库](https://gitee.com/poerlang/nars_cxin_py_to_ts) | 🟢 公开 |
 | [[opennars304ts\|OpenNARS 304 TS]] | OpenNARS 3.0.4 的 TypeScript 实现 | TypeScript | ARCJ137442 | [[opennars304ts\|项目页]]；[仓库](https://github.com/ARCJ137442/OpenNARS-304-ts) | 🟢 公开 |
-| [[openjunars\|OpenJunars]] | Junars 的开源版本 | Julia | 孙常新（AIxer） | [[openjunars\|项目页]]；[仓库](https://github.com/AIxer/OpenJunars) | 🟢 公开 |
+| [[openjunars\|OpenJunars]] | Junars 的开源版本 | Julia | [[/wiki/people/sun-changxin\|孙常新]]（AIxer） | [[openjunars\|项目页]]；[仓库](https://github.com/AIxer/OpenJunars) | 🟢 公开 |
 | [[nars_python\|NARS-Python]] | 独立 Python 实现 | Python | Christian Hahm | [[nars_python\|项目页]]；[仓库](https://github.com/ccrock4t/NARS-Python) | 🟢 公开 |
 | [[opennars4\|OpenNARS 4 (PyNARS)]] | OpenNARS 4 / Python | Python | OpenNARS 项目；PyNARS 原贡献者参与早期实现 | [[opennars4\|项目页]]；[仓库](https://github.com/opennars/OpenNARS-4) | 🟢 公开 |
 | [[20nar1\|20NAR1]] | 受 NARS 启发的 GMI 系统 | Rust | Robert Wünsche（PtrMan） | [[20nar1\|项目页]]；[仓库](https://github.com/PtrMan/20NAR1) | 🟢 公开 |
 | [[narst\|NARst]] | 实验性 Rust NARS 实现 | Rust | Adrian Borucki | [[narst\|项目页]]；[仓库](https://github.com/ntoxeg/narst) | 🟢 公开 |
 | [[narust\|NARust-158]] | OpenNARS 1.5.8 的 Rust 重实现 | Rust | ARCJ137442 / Tessergon | [[narust\|项目页]]；[仓库](https://github.com/ARCJ137442/NARust-158) | 🟢 公开 |
 | [[nars_swift\|NARS-Swift]] | Swift NAL/NARS 实现 | Swift | Maxim Tarasov | [[nars_swift\|项目页]]；[仓库](https://github.com/maxeeem/NARS-Swift) | 🟢 公开 |
-| [[exnars\|Exnars]] | 暂未公开（项目方未提供代号或定位说明） | Elixir | 孙常新 | [[exnars\|项目页]] | 🔴 内部 |
+| [[exnars\|Exnars]] | 暂未公开（项目方未提供代号或定位说明） | Elixir | [[/wiki/people/sun-changxin\|孙常新]] | [[exnars\|项目页]] | 🔴 内部 |
 
 ## 资料与理论入口
 

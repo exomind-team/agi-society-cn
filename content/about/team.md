@@ -8,12 +8,12 @@ comments: true
 
 1. 创办人：[[#王培]]（[[../wiki/people/wang-pei|人物独页]]）、[[../wiki/people/hu-xiangen|胡祥恩]]
 2. 专家组：[[#徐英瑾]]（[[../wiki/people/xu-yingjin|人物独页]]）、[[#魏屹东]]（[[../wiki/people/wei-yidong|人物独页]]）、[[../wiki/people/sang-xinmin|桑新民]]、[[../wiki/people/wang-weijun|王伟军]]
-3. 秘书组：[[#刘凯]]（[[../wiki/people/liu-kai|人物独页]]）、[[#李祥]]（[[../wiki/people/li-xiang|人物独页]]）、[[#那孜古力·斯拉木(那迪)|那迪]]（[[../wiki/people/naziguli-slam|人物独页]]）、黄英辉
+3. 秘书组：[[#刘凯]]（[[../wiki/people/liu-kai|人物独页]]）、[[#李祥]]（[[../wiki/people/li-xiang|人物独页]]）、[[#那孜古力·斯拉木(那迪)|那迪]]（[[../wiki/people/naziguli-slam|人物独页]]）、[[/wiki/people/huang-yinghui|黄英辉]]
 4. 会员组：陈礼军、冯博杰、[[../wiki/people/jia-min|贾敏]]、贾晓刚、柯东、李光辉、李汤睿、林嘉濠、刘子莫、马翰林、墨\_AGI、沈建铭、[[../wiki/people/wang-tao|王涛]]、王泰然、[[../wiki/people/wu-yuxi|吴雨曦]]、吴叶、吴震宇、徐博文、徐川皓、[[../wiki/people/yang-yaya|杨亚亚]]、杨旭、杨金才、于志浩、张涛、周泽恩
 
 ---
 
-## 王培
+## [[/wiki/people/wang-pei|王培]]
 
 > 美国天普大学计算机系教授，博士生导师。曾在侯世达（Douglas Hofstadter）指导下攻读博士学位。
 
@@ -34,7 +34,7 @@ comments: true
 - 概念与学习
 - 动态资源管理
 
-王培教授是
+[[/wiki/people/wang-pei|王培]]教授是
 
 1. OpenNARS项目（通用人工智能项目）的发起人和主要编写者，
 2. [国际AGI协会](http://agi-conf.org/)的发起人和常驻委员
@@ -45,7 +45,7 @@ comments: true
 1. 中国 NARS 小组的指导教授
 2. 中国通用人工智能协会的常驻学术点评人
 
-关于王培教授的头衔和周边，实在太多，建议点击下面的链接，观看视频，阅读论文和项目源码，了解详情：
+关于[[/wiki/people/wang-pei|王培]]教授的头衔和周边，实在太多，建议点击下面的链接，观看视频，阅读论文和项目源码，了解详情：
 
 - [中文资料](https://cis.temple.edu/~pwang/Chinese.html)
 - [OpenNARS Wiki](https://github.com/opennars/opennars/wiki)
@@ -58,7 +58,7 @@ comments: true
 
 里面有一些关于个人问题的回答等。与AGI强相关。
 
-## 刘凯
+## [[/wiki/people/liu-kai|刘凯]]
 
 > 渤海大学教育科学学院教师、硕士生导师，中国通用人工智能协会（筹）召集人。职称和学历的来源及核验状态见人物独页。
 
@@ -92,7 +92,7 @@ comments: true
     1. 基于认知建构的下一代ITS（教育技术学）
     2. 教育干预手段治疗精神障碍（精神病学）
 
-## 徐英瑾
+## [[/wiki/people/xu-yingjin|徐英瑾]]
 
 > 复旦大学哲学学院教授，博士生导师
 
@@ -133,17 +133,17 @@ comments: true
 
 代表作《心智、语言和机器——维特根斯坦哲学与人工智能哲学的对话》（76万字，人民出版社2013年10月出版）是国内目前最全面深入的关于人工智能哲学的研究著作。
 
-目前徐英瑾还任中国知识论专业委员会副秘书长，2018年担任"世界哲学大会"人工智能分会场主席。
+目前[[/wiki/people/xu-yingjin|徐英瑾]]还任中国知识论专业委员会副秘书长，2018年担任"世界哲学大会"人工智能分会场主席。
 
 （上述资料源自学术主页）
 
-## 那孜古力·斯拉木(那迪)
+## [[/wiki/people/naziguli-slam|那孜古力·斯拉木]]([[/wiki/people/naziguli-slam|那迪]])
 
 > 讲师、硕士生导师；西北民族大学人工智能学院、中国民族信息技术研究院。
 
 [[../wiki/people/naziguli-slam|人物资料：履历、成果与协会报告]] · [西北民族大学主页↗](https://www.xbmu.edu.cn/xxy/info/2851/6932.htm) · [知网作者检索↗](https://chn.oversea.cnki.net/kcms2/author/detail?v=wRD08hUPYgwHqv6pqt1Lry077C8HmYeFUg_u_vKAKELr9EuNyzuelYm8aFEHWLCDlsaQ35mKa0ssz5y7seHPRwYweIqJYvLqGRxektNLWL-gjim3eRBvXXRWBg--mAzQraqInCBc1Zy03vfEnEBPhEIi3C0Kz5X0byKD64Kg2olxmlgOimKHfRjBS1efeJAW&uniplatform=NZKPT&language=CHS)
 
-## 魏屹东
+## [[/wiki/people/wei-yidong|魏屹东]]
 
 > 山西大学教授，哲学方向博士生导师
 
@@ -159,11 +159,11 @@ comments: true
 - 哲学
 - 心理学
 
-## 李祥
+## [[/wiki/people/li-xiang|李祥]]
 
 [查看独立人物页与关联成果](/wiki/people/li-xiang)
 
-> 辽宁工业大学计算机讲师，人工智能方向硕士生导师；曾在王培教授指导下攻读博士学位。
+> 辽宁工业大学计算机讲师，人工智能方向硕士生导师；曾在[[/wiki/people/wang-pei|王培]]教授指导下攻读博士学位。
 
 [学术主页↗](https://seie.lnut.edu.cn/info/14393/185134.htm)
 [email↗](mailto:xiangliagi@lnut.edu.cn)

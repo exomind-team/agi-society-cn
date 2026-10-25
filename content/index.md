@@ -11,7 +11,7 @@ content-order: order
 
 ## 中国通用人工智能协会
 
-协会由王培教授发起，研究与交流涉及计算机科学、哲学、认知科学和教育。本站整理相关理论、开源项目与会议资料，方便查阅原文、了解研究进展，也为动手实践提供入口。
+协会由[[/wiki/people/wang-pei|王培]]教授发起，研究与交流涉及计算机科学、哲学、认知科学和教育。本站整理相关理论、开源项目与会议资料，方便查阅原文、了解研究进展，也为动手实践提供入口。
 
 [认识协会](/about/) · [研究方向](/research/) · [联系与参与](/contact/)
 
@@ -96,7 +96,7 @@ content-order: order
 
 <div class="team-member">
 
-**王培** · 教授
+**[[/wiki/people/wang-pei|王培]]** · 教授
 *美国天普大学计算机系*
 NARS 理论创始人，AGI 协会发起人
 
@@ -104,7 +104,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**刘凯** · 博士
+**[[/wiki/people/liu-kai|刘凯]]** · 博士
 *渤海大学教育科学学院*
 协会召集人，通用人工智能与教育
 
@@ -112,7 +112,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**徐英瑾** · 教授
+**[[/wiki/people/xu-yingjin|徐英瑾]]** · 教授
 *复旦大学哲学学院*
 人工智能哲学，心灵哲学
 
@@ -120,7 +120,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**那迪** · 博士
+**[[/wiki/people/naziguli-slam|那迪]]** · 博士
 *西北民族大学*
 智能决策，数据科学，AGI 理论
 
@@ -128,7 +128,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**魏屹东** · 教授
+**[[/wiki/people/wei-yidong|魏屹东]]** · 教授
 *山西大学哲学学院*
 适应性表征，认知哲学
 
@@ -136,7 +136,7 @@ NARS 理论创始人，AGI 协会发起人
 
 <div class="team-member">
 
-**李祥** · 博士
+**[[/wiki/people/li-xiang|李祥]]** · 博士
 *辽宁工业大学*
 AGI 认知科学，人工智能情感
 

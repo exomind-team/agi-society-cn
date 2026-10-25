@@ -45,6 +45,25 @@ function inlineText(tokens) {
   ).join('\n')
 }
 
+function unlinkedInlineText(tokens) {
+  return tokens.filter(token => token.type === 'inline').flatMap(token => {
+    let inLink = false
+    return (token.children || []).flatMap(child => {
+      if (child.type === 'link_open') { inLink = true; return [] }
+      if (child.type === 'link_close') { inLink = false; return [] }
+      if (child.type === 'text' && !inLink) return [child.content]
+      return []
+    })
+  }).join('\n').replace(/\[\[[^\]]+\]\]/g, '')
+}
+
+function visibleMarkdownText(value) {
+  return value.replace(/\[\[([^\]]+)\]\]/g, (_, target) => {
+    const [path, label] = target.replace(/\\\|/g, '|').split('|')
+    return label || path
+  })
+}
+
 /** Table parsing uses header roles, not co-occurrence: a name in a title is not a speaker. */
 function conferenceRows(tokens) {
   const rows = []
@@ -62,10 +81,12 @@ function conferenceRows(tokens) {
         const speaker = headers.findIndex(h => /^(报告人|主讲人|主讲|讲者)$/.test(h))
         const title = headers.findIndex(h => /^(报告标题|报告题目|主题|题目|内容)$/.test(h))
         if (speaker >= 0 && title >= 0) {
-          const base = 'report-' + createHash('sha256').update(`${cells[speaker]}\n${cells[title]}`).digest('hex').slice(0, 12)
+          const speakers = visibleMarkdownText(cells[speaker])
+          const reportTitle = visibleMarkdownText(cells[title])
+          const base = 'report-' + createHash('sha256').update(`${speakers}\n${reportTitle}`).digest('hex').slice(0, 12)
           const occurrence = (anchors.get(base) || 0) + 1
           anchors.set(base, occurrence)
-          rows.push({ speakers: cells[speaker], title: cells[title], source: cells.join(' ').match(/https:\/\/[^\s)]+/)?.[0], anchor: base + (occurrence > 1 ? `-${occurrence}` : ''), token: rowToken })
+          rows.push({ speakers, title: reportTitle, source: cells.join(' ').match(/https:\/\/[^\s)]+/)?.[0], anchor: base + (occurrence > 1 ? `-${occurrence}` : ''), token: rowToken })
         }
       }
     }
@@ -110,6 +131,7 @@ export function buildRelations({ pages, people }) {
     const from = pageHref(page.file)
     const tokens = markdown.parse(page.content, {})
     const prose = inlineText(tokens)
+    const unlinkedProse = unlinkedInlineText(tokens)
     for (const match of prose.matchAll(/(?<!!)\[\[([^\]]+)\]\]/g)) {
       const resolved = resolveTarget({ source: page.file, target: match[1], files })
       if (resolved && resolved !== page.file) add({ from, to: pageHref(resolved), role: 'link', label: page.title, rule: 'explicit-wikilink', source: from, status: 'confirmed', confidence: 'explicit' })
@@ -135,7 +157,7 @@ export function buildRelations({ pages, people }) {
       }
     }
     for (const [name, matches] of names) {
-      if (matches.length !== 1 || !prose.includes(name) || page.frontmatter.personId === matches[0]) continue
+      if (matches.length !== 1 || !unlinkedProse.includes(name) || page.frontmatter.personId === matches[0]) continue
       const to = `/wiki/people/${matches[0]}`
       if (!edges.some(e => e.from === from && e.to === to)) add({ from, to, role: 'mention', label: page.title, rule: 'unique-name-mention', source: from, status: 'candidate', confidence: 'name-only' })
     }

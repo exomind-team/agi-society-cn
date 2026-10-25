@@ -8,7 +8,9 @@ import { parse } from 'parse5'
 import { pathwaysBaselineTree, pathwaysChanged, pathwaysAdded, withoutPathwaysEntries } from './fixtures/agi-pathways-scope.mjs'
 
 import { wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-integrated-scope.mjs'
-const read = file => beforeHomeLayout(file, fs.readFileSync(file, 'utf8'))
+import { websitePlanAdded } from './fixtures/website-plan-scope.mjs'
+const beforePersonLinkMarkup = text => text.replace(/\[\[\/wiki\/people\/[a-z0-9-]+\\?\|([^\]]+)\]\]/g, '$1')
+const read = file => beforePersonLinkMarkup(beforeHomeLayout(file, fs.readFileSync(file, 'utf8')))
 const original = file => execFileSync('git', ['show', `${pathwaysBaselineTree}:${file}`], { maxBuffer: 64 * 1024 * 1024 })
 const inSource = file => /^(content|data|\.vitepress|docs)\//.test(file)
 const originalFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', pathwaysBaselineTree], { encoding: 'utf8' }).trim().split('\n').filter(inSource)
@@ -22,7 +24,7 @@ for (const file of originalFiles) {
   }
 }
 const sourceFiles = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], { encoding: 'utf8' }).trim().split('\n').filter(inSource)
-assert.deepEqual(sourceFiles.filter(file => !originalFiles.includes(file)).sort(), [...pathwaysAdded, ...wikiRelationsAdded].sort(), 'Only explicitly approved cross-route and wiki-relationship sources may be added')
+assert.deepEqual(sourceFiles.filter(file => !originalFiles.includes(file)).sort(), [...pathwaysAdded, ...wikiRelationsAdded, ...websitePlanAdded].sort(), 'Only explicitly approved cross-route, wiki-relationship and website-plan sources may be added')
 
 const researchFile = 'content/research/index.md'
 const oldIntro = '这里整理协会的研究资料。想了解 NARS 从什么问题出发，可以先读基本预设；需要进一步核对论述，再查理论正文与参考书籍。'

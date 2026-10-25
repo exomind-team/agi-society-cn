@@ -717,7 +717,8 @@
   ],
   "expectedAdditionProfiles": {
     "naziguli-slam": "bfaf12024ef02fe93a5385742ddceb5b6778856189ba183af1a6cee245861b67",
-    "liu-kai": "8746ff0ed2a7203111596751fd4761e70e788b4f20c3e2fd768177a8d1308a75"
+    "liu-kai": "b5c3eb6dc4813193dad054b93736c4194c7c9196cd473e1e07cc85da5f334973",
+    "wang-tao": "ae7afea9358b79ad243dd29a410e6e56f33273ce89cc8e141b8782e2417403fb"
   },
   "expectedPortraits": {
     "wang-pei": {
@@ -751,6 +752,10 @@
     "liu-kai": {
       "file": "liu-kai-personal-introduction-pptx.jpeg",
       "sha256": "4c04fafa3fc895cca57c5534c41ee75ddfad8819182dc268f9d92320a3f4304c"
+    },
+    "wang-tao": {
+      "file": "wang-tao-hbue.jpg",
+      "sha256": "3a1ca1eca903f8ca6688cd534a6657059488d2675d0ba3c3f23d204c590d4d87"
     }
   }
 }

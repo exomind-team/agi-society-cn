@@ -10,7 +10,7 @@ order: 2
 
 ## NARS 理论
 
-**NARS**（Non-Axiomatic Reasoning System，非公理推理系统）是王培教授提出的通用人工智能理论框架，研究系统如何在**实时、开放、[[research/nars/theory/nac/nac_principles/aikr|知识与资源不足]]** 的条件下进行自适应推理。
+**NARS**（Non-Axiomatic Reasoning System，非公理推理系统）是[[/wiki/people/wang-pei|王培]]教授提出的通用人工智能理论框架，研究系统如何在**实时、开放、[[research/nars/theory/nac/nac_principles/aikr|知识与资源不足]]** 的条件下进行自适应推理。
 
 可以从以下条目读起：
 - [[research/nars/index|NARS 概述]]
@@ -22,7 +22,7 @@ order: 2
 
 ### 进一步阅读
 
-- **GTI**（A General Theory of Intelligence）：王培教授的英文专著，介绍一般智能理论。
+- **GTI**（A General Theory of Intelligence）：[[/wiki/people/wang-pei|王培]]教授的英文专著，介绍一般智能理论。
 - [[research/nars/theory/nac/index|NAC（非公理控制）]]：本站整理的中文资料，讨论非公理推理中的控制机制。
 
 ## ACA · 人工认知生命

@@ -29,7 +29,7 @@ comments: true
 
 ## 视频合集
 
-2019-2025的组会视频，在B站上有合集（[刘凯-AGI](https://space.bilibili.com/475410405)）：
+2019-2025的组会视频，在B站上有合集（[[/wiki/people/liu-kai|刘凯]]-[AGI](https://space.bilibili.com/475410405)）：
 
 | 学年 | B站链接 | 场次 |
 |------|---------|:--:|

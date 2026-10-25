@@ -1,17 +1,257 @@
 [
-  { "from": "/about/team", "to": "/wiki/people/hu-xiangen", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/jia-min", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/liu-kai", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/sang-xinmin", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/wang-pei", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/wang-weijun", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/wei-yidong", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/wu-yuxi", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/xu-yingjin", "rule": "explicit-wikilink" },
-  { "from": "/about/team", "to": "/wiki/people/yang-yaya", "rule": "explicit-wikilink" },
-  { "from": "/contact/team", "to": "/wiki/people/liu-kai", "rule": "explicit-markdown-link" },
-  { "from": "/contact/team", "to": "/wiki/people/naziguli-slam", "rule": "explicit-markdown-link" },
-  { "from": "/contact/team", "to": "/wiki/people/wang-pei", "rule": "explicit-markdown-link" },
-  { "from": "/contact/team", "to": "/wiki/people/wei-yidong", "rule": "explicit-markdown-link" },
-  { "from": "/contact/team", "to": "/wiki/people/xu-yingjin", "rule": "explicit-markdown-link" }
+  {
+    "from": "/",
+    "to": "/wiki/people/li-xiang",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/",
+    "to": "/wiki/people/naziguli-slam",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/",
+    "to": "/wiki/people/wei-yidong",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/",
+    "to": "/wiki/people/xu-yingjin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/agi",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/li-xiang",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/naziguli-slam",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/wei-yidong",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/home-archive",
+    "to": "/wiki/people/xu-yingjin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/hu-xiangen",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/jia-min",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/sang-xinmin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/wang-weijun",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/wei-yidong",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/wu-yuxi",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/xu-yingjin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/about/team",
+    "to": "/wiki/people/yang-yaya",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/annual/2017",
+    "to": "/wiki/people/hu-xiangen",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/annual/2017",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/annual/2020",
+    "to": "/wiki/people/sun-changxin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/annual/2021",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/group/",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/conference/group/2019-2020",
+    "to": "/wiki/people/naziguli-slam",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/",
+    "to": "/wiki/people/xu-yingjin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/documents_and_qq_group",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/liu-kai",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/naziguli-slam",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/wei-yidong",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/xu-yingjin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/contact/team",
+    "to": "/wiki/people/li-xiang",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/projects/nars_impl/",
+    "to": "/wiki/people/sun-changxin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/projects/nars_impl/exnars",
+    "to": "/wiki/people/sun-changxin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/projects/nars_impl/introduction",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/projects/nars_impl/nars_cxin_py_to_ts",
+    "to": "/wiki/people/sun-changxin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/projects/nars_impl/openjunars",
+    "to": "/wiki/people/sun-changxin",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/agi-pathways",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/nars/",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/nars/theory/3c",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/nars/theory/learning_resources",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/research/nars/theory/nac/source-materials",
+    "to": "/wiki/people/wang-pei",
+    "rule": "explicit-wikilink"
+  },
+  {
+    "from": "/wiki/papers/liu-2023-teaching-machines-effectiveness",
+    "to": "/wiki/people/li-xiang",
+    "rule": "explicit-wikilink"
+  }
 ]

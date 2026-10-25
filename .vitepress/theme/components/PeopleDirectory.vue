@@ -12,6 +12,12 @@ const personPath = (name: string) => {
   return person ? '/wiki/people/' + person.id : ''
 }
 const profilePath = (name: string) => personPath(name) || '/about/team'
+const linkedOriginalBio = (person: { name: string; originalBio?: string }) => {
+  if (!person.originalBio) return ''
+  const name = person.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const linked = '<a href="' + withBase(profilePath(person.name)) + '">' + person.name + '</a>'
+  return person.originalBio.replace(new RegExp('<strong>' + name + '</strong>'), '<strong>' + linked + '</strong>')
+}
 </script>
 
 <template>
@@ -37,8 +43,8 @@ const profilePath = (name: string) => personPath(name) || '/about/team'
           <img :src="portraitUrl(profileFor(person.name)?.portrait?.file)" alt="" loading="lazy" width="88" height="110" />
         </a>
         <div class="secretary-introduction">
-        <div v-if="person.originalBio" class="person-original-bio" v-html="person.originalBio" />
-        <h4 v-else>{{ person.name }}</h4>
+        <div v-if="person.originalBio" class="person-original-bio" v-html="linkedOriginalBio(person)" />
+        <h4 v-else><a :href="withBase(personPath(person.name) || person.path)">{{ person.name }}</a></h4>
         <a :href="withBase(personPath(person.name) || person.path)">{{ personPath(person.name) ? '人物独页与关联' : '查看成员介绍' }}</a>
         </div>
       </article>

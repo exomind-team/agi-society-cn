@@ -15,7 +15,7 @@ tags: [机器教育, 具身认知]
 
 [2025 年会官方记录](https://www.agi-society.cn/wiki/conference/annual/2025)列有以下报告：
 
-- 刘凯：《人工认知生命（ACA）：一个自下而上的具身AGI项目》
+- [[/wiki/people/liu-kai|刘凯]]：《人工认知生命（ACA）：一个自下而上的具身AGI项目》
 - 林嘉濠、吴震宇：《智之源——人工认知生命（ACA）的身体及其特点》
 - 张涛：《觉之源——人工认知生命（ACA）的主观性与动机系统》
 
@@ -25,7 +25,7 @@ tags: [机器教育, 具身认知]
 
 [2026 年会档案](/conference/annual/2026)收录了大会报告和“机器教育与人工认知生命分论坛”。以下三条链接与讲者、题目的对应关系，依据[协会公开源文件](https://github.com/exomind-team/agi-society-cn/blob/60f852704f678ff03b3faa381ede75a2dbc16c0c/content/conference/annual/2026.md)于 2026-10-20 核对：
 
-1. **刘凯：人工认知生命（ACA）：具身AGI项目年度进展**  
+1. **[[/wiki/people/liu-kai|刘凯]]：人工认知生命（ACA）：具身AGI项目年度进展**<br>
    [录像入口](https://www.bilibili.com/video/BV1AmGc6VEBG?p=6)。
 2. **林嘉濠：ACA项目进展之一：机器婴儿身体的再认识**  
    [录像入口](https://www.bilibili.com/video/BV1TDGT6vEBt?p=1)。

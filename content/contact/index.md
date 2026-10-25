@@ -7,7 +7,7 @@ comments: false
 
 ## 研究团队
 
-中国通用人工智能协会由王培教授发起，成员的研究涉及哲学、计算机科学、认知科学和教育科学。可以先从团队资料了解各自的方向，再选择联系对象。
+中国通用人工智能协会由[[/wiki/people/wang-pei|王培]]教授发起，成员的研究涉及哲学、计算机科学、认知科学和教育科学。可以先从团队资料了解各自的方向，再选择联系对象。
 
 [[contact/team|查看全部团队成员 →]]
 
@@ -21,8 +21,8 @@ comments: false
 
 以下邮箱用于联系相应研究者，不是协会统一收件箱。已于 2026 年 10 月 19 日对照机构或本人主页核对；来信请说明研究问题，并附上相关材料。
 
-- 王培：<pei.wang@temple.edu> · [天普大学本人学术主页](https://cis.temple.edu/~pwang/)
-- 徐英瑾：<yjxu@fudan.edu.cn> · [复旦大学官方人物页](https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm)
+- [[/wiki/people/wang-pei|王培]]：<pei.wang@temple.edu> · [天普大学本人学术主页](https://cis.temple.edu/~pwang/)
+- [[/wiki/people/xu-yingjin|徐英瑾]]：<yjxu@fudan.edu.cn> · [复旦大学官方人物页](https://philosophy.fudan.edu.cn/64/8f/c14253a222351/page.htm)
 
 ## 在线资源
 

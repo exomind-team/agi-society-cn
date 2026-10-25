@@ -9,15 +9,15 @@ comments: true
 
 ## 1. 理论理解
 
-### 王培老师科普视频讲座
+### [[/wiki/people/wang-pei|王培]]老师科普视频讲座
 
 > **NARS 和 AGI 关键视频（50分钟） 1~5**
 
-[《通用人工智能》（1）--王培 - 读书人 (dushuren123.com)](http://www.dushuren123.com/dushuren/video/share.html?id=1679351024)
+[[/wiki/people/wang-pei|王培]]的《通用人工智能》（1）—[读书人视频↗](http://www.dushuren123.com/dushuren/video/share.html?id=1679351024)
 
 视频备份：[破耳狼的个人空间-破耳狼个人主页-哔哩哔哩视频 (bilibili.com)](https://space.bilibili.com/295431971/channel/seriesdetail?sid=1802789&ctype=0)
 
-这组讲座可用于了解王培老师对 AGI 与 NARS 的介绍。遇到感兴趣的概念，可以先记下来，再到后面的著作与中文资料中继续查找。
+这组讲座可用于了解[[/wiki/people/wang-pei|王培]]老师对 AGI 与 NARS 的介绍。遇到感兴趣的概念，可以先记下来，再到后面的著作与中文资料中继续查找。
 
 ### 《智能理论纲要》
 
@@ -25,14 +25,14 @@ comments: true
 
 ### 基础概念相关中文文章和视频
 
-[王培老师主页中文资料集](https://cis.temple.edu/~pwang/Chinese.html)
+[[/wiki/people/wang-pei|王培]]老师的[主页中文资料集↗](https://cis.temple.edu/~pwang/Chinese.html)
 
-### 王培老师对AGI研究者的学习路径建议
+### [[/wiki/people/wang-pei|王培]]老师对AGI研究者的学习路径建议
 
 > 本资料原文为英文，推荐读完中文资料后再阅读
 > [AGI Education (temple.edu)](https://cis.temple.edu/~pwang/AGI-Curriculum.html)
 
-> [!warning]+ 王培老师的备注
+> [!warning]+ [[/wiki/people/wang-pei|王培]]老师的备注
 >
 > 以下列表是对通用人工智能研究感兴趣的学生的部分教育计划。它包括大约25门一学期课程的材料。
 >
@@ -46,7 +46,7 @@ comments: true
 
 #### 1. 介绍性读物
 
-   图灵的一篇论文、侯世达的《哥德尔、艾舍尔、巴赫：集异璧之大成》（王培老师为译者之一）。首先指出AI目标，然后指出智能的现象。集异璧(GEB)。
+   图灵的一篇论文、侯世达的《哥德尔、艾舍尔、巴赫：集异璧之大成》（[[/wiki/people/wang-pei|王培]]老师为译者之一）。首先指出AI目标，然后指出智能的现象。集异璧(GEB)。
 
 ## 2. 编码实现
 

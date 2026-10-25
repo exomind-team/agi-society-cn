@@ -1,4 +1,5 @@
 import { beforeMentorWithdrawal, isWithdrawnRelation } from './fixtures/withdrawn-mentor-contract.mjs'
+import { withoutCnkiAuthorPage } from './fixtures/cnki-author-page-contract.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import crypto from 'node:crypto'
@@ -8,15 +9,15 @@ const frozen=JSON.parse(fs.readFileSync('tests/fixtures/li-xiang-contract.json',
 const navigationPromotions=JSON.parse(fs.readFileSync('tests/fixtures/member-navigation-promotions.json','utf8'))
 const profiles=JSON.parse(fs.readFileSync('data/people-profiles.json','utf8'))
 const hash=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex')
-assert.deepEqual(profiles.filter(p=>p.id!=='huang-yinghui').map(p=>p.id).sort(),[...Object.keys(frozen.profiles),'li-xiang'].sort())
-for(const [id,sha] of Object.entries(frozen.profiles)) assert.equal(hash(beforeMentorWithdrawal(profiles.find(p=>p.id===id))),sha,`Preserve complete d594 profile: ${id}`)
-const li=profiles.find(p=>p.id==='li-xiang');assert.equal(hash(li),frozen.liXiangProfileSha256)
+assert.deepEqual(profiles.filter(p=>!['huang-yinghui','wang-tao'].includes(p.id)).map(p=>p.id).sort(),[...Object.keys(frozen.profiles),'li-xiang'].sort())
+for(const [id,sha] of Object.entries(frozen.profiles)) assert.equal(hash(beforeMentorWithdrawal(withoutCnkiAuthorPage(profiles.find(p=>p.id===id)))),sha,`Preserve complete d594 profile: ${id}`)
+const li=profiles.find(p=>p.id==='li-xiang');assert.equal(hash(withoutCnkiAuthorPage(li)),frozen.liXiangProfileSha256)
 assert.equal(li.name,'李祥');assert.deepEqual(li.aliases,[])
 assert.equal(li.portrait.sourceUrl,'https://jckxyjy.lnut.edu.cn/info/14480/184821.htm')
 assert.equal(li.portrait.sha256,frozen.liXiangPhotoSha256)
 assert.equal(matter(fs.readFileSync('content/wiki/people/li-xiang.md','utf8')).data.personId,'li-xiang')
 const expectedPhotos={...frozen.portraits,'li-xiang':{file:'li-xiang.jpg',sha256:frozen.liXiangPhotoSha256}}
-assert.deepEqual(profiles.filter(p=>p.portrait&&p.id!=='huang-yinghui').map(p=>p.id).sort(),Object.keys(expectedPhotos).sort())
+assert.deepEqual(profiles.filter(p=>p.portrait&&!['huang-yinghui','wang-tao'].includes(p.id)).map(p=>p.id).sort(),Object.keys(expectedPhotos).sort())
 for(const [id,photo] of Object.entries(expectedPhotos)){
  const p=profiles.find(p=>p.id===id);assert.equal(p.portrait.file,photo.file);assert.equal(p.portrait.sha256,photo.sha256)
  assert.equal(crypto.createHash('sha256').update(fs.readFileSync('content/about/image/people/'+photo.file)).digest('hex'),photo.sha256,`Exact portrait bytes: ${id}`)
@@ -29,13 +30,14 @@ for(const old of frozen.relations){
  if(isWithdrawnRelation(old,current)) continue
  const [from,to,role,rule]=JSON.parse(old)
  const promotion=navigationPromotions.find(item=>item.from===from&&item.to===to)
- const expected=promotion&&role==='mention'&&rule==='unique-name-mention'?JSON.stringify([from,to,'link',promotion.rule,from,'confirmed','explicit']):old
+ const promoted=promotion&&((role==='mention'&&rule==='unique-name-mention')||(role==='link'&&rule==='explicit-markdown-link'))
+ const expected=promoted?JSON.stringify([from,to,'link',promotion.rule,from,'confirmed','explicit']):old
  assert.ok(current.has(expected),`Preserve every d594 relation or its explicit-navigation promotion: ${old}`)
 }
 assert.equal(graph.edges.filter(e=>e.to==='/wiki/people/li-xiang'&&e.role==='speaker'&&e.rule==='agenda-speaker-column').length,14)
 const boundary=JSON.parse(fs.readFileSync('scripts/offline/release-boundary.json'))
 assert.deepEqual(boundary.routes.filter(p=>!['/wiki/people/huang-yinghui','/wiki/people/wang-tao','/wiki/people/qi-haibin'].includes(p)),[...frozen.boundary.routes,'/wiki/people/li-xiang','/wiki/people/naziguli-slam'].sort())
-assert.deepEqual(boundary.sourceFiles.filter(p=>p!=='/source/content/about/image/people/huang-yinghui-ccnu.png'),[...frozen.boundary.sourceFiles,'/source/content/about/image/people/li-xiang.jpg','/source/content/about/image/people/liu-kai-personal-introduction-pptx.jpeg','/source/content/about/image/people/naziguli-slam-xbmu.jpg'].sort())
+assert.deepEqual(boundary.sourceFiles.filter(p=>!['/source/content/about/image/people/huang-yinghui-ccnu.png','/source/content/about/image/people/wang-tao-hbue.jpg'].includes(p)),[...frozen.boundary.sourceFiles,'/source/content/about/image/people/li-xiang.jpg','/source/content/about/image/people/liu-kai-personal-introduction-pptx.jpeg','/source/content/about/image/people/naziguli-slam-xbmu.jpg'].sort())
 assert.deepEqual(boundary.unlisted,frozen.boundary.unlisted)
 assert.equal(boundary.notice,frozen.boundary.notice)
 for(const file of ['dist/index.html','dist/about/team.html']) assert.ok(fs.readFileSync(file,'utf8').includes('/wiki/people/li-xiang'),`Visible entry: ${file}`)

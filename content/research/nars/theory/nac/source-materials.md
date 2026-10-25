@@ -14,9 +14,9 @@ comments: true
 
 ### 1. NARS 与非公理逻辑
 
-- [Non-Axiomatic Logic: A Model of Intelligent Reasoning](https://www.worldscientific.com/worldscibooks/10.1142/8665) —— 王培的技术专著入口；用于核对 NAL、AIKR 与 NARS 的理论边界。
+- [Non-Axiomatic Logic: A Model of Intelligent Reasoning](https://www.worldscientific.com/worldscibooks/10.1142/8665) —— [[/wiki/people/wang-pei|王培]]的技术专著入口；用于核对 NAL、AIKR 与 NARS 的理论边界。
 - [AIKR: Insufficient Knowledge and Resources](https://cis.temple.edu/~pwang/Publication/AIKR.pdf) —— AIKR 原始论文入口；当前知识库已有 [[research/nars/theory/nac/nac_principles/aikr|AIKR 页面]]。
-- [A General Theory of Intelligence](https://cis.temple.edu/~pwang/GTI-book/) —— 王培的 GTI 原始 eBook；当前知识库已有 [[research/nars/theory/gti/index|本地镜像]]，其第 3、4、5 章是理解推理系统、自组织、传感运动和自我控制的重要背景材料。
+- [A General Theory of Intelligence](https://cis.temple.edu/~pwang/GTI-book/) —— [[/wiki/people/wang-pei|王培]]的 GTI 原始 eBook；当前知识库已有 [[research/nars/theory/gti/index|本地镜像]]，其第 3、4、5 章是理解推理系统、自组织、传感运动和自我控制的重要背景材料。
 - [Temple AGI Team](https://cis.temple.edu/tagit/#projects) —— 官方团队项目与演示入口；用于核对 NARS 实现、论文和 Demo 的归属。
 
 ### 2. NARS 运行结构与控制机制的直接描述

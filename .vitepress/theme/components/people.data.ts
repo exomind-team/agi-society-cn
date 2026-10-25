@@ -10,9 +10,12 @@ export default {
     const team = readFileSync(path.resolve('content/about/team.md'), 'utf8')
     const markdown = new MarkdownIt()
     const originals = Object.fromEntries([...home.matchAll(/<div class="team-member">\s*([\s\S]*?)\s*<\/div>/g)].map(match => {
-      const name = match[1].match(/\*\*(.*?)\*\*/)?.[1]
-      if (!name) throw new Error('Unrecognized original homepage member')
-      return [name, markdown.render(match[1])]
+      const sourceName = match[1].match(/\*\*(.*?)\*\*/)?.[1]
+      if (!sourceName) throw new Error('Unrecognized original homepage member')
+      const wikilink = sourceName.match(/^\[\[\/wiki\/people\/[a-z0-9-]+\|([^\]]+)\]\]$/)
+      const name = wikilink?.[1] || sourceName
+      const bio = wikilink ? match[1].replace('**' + sourceName + '**', '**' + name + '**') : match[1]
+      return [name, markdown.render(bio)]
     }))
     const groups = [...team.matchAll(/^\d\. (创办人|专家组|秘书组|会员组)：(.+)$/gm)].map(match => ({
       label: match[1],

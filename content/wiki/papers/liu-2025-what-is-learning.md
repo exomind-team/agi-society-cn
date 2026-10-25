@@ -42,7 +42,7 @@ tags:
 
 - [公开来源](https://www.rdfybk.com/qw/DownPdf?id=911474)（搜索索引匹配，未声称全文逐页复核）。
 
-- [公开来源](https://openedu.sou.edu.cn/)，2025年第31卷6期目录，题名及刘凯、杨亚亚等（已核对所列范围）。
+- [公开来源](https://openedu.sou.edu.cn/)，2025年第31卷6期目录，题名及[[/wiki/people/liu-kai|刘凯]]、[[/wiki/people/yang-yaya|杨亚亚]]等（已核对所列范围）。
 
 ## 资料边界
 

@@ -1,12 +1,15 @@
 import { beforeMentorWithdrawal } from './fixtures/withdrawn-mentor-contract.mjs'
+import { withoutCnkiAuthorPage } from './fixtures/cnki-author-page-contract.mjs'
 import { beforeHomeLayout, homeLayoutFiles } from './fixtures/home-layout-scope.mjs'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import {execFileSync,spawnSync} from 'node:child_process'
 import { wikiRelationsBaseline, wikiRelationsChanged, wikiRelationsAdded } from './fixtures/wiki-relations-scope.mjs'
+import { websitePlanAdded } from './fixtures/website-plan-scope.mjs'
 const normalizeText=text=>text.replace(/\r\n/g,'\n')
+const beforePersonLinkMarkup=text=>text.replace(/\[\[\/wiki\/people\/[a-z0-9-]+\\?\|([^\]]+)\]\]/g,'$1').replace(/<br>\r?\n/g,'  \n')
 const original=file=>normalizeText(execFileSync('git',['show',wikiRelationsBaseline+':'+file],{encoding:'utf8',maxBuffer:64*1024*1024}))
-const read=file=>normalizeText(beforeHomeLayout(file,fs.readFileSync(file,'utf8')))
+const read=file=>normalizeText(beforePersonLinkMarkup(beforeHomeLayout(file,fs.readFileSync(file,'utf8'))))
 const source=file=>/^(content|data|\.vitepress|docs)\//.test(file)
 const before=execFileSync('git',['ls-tree','-r','--name-only',wikiRelationsBaseline],{encoding:'utf8'}).trim().split('\n').filter(source)
 let unchanged=0
@@ -24,7 +27,7 @@ for(const file of before){
  }
 }
 const current=execFileSync('git',['ls-files','--cached','--others','--exclude-standard'],{encoding:'utf8'}).trim().split('\n').filter(source)
-assert.deepEqual(current.filter(file=>!before.includes(file)).sort(),wikiRelationsAdded.toSorted())
+assert.deepEqual(current.filter(file=>!before.includes(file)).sort(),[...wikiRelationsAdded,...websitePlanAdded].toSorted())
 const annual='content/conference/annual/2026.md'
 assert.ok(read(annual).includes('从黑格尔、马克思到机器学习'),'Preserve the corrected 2026 historical-agenda title')
 assert.ok(!read(annual).includes('从黑尔格、马克思到机器学习'),'Do not regress the corrected historical-agenda title')
@@ -41,9 +44,9 @@ assert.ok(read(aca).includes('暂不据此填写已核定的官方英文全称�
 assert.equal(read(aca),original(aca),'Preserve the accepted ACA source and limits from the stable baseline')
 const priorProfiles=JSON.parse(original('data/people-profiles.json')), nextProfiles=JSON.parse(read('data/people-profiles.json'))
 const priorIds=new Set(priorProfiles.map(p=>p.id))
-assert.deepEqual(nextProfiles.filter(p=>priorIds.has(p.id)).map(beforeMentorWithdrawal),priorProfiles,'All profiles from the stable baseline remain unchanged')
-assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['huang-yinghui','li-xiang','liu-kai','naziguli-slam'],'Only the reviewed Li Xiang, Nady and Liu profiles are added')
+assert.deepEqual(nextProfiles.filter(p=>priorIds.has(p.id)).map(p=>beforeMentorWithdrawal(withoutCnkiAuthorPage(p))),priorProfiles,'All profiles from the stable baseline remain unchanged apart from the CNKI author-page addendum')
+assert.deepEqual(nextProfiles.filter(p=>!priorIds.has(p.id)).map(p=>p.id).sort(),['huang-yinghui','li-xiang','liu-kai','naziguli-slam','wang-tao'],'Only the reviewed Li Xiang, Nady, Liu and Wang Tao profiles are added')
 assert.equal(new Set(nextProfiles.map(p=>p.id)).size,nextProfiles.length)
 await import('./profile-additions.test.mjs')
 assert.equal(nextProfiles.find(p=>p.id==='wang-weijun').portrait.sha256,'168ed54774e49e245c4d3a882a508a19ac353adf780ab62f6d9802de90346497')
-console.log('PASS wiki retention: '+unchanged+' stable-baseline source files unchanged; corrected 2026 agenda title, retained year-table rows and ACA evidence limits; historical profiles/IDs/relations/portraits preserved; exact Li Xiang/Nady/Liu addition scope.')
+console.log('PASS wiki retention: '+unchanged+' stable-baseline source files unchanged; corrected 2026 agenda title, retained year-table rows and ACA evidence limits; historical profiles/IDs/relations/portraits preserved; exact Li Xiang/Nady/Liu/Wang Tao addition scope.')

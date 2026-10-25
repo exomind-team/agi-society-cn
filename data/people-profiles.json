@@ -147,6 +147,16 @@
             "timeScope": "2001-07—2008-05"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的关注领域包括通用人工智能、教育、机器教育、AGI与非公理逻辑。",
+            "sources": ["6"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -169,6 +179,10 @@
       {
         "label": "OpenNARS",
         "href": "https://github.com/opennars/opennars"
+      },
+      {
+        "label": "知网作者知网节（页面关联坦普尔大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOoKJ4YLFCxj5JNdsheYb9Dn837koxH6ECM_cKOm3QqHEtf-Xs3lfoBR5ZP90DjLZu_JTWaqLKVTmBuJyOkn1MwN7dGScHzv_WZHemQ4Pbn-GBEsrXlNAesiVJ4uW-PxbyfhLLfIlO7NLQ=="
       }
     ],
     "sources": [
@@ -201,6 +215,12 @@
         "label": "协会网站现有源文件",
         "url": "/about/team",
         "observedOn": "2026-10-19"
+      },
+      {
+        "id": "6",
+        "label": "中国知网作者知网节：王培（页面关联坦普尔大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOoKJ4YLFCxj5JNdsheYb9Dn837koxH6ECM_cKOm3QqHEtf-Xs3lfoBR5ZP90DjLZu_JTWaqLKVTmBuJyOkn1MwN7dGScHzv_WZHemQ4Pbn-GBEsrXlNAesiVJ4uW-PxbyfhLLfIlO7NLQ==",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "代表作和履历为精选资料，非完整成果目录。"
@@ -372,6 +392,16 @@
             "timeScope": "2023-12-20"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括青少年、多媒体学习、智能导学系统、通用人工智能、认知负荷理论、眼动与机器教育。",
+            "sources": ["8"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -394,6 +424,10 @@
       {
         "label": "ORCID",
         "href": "https://orcid.org/0000-0001-9045-4070"
+      },
+      {
+        "label": "知网作者知网节（页面关联香港理工大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-bA2HzPAULvWYjCGgKWhfqyDbXGkjhxJfhlbCQHXit1HLKlZnu8-lt67oYeKu92ei9Ra6ry-ZHaj5u_G5IBu4fOTlGyul4LWK&uniplatform=NZKPT&language=CHS"
       }
     ],
     "sources": [
@@ -438,6 +472,12 @@
         "label": "PolyU机构库论文",
         "url": "https://ira.lib.polyu.edu.hk/bitstream/10397/113501/1/electronics-13-04876.pdf",
         "observedOn": "2026-10-19"
+      },
+      {
+        "id": "8",
+        "label": "中国知网作者知网节：胡祥恩（页面关联香港理工大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-bA2HzPAULvWYjCGgKWhfqyDbXGkjhxJfhlbCQHXit1HLKlZnu8-lt67oYeKu92ei9Ra6ry-ZHaj5u_G5IBu4fOTlGyul4LWK&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "代表作和履历为精选资料，非完整成果目录。"
@@ -558,6 +598,16 @@
             "timeScope": "2025"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括人工智能、通用人工智能、现象学、大语言模型、深度学习与分析哲学。",
+            "sources": ["4"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -568,6 +618,10 @@
       {
         "label": "2025年会报告",
         "href": "/conference/annual/2025"
+      },
+      {
+        "label": "知网作者知网节（页面关联复旦大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-edQJ-IEugx8EBSCDIF7ChpYht_sotpf_NfP3iDnjAbdtV6mCIq2eFML-mhhtV3Jj7X35Gpe_fr-q_KYS6mpXeYfKL8jKaR1q"
       }
     ],
     "sources": [
@@ -588,6 +642,12 @@
         "label": "第十届中国通用人工智能年会",
         "url": "https://www.agi-society.cn/wiki/conference/annual/2025",
         "observedOn": "2026-10-19"
+      },
+      {
+        "id": "4",
+        "label": "中国知网作者知网节：徐英瑾（页面关联复旦大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-edQJ-IEugx8EBSCDIF7ChpYht_sotpf_NfP3iDnjAbdtV6mCIq2eFML-mhhtV3Jj7X35Gpe_fr-q_KYS6mpXeYfKL8jKaR1q",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "代表成果为精选，不代表完整或最新全部成果。官网职级日期有一个月重叠，本页保留其原始时间。"
@@ -708,6 +768,16 @@
             "timeScope": "2025"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括适应性表征、人工智能、认知、语境论、科学哲学、科学史与人工认知。",
+            "sources": ["3"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -718,6 +788,10 @@
       {
         "label": "2025年会报告",
         "href": "/conference/annual/2025"
+      },
+      {
+        "label": "知网作者知网节（页面关联山西大学哲学学院）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOrTSm84jmVbQG5ikdSYVqrS-e15ScSKJ23LGq7zsfRJc4bYZ1QQIgMatbzYKG71OR-FoaQq0eNkbRihmeuOfFB4qMXTnV8mLE48yq4c0Nq8T6d5HzDPXh-L&uniplatform=NZKPT&language=CHS"
       }
     ],
     "sources": [
@@ -732,6 +806,12 @@
         "label": "第十届中国通用人工智能年会",
         "url": "https://www.agi-society.cn/wiki/conference/annual/2025",
         "observedOn": "2026-10-19"
+      },
+      {
+        "id": "3",
+        "label": "中国知网作者知网节：魏屹东（页面关联山西大学哲学学院）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOrTSm84jmVbQG5ikdSYVqrS-e15ScSKJ23LGq7zsfRJc4bYZ1QQIgMatbzYKG71OR-FoaQq0eNkbRihmeuOfFB4qMXTnV8mLE48yq4c0Nq8T6d5HzDPXh-L&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "代表成果为精选，不代表完整或最新全部成果。2007—2013年院长属于历史职务。"
@@ -992,6 +1072,16 @@
             "timeScope": "2023-12-05页面"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括知识共享、知识管理、信息服务、电子商务、云计算与用户偏好。",
+            "sources": ["3"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -1002,6 +1092,10 @@
       {
         "label": "华中师范大学官方人物页",
         "href": "https://www.ccnu.edu.cn/jyb/info/1010/1104.htm"
+      },
+      {
+        "label": "知网作者知网节（页面关联华中师范大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-hUesWzmMV7p0vkc4kB2autVSFxhSziL-3XliEgoYZNl9gLmOXG7F3HHQMmkxsegNAfaq6TVCDQeDilMiJYEqBNd9JMU7CCfd&uniplatform=NZKPT&language=CHS"
       }
     ],
     "sources": [
@@ -1016,6 +1110,12 @@
         "label": "华中师范大学：王伟军（2023-12-05）",
         "url": "https://www.ccnu.edu.cn/jyb/info/1010/1104.htm",
         "observedOn": "2026-10-20"
+      },
+      {
+        "id": "3",
+        "label": "中国知网作者知网节：王伟军（页面关联华中师范大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-hUesWzmMV7p0vkc4kB2autVSFxhSziL-3XliEgoYZNl9gLmOXG7F3HHQMmkxsegNAfaq6TVCDQeDilMiJYEqBNd9JMU7CCfd&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "本页非完整履历与成果目录。"
@@ -1497,7 +1597,7 @@
     "affiliation": "渤海大学教育科学学院 · 副教授（据用户提供个人简介材料，职称未独立核验）",
     "summary": "研究方向包括通用人工智能与教育大科学理论实践、类脑系统开发与机器教育、计算精神病学。",
     "verifiedOn": "2026-10-20",
-    "identityBoundary": "本页延续协会既有刘凯人物标识与论文归属记录，不据同名账号合并身份。职称、学历和经历的来源及核验限制见下方资料说明。",
+    "identityBoundary": "本页沿用协会人物名录与论文署名记录；履历按各页面分项呈现。",
     "sections": [
       {
         "title": "职称与研究方向概览",
@@ -1649,6 +1749,16 @@
             ]
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括通用人工智能、人工智能、教育、机器教育与智能导学系统。",
+            "sources": ["3"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -1675,6 +1785,10 @@
       {
         "label": "论文：What Is Learning?",
         "href": "/wiki/papers/liu-2025-what-is-learning"
+      },
+      {
+        "label": "知网作者知网节（页面关联渤海大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOo_-QKJ--eA1M5nYJae867r1jaZxT6XhviO3awhjcwBlRaZw-U6iUj2VyQBcoJWQy95zXZtqYRJ0PjPtxs8-oG7FwmGfd7rSg5htuq77XCf1M86-PD3nr_sWSRZ1yWbRhb_6mtO_1ft4Q=="
       }
     ],
     "portrait": {
@@ -1695,9 +1809,15 @@
         "label": "协会成员名录（既有资料）",
         "url": "/about/team",
         "observedOn": "2026-10-20"
+      },
+      {
+        "id": "3",
+        "label": "中国知网作者知网节：刘凯（页面关联渤海大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOo_-QKJ--eA1M5nYJae867r1jaZxT6XhviO3awhjcwBlRaZw-U6iUj2VyQBcoJWQy95zXZtqYRJ0PjPtxs8-oG7FwmGfd7rSg5htuq77XCf1M86-PD3nr_sWSRZ1yWbRhb_6mtO_1ft4Q==",
+        "observedOn": "2026-10-25"
       }
     ],
-    "limitations": "个人简介 PPTX 为单页材料且未附外部引用；职称、学历、经历和研究方向尚未逐项独立核验。博士后与访问学者时间有重叠，按原材料分项呈现，不推断其安排。内嵌头像经用户明确批准用于此人物页，但 PPTX 未注明摄影者或高校官方来源；不据此主张其为高校官方照片。招生要求和非必要个人字段未纳入。"
+    "limitations": "个人简介材料列有职称、学历、经历与研究方向；博士后及访问经历按原文分项呈现。用户已批准使用PPTX内嵌头像，材料未注明摄影者。招生要求和非必要个人字段未纳入。"
   },
   {
     "id": "li-xiang",
@@ -1795,6 +1915,16 @@
             "timeScope": "2020"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括交叉学科、智能材料结构、智能机械制造、人工智能与教育改革。",
+            "sources": ["2"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "related": [
@@ -1805,6 +1935,10 @@
       {
         "label": "协会成员名录",
         "href": "/about/team"
+      },
+      {
+        "label": "知网作者知网节（页面关联辽宁工业大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOrimxa_mA4YOSytqsVnQ_xsOUryqSarkBsCY5lj8dFP_FZ9NMzUgOXPFKMQegv8xJikEt7biyCTmjA6uZo5dezLHQHQ8fdmC5lXf7vhu_GMgaYSyieUaccwQ4gOa8n-QQ2Gfy6LAl3O0g=="
       }
     ],
     "sources": [
@@ -1813,6 +1947,12 @@
         "label": "辽宁工业大学交叉科学学院：李祥（页面日期2024-09-27，正文含2025年成果）",
         "url": "https://jckxyjy.lnut.edu.cn/info/14480/184821.htm",
         "observedOn": "2026-10-20"
+      },
+      {
+        "id": "2",
+        "label": "中国知网作者知网节：李祥（页面关联辽宁工业大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOrimxa_mA4YOSytqsVnQ_xsOUryqSarkBsCY5lj8dFP_FZ9NMzUgOXPFKMQegv8xJikEt7biyCTmjA6uZo5dezLHQHQ8fdmC5lXf7vhu_GMgaYSyieUaccwQ4gOa8n-QQ2Gfy6LAl3O0g==",
+        "observedOn": "2026-10-25"
       }
     ],
     "limitations": "职务按核验时所见官方页面记载，页面标注日期不等于正文所有内容更新时间。论文列表依据学院介绍，未逐篇独立核验出版元数据；不是完整成果目录。"
@@ -1832,7 +1972,7 @@
       "caption": "华中师范大学心理学院公开会议资料中的肖像（2023）",
       "rights": "照片来自华中师范大学心理学院公开会议资料，图片下方姓名与单位对应黄英辉。页面保留版权，未见照片单独开放许可或明确禁止转载说明；不主张已获额外授权，不适用本站文字的 CC BY-SA 许可。"
     },
-    "identityBoundary": "依协会既有秘书组名单及公开会议资料识别，不合并同名医生或其他同名人士。",
+    "identityBoundary": "协会秘书组名录及公开会议资料列有黄英辉。",
     "sections": [
       {
         "title": "身份与研究",
@@ -1858,6 +1998,16 @@
             "timeScope": "2023年会议资料所列，不据此推断后续职务变化"
           }
         ]
+      },
+      {
+        "title": "知网作者页关注领域",
+        "items": [
+          {
+            "text": "知网作者页列出的主题包括生成式人工智能、ChatGPT、提示工程、推荐系统、信息茧房与可解释性机器学习。",
+            "sources": ["4"],
+            "timeScope": "知网作者页（2026-10-25）"
+          }
+        ]
       }
     ],
     "sources": [
@@ -1878,8 +2028,297 @@
         "label": "协会：黄英辉老师招生信息（2026-05-14）",
         "url": "https://www.agi-society.cn/?p=789",
         "observedOn": "2026-10-20"
+      },
+      {
+        "id": "4",
+        "label": "中国知网作者知网节：黄英辉（页面关联武汉理工大学）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-hmIGd0bNuKNl8YDdJ1crb_ZOj_ibLy1NqN5w9vXabC8VgZSV87w8D3kDq2YwyrQ_2CpJVzxWCReKT7VS-eF5Y83sKBfEFaAx&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      }
+    ],
+    "related": [
+      {
+        "label": "知网作者知网节（页面关联武汉理工大学）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOq1bEvSpI58ayXc7CpeaRo-hmIGd0bNuKNl8YDdJ1crb_ZOj_ibLy1NqN5w9vXabC8VgZSV87w8D3kDq2YwyrQ_2CpJVzxWCReKT7VS-eF5Y83sKBfEFaAx&uniplatform=NZKPT&language=CHS"
       }
     ],
     "limitations": "本页仅补充照片及最小身份资料，不扩展学位、现任职称或履历。照片来源公开不等于开放授权。"
+  },
+  {
+    "id": "wang-tao",
+    "name": "王涛",
+    "aliases": [],
+    "affiliation": "湖北经济学院信息工程学院（2025 年 Springer 论文所列作者单位）",
+    "summary": "研究方向包括人工智能；知网作者页列出的关注领域还包括数据挖掘、序列模式、关联规则、智能导学系统等。合著论文探索 OpenNARS 在钢材表面缺陷检测中的工业场景专门化。",
+    "verifiedOn": "2026-10-25",
+    "portrait": {
+      "file": "wang-tao-hbue.jpg",
+      "sourceUrl": "https://ie.hbue.edu.cn/12/f3/c413a135923/page.htm",
+      "originalUrl": "https://ie.hbue.edu.cn/_upload/article/images/15/fe/abbb1b414ece9512b7734552be28/034af6e4-5922-4aa9-9ad3-c86a16ccd6ab.jpg",
+      "sha256": "3a1ca1eca903f8ca6688cd534a6657059488d2675d0ba3c3f23d204c590d4d87",
+      "caption": "湖北经济学院信息工程学院教师主页照片",
+      "rights": "照片取自湖北经济学院官方教师主页；页面未见照片开放许可，版权归原权利人。本页不主张已获额外授权，照片不适用本站文字的 CC BY-SA 许可。"
+    },
+    "identityBoundary": "协会会员名录、湖北经济学院教师主页、知网作者页和 Springer 论文均记录王涛与湖北经济学院的关联。",
+    "sections": [
+      {
+        "title": "校方主页所列职务与研究",
+        "items": [
+          {
+            "text": "湖北经济学院信息工程学院副教授。",
+            "sources": ["1"],
+            "timeScope": "校方教师简介发布于 2017-06-16；不是 2026 年现职确认"
+          },
+          {
+            "text": "研究方向：人工智能。",
+            "sources": ["1"],
+            "timeScope": "校方教师简介发布于 2017-06-16"
+          },
+          {
+            "text": "讲授《数据库原理》《数据库应用课程设计》。",
+            "sources": ["1"],
+            "timeScope": "校方教师简介发布于 2017-06-16"
+          }
+        ]
+      },
+      {
+        "title": "教育经历",
+        "items": [
+          {
+            "text": "华中科技大学 · 计算机软件博士",
+            "sources": ["1"],
+            "timeScope": "2001-09—2006-06"
+          },
+          {
+            "text": "华中科技大学 · 计算机软件硕士",
+            "sources": ["1"],
+            "timeScope": "1995-09—1998-06"
+          },
+          {
+            "text": "南开大学 · 计算机软件学士",
+            "sources": ["1"],
+            "timeScope": "1986-09—1990-07"
+          }
+        ]
+      },
+      {
+        "title": "工作经历",
+        "items": [
+          {
+            "text": "湖北经济学院信息工程学院 · 副教授",
+            "sources": ["1"],
+            "timeScope": "2006-07 至今（校方主页发布于 2017-06-16；当前职务未另行确认）"
+          },
+          {
+            "text": "华中科技大学计算机学院 · 讲师",
+            "sources": ["1"],
+            "timeScope": "1998-07—2006-07"
+          }
+        ]
+      },
+      {
+        "title": "代表论文与知网作者页成果",
+        "items": [
+          {
+            "text": "The Specialization of AGI: Exploration of Industrial Applications for General Artificial Intelligence。合著；Artificial Intelligence Logic and Applications (AILA 2024), Communications in Computer and Information Science, 2248: 316–323。DOI: 10.1007/978-981-96-0354-1_27",
+            "sources": ["2"],
+            "timeScope": "Springer 页面标注 First Online: 2025-01-31"
+          },
+          {
+            "text": "“智适应”理论与实践——第三届人工智能和自适应教育国际大会综述。刘凯、王韶、隆舟、王涛合著；《开放教育研究》2019，25(05)：33–48。作者单位列有湖北经济学院信息工程学院。DOI: 10.13966/j.cnki.kfjyyj.2019.05.004",
+            "sources": ["4"],
+            "timeScope": "知网题录于 2026-10-25 核对；在线公开时间为 2019-10-15，期刊期次为 2019 年第 5 期"
+          },
+          {
+            "text": "软件漏洞静态检测模型及检测框架。王涛、韩兰胜、付才、邹德清、刘铭合著；《计算机科学》2016(05)。",
+            "sources": ["5"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "软件工程人才培养模式的改革探索。王虹、王涛、崔洪芳、李祥、关培超、刘鹏远合著；作者单位：湖北经济学院计算机学院；《湖北经济学院学报（人文社会科学版）》2009，6(12)：63–64。",
+            "sources": ["6"],
+            "timeScope": "知网题录于 2026-10-25 核对；在线公开时间为 2010-03-03，期刊期次为 2009 年第 12 期"
+          },
+          {
+            "text": "使用序列模式精简基挖掘序列模式。王涛、卢炎生合著；《小型微型计算机系统》2005(10)。",
+            "sources": ["7"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "移动 Ad Hoc 网络 OLSR 路由协议中虫洞问题的研究。欧阳星明、王涛合著；《计算机工程与科学》2007(03)。",
+            "sources": ["8"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "压缩频繁序列模式集。王涛；《小型微型计算机系统》2008(03)。",
+            "sources": ["9"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "挖掘频繁子树精简基（英文）。王涛、卢炎生合著；Journal of Southeast University (English Edition) 2006(01)。",
+            "sources": ["10"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "挖掘序列模式和结构化模式的精简集。学位论文；王涛；华中科技大学，2006。",
+            "sources": ["11"],
+            "timeScope": "知网作者页列为学位论文；未读取全文"
+          },
+          {
+            "text": "一种基于频繁子树的数据库索引方法。王涛；《华中科技大学学报（自然科学版）》2008(03)。",
+            "sources": ["12"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "一种主动实时数据库语言——ARTDBL。张文彬、王涛、卢炎生合著；《计算机工程与应用》1998(07)。",
+            "sources": ["13"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "一种更新频繁项目集的快速算法。王涛、卢炎生合著；《计算机工程与科学》2007(02)。",
+            "sources": ["14"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "一种挖掘 free 项目集的快速算法。赵栋、卢炎生、王涛合著；《小型微型计算机系统》2004(10)。",
+            "sources": ["15"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "在有噪音的环境中挖掘序列模式精简基。王涛；《华中科技大学学报（自然科学版）》2006(06)。",
+            "sources": ["16"],
+            "timeScope": "知网作者页记录；未读取全文"
+          },
+          {
+            "text": "一种用于快速关联规则挖掘的分段信息表生成算法。赵栋、卢炎生、王涛合著；《计算机工程与科学》2005(11)。",
+            "sources": ["17"],
+            "timeScope": "知网作者页记录；未读取全文"
+          }
+        ]
+      }
+    ],
+    "related": [
+      {
+        "label": "湖北经济学院信息工程学院教师主页",
+        "href": "https://ie.hbue.edu.cn/12/f3/c413a135923/page.htm"
+      },
+      {
+        "label": "论文：The Specialization of AGI: Exploration of Industrial Applications for General Artificial Intelligence",
+        "href": "https://link.springer.com/chapter/10.1007/978-981-96-0354-1_27"
+      },
+      {
+        "label": "知网作者知网节：王涛（湖北经济学院）",
+        "href": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOqsShPIKDjFeYa5v7nUEhGQlT-Z-tEF3M2u5P8VuVTsu6jMKEubtywEb1LA_gTF1xbFql_UqkxGdnIFPIzRXpWYUewZTRRjhH4_UOlFEUW1X6NhJEuhoRFMJ8CVaIRAywavPfCyjENcUA=="
+      },
+      {
+        "label": "协会成员名录",
+        "href": "/about/team"
+      }
+    ],
+    "sources": [
+      {
+        "id": "1",
+        "label": "湖北经济学院信息工程学院：教师简介“王涛”（2017-06-16）",
+        "url": "https://ie.hbue.edu.cn/12/f3/c413a135923/page.htm",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "2",
+        "label": "Springer Nature：The Specialization of AGI（AILA 2024，First Online 2025-01-31）",
+        "url": "https://link.springer.com/chapter/10.1007/978-981-96-0354-1_27",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "3",
+        "label": "中国知网作者知网节：王涛（湖北经济学院）",
+        "url": "https://kns.cnki.net/kcms2/author/detail?v=DrqODIoCYOqsShPIKDjFeYa5v7nUEhGQlT-Z-tEF3M2u5P8VuVTsu6jMKEubtywEb1LA_gTF1xbFql_UqkxGdnIFPIzRXpWYUewZTRRjhH4_UOlFEUW1X6NhJEuhoRFMJ8CVaIRAywavPfCyjENcUA==",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "4",
+        "label": "中国知网：《“智适应”理论与实践——第三届人工智能和自适应教育国际大会综述》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOrqzLLHRbgZNbwqoJDb_33sf7xAjw2Msi_1kujogZkqj9IM3ZyOxNAeDLR_SP2wr0sBt1CyKZanB6W15dSUfjU-cEIAaob7uHuUpXRKk-QPCarnikkXqvv7i1x5bwMOaJsg57Mgd81icg==&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "5",
+        "label": "中国知网：《软件漏洞静态检测模型及检测框架》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOrqzLLHRbgZNbwqoJDb_33sf7xAjw2Msi9MWDOHxAzI1-J7pEg7ZTgcKGMEpqrah5l2z1cvYk3Oqegniy72Wx1uAwJfykXDzmRPYmDu3i_o5xR3pQ3OfzlHcf_cZdAULjl_0PQNL0WG-A==&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "6",
+        "label": "中国知网：《软件工程人才培养模式的改革探索》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOrqzLLHRbgZNbwqoJDb_33sf7xAjw2Msi9kvsp1t2wYycl-I9KLYJA0hOep0tcm876ifSTPTB2_sX58qH-3c8hrzW_J9qzOompLlRK23yyHtfWhI4cs0jI3p4dUtZPFWbc=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "7",
+        "label": "中国知网：《使用序列模式精简基挖掘序列模式》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOrqzLLHRbgZNbwqoJDb_33sf7xAjw2Msi8OXuA2q5-THb5cW51srjsLJCcHSy9X-btNNdCzPTVFaIIex4xfRYMrTB6ti1vI6nT5YRsBB_b_BK66tcTQ-InrPzrQF1TW5XM=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "8",
+        "label": "中国知网：《移动 Ad Hoc 网络 OLSR 路由协议中虫洞问题的研究》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOrqzLLHRbgZNbwqoJDb_33sf7xAjw2Msi9MWDOHxAzI16mjhw2QjqWC0pzioaZqXEqvi6czT_4Nw94ITRRuXFgSK-JwEcRgA_yRvqtcviJ7LOvBROoxC5izONaOyIvT1x8=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "9",
+        "label": "中国知网：《压缩频繁序列模式集》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOp7ClXM0lFu5fbFcvQn34kEZl3JrJ6_XoXPukV65BnD4hROmh62fc7CAi9IVrLRP131goIl4qQpoRVK3AZZPuV4ykhEOsGohSCuvS0ej6FcO588pj46n-3rPdXdiEFtbFM=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "10",
+        "label": "中国知网：《挖掘频繁子树精简基（英文）》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOp7ClXM0lFu5fbFcvQn34kEZl3JrJ6_XoV1tbqZXJXuh04sLQAjPqgwuwatHUL7lTwV6wdXzmBxRcdvnaTEg5DB_l3LGW4UTHlUptJ4kQCvAxDMtmaSW1mk59r7a1dJHNA=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "11",
+        "label": "中国知网：学位论文《挖掘序列模式和结构化模式的精简集》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOp7ClXM0lFu5fbFcvQn34kEh-DZsHK5WPt-RdG5w27O5OnROAyJPvbyrIxi_ZFyUzgJ2dtlrtQGSS4bcUB1LogSTkngMb6XyzyOm_yUlJ34p1HaKmaNM_rcpemo-pALp8Bywq00VilO4w==&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "12",
+        "label": "中国知网：《一种基于频繁子树的数据库索引方法》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOp7ClXM0lFu5fbFcvQn34kEZl3JrJ6_XoV85PmIOkeqpwpJYfgkNTrRrddtzyBXMWYuQGna-EVyLUFRHa1uvLYzAj_hknI_OA4elqPrfGespNqH3IU3nxK3EnUboHqN8pY=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "13",
+        "label": "中国知网：《一种主动实时数据库语言——ARTDBL》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOp7ClXM0lFu5fbFcvQn34kEZl3JrJ6_XoWhu-XD0VSCAsGr9rHwued6331ys_iO3WtYir9UL5DrZuGDtLZji8br-RyNvHYE5-K-gqg8B9O56t8R0eibgsOIvYSLrHY4TPU=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "14",
+        "label": "中国知网：《一种更新频繁项目集的快速算法》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOoWf37ecTuqAZtFmoTgXK1dYt29jLAyGPuwiRfA2uivcqA5h1f390fQqNgMug-W2D9DBStJlHCEZsAM0_b-EJJY9huPPJ-hZLtuwy5pth7xlQFTaqiQF3P1wJ86aqcXrbo=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "15",
+        "label": "中国知网：《一种挖掘 free 项目集的快速算法》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOoWf37ecTuqAZtFmoTgXK1dYt29jLAyGPtZyRTOzVbl_KCzBrjTuMAZ7EAJnVEJdfwcbdU4uaG13L3qwoRTgHEOXrLjuZyjI-TOAorQGTYCampE2cchzBPWLn4r1uymSV4=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "16",
+        "label": "中国知网：《在有噪音的环境中挖掘序列模式精简基》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOqe8-EugE0gP-6TJUITcpcqV4yY8hUx5FVA1OBf0cAK4cVPrY06KF2G62MGENl_vRwHTuqkTpOyK0EdDGPhwhjLnLh9t1X-Pb1fAd2a7DvCE1WOxpGJhwmphRoQBRY-s_Y=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      },
+      {
+        "id": "17",
+        "label": "中国知网：《一种用于快速关联规则挖掘的分段信息表生成算法》",
+        "url": "https://kns.cnki.net/kcms2/article/abstract?v=DrqODIoCYOo9YisVsiV5Zy6j3nZtXQMZEu8O0TuCS2K6MhtfzfnMmGWrRI0RDg5raIQjCrBEZgAez2taoBuW457AcgsBIRoDUpgAd2Z8lx92Z3ZXkBjjNBBHRG5sjq6E2lpdfV0RFA0=&uniplatform=NZKPT&language=CHS",
+        "observedOn": "2026-10-25"
+      }
+    ],
+    "limitations": "职称、课程及教育/工作经历据湖北经济学院教师简介记载（页面日期2017-06-16）；2025年Springer论文及知网作者页列有湖北经济学院相关作者记录。2017页面中的“至今”不代表已确认2026年现职。页面未收录邮箱、性别和籍贯等非必要字段。照片来自校方主页，版权归原权利人，未见开放许可声明；不适用本站文字的CC BY-SA许可。"
   }
 ]

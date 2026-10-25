@@ -14,7 +14,7 @@ comments: true
 |---|---|
 | 代际 / 定位 | Python 到 TypeScript 的迁移实现 |
 | 编程语言 | TypeScript（仓库 API 未声明语言） |
-| 作者 / 维护组织 | 孙常新（原作者）；破耳狼（现作者） |
+| 作者 / 维护组织 | [[/wiki/people/sun-changxin\|孙常新]]（原作者）；破耳狼（现作者） |
 | 代码仓库 | [仓库](https://gitee.com/poerlang/nars_cxin_py_to_ts) |
 | 许可证 | 未声明 |
 | Narsese / NAL 边界 | 本轮未从仓库元数据确认 NAL 覆盖范围 |
@@ -27,7 +27,7 @@ comments: true
 
 [GitHub↗](https://gitee.com/poerlang/nars_cxin_py_to_ts)
 
-- 原作者：*孙常新 (Changxin Sun)*
+- 原作者：*[[/wiki/people/sun-changxin|孙常新]] (Changxin Sun)*
     - [GitHub↗](https://github.com/AIxer)
 - 现作者：*破耳狼 (poerlang)*
     - [GitHub↗](https://gitee.com/poerlang/)

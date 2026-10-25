@@ -18,7 +18,7 @@ AGI 资料中的“智能”并不总指同一件事。读到一个项目时，�
 
 ### 先给“通用”一个具体含义
 
-想弄清“机器能聊天，是否就算拥有通用智能”，可以先读[王培的 AGI 入门导读](https://cis.temple.edu/~pwang/AGI-Intro.html)，再对照[智能定义论文](https://cis.temple.edu/tagit/publications/PAGI-TR-9.pdf)。阅读时留意作者怎样描述系统的任务、限制和评价标准。下面的 S09、S01 记录了原文入口与核验范围。
+想弄清“机器能聊天，是否就算拥有通用智能”，可以先读[[/wiki/people/wang-pei|王培]]的 [AGI 入门导读](https://cis.temple.edu/~pwang/AGI-Intro.html)，再对照[智能定义论文](https://cis.temple.edu/tagit/publications/PAGI-TR-9.pdf)。阅读时留意作者怎样描述系统的任务、限制和评价标准。下面的 S09、S01 记录了原文入口与核验范围。
 
 这里也值得停一下：AGI 与 strong AI 不能不加说明地画等号。前者通常讨论能力的通用性；Searle 在 1980 年的哲学语境里讨论的是程序是否真正具有理解和认知状态。两种问题可以相遇，却不应被一个标签抹平。参见 [Searle 原文](https://www.cs.tufts.edu/comp/50cog/readings/searle.html)及 S02。
 
@@ -32,7 +32,7 @@ AGI 资料中的“智能”并不总指同一件事。读到一个项目时，�
 
 NARS 并不是一个可以用“改造的贝叶斯网络”概括的系统。它将真值和意义联系到已有经验，并把推理与有限资源下的控制放在一起研究。[经验语义论文](https://www.cis.temple.edu/~pwang/Publication/semantics.pdf)是继续往下读的起点。
 
-例如，在王培 [2001 年的置信度论文](https://www.cis.temple.edu/~pwang/Publication/confidence.pdf)中，频率 f=w+/w 表达正证据比例，置信度 c=w/(w+k)、k>0 保留证据量的信息。两组经验可以有相同的正证据比例，却有不同的证据量；这正是两个数而不是一个数有用的地方。置信度不等同于“命题为真的概率”。论文中的贝叶斯比较是作者的论证，也不意味着整个领域已经接受了同一结论。
+例如，在[[/wiki/people/wang-pei|王培]] [2001 年的置信度论文](https://www.cis.temple.edu/~pwang/Publication/confidence.pdf)中，频率 f=w+/w 表达正证据比例，置信度 c=w/(w+k)、k>0 保留证据量的信息。两组经验可以有相同的正证据比例，却有不同的证据量；这正是两个数而不是一个数有用的地方。置信度不等同于“命题为真的概率”。论文中的贝叶斯比较是作者的论证，也不意味着整个领域已经接受了同一结论。
 
 需要接着读理论，可以从[知识地图](/learn/map)查找正文；想了解某位作者的工作，可查看[人物研究资料](/about/people)中的著作与会议报告。
 
@@ -240,7 +240,7 @@ NARS 并不是一个可以用“改造的贝叶斯网络”概括的系统。它
 </details>
 
 <details class="resource-entry" id="resource-s15">
-<summary><strong>S15 · B站视频BV1zA411u7rC（旧清单称刘凯_AGI）</strong><span>本轮读取失败</span></summary>
+<summary><strong>S15 · B站视频BV1zA411u7rC（旧清单称[[/wiki/people/liu-kai|刘凯]]_AGI）</strong><span>本轮读取失败</span></summary>
 
 [打开原始资料](https://www.bilibili.com/video/BV1zA411u7rC)
 
@@ -268,7 +268,7 @@ NARS 并不是一个可以用“改造的贝叶斯网络”概括的系统。它
 </details>
 
 <details class="resource-entry" id="resource-s17">
-<summary><strong>S17 · Google Scholar学者页（旧清单称王培）</strong><span>本轮读取失败</span></summary>
+<summary><strong>S17 · Google Scholar学者页（旧清单称[[/wiki/people/wang-pei|王培]]）</strong><span>本轮读取失败</span></summary>
 
 [打开原始资料](https://scholar.google.com/citations?hl=en&user=-EYJLoMAAAAJ)
 
