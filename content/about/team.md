@@ -9,15 +9,15 @@ comments: true
 1. 创办人：[[#王培]]（[[../wiki/people/wang-pei|人物独页]]）、[[../wiki/people/hu-xiangen|胡祥恩]]
 2. 专家组：[[#徐英瑾]]（[[../wiki/people/xu-yingjin|人物独页]]）、[[#魏屹东]]（[[../wiki/people/wei-yidong|人物独页]]）、[[../wiki/people/sang-xinmin|桑新民]]、[[../wiki/people/wang-weijun|王伟军]]
 3. 秘书组：[[#刘凯]]（[[../wiki/people/liu-kai|人物独页]]）、[[#李祥]]（[[../wiki/people/li-xiang|人物独页]]）、[[#那孜古力·斯拉木(那迪)|那迪]]（[[../wiki/people/naziguli-slam|人物独页]]）、黄英辉
-4. 会员组：陈礼军、冯博杰、[[../wiki/people/jia-min|贾敏]]、贾晓刚、柯东、李光辉、李汤睿、林嘉濠、刘子莫、马翰林、墨\_AGI、沈建铭、王涛、王泰然、[[../wiki/people/wu-yuxi|吴雨曦]]、吴叶、吴震宇、徐博文、徐川皓、[[../wiki/people/yang-yaya|杨亚亚]]、杨旭、杨金才、于志浩、张涛、周泽恩
+4. 会员组：陈礼军、冯博杰、[[../wiki/people/jia-min|贾敏]]、贾晓刚、柯东、李光辉、李汤睿、林嘉濠、刘子莫、马翰林、墨\_AGI、沈建铭、[[../wiki/people/wang-tao|王涛]]、王泰然、[[../wiki/people/wu-yuxi|吴雨曦]]、吴叶、吴震宇、徐博文、徐川皓、[[../wiki/people/yang-yaya|杨亚亚]]、杨旭、杨金才、于志浩、张涛、周泽恩
 
 ---
 
 ## 王培
 
-> 美国天普大学计算机系教授，博士生导师。博士师从侯世达（Douglas Hofstadter）。
+> 美国天普大学计算机系教授，博士生导师。曾在侯世达（Douglas Hofstadter）指导下攻读博士学位。
 
-![王培老师相片](./image/team/王培老师相片.png)
+![王培教授照片](./image/team/王培老师相片.png)
 
 [学术主页↗](https://cis.temple.edu/~pwang/)
 [个人CV↗](https://cis.temple.edu/~pwang/PeiWangCV.html "Curriculum Vitae of Pei Wang (temple.edu)")
@@ -42,8 +42,8 @@ comments: true
 
 同时也是
 
-1. 中国NARS小组的指导老师
-2. 中国通用人工智能协会的常驻点评指导老师
+1. 中国 NARS 小组的指导教授
+2. 中国通用人工智能协会的常驻学术点评人
 
 关于王培教授的头衔和周边，实在太多，建议点击下面的链接，观看视频，阅读论文和项目源码，了解详情：
 
@@ -94,7 +94,7 @@ comments: true
 
 ## 徐英瑾
 
-> 哲学博士，复旦大学哲学学院教授，博士生导师
+> 复旦大学哲学学院教授，博士生导师
 
 [[../wiki/people/xu-yingjin|人物独页与关联资料]]
 
@@ -139,13 +139,13 @@ comments: true
 
 ## 那孜古力·斯拉木(那迪)
 
-> 讲师、工学博士、硕士生导师；西北民族大学人工智能学院、中国民族信息技术研究院。
+> 讲师、硕士生导师；西北民族大学人工智能学院、中国民族信息技术研究院。
 
 [[../wiki/people/naziguli-slam|人物资料：履历、成果与协会报告]] · [西北民族大学主页↗](https://www.xbmu.edu.cn/xxy/info/2851/6932.htm) · [知网作者检索↗](https://chn.oversea.cnki.net/kcms2/author/detail?v=wRD08hUPYgwHqv6pqt1Lry077C8HmYeFUg_u_vKAKELr9EuNyzuelYm8aFEHWLCDlsaQ35mKa0ssz5y7seHPRwYweIqJYvLqGRxektNLWL-gjim3eRBvXXRWBg--mAzQraqInCBc1Zy03vfEnEBPhEIi3C0Kz5X0byKD64Kg2olxmlgOimKHfRjBS1efeJAW&uniplatform=NZKPT&language=CHS)
 
 ## 魏屹东
 
-> 博士，山西大学教授，哲学方向博士生导师
+> 山西大学教授，哲学方向博士生导师
 
 [[../wiki/people/wei-yidong|人物独页与关联资料]]
 
@@ -163,7 +163,7 @@ comments: true
 
 [查看独立人物页与关联成果](/wiki/people/li-xiang)
 
-> 博士，辽宁工业大学计算机讲师，人工智能方向硕士生导师。博士师从王培
+> 辽宁工业大学计算机讲师，人工智能方向硕士生导师；曾在王培教授指导下攻读博士学位。
 
 [学术主页↗](https://seie.lnut.edu.cn/info/14393/185134.htm)
 [email↗](mailto:xiangliagi@lnut.edu.cn)

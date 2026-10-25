@@ -22,7 +22,7 @@ for(const [id,photo] of Object.entries(expectedPhotos)){
  assert.equal(crypto.createHash('sha256').update(fs.readFileSync('content/about/image/people/'+photo.file)).digest('hex'),photo.sha256,`Exact portrait bytes: ${id}`)
 }
 const people=readPeople();assert.equal(new Set(people.map(p=>p.id)).size,people.length)
-assert.deepEqual(people.filter(p=>p.id!=='huang-yinghui').map(p=>p.id).sort(),[...frozen.identities.map(p=>p.id),'li-xiang'].sort())
+assert.deepEqual(people.filter(p=>!['huang-yinghui','wang-tao','qi-haibin'].includes(p.id)).map(p=>p.id).sort(),[...frozen.identities.map(p=>p.id),'li-xiang'].sort())
 for(const old of frozen.identities){const p=people.find(p=>p.id===old.id);assert.deepEqual({id:p.id,name:p.name,aliases:p.aliases},old)}
 const graph=buildRelations({people,pages:readPages('content')});const key=e=>JSON.stringify([e.from,e.to,e.role,e.rule,e.source,e.status,e.confidence]);const current=new Set(graph.edges.map(key))
 for(const old of frozen.relations){
@@ -34,7 +34,7 @@ for(const old of frozen.relations){
 }
 assert.equal(graph.edges.filter(e=>e.to==='/wiki/people/li-xiang'&&e.role==='speaker'&&e.rule==='agenda-speaker-column').length,14)
 const boundary=JSON.parse(fs.readFileSync('scripts/offline/release-boundary.json'))
-assert.deepEqual(boundary.routes.filter(p=>p!=='/wiki/people/huang-yinghui'),[...frozen.boundary.routes,'/wiki/people/li-xiang','/wiki/people/naziguli-slam'].sort())
+assert.deepEqual(boundary.routes.filter(p=>!['/wiki/people/huang-yinghui','/wiki/people/wang-tao','/wiki/people/qi-haibin'].includes(p)),[...frozen.boundary.routes,'/wiki/people/li-xiang','/wiki/people/naziguli-slam'].sort())
 assert.deepEqual(boundary.sourceFiles.filter(p=>p!=='/source/content/about/image/people/huang-yinghui-ccnu.png'),[...frozen.boundary.sourceFiles,'/source/content/about/image/people/li-xiang.jpg','/source/content/about/image/people/liu-kai-personal-introduction-pptx.jpeg','/source/content/about/image/people/naziguli-slam-xbmu.jpg'].sort())
 assert.deepEqual(boundary.unlisted,frozen.boundary.unlisted)
 assert.equal(boundary.notice,frozen.boundary.notice)

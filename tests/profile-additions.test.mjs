@@ -9,8 +9,25 @@ const navigationPromotions=JSON.parse(fs.readFileSync('tests/fixtures/member-nav
 const profiles=JSON.parse(fs.readFileSync('data/people-profiles.json','utf8'))
 const digest=value=>crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex')
 const people=readPeople(), byId=new Map(people.map(p=>[p.id,p]))
+const identityOnlyAdditions=['wang-tao','qi-haibin']
+const boundary=JSON.parse(fs.readFileSync('scripts/offline/release-boundary.json','utf8'))
 assert.equal(byId.size,people.length,'Never duplicate a migrated identity')
-assert.deepEqual(people.filter(p=>!['li-xiang','huang-yinghui'].includes(p.id)).map(p=>p.id).sort(),[...contract.historicalIdentities.map(p=>p.id),'naziguli-slam'].sort(),'Exactly one new identity; Liu Kai keeps the existing ID')
+assert.deepEqual(people.filter(p=>!['li-xiang','huang-yinghui',...identityOnlyAdditions].includes(p.id)).map(p=>p.id).sort(),[...contract.historicalIdentities.map(p=>p.id),'naziguli-slam'].sort(),'Preserve historical identities; Liu Kai keeps the existing ID')
+assert.deepEqual(people.filter(p=>identityOnlyAdditions.includes(p.id)).map(p=>p.id).sort(),identityOnlyAdditions.toSorted(),'Only the two requested identity-only people pages are added')
+assert.deepEqual(identityOnlyAdditions.map(id=>({id:byId.get(id).id,name:byId.get(id).name,aliases:byId.get(id).aliases})),[
+ {id:'wang-tao',name:'王涛',aliases:[]},
+ {id:'qi-haibin',name:'齐海滨',aliases:[]}
+])
+for(const id of identityOnlyAdditions){
+ const page=matter(fs.readFileSync(`content/wiki/people/${id}.md`,'utf8'))
+ assert.equal(page.data.personId,id,`Identity page route binds to the exact ID: ${id}`)
+ assert.ok(page.content.includes('<PersonProfile />'))
+ assert.ok(boundary.routes.includes(`/wiki/people/${id}`),`Public release boundary includes ${id}`)
+}
+const newEdges=buildRelations({people,pages:readPages('content')}).edges
+assert.ok(newEdges.some(edge=>edge.to==='/wiki/people/wang-tao'&&edge.role==='speaker'),'Wang Tao is linked to agenda speaker records')
+assert.ok(newEdges.some(edge=>edge.to==='/wiki/people/qi-haibin'&&edge.role==='speaker'&&edge.from==='/conference/group/2018-2019'),'Qi Haibin is linked to the sourced 2018–2019 report')
+assert.ok(fs.readFileSync('content/about/team.md','utf8').includes('[[../wiki/people/wang-tao|王涛]]'),'The member roster links Wang Tao to his page')
 for(const prior of contract.historicalIdentities){const current=byId.get(prior.id);assert.ok(current,prior.id);assert.deepEqual({id:current.id,name:current.name,aliases:current.aliases},prior)}
 assert.deepEqual(profiles.filter(p=>!['li-xiang','huang-yinghui'].includes(p.id)).map(p=>p.id).sort(),[...Object.keys(contract.historicalProfiles),...Object.keys(contract.expectedAdditionProfiles)].sort())
 for(const [id,sha] of Object.entries({...contract.historicalProfiles,...contract.expectedAdditionProfiles})) assert.equal(digest(beforeMentorWithdrawal(profiles.find(p=>p.id===id))),sha,`Profile changed beyond reviewed scope: ${id}`)
@@ -37,7 +54,7 @@ for(const id of ['liu-2018-machine-education','liu-2023-dual-paradigm','liu-2023
  const title=matter(fs.readFileSync(`content/wiki/papers/${id}.md`,'utf8')).data.title
  assert.equal(liu.related.find(r=>r.href===`/wiki/papers/${id}`).label,`论文：${title}`)
 }
-console.log(`PASS profile additions: 15 historical identities, 6 full historical profiles, 628 historical relations (${promotedRelations} member-name edges resolve to explicit links), ${Object.keys(contract.expectedPortraits).length} fixed portrait hashes; two added full profiles and exactly one new person ID; three precise paper titles.`)
+console.log(`PASS profile additions: 15 historical identities, 6 full historical profiles, 628 historical relations (${promotedRelations} member-name edges resolve to explicit links), ${Object.keys(contract.expectedPortraits).length} fixed portrait hashes; two full-profile additions and two separately bounded identity-only pages; three precise paper titles.`)
 
 // The explicit new layer must validate every excluded Li Xiang record and all d594 state.
 await import('./li-xiang-expansion.test.mjs')

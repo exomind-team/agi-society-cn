@@ -31,14 +31,34 @@
 @media (min-width: 768px) {
   .VPNavBar .VPNavBarSearch { padding-left: 36px; padding-right: 12px; }
 }
-/* The title + preview identity exceeds the default sidebar title slot.
-   Keep the header in normal flex layout on document pages as on the homepage. */
+/* Keep desktop document headers on the same alignment grid as the homepage.
+   Prefix VPNav so these rules beat VitePress's later, equally specific
+   has-sidebar defaults at 960px and 1440px. */
 @media (min-width: 960px) {
-  .VPNavBar.has-sidebar .wrapper { padding: 0 32px; }
-  .VPNavBar.has-sidebar .container { max-width: calc(var(--vp-layout-max-width) - 64px); }
-  .VPNavBar.has-sidebar .container > .title { position: static; width: auto; padding: 0; }
-  .VPNavBar.has-sidebar .content { padding: 0; }
-  .VPNavBar.has-sidebar .VPNavBarTitle .title { border-bottom-color: transparent; }
+  .VPNav .VPNavBar.has-sidebar .wrapper { padding: 0 32px; }
+  .VPNav .VPNavBar.has-sidebar .container { max-width: calc(var(--vp-layout-max-width) - 64px); }
+  .VPNav .VPNavBar.has-sidebar .container > .title { position: static; width: auto; padding: 0; }
+  .VPNav .VPNavBar.has-sidebar .content { padding: 0; }
+  .VPNav .VPNavBar.has-sidebar .divider { padding-left: 0; }
+  .VPNav .VPNavBar.has-sidebar .VPNavBarTitle .title { border-bottom-color: transparent; }
+}
+
+/* Keep the document tree's scroll affordance quiet and on-brand without
+   changing the browser's page scrollbar or the sidebar's scroll behavior. */
+.VPSidebar {
+  scrollbar-color: color-mix(in srgb, var(--vp-c-text-3) 36%, transparent) transparent;
+  scrollbar-width: thin;
+}
+.VPSidebar::-webkit-scrollbar { width: 8px; }
+.VPSidebar::-webkit-scrollbar-track { background: transparent; }
+.VPSidebar::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+  background-color: color-mix(in srgb, var(--vp-c-text-3) 36%, transparent);
+}
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: color-mix(in srgb, var(--vp-c-brand-1) 72%, transparent);
 }
 /* Six Chinese navigation groups need more room than VitePress's 768px default.
    Keep all destinations available through the same accessible menu on tablets. */

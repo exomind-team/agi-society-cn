@@ -96,7 +96,7 @@ for(const page of raw){
 }
 for(const route of ['conference/index.html','conference/annual/index.html']){
  const doc=html('dist/'+route)
- const links=all(doc,n=>n.tagName==='a').map(n=>attrs(n).href)
+ const links=all(doc,n=>n.tagName==='a').map(n=>(attrs(n).href||'').replace(/^\/agi-society-cn(?=\/|$)/,''))
  assert.ok(links.includes('/conference/annual/2025')&&links.includes('/conference/annual/2026'))
 }
 for(const p of people) {
