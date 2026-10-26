@@ -128,9 +128,11 @@ npm run serve        # 预览构建产物
 
 ## 开发参考
 
-- [CLAUDE.md](./CLAUDE.md) — Agent 开发规范（15 章）
+- [CLAUDE.md](./CLAUDE.md) — Agent 开发规范（13 章）
 - [CONTRIBUTING.md](./CONTRIBUTING.md) — 贡献指南
 - [官网后续维护计划](./docs/website-maintenance-plan.md) — 教师友好编辑流程、新闻动态采集与发布边界
+- [NARS 项目与资料维护策略](./docs/nars-catalog-policy.md) — NARS 条目收录范围与查重
+- [内容与代码维护细则](./docs/development-maintenance.md) — Wikilink、补丁、渲染排障与内容恢复
 - [Nólëbase 文档](https://nolebase.ayaka.io/)
 - [VitePress 文档](https://vitepress.dev/)
 

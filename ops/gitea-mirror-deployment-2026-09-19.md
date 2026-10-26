@@ -25,6 +25,18 @@ main 推送
 
 Gitea Release 只承载已构建产物；Gitea 的 `main`、`dev` 则作为 GitHub 的源码镜像，二者独立维护。
 
+## 手动 SSH 授权边界
+
+本地运维对话中的“ssh exe”专指使用 ssh-as-executable 构建的 exe，通过该 exe 的专用程序代理连接。除非维护者明确扩大授权，授权仅限所指单个任务、单次使用；不能推定为持续访问权限，也不能挪用于后续任务。
+
+## 腾讯云公开根目录核验（2026-10-26）
+
+`www.agi-society.cn` 的 Nginx vhost（`wordpress.local.conf`）实际以 `/var/www/agi-society-pioneer/current` 为站点根目录。仓库内 `ops/agi-wiki-deploy` 的 `activate` 命令目前只切换 `/var/www/agi-wiki/current`；这两个目录不是同一个站点根目录，因此部署 helper 报成功并不必然代表 `www` 已更新。
+
+经维护者授权，本轮从已校验的 `/var/www/agi-wiki/releases/6ce495b9db48a72f4308aa40c90de7625e7c6e64` 将同版静态内容复制到 Pioneer release，并原子切换 `/var/www/agi-society-pioneer/current`。旧 release `b719c21c079f8f1c1026be209aac96206c67864` 保留；Nginx 配置未修改、服务未重载。公网核验确认修订标记匹配，贾敏、齐海滨和王涛人物页均返回 HTTP 200，人物名与预期来源链接存在。
+
+**自动化缺口仍存在：** Gitea 拉取和 SCP 回退使用的服务器 `agi-wiki-deploy` 仍只激活 `agi-wiki` 根目录。后续要让常规 Tencent workflow 持续更新 `www`，需审阅并发布相应的部署 helper/workflow 改动；对服务器 helper 的生产配置写入需另有明确授权。本轮仅修复当前站点内容版本。
+
 源码同步使用 Gitea 原生镜像接口 `POST /api/v1/repos/agiteam/agi-society-cn/mirror-sync`，而不是向镜像仓库执行 `git push`。这是必要的：该仓库在 Gitea 中被标记为只读镜像，直接 push 会得到 `mirror repository is read-only`；工作流触发同步后，会轮询并核验 Gitea 的 `main`、`dev` 提交哈希均与 GitHub 一致。
 
 腾讯云 WordPress 站点通过 Nginx `/wiki/` 反向代理到本机 `127.0.0.1:8085`，后者读取 `/var/www/agi-wiki-wordpress/current`。专用 `/wiki/` 构建产物保证资源和内部链接继续带有 `/wiki/` 前缀。

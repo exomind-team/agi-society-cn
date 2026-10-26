@@ -169,72 +169,8 @@ tests/
 - `ignoreDeadLinks: true` 已配置，但仍需关注构建警告
 
 ### NARS 与会议资料维护
-
-- 修改 `data/nars-implementations.json` 后运行 `npm run nars:catalog`，不要手工维护总表的重复字段
-- B 站候选审计需要先通过 web-access/CDP 打开协会官方空间，再运行 `node scripts/audit-bilibili-conference.mjs --target=<CDP target id> --write`
-- B 站脚本只生成候选报告，不自动把视频归入年会或组会；正式入库前必须核对标题、发布时间、合集分页与议程
-- NARS 理论原始资料入口维护在 `content/research/nars/theory/nac/source-materials.md`
-
-#### 标准化 NARS 项目收录流程
-
-新项目从发现到正式收录统一走这套（脚本 + 人工两步）：
-
-1. **运行 `scripts/ingest-nars-project.mjs` 起草元数据**
-   ```bash
-   node scripts/ingest-nars-project.mjs \
-     --owner=<owner> --repo=<repo> \
-     --target=impl|derivatives \
-     --tier=A1|A2|A3|B1|B2 \
-     [--page=<page-id>] [--name=<display-name>]
-   ```
-   脚本自动拉 GitHub 元数据（fork 链 / parent / source / stars / README 前 30 行），按 §"收录 NARS 实现的查重纪律" 做出 PASS / WARN 提示，并把项目页骨架打印到 stdout。脚本**不修改任何文件**
-
-2. **人工根据骨架写项目页**
-   - README 取摘要、改正语言、补 author / license / 来源溯源
-   - 顶部"层级"标注保留用户的 --tier 提示
-   - 写文件到 `content/projects/nars_{impl,derivatives}/<page>.md`
-
-3. **同步索引页 / JSON 数据源**（按目标分类）
-   - `target=impl`：在 `data/nars-implementations.json` 加 entry 后跑 `npm run nars:catalog`，render-nars-index.mjs 自动把行加到 nars_impl/index.md
-   - `target=derivatives`：手工在 `content/projects/nars_derivatives/index.md` 的"已收录"表格加行；分类体系用 A/B + 子档 1/2/3
-
-4. **commit + push** 后执行 `npm run publish:tencent --confirm=tencent-main` 让腾讯云镜像同步
-
-5. **复核**：`npm run build` + `npm run check:content-links`，确保 wikilink 与表格 `\|` 转义符合 §9
-
-### 收录 NARS 实现的查重纪律
-
-- 在 `data/nars-implementations.json` 新增任何 NARS 实现条目之前，必须做"代码/来源溯源"
-- 溯源手段（按可信度排序）：
-  1. 通过 `gh api repos/<owner>/<repo> --jq '{fork, parent, source}'` 拿 fork 链，明确上游（fork 透明可接受）
-  2. 抽样对比 mininars.nars_core_java/nars/main_nogui/*.java 与本地 OpenNARS v3.x 仓库 `src/nars/main/*.java` 的 package + 起始几行
-  3. 必要时整目录 `diff -rq` 或抽样全文比对
-- 明确边界：
-  - 接受：fork 链透明（GitHub parent/source 可见）+ 有具体二次改造（如精简模块、增 NAL 层、改 GUI、换语言重写）
-  - 拒绝：换名复刻（同一份代码换维护者/换项目名，无可核验的二次改造）——除非项目方明确说明
-- 文档化：所有 NARS 实现条目须在 `notes` / `generation` 字段写明上游来源与本次精简内容；若属 fork 链一目了然，在项目页正文也要再次注明
-- 例外（如特殊说明 fork 即停刊的归档项目）单独评估，且笔记里要写明评估依据
-
-### NARS 实现的准入范围
-
-- NARS 实现（`nars_impl`）须同时满足两条：
-  1. **原创 NARS 推理器代码**：自己实现 Narsese 解析、NAL 规则、控制机制等核心组件；可以是他人项目的 fork + 大量二次改造（如 OpenNARS 系列的 C / Clojure / Python / Julia / Rust / TypeScript / Swift 衍生实现），但**不能是只换名搬运**的纯 fork
-  2. **对外提供基于 Narsese 的推理服务**：用户能够向程序提交 Narsese 输入并得到 NARS 推理输出
-- 只"受 NARS 启发"但用其他技术栈（LLM 提示工程、神经符号、强化学习等）的项目**不算** NARS 实现，归 `nars_derivatives`
-- 仅按"调用 NARS 作为子模块"而自己不实现推理器的项目，归 `nars_derivatives`（运行时集成层）
-
-### 衍生项目收录范围
-
-- nars_derivatives 只收录与 NARS（理论、内核、NAL、Narsese）有**直接字样**关联的衍生项目；不属于 NARS 但属于其他 AGI 平行理论的项目（即便作者相邻），不在本页收录
-- 当某个仓库跟 NARS 没直接字样、但跟 NARS 作者群有间接关联（fork 关系、共同目录、共同作者），应挂回对应原作者、并告知作者无关
-
-### 挂回原作者 / 范围声明
-
-- 当一个仓库 fork 自其它作者、且 GitHub 上没有清晰可核验的二次改造（PR、commit history、changelog 等），收录时应把候选条目挂在**原作者**名下，fork 仅作为补充链接，避免"换账号搬运"造成的归属漂移
-- 反例：把 poerlang 名下的 `he4o` / `HELIX_THEORY`（fork 自 jiaxiaogang/HE、jiaxiaogang/HELIX_THEORY，无独有改造）当作 poerlang 原创收录，会把原作者的署名错挂——应当挂在 jiaxiaogang 名下，且因这俩本质是 jiaxiaogang 的"螺旋抗熵"AGI 平行理论，与 NARS 没有直接字样关联，按 §"衍生项目收录范围"也不在 nars_derivatives 收录清单内
-- 普通推送不发布腾讯云生产镜像；生产发布只能执行 `npm run publish:tencent --confirm=tencent-main`，并在 GitHub Actions 手动确认 `publish_tencent=true`
-
----
+- 修改 data/nars-implementations.json 后运行 npm run nars:catalog；B 站候选审计须核对来源和议程。
+- 收录流程、查重纪律、项目范围与作者归属规则见 [NARS 项目与资料维护策略](./docs/nars-catalog-policy.md)。
 
 ## 8. 关键文件索引
 
@@ -252,66 +188,19 @@ tests/
 | `data/nars-implementations.json` | NARS 各实现的结构化基础资料 |
 | `tests/` | 所有测试脚本（6 个） |
 | `../CONTRIBUTING.md` | 项目贡献指南（Obsidian / GitHub / 本地构建三种路径） |
+| docs/nars-catalog-policy.md | NARS 条目收录与查重规则 |
+| docs/development-maintenance.md | Wikilink、补丁、渲染排障与内容恢复细则 |
 | `content/contact/contributing/obsidian.md` | Obsidian 编辑指南 |
 
 ---
 
-## 9. Wikilink 编写规范
+## 9. 内容与技术维护
 
-### 死命令
+- 全站内部 Markdown 页面使用 wikilink；改动后运行 npm run build 与 npm run check:content-links。
+- 不直接改 node_modules；依赖补丁必须有复现测试并按仓库 patch 流程验证。
+- Wikilink、Patch、渲染排障与内容恢复细则见 [内容与代码维护细则](./docs/development-maintenance.md)。
 
-**Obsidian 中能正常打开的链接，部署到网站必须同样有效并能打开。**
-
-### 命名原则
-
-- **能不用路径就不用路径**：`[[ona|ONA]]` 而非 `[[impls/ona|ONA]]`
-- 同名文件（如 `index.md` 有 29 个、`ona.md` 有 2 个）必须保留最小父目录前缀消歧义：`[[impls/ona|ONA]]`
-- 跨目录引用父级：`[[../index|NARS]]`
-- 全站统一使用 `[[wikilink]]`，**禁止**写 `[text](./path/to/file.md)` 形式的 Markdown 内链
-
-### 表格内的 wikilink
-
-表格中 `[[target|display]]` 的 `|` 会被 Markdown 解析为列分隔符，必须用反斜杠转义：
-
-```markdown
-| 届次 | 详情 |
-|------|------|
-| [[2016\|第一届]] | ... |
-```
-
-### 全站内链转换
-
-- 所有指向 `.md` 文件的内链必须转为 `[[wikilink]]` 格式
-- 外部链接（B站、GitHub、优酷）保持 `[text](url)` 不变
-- 图片链接保持 `![alt](url)` 不变
-
----
-
-## 10. Patch 规范（node_modules 修补）
-
-### 何时使用
-
-依赖包的 Bug 或缺失功能影响业务需求，且不适合 fork/等上游修复时。
-
-### TDD 流程
-
-1. 写最小复现测试钉住问题（`temp/test-xxx.js`）
-2. 修改 `node_modules` 中对应文件
-3. 测试通过后，运行 `npx patch-package <package-name>` 生成 patch
-4. `rm -rf node_modules && npm install` 验证 patch 自动生效（Unix 系列命令，无 Unix 环境则需使用等价命令）
-
-### 共享逻辑提取
-
-如果需要修改双入口包（`.cjs` + `.mjs`），将公共逻辑提取到一个 `.cjs` 文件，两个入口分别导入。**CJS 可以作为 CJS 和 ESM 的共同导入目标。**
-
-### 配置
-
-- `package.json` 的 `postinstall` 脚本已配置 `patch-package`，无需手动执行
-- `patches/` 目录随仓库提交
-
----
-
-## 11. Agent 行为边界
+## 10. Agent 行为边界
 
 ### 脚本纪律
 
@@ -322,48 +211,7 @@ tests/
 
 ---
 
-## 12. 链接与渲染
-
-### 渲染异常诊断流程
-
-Markdown → markdown-it 转译 → Vue 模板编译 → SSR → 客户端 hydration。每一层都可能出问题。
-
-- 查看构建产物的 SSR HTML 确认组件是否正确渲染
-- 查看编译后的 JS（`.lean.js`）确认 `resolveComponent` 调用
-- 第三方包有 bug 时在 VitePress 配置层禁用，不直接改 `node_modules`（除 TDD patch 流程外）
-
-### 脚本输出的 Markdown 必须构建验证
-
-`vitepress build` 后检查表格渲染为 `<table>` / `<th>` / `<td>`（不是 `<p>` 内嵌 `|`）。
-
-### 构建失败时优先清缓存
-
-```bash
-rm -rf dist .vitepress/cache node_modules/.vite
-npx vitepress build
-```
-
-> 注：以上为 Unix 系列命令，无 Unix 环境则需使用等价命令。
-
----
-
-## 13. 内容补全
-
-### 历史数据恢复三层策略
-
-1. **Git 历史** — `git show <commit> -- <file>` 提取原始内容
-2. **平台 API** — B站 `pagelist` 接口获取分P时间戳
-3. **浏览器搜索** — web-access / CDP 搜索缺失条目
-
-每层完成确认无遗漏后再进下一层。
-
-### 中文语义分割—脚本初稿，人工校验
-
-顿号 `、` 分隔的多人名、英文名、课题组名、"群体讨论"等非人名，脚本跑完必须人工复查。
-
----
-
-## 14. 协作基础设施
+## 11. 协作基础设施
 
 - `.obsidian/` 全部 Git 忽略（`content/.obsidian/`），各协作者自行配置
 - `CONTRIBUTING.md` 在项目根目录，提供多种贡献路径
@@ -372,7 +220,7 @@ npx vitepress build
 
 ---
 
-## 15. 协作流程
+## 12. 协作流程
 
 ### 重大决策前用结构化提问对齐认知
 
@@ -384,7 +232,7 @@ npx vitepress build
 
 ---
 
-## 16. 技术栈要点
+## 13. 技术栈要点
 
 - **Markdown 引擎**：markdown-it + `markdown-it-mark`（`==高亮==`）+ `markdown-it-obsidian-callouts` + `@nolebase/markdown-it-bi-directional-links`（`[[wikilink]]`）
 - **双向链接**：`bidirectionalLinks.dir` 指向 `content/` 目录，`[[nars/index|NARS]]` 格式
