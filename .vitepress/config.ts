@@ -123,10 +123,6 @@ export default defineConfig({
           state.src = state.src.replace(`<ConferenceYears kind="${kind}" />`, `<div class="conference-overview conference-${kind}">\n\n${resolved}\n\n</div>`)
         }
       })
-      md.core.ruler.before('normalize', 'homepage-people-view', (state) => {
-        if (state.env.relativePath !== 'index.md') return
-        state.src = state.src.replace(/<div class="team-grid">[\s\S]*?(?=\n<\/section>)/, '<PeopleDirectory />\n')
-      })
       md.use(obsidianCallouts)
       md.use(markdownItMark)
     },
@@ -138,15 +134,8 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
-      { text: '学习与知识', link: '/learn/map' },
-      { text: '研究与项目', items: [
-        { text: '研究方向', link: '/research/' },
-        { text: '选择项目', link: '/learn/projects' },
-        { text: '推理器实现', link: '/projects/nars_impl/' },
-        { text: '应用与工具', link: '/projects/nars_derivatives/' },
-      ] },
+      { text: '知识百科', link: '/wiki/' },
       { text: '会议与交流', link: '/conference/' },
-      { text: '社区 · 演示', link: '/community' },
       { text: '新闻动态', link: '/news' },
       { text: '关于与联系', items: [
         { text: '协会简介', link: '/about/' },

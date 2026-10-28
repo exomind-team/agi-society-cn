@@ -5,6 +5,7 @@ import { presetClient } from '@nolebase/integrations/vitepress/client'
 import DocFooterLicense from './components/DocFooterLicense.vue'
 import ResearchHome from './components/ResearchHome.vue'
 import ResearchNews from './components/ResearchNews.vue'
+import HomeNewsTeaser from './components/HomeNewsTeaser.vue'
 import KnowledgeMap from './components/KnowledgeMap.vue'
 import PeopleProfiles from './components/PeopleProfiles.vue'
 import PeopleDirectory from './components/PeopleDirectory.vue'
@@ -49,6 +50,7 @@ export default {
     ctx.app.component('PeopleIndex', PeopleIndex)
     ctx.app.component('ResearchHome', ResearchHome)
     ctx.app.component('ResearchNews', ResearchNews)
+    ctx.app.component('HomeNewsTeaser', HomeNewsTeaser)
     ctx.app.component('PeopleDirectory', PeopleDirectory)
     ctx.app.component('PeopleProfiles', PeopleProfiles)
     ctx.app.component('KnowledgeMap', KnowledgeMap)

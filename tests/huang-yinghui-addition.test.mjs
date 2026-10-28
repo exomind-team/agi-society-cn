@@ -14,7 +14,23 @@ for(const prior of old.people){const p=people.find(p=>p.id===prior.id);assert.de
 const edges=buildRelations({people,pages:readPages('content')}).edges
 const key=e=>JSON.stringify([e.from,e.to,e.role,e.rule,e.source,e.status,e.confidence]);const now=new Set(edges.map(key))
 const navigationPromotions=JSON.parse(fs.readFileSync('tests/fixtures/member-navigation-promotions.json','utf8'))
+const homepageLinkMigrations=JSON.parse(fs.readFileSync('tests/fixtures/profile-additions-contract.json','utf8')).homepageLinkMigrations
+const navSource=fs.readFileSync('.vitepress/config.ts','utf8')
+const contactSource=fs.readFileSync('content/contact/index.md','utf8')
+const homeNewsSource=fs.readFileSync('.vitepress/theme/components/HomeNewsTeaser.vue','utf8')
+const homeSource=fs.readFileSync('content/index.md','utf8')
+const memberRosterSource=fs.readFileSync('content/about/team.md','utf8')
 for(const e of old.relations) if(!isWithdrawnRelation(key(e),now)) {
+ const migration=homepageLinkMigrations.find(item=>JSON.stringify(item.relation)===key(e))?.replacement
+ if(migration==='about-contact-navigation'){assert.ok(navSource.includes("link: '/contact/'"));continue}
+ if(migration==='contact-page-resource-index'){assert.ok(contactSource.includes('documents_and_qq_group'));continue}
+ if(migration==='homepage-news-teaser-component'){assert.ok(homeNewsSource.includes("withBase('/news')"));continue}
+ if(migration==='member-roster'){
+  const id=e.to.split('/').pop()
+  assert.ok(homeSource.includes('/contact/team'))
+  assert.ok(memberRosterSource.includes('../wiki/people/'+id+'|'))
+  continue
+ }
  const promotion=navigationPromotions.find(item=>item.from===e.from&&item.to===e.to)
  const promoted=promotion&&((e.role==='mention'&&e.rule==='unique-name-mention')||(e.role==='link'&&e.rule==='explicit-markdown-link'))
  const expected=promoted?JSON.stringify([e.from,e.to,'link',promotion.rule,e.from,'confirmed','explicit']):key(e)

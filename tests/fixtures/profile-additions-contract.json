@@ -757,5 +757,39 @@
       "file": "wang-tao-hbue.jpg",
       "sha256": "3a1ca1eca903f8ca6688cd534a6657059488d2675d0ba3c3f23d204c590d4d87"
     }
-  }
+  },
+  "homepageLinkMigrations": [
+    {
+      "relation": ["/","/contact/","link","explicit-markdown-link","/","confirmed","explicit"],
+      "replacement": "about-contact-navigation"
+    },
+    {
+      "relation": ["/","/contact/documents_and_qq_group","link","explicit-markdown-link","/","confirmed","explicit"],
+      "replacement": "contact-page-resource-index"
+    },
+    {
+      "relation": ["/","/news","link","explicit-markdown-link","/","confirmed","explicit"],
+      "replacement": "homepage-news-teaser-component"
+    },
+    {
+      "relation": ["/","/wiki/people/liu-kai","mention","unique-name-mention","/","candidate","name-only"],
+      "replacement": "member-roster"
+    },
+    {
+      "relation": ["/","/wiki/people/wei-yidong","mention","unique-name-mention","/","candidate","name-only"],
+      "replacement": "member-roster"
+    },
+    {
+      "relation": ["/","/wiki/people/xu-yingjin","mention","unique-name-mention","/","candidate","name-only"],
+      "replacement": "member-roster"
+    },
+    {
+      "relation": ["/","/wiki/people/naziguli-slam","mention","unique-name-mention","/","candidate","name-only"],
+      "replacement": "member-roster"
+    },
+    {
+      "relation": ["/","/wiki/people/li-xiang","mention","unique-name-mention","/","candidate","name-only"],
+      "replacement": "member-roster"
+    }
+  ]
 }

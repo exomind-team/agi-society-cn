@@ -13,13 +13,15 @@ content-order: order
 
 协会由[[/wiki/people/wang-pei|王培]]教授发起，研究与交流涉及计算机科学、哲学、认知科学和教育。本站整理相关理论、开源项目与会议资料，方便查阅原文、了解研究进展，也为动手实践提供入口。
 
-[认识协会](/about/) · [研究方向](/research/) · [联系与参与](/contact/)
+[认识协会](/about/) · [研究方向](/research/)
 
 </section>
 
+<HomeNewsTeaser variant="inline" />
+
 <section class="section home-learning" id="知识库">
 
-## 从问题到实验
+## 从理论到实现
 
 <div class="home-journey">
 
@@ -57,92 +59,13 @@ content-order: order
 
 </section>
 
-<section class="section home-meetings" id="学术会议">
+<section class="section home-members">
 
-## 在交流中推进研究
+## 协会成员
 
-<div class="home-meeting-paths">
+协会分组名录与成员介绍集中在协会成员页；人物独页和研究资料也可从知识百科浏览。
 
-<div>
-
-### 年会档案
-
-从 2016 年到 2026 年，按届次查找议程、报告与录像。部分材料仍有缺项，详见各届档案。
-
-[历届年会](/conference/annual/) · [2026 年完整议程](/conference/annual/2026)
-
-</div>
-
-<div>
-
-### 学术组会
-
-组会资料按学年整理，包含理论研读、论文分享与工程进展报告。找某个题目或报告人，可以从各学年的记录查起。
-
-[组会资料](/conference/group/) · [新闻动态](/news)
-
-</div>
-
-</div>
-
-</section>
-
-<!-- 核心成员 -->
-<section class="section">
-
-## 核心成员
-
-<div class="team-grid">
-
-<div class="team-member">
-
-**[[/wiki/people/wang-pei|王培]]** · 教授
-*美国天普大学计算机系*
-NARS 理论创始人，AGI 协会发起人
-
-</div>
-
-<div class="team-member">
-
-**[[/wiki/people/liu-kai|刘凯]]** · 博士
-*渤海大学教育科学学院*
-协会召集人，通用人工智能与教育
-
-</div>
-
-<div class="team-member">
-
-**[[/wiki/people/xu-yingjin|徐英瑾]]** · 教授
-*复旦大学哲学学院*
-人工智能哲学，心灵哲学
-
-</div>
-
-<div class="team-member">
-
-**[[/wiki/people/naziguli-slam|那迪]]** · 博士
-*西北民族大学*
-智能决策，数据科学，AGI 理论
-
-</div>
-
-<div class="team-member">
-
-**[[/wiki/people/wei-yidong|魏屹东]]** · 教授
-*山西大学哲学学院*
-适应性表征，认知哲学
-
-</div>
-
-<div class="team-member">
-
-**[[/wiki/people/li-xiang|李祥]]** · 博士
-*辽宁工业大学*
-AGI 认知科学，人工智能情感
-
-</div>
-
-</div>
+[更多协会成员 ↗](/contact/team)
 
 </section>
 
@@ -150,41 +73,33 @@ AGI 认知科学，人工智能情感
 <div class="section-divider"></div>
 
 
-<section class="section home-participate" id="参与">
+<section class="section home-knowledge" id="继续浏览">
 
-## 把问题与材料带进来
+## 继续浏览
 
-<div class="home-meeting-paths">
+从协会知识库查找人物、论文、理论和思想书库；知识地图提供独立的站点浏览入口。
 
-<div>
-
-### 交流与合作
-
-想讨论研究或工程问题，可先查看相关项目和团队资料。联系时说明要解决什么问题、已经尝试了什么，并附上论文或实验记录，便于继续交流。
-
-[项目与工程入口](/learn/projects) · [联系协会](/contact/) · [研究与报考联系](/contact/#研究与报考联系) · [群组与资料](/contact/documents_and_qq_group)
-
-</div>
-
-<div>
-
-### 共建知识库
-
-发现文档错误或缺少资料，可以直接提出。正文以 Markdown 维护；修改时附上出处，项目介绍带上代码与运行说明，具体做法见贡献指南。
-
-[如何贡献](/contact/contributing/formats) · [源码仓库](https://github.com/exomind-team/agi-society-cn)
-
-</div>
-
-</div>
+[协会知识库](/wiki/) · [知识地图](/learn/map) · [社区演示](/community) · [补充与修正](/contact/contributing/formats)
 
 </section>
+
+<template #conference>
+<section class="conference-shelf">
+
+<h2>会议书架</h2>
+<p class="shelf-years">2016 <span aria-hidden="true">—</span> 2026</p>
+<p>十一届年会的议程、报告与录像，按年份查阅。</p>
+
+[历届年会](/conference/annual/) · [2026 完整议程](/conference/annual/2026) · [学术组会](/conference/group/)
+
+</section>
+</template>
 
 <template #footer>
 
 <div class="home-footer">
 
-文字内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可；第三方照片除外 · [历史首页内容](/about/home-archive) · [旧维基入口](/wiki/)
+文字内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 许可；第三方照片除外 · [历史首页内容](/about/home-archive)
 
 </div>
 

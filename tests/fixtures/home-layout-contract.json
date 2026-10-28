@@ -1,21 +1,32 @@
 {
-  "baseline": "b6bd20044ed4f9b87a5984164b3a238530d76cd2",
+  "baseline": "721d0b2c8b75b7342264a4c095700ad8bd6be0d2",
   "files": {
+    ".vitepress/config.ts": {
+      "before": "f3db78b8011ffdea8a797d9f331f52f7eb90cde80de9502289c965eeaf9253a3",
+      "after": "f05b9f4313c301ab5f80590a5eb373466f1728adba647013c5f633e6ad48469b"
+    },
     ".vitepress/theme/components/ResearchHome.vue": {
-      "before": "0205631ca2c8ecf888818782034a3a3beab2dd009fac6156afed7bb279c01530",
-      "after": "f12a247e809693a4a3030d42df34b640bcfec9043fc1d6174ee0852e971557ff"
+      "before": "f12a247e809693a4a3030d42df34b640bcfec9043fc1d6174ee0852e971557ff",
+      "after": "e1e973be954528dda0228b1e57c694665b5dd978cc8c0c629658319d70bac976"
+    },
+    ".vitepress/theme/components/people.data.ts": {
+      "before": "d41e23e16d35ec4d674afc2f57945b643ef786edf393dd8445a773934cadf8db",
+      "after": "e3ea668ff47f66d10bae5439f8f52e07d0efd11a2596c8767b31a639e96444e4"
     },
     ".vitepress/theme/index.ts": {
-      "before": "aef898d79d6d8a477b5f778fc7107885d9060cc3cdfecd758f97008df94779f6",
-      "after": "20dc9efc08dd9049ef0306eef9bcee4694c2f5a6ffac30fa0e2ebba530460e54"
+      "before": "20dc9efc08dd9049ef0306eef9bcee4694c2f5a6ffac30fa0e2ebba530460e54",
+      "after": "2ca84921d1fdf7685a383ba8f2c6976c4387e41028b35a014867ffedfcadc260"
     },
     ".vitepress/theme/styles/research-preview.css": {
-      "before": "d092f86eb2f42daca9512b1ed9ed47c84900dff3538f7da4782d0fbc32aeeecb",
-      "after": "ce3ef476f4534dd0f2e0b21c52f77ed3299b2b9a0ecaa5394642c00d1643a343"
+      "before": "ce3ef476f4534dd0f2e0b21c52f77ed3299b2b9a0ecaa5394642c00d1643a343",
+      "after": "4a08cb14574fdb807761b1f52114f7ca782bb1e78af5c9bcbcd6944adad8a33c"
     },
     "content/index.md": {
-      "before": "3cc9e5971fc2efc9ca9ba5f122100dab0e10796b4e3f0d27b3c5d8f07e8af9ac",
-      "after": "d5d1358432345a021822f6cd35505e48a27ac7ecb274d7ac33cb45e285231a32"
+      "before": "48bfa7eaf64de02f8f5e7ce0f118e28c0e781624f9894d01cc6d90d40a266197",
+      "after": "7dea5fc777f0dbfbc692cd19fbbfd4504a4773ddf959f7b92aa8290dc294a58a"
     }
+  },
+  "newFiles": {
+    ".vitepress/theme/components/HomeNewsTeaser.vue": "d2235fa6e15038ac9ee3f12509ffe20582c2a7ae2a0db8e1dc6dbb7d53541aee"
   }
 }

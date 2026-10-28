@@ -7,6 +7,12 @@ import matter from 'gray-matter'
 import {readPeople,readPages,buildRelations} from '../.vitepress/relations/index.mjs'
 const frozen=JSON.parse(fs.readFileSync('tests/fixtures/li-xiang-contract.json','utf8'))
 const navigationPromotions=JSON.parse(fs.readFileSync('tests/fixtures/member-navigation-promotions.json','utf8'))
+const homepageLinkMigrations=JSON.parse(fs.readFileSync('tests/fixtures/profile-additions-contract.json','utf8')).homepageLinkMigrations
+const navSource=fs.readFileSync('.vitepress/config.ts','utf8')
+const contactSource=fs.readFileSync('content/contact/index.md','utf8')
+const homeNewsSource=fs.readFileSync('.vitepress/theme/components/HomeNewsTeaser.vue','utf8')
+const homeSource=fs.readFileSync('content/index.md','utf8')
+const memberRosterSource=fs.readFileSync('content/about/team.md','utf8')
 const profiles=JSON.parse(fs.readFileSync('data/people-profiles.json','utf8'))
 const hash=v=>crypto.createHash('sha256').update(JSON.stringify(v)).digest('hex')
 assert.deepEqual(profiles.filter(p=>!['huang-yinghui','wang-tao'].includes(p.id)).map(p=>p.id).sort(),[...Object.keys(frozen.profiles),'li-xiang'].sort())
@@ -28,6 +34,16 @@ for(const old of frozen.identities){const p=people.find(p=>p.id===old.id);assert
 const graph=buildRelations({people,pages:readPages('content')});const key=e=>JSON.stringify([e.from,e.to,e.role,e.rule,e.source,e.status,e.confidence]);const current=new Set(graph.edges.map(key))
 for(const old of frozen.relations){
  if(isWithdrawnRelation(old,current)) continue
+ const migration=homepageLinkMigrations.find(item=>JSON.stringify(item.relation)===old)?.replacement
+ if(migration==='about-contact-navigation'){assert.ok(navSource.includes("link: '/contact/'"));continue}
+ if(migration==='contact-page-resource-index'){assert.ok(contactSource.includes('documents_and_qq_group'));continue}
+ if(migration==='homepage-news-teaser-component'){assert.ok(homeNewsSource.includes("withBase('/news')"));continue}
+ if(migration==='member-roster'){
+  const id=JSON.parse(old)[1].split('/').pop()
+  assert.ok(homeSource.includes('/contact/team'))
+  assert.ok(memberRosterSource.includes('../wiki/people/'+id+'|'))
+  continue
+ }
  const [from,to,role,rule]=JSON.parse(old)
  const promotion=navigationPromotions.find(item=>item.from===from&&item.to===to)
  const promoted=promotion&&((role==='mention'&&rule==='unique-name-mention')||(role==='link'&&rule==='explicit-markdown-link'))

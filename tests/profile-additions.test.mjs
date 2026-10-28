@@ -39,8 +39,24 @@ for(const [id,expected] of Object.entries(contract.expectedPortraits)){
 }
 const graph=buildRelations({people,pages:readPages('content')});const key=e=>JSON.stringify([e.from,e.to,e.role,e.rule,e.source,e.status,e.confidence]);const now=new Set(graph.edges.map(key))
 let promotedRelations=0
+const migratedHomeLinks=new Map((contract.homepageLinkMigrations||[]).map(item=>[JSON.stringify(item.relation),item.replacement]))
+const navSource=fs.readFileSync('.vitepress/config.ts','utf8')
+const contactSource=fs.readFileSync('content/contact/index.md','utf8')
+const homeNewsSource=fs.readFileSync('.vitepress/theme/components/HomeNewsTeaser.vue','utf8')
+const homeSource=fs.readFileSync('content/index.md','utf8')
+const memberRosterSource=fs.readFileSync('content/about/team.md','utf8')
 for(const prior of contract.historicalRelations){
  if(isWithdrawnRelation(prior,now)) continue
+ const migration=migratedHomeLinks.get(prior)
+ if(migration==='about-contact-navigation'){assert.ok(navSource.includes("link: '/contact/'"),'The contact route remains in the About & Contact menu');continue}
+ if(migration==='contact-page-resource-index'){assert.ok(contactSource.includes('documents_and_qq_group'),'The resource route remains under the contact index');continue}
+ if(migration==='homepage-news-teaser-component'){assert.ok(homeNewsSource.includes("withBase('/news')"),'The all-news route moved to the homepage news teaser');continue}
+ if(migration==='member-roster'){
+  const id=JSON.parse(prior)[1].split('/').pop()
+  assert.ok(homeSource.includes('/contact/team'),'The homepage still exposes the consolidated member roster')
+  assert.ok(memberRosterSource.includes('../wiki/people/'+id+'|'),'The member roster retains the individual profile link: '+id)
+  continue
+ }
  const [from,to,role,rule]=JSON.parse(prior)
  const promotion=navigationPromotions.find(item=>item.from===from&&item.to===to)
  if(promotion&&role==='mention'&&rule==='unique-name-mention') promotedRelations++
